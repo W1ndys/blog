@@ -1,0 +1,1352 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="keywords" content="博客, 生活, 技术, 记录">
+    
+    <meta name="author" content="W1ndys">
+    <!-- preconnect -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    
+        
+        
+        
+            <link rel="preconnect" href="https://evan.beee.top" crossorigin>
+        
+    
+    <!--- Seo Part-->
+    
+    <link rel="canonical" href="https://blog.w1ndys.top/posts/520cc65.html"/>
+    <meta name="robots" content="index,follow">
+    <meta name="googlebot" content="index,follow">
+    <meta name="revisit-after" content="1 days">
+    
+    
+    
+        
+        <meta name="description" content="W1ndys小屋">
+<meta property="og:type" content="article">
+<meta property="og:title" content="使用Typora_plugin实现Hexo博客绝对路径一键替换相对路径|正斜杠替换为反斜杠">
+<meta property="og:url" content="https://blog.w1ndys.top/posts/520cc65.html">
+<meta property="og:site_name" content="W1ndys小屋">
+<meta property="og:description" content="W1ndys小屋">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://blog.w1ndys.top/images/redefine-og.webp">
+<meta property="article:published_time" content="2024-02-08T07:24:23.000Z">
+<meta property="article:modified_time" content="2025-02-23T05:37:18.715Z">
+<meta property="article:author" content="W1ndys">
+<meta property="article:tag" content="Hexo">
+<meta property="article:tag" content="Typora">
+<meta property="article:tag" content="Typora-plugin">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://blog.w1ndys.top/images/redefine-og.webp">
+    
+    
+    <!--- Icon Part-->
+    <link rel="icon" type="image/png" href="/images/favicon.ico" sizes="192x192">
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon.ico">
+    <meta name="theme-color" content="#A31F34">
+    <link rel="shortcut icon" href="/images/favicon.ico">
+    <!--- Page Info-->
+    
+    <title>
+        
+            使用Typora_plugin实现Hexo博客绝对路径一键替换相对路径|正斜杠替换为反斜杠 | W1ndys小屋
+        
+    </title>
+
+    <link rel="stylesheet" href="https://evan.beee.top/projects/hexo-theme-redefine@2.8.2/source/fonts/Chillax/chillax.css">
+
+    <!--- Inject Part-->
+    
+        
+            
+    
+            
+    
+            
+                
+                    <script data-swup-reload-script data-pjax charset="UTF-8" id="LA_COLLECT" src="//sdk.51.la/js-sdk-pro.min.js"></script>
+                
+    
+            
+                
+                    <script data-swup-reload-script data-pjax>LA.init({id:"3HPYFt9znqKItrHZ",ck:"3HPYFt9znqKItrHZ",autoTrack:true})</script>
+                
+    
+            
+                
+                    <link rel="stylesheet" type="text/css" href="/css/Capoo.css">
+                
+    
+
+    
+<link rel="stylesheet" href="/css/style.css">
+
+
+    
+        <link rel="stylesheet" href="https://evan.beee.top/projects/hexo-theme-redefine@2.8.2/source/css/build/tailwind.css">
+    
+
+    <link rel="stylesheet" href="https://evan.beee.top/projects/hexo-theme-redefine@2.8.2/source/fonts/GeistMono/geist-mono.css">
+    <link rel="stylesheet" href="https://evan.beee.top/projects/hexo-theme-redefine@2.8.2/source/fonts/Geist/geist.css">
+    <!--- Font Part-->
+    
+    
+    
+    
+    
+    
+        <script  src="https://evan.beee.top/projects/hexo-theme-redefine@2.8.2/source/js/build/libs/anime.min.js" ></script>
+    
+
+    <script id="hexo-configurations">
+    window.config = {"hostname":"blog.w1ndys.top","root":"/","language":"zh-CN","path":"search.xml"};
+    window.theme = {"articles":{"style":{"font_size":"16px","line_height":1.5,"image_border_radius":"14px","image_alignment":"center","image_caption":false,"link_icon":true,"delete_mask":true,"title_alignment":"left","headings_top_spacing":{"h1":"3.2rem","h2":"2.4rem","h3":"1.9rem","h4":"1.6rem","h5":"1.4rem","h6":"1.3rem"}},"word_count":{"enable":true,"count":true,"min2read":true},"author_label":{"enable":true,"auto":false,"list":[]},"code_block":{"copy":true,"style":"mac","highlight_theme":{"light":"github","dark":"vs2015"},"font":{"enable":false,"family":null,"url":null}},"toc":{"enable":true,"max_depth":3,"number":false,"expand":true,"init_open":true},"copyright":{"enable":true,"default":"all_rights_reserved"},"lazyload":true,"pangu_js":true,"recommendation":{"enable":false,"title":"推荐阅读","limit":3,"mobile_limit":2,"placeholder":"/images/wallhaven-wqery6-light.webp","skip_dirs":[]}},"colors":{"primary":"#A31F34","secondary":"#1890ff","default_mode":"light"},"global":{"fonts":{"chinese":{"enable":false,"family":null,"url":null},"english":{"enable":false,"family":null,"url":null},"title":{"enable":false,"family":null,"url":null}},"content_max_width":"1000px","sidebar_width":"210px","hover":{"shadow":true,"scale":true},"scroll_progress":{"bar":true,"percentage":true},"website_counter":{"url":"https://cn.vercount.one/js","enable":true,"site_pv":true,"site_uv":true,"post_pv":true},"single_page":true,"preloader":{"enable":true,"custom_message":"欢迎来到W1ndys小屋"},"open_graph":{"enable":true,"image":"/images/redefine-og.webp","description":"W1ndys小屋"},"google_analytics":{"enable":false,"id":null}},"home_banner":{"enable":true,"style":"fixed","image":{"light":"https://pic1.zhimg.com/80/v2-b4e05912f591b51b9fa3e8aa4b9cba45.png","dark":"https://pic1.zhimg.com/80/v2-b4e05912f591b51b9fa3e8aa4b9cba45.png"},"title":"W1ndys小屋","subtitle":{"text":["一言加载中..."],"hitokoto":{"enable":true,"show_author":true,"api":"https://v1.hitokoto.cn"},"typing_speed":100,"backing_speed":80,"starting_delay":500,"backing_delay":1500,"loop":true,"smart_backspace":true},"text_color":{"light":"#fff","dark":"#d1d1b6"},"text_style":{"title_size":"2.8rem","subtitle_size":"1.5rem","line_height":1.2},"custom_font":{"enable":false,"family":null,"url":null},"social_links":{"enable":true,"style":"default","links":{"github":"https://github.com/W1ndys","instagram":null,"zhihu":"https://www.zhihu.com/people/w1ndys","twitter":null,"email":"w1ndys@outlook.com"},"qrs":{"weixin":null}}},"plugins":{"feed":{"enable":true},"aplayer":{"enable":false,"type":"fixed","audios":[{"name":null,"artist":null,"url":null,"cover":null,"lrc":null}]},"mermaid":{"enable":false,"version":"11.4.1"}},"version":"2.8.2","navbar":{"auto_hide":true,"color":{"left":"#f78736","right":"#367df7","transparency":35},"width":{"home":"1200px","pages":"1000px"},"links":{"Home":{"path":"/","icon":"fa-regular fa-house"},"Archives":{"path":"/archives","icon":"fa-regular fa-archive"},"Categories":{"path":"/categories","icon":"fa-regular fa-folder"},"Tags":{"path":"/tags","icon":"fa-regular fa-tags"},"友链接力":{"icon":"fa-solid fa-train-subway","submenus":{"异次元之旅":"https://travel.moe/go.html?travel=on","MIIT Travel":"https://beian.miit.cn.com/go.php","虫洞 | 十年之约":"https://foreverblog.cn/go.html","博客录":"https://bokelu.suijiboke.gs","笔墨迹":"https://blogscn.fun/random.html","博客圈":"https://bokequan.cn/?suiji","开往":"https://www.travellings.cn/go.html"}},"Friends":{"path":"/links","icon":"fa-regular fa-link"},"书签":{"icon":"fa-solid fa-bookmark","path":"/bookmarks/"}},"search":{"enable":true,"preload":true}},"page_templates":{"friends_column":3,"tags_style":"blur"},"home":{"sidebar":{"enable":true,"position":"left","first_item":"menu","announcement":"Welcome to W1ndys's Blog","show_on_mobile":true,"links":{"Archives":{"path":"/archives","icon":"fa-regular fa-archive"},"Tags":{"path":"/tags","icon":"fa-regular fa-tags"},"Categories":{"path":"/categories","icon":"fa-regular fa-folder"}}},"article_date_format":"auto","excerpt_length":200,"categories":{"enable":true,"limit":5},"tags":{"enable":true,"limit":5}},"footerStart":"2023/08/22 05:20:00"};
+    window.lang_ago = {"second":"%s 秒前","minute":"%s 分钟前","hour":"%s 小时前","day":"%s 天前","week":"%s 周前","month":"%s 个月前","year":"%s 年前"};
+    window.data = {"masonry":true};
+  </script>
+    
+    <!--- Fontawesome Part-->
+    <link rel="stylesheet" href="https://evan.beee.top/projects/hexo-theme-redefine@2.8.2/source/fontawesome/fontawesome.min.css">
+    <link rel="stylesheet" href="https://evan.beee.top/projects/hexo-theme-redefine@2.8.2/source/fontawesome/brands.min.css">
+    <link rel="stylesheet" href="https://evan.beee.top/projects/hexo-theme-redefine@2.8.2/source/fontawesome/solid.min.css">
+    <link rel="stylesheet" href="https://evan.beee.top/projects/hexo-theme-redefine@2.8.2/source/fontawesome/regular.min.css">
+    
+    
+    
+    
+<meta name="generator" content="Hexo 7.3.0"><link rel="alternate" href="/atom.xml" title="W1ndys小屋" type="application/atom+xml">
+</head>
+
+
+
+<body>
+	<div class="progress-bar-container">
+	
+	<span class="scroll-progress-bar"></span>
+	
+
+	
+	<span class="pjax-progress-bar"></span>
+	<!--        <span class="swup-progress-icon">-->
+	<!--            <i class="fa-solid fa-circle-notch fa-spin"></i>-->
+	<!--        </span>-->
+	
+</div>
+
+<style>
+    :root {
+        --preloader-background-color: #fff;
+        --preloader-text-color: #000;
+    }
+
+    @media (prefers-color-scheme: dark) {
+        :root {
+            --preloader-background-color: #202124;
+            --preloader-text-color: #fff;
+        }
+    }
+
+    @media (prefers-color-scheme: light) {
+        :root {
+            --preloader-background-color: #fff;
+            --preloader-text-color: #000;
+        }
+    }
+
+    @media (max-width: 600px) {
+        .ml13 {
+            font-size: 2.6rem !important; /* Adjust this value as needed */
+        }
+    }
+
+    .preloader {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem; /* Tailwind 'gap-4' is 1rem */
+        align-items: center;
+        justify-content: center;
+        position: fixed;
+        padding: 12px;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh; /* 'h-screen' is 100% of the viewport height */
+        background-color: var(--preloader-background-color);
+        z-index: 1100; /* 'z-[1100]' sets the z-index */
+        transition: opacity 0.2s ease-in-out;
+    }
+
+    .ml13 {
+        font-size: 3.2rem;
+        /* text-transform: uppercase; */
+        color: var(--preloader-text-color);
+        letter-spacing: -1px;
+        font-weight: 500;
+        font-family: 'Chillax-Variable', sans-serif;
+        text-align: center;
+    }
+
+    .ml13 .word {
+        display: inline-flex;
+        flex-wrap: wrap;
+        white-space: nowrap;
+    }
+
+    .ml13 .letter {
+        display: inline-block;
+        line-height: 1em;
+    }
+</style>
+
+<div class="preloader">
+    <h2 class="ml13">
+        欢迎来到W1ndys小屋
+    </h2>
+    <script>
+        var textWrapper = document.querySelector('.ml13');
+        // Split text into words
+        var words = textWrapper.textContent.trim().split(' ');
+
+        // Clear the existing content
+        textWrapper.innerHTML = '';
+
+        // Wrap each word and its letters in spans
+        words.forEach(function(word) {
+            var wordSpan = document.createElement('span');
+            wordSpan.classList.add('word');
+            wordSpan.innerHTML = word.replace(/\S/g, "<span class='letter'>$&</span>");
+            textWrapper.appendChild(wordSpan);
+            textWrapper.appendChild(document.createTextNode(' ')); // Add space between words
+        });
+
+        var animation = anime.timeline({ loop: true })
+            .add({
+                targets: '.ml13 .letter',
+                translateY: [20, 0],
+                translateZ: 0,
+                opacity: [0, 1],
+                filter: ['blur(5px)', 'blur(0px)'],
+                easing: "easeOutExpo",
+                duration: 1200,
+                delay: (el, i) => 300 + 20 * i,
+            })
+            .add({
+                targets: '.ml13 .letter',
+                translateY: [0, -20],
+                opacity: [1, 0],
+                filter: ['blur(0px)', 'blur(5px)'],
+                easing: "easeInExpo",
+                duration: 1000,
+                delay: (el, i) => 15 * i,
+                complete: function() {
+                    hidePreloader();
+                }
+            }, '-=700');
+
+
+        let themeStatus = JSON.parse(localStorage.getItem('REDEFINE-THEME-STATUS'))?.isDark;
+
+        // If the theme status is not found in local storage, check the preferred color scheme
+        if (themeStatus === undefined || themeStatus === null) {
+            if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+                themeStatus = 'dark';
+            } else {
+                themeStatus = 'light';
+            }
+        }
+
+        // Now you can use the themeStatus variable in your code
+        if (themeStatus) {
+            document.documentElement.style.setProperty('--preloader-background-color', '#202124');
+            document.documentElement.style.setProperty('--preloader-text-color', '#fff');
+        } else {
+            document.documentElement.style.setProperty('--preloader-background-color', '#fff');
+            document.documentElement.style.setProperty('--preloader-text-color', '#000');
+        }
+
+        window.addEventListener('load', function () {
+            setTimeout(hidePreloader, 5000); // Call hidePreloader after 5000 milliseconds if not already called by animation
+        });
+
+        function hidePreloader() {
+            var preloader = document.querySelector('.preloader');
+            preloader.style.opacity = '0';
+            setTimeout(function () {
+                preloader.style.display = 'none';
+            }, 200);
+        }
+    </script>
+</div>
+
+<main class="page-container" id="swup">
+
+	
+
+	<div class="main-content-container flex flex-col justify-between min-h-dvh">
+		<div class="main-content-header">
+			<header class="navbar-container px-6 md:px-12">
+    <div class="navbar-content transition-navbar ">
+        <div class="left">
+            
+                <a class="logo-image h-8 w-8 sm:w-10 sm:h-10 mr-3" href="/">
+                    <img src="/images/haixian.svg" class="w-full h-full rounded-sm">
+                </a>
+            
+            <a class="logo-title" href="/">
+                
+                W1ndys小屋
+                
+            </a>
+        </div>
+
+        <div class="right">
+            <!-- PC -->
+            <div class="desktop">
+                <ul class="navbar-list">
+                    
+                        
+                            
+
+                            <li class="navbar-item">
+                                <!-- Menu -->
+                                <a class=""
+                                   href="/"
+                                        >
+                                    <i class="fa-regular fa-house fa-fw"></i>
+                                    首页
+                                    
+                                </a>
+
+                                <!-- Submenu -->
+                                
+                            </li>
+                    
+                        
+                            
+
+                            <li class="navbar-item">
+                                <!-- Menu -->
+                                <a class=""
+                                   href="/archives"
+                                        >
+                                    <i class="fa-regular fa-archive fa-fw"></i>
+                                    归档
+                                    
+                                </a>
+
+                                <!-- Submenu -->
+                                
+                            </li>
+                    
+                        
+                            
+
+                            <li class="navbar-item">
+                                <!-- Menu -->
+                                <a class=""
+                                   href="/categories"
+                                        >
+                                    <i class="fa-regular fa-folder fa-fw"></i>
+                                    分类
+                                    
+                                </a>
+
+                                <!-- Submenu -->
+                                
+                            </li>
+                    
+                        
+                            
+
+                            <li class="navbar-item">
+                                <!-- Menu -->
+                                <a class=""
+                                   href="/tags"
+                                        >
+                                    <i class="fa-regular fa-tags fa-fw"></i>
+                                    标签
+                                    
+                                </a>
+
+                                <!-- Submenu -->
+                                
+                            </li>
+                    
+                        
+                            
+
+                            <li class="navbar-item">
+                                <!-- Menu -->
+                                <a class="has-dropdown"
+                                   href="#"
+                                        onClick=&#34;return false;&#34;>
+                                    <i class="fa-solid fa-train-subway fa-fw"></i>
+                                    友链接力
+                                    <i class="fa-solid fa-chevron-down fa-fw"></i>
+                                </a>
+
+                                <!-- Submenu -->
+                                
+                                    <ul class="sub-menu">
+                                        
+                                            <li>
+                                                <a target="_blank" rel="noopener" href="https://travel.moe/go.html?travel=on">
+                                                    异次元之旅
+                                                </a>
+                                            </li>
+                                        
+                                            <li>
+                                                <a target="_blank" rel="noopener" href="https://beian.miit.cn.com/go.php">
+                                                    MIIT TRAVEL
+                                                </a>
+                                            </li>
+                                        
+                                            <li>
+                                                <a target="_blank" rel="noopener" href="https://foreverblog.cn/go.html">
+                                                    虫洞 | 十年之约
+                                                </a>
+                                            </li>
+                                        
+                                            <li>
+                                                <a target="_blank" rel="noopener" href="https://bokelu.suijiboke.gs">
+                                                    博客录
+                                                </a>
+                                            </li>
+                                        
+                                            <li>
+                                                <a target="_blank" rel="noopener" href="https://blogscn.fun/random.html">
+                                                    笔墨迹
+                                                </a>
+                                            </li>
+                                        
+                                            <li>
+                                                <a target="_blank" rel="noopener" href="https://bokequan.cn/?suiji">
+                                                    博客圈
+                                                </a>
+                                            </li>
+                                        
+                                            <li>
+                                                <a target="_blank" rel="noopener" href="https://www.travellings.cn/go.html">
+                                                    开往
+                                                </a>
+                                            </li>
+                                        
+                                    </ul>
+                                
+                            </li>
+                    
+                        
+                            
+
+                            <li class="navbar-item">
+                                <!-- Menu -->
+                                <a class=""
+                                   href="/links"
+                                        >
+                                    <i class="fa-regular fa-link fa-fw"></i>
+                                    友情链接
+                                    
+                                </a>
+
+                                <!-- Submenu -->
+                                
+                            </li>
+                    
+                        
+                            
+
+                            <li class="navbar-item">
+                                <!-- Menu -->
+                                <a class=""
+                                   href="/bookmarks/"
+                                        >
+                                    <i class="fa-solid fa-bookmark fa-fw"></i>
+                                    书签
+                                    
+                                </a>
+
+                                <!-- Submenu -->
+                                
+                            </li>
+                    
+                    
+                        <li class="navbar-item search search-popup-trigger">
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                        </li>
+                    
+                </ul>
+            </div>
+            <!-- Mobile -->
+            <div class="mobile">
+                
+                    <div class="icon-item search search-popup-trigger"><i class="fa-solid fa-magnifying-glass"></i>
+                    </div>
+                
+                <div class="icon-item navbar-bar">
+                    <div class="navbar-bar-middle"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Mobile sheet -->
+    <div class="navbar-drawer h-dvh w-full absolute top-0 left-0 bg-background-color flex flex-col justify-between">
+        <ul class="drawer-navbar-list flex flex-col px-4 justify-center items-start">
+            
+                
+                    
+
+                    <li class="drawer-navbar-item text-base my-1.5 flex flex-col w-full">
+                        
+                        <a class="py-1.5 px-2 flex flex-row items-center justify-between gap-1 hover:!text-primary active:!text-primary text-2xl font-semibold group border-b border-border-color hover:border-primary w-full "
+                           href="/"
+                        >
+                            <span>
+                                首页
+                            </span>
+                            
+                                <i class="fa-regular fa-house fa-sm fa-fw"></i>
+                            
+                        </a>
+                        
+
+                        
+                    </li>
+            
+                
+                    
+
+                    <li class="drawer-navbar-item text-base my-1.5 flex flex-col w-full">
+                        
+                        <a class="py-1.5 px-2 flex flex-row items-center justify-between gap-1 hover:!text-primary active:!text-primary text-2xl font-semibold group border-b border-border-color hover:border-primary w-full "
+                           href="/archives"
+                        >
+                            <span>
+                                归档
+                            </span>
+                            
+                                <i class="fa-regular fa-archive fa-sm fa-fw"></i>
+                            
+                        </a>
+                        
+
+                        
+                    </li>
+            
+                
+                    
+
+                    <li class="drawer-navbar-item text-base my-1.5 flex flex-col w-full">
+                        
+                        <a class="py-1.5 px-2 flex flex-row items-center justify-between gap-1 hover:!text-primary active:!text-primary text-2xl font-semibold group border-b border-border-color hover:border-primary w-full "
+                           href="/categories"
+                        >
+                            <span>
+                                分类
+                            </span>
+                            
+                                <i class="fa-regular fa-folder fa-sm fa-fw"></i>
+                            
+                        </a>
+                        
+
+                        
+                    </li>
+            
+                
+                    
+
+                    <li class="drawer-navbar-item text-base my-1.5 flex flex-col w-full">
+                        
+                        <a class="py-1.5 px-2 flex flex-row items-center justify-between gap-1 hover:!text-primary active:!text-primary text-2xl font-semibold group border-b border-border-color hover:border-primary w-full "
+                           href="/tags"
+                        >
+                            <span>
+                                标签
+                            </span>
+                            
+                                <i class="fa-regular fa-tags fa-sm fa-fw"></i>
+                            
+                        </a>
+                        
+
+                        
+                    </li>
+            
+                
+                    
+
+                    <li class="drawer-navbar-item-sub text-base my-1.5 flex flex-col w-full">
+                        
+                        <div class="py-1.5 px-2 flex flex-row items-center justify-between gap-1 hover:!text-primary active:!text-primary cursor-pointer text-2xl font-semibold group border-b border-border-color hover:border-primary w-full "
+                             navbar-data-toggle="submenu-友链接力"
+                        >
+                            <span>
+                                友链接力
+                            </span>
+                            
+                                <i class="fa-solid fa-chevron-right fa-sm fa-fw transition-all"></i>
+                            
+                        </div>
+                        
+
+                        
+                            <div class="flex-col items-start px-2 py-2 hidden" data-target="submenu-友链接力">
+                                
+                                    <div class="drawer-navbar-item text-base flex flex-col justify-center items-start hover:underline active:underline hover:underline-offset-1 rounded-3xl">
+                                        <a class=" text-third-text-color text-xl"
+                                           target="_blank" rel="noopener" href="https://travel.moe/go.html?travel=on">异次元之旅</a>
+                                    </div>
+                                
+                                    <div class="drawer-navbar-item text-base flex flex-col justify-center items-start hover:underline active:underline hover:underline-offset-1 rounded-3xl">
+                                        <a class=" text-third-text-color text-xl"
+                                           target="_blank" rel="noopener" href="https://beian.miit.cn.com/go.php">MIIT TRAVEL</a>
+                                    </div>
+                                
+                                    <div class="drawer-navbar-item text-base flex flex-col justify-center items-start hover:underline active:underline hover:underline-offset-1 rounded-3xl">
+                                        <a class=" text-third-text-color text-xl"
+                                           target="_blank" rel="noopener" href="https://foreverblog.cn/go.html">虫洞 | 十年之约</a>
+                                    </div>
+                                
+                                    <div class="drawer-navbar-item text-base flex flex-col justify-center items-start hover:underline active:underline hover:underline-offset-1 rounded-3xl">
+                                        <a class=" text-third-text-color text-xl"
+                                           target="_blank" rel="noopener" href="https://bokelu.suijiboke.gs">博客录</a>
+                                    </div>
+                                
+                                    <div class="drawer-navbar-item text-base flex flex-col justify-center items-start hover:underline active:underline hover:underline-offset-1 rounded-3xl">
+                                        <a class=" text-third-text-color text-xl"
+                                           target="_blank" rel="noopener" href="https://blogscn.fun/random.html">笔墨迹</a>
+                                    </div>
+                                
+                                    <div class="drawer-navbar-item text-base flex flex-col justify-center items-start hover:underline active:underline hover:underline-offset-1 rounded-3xl">
+                                        <a class=" text-third-text-color text-xl"
+                                           target="_blank" rel="noopener" href="https://bokequan.cn/?suiji">博客圈</a>
+                                    </div>
+                                
+                                    <div class="drawer-navbar-item text-base flex flex-col justify-center items-start hover:underline active:underline hover:underline-offset-1 rounded-3xl">
+                                        <a class=" text-third-text-color text-xl"
+                                           target="_blank" rel="noopener" href="https://www.travellings.cn/go.html">开往</a>
+                                    </div>
+                                
+                            </div>
+                        
+                    </li>
+            
+                
+                    
+
+                    <li class="drawer-navbar-item text-base my-1.5 flex flex-col w-full">
+                        
+                        <a class="py-1.5 px-2 flex flex-row items-center justify-between gap-1 hover:!text-primary active:!text-primary text-2xl font-semibold group border-b border-border-color hover:border-primary w-full "
+                           href="/links"
+                        >
+                            <span>
+                                友情链接
+                            </span>
+                            
+                                <i class="fa-regular fa-link fa-sm fa-fw"></i>
+                            
+                        </a>
+                        
+
+                        
+                    </li>
+            
+                
+                    
+
+                    <li class="drawer-navbar-item text-base my-1.5 flex flex-col w-full">
+                        
+                        <a class="py-1.5 px-2 flex flex-row items-center justify-between gap-1 hover:!text-primary active:!text-primary text-2xl font-semibold group border-b border-border-color hover:border-primary w-full "
+                           href="/bookmarks/"
+                        >
+                            <span>
+                                书签
+                            </span>
+                            
+                                <i class="fa-solid fa-bookmark fa-sm fa-fw"></i>
+                            
+                        </a>
+                        
+
+                        
+                    </li>
+            
+
+            
+            
+                
+                    
+                    
+                    
+            
+        </ul>
+
+        <div class="statistics flex justify-around my-2.5">
+    <a class="item tag-count-item flex flex-col justify-center items-center w-20" href="/tags">
+        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">161</div>
+        <div class="label text-third-text-color text-sm">标签</div>
+    </a>
+    <a class="item tag-count-item flex flex-col justify-center items-center w-20" href="/categories">
+        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">80</div>
+        <div class="label text-third-text-color text-sm">分类</div>
+    </a>
+    <a class="item tag-count-item flex flex-col justify-center items-center w-20" href="/archives">
+        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">193</div>
+        <div class="label text-third-text-color text-sm">文章</div>
+    </a>
+</div>
+    </div>
+
+    <div class="window-mask"></div>
+
+</header>
+
+
+		</div>
+
+		<div class="main-content-body transition-fade-up">
+			
+
+			<div class="main-content">
+				<div class="post-page-container flex relative justify-between box-border w-full h-full">
+	<div class="article-content-container">
+
+		<div class="article-title relative w-full">
+			
+			<div class="w-full flex items-center pt-6 justify-start">
+				<h1 class="article-title-regular text-second-text-color tracking-tight text-4xl md:text-6xl font-semibold px-2 sm:px-6 md:px-8 py-3">使用Typora_plugin实现Hexo博客绝对路径一键替换相对路径|正斜杠替换为反斜杠</h1>
+			</div>
+			
+		</div>
+
+		
+		<div class="article-header flex flex-row gap-2 items-center px-2 sm:px-6 md:px-8">
+			<div class="avatar w-[46px] h-[46px] flex-shrink-0 rounded-medium border border-border-color p-[1px]">
+				<img src="https://avatars.githubusercontent.com/u/109416673">
+			</div>
+			<div class="info flex flex-col justify-between">
+				<div class="author flex items-center">
+					<span class="name text-default-text-color text-lg font-semibold">W1ndys</span>
+					
+					<span class="author-label ml-1.5 text-xs px-2 py-0.5 rounded-small text-third-text-color border border-shadow-color-1">Lv6</span>
+					
+				</div>
+				<div class="meta-info">
+					<div class="article-meta-info">
+    <span class="article-date article-meta-item">
+        <i class="fa-regular fa-pen-fancy"></i>&nbsp;
+        <span class="desktop">2024-02-08 15:24:23</span>
+        <span class="mobile">2024-02-08 15:24:23</span>
+        <span class="hover-info">创建</span>
+    </span>
+    
+        <span class="article-date article-meta-item">
+            <i class="fa-regular fa-wrench"></i>&nbsp;
+            <span class="desktop">2025-02-23 13:37:18</span>
+            <span class="mobile">2025-02-23 13:37:18</span>
+            <span class="hover-info">更新</span>
+        </span>
+    
+
+    
+        <span class="article-categories article-meta-item">
+            <i class="fa-regular fa-folders"></i>&nbsp;
+            <ul>
+                
+                
+                    
+                        
+                        <li>
+                            <a href="/categories/%E6%8A%80%E6%9C%AF%E6%95%99%E7%A8%8B/">技术教程</a>&nbsp;
+                        </li>
+                    
+                    
+                
+                    
+                        
+                            <li>></li>
+                        
+                        <li>
+                            <a href="/categories/%E6%8A%80%E6%9C%AF%E6%95%99%E7%A8%8B/Typora/">Typora</a>&nbsp;
+                        </li>
+                    
+                    
+                
+            </ul>
+        </span>
+    
+    
+        <span class="article-tags article-meta-item">
+            <i class="fa-regular fa-tags"></i>&nbsp;
+            <ul>
+                
+                    <li>
+                        <a href="/tags/Hexo/">Hexo</a>&nbsp;
+                    </li>
+                
+                    <li>
+                        | <a href="/tags/Typora/">Typora</a>&nbsp;
+                    </li>
+                
+                    <li>
+                        | <a href="/tags/Typora-plugin/">Typora-plugin</a>&nbsp;
+                    </li>
+                
+            </ul>
+        </span>
+    
+
+    
+    
+        <span class="article-wordcount article-meta-item">
+            <i class="fa-regular fa-typewriter"></i>&nbsp;<span>2.1k 字</span>
+        </span>
+    
+    
+        <span class="article-min2read article-meta-item">
+            <i class="fa-regular fa-clock"></i>&nbsp;<span>9 分钟</span>
+        </span>
+    
+    
+        <span class="article-pv article-meta-item">
+            <i class="fa-regular fa-eye"></i>&nbsp;<span id="busuanzi_value_page_pv"></span>
+        </span>
+    
+</div>
+
+				</div>
+			</div>
+		</div>
+		
+
+		
+
+
+		<div class="article-content markdown-body px-2 sm:px-6 md:px-8 pb-8">
+			<h1 id="使用-Typora-plugin-实现-Hexo-博客绝对路径一键替换相对路径-正斜杠替换为反斜杠"><a href="#使用-Typora-plugin-实现-Hexo-博客绝对路径一键替换相对路径-正斜杠替换为反斜杠" class="headerlink" title="使用 Typora_plugin 实现 Hexo 博客绝对路径一键替换相对路径|正斜杠替换为反斜杠"></a>使用 Typora_plugin 实现 Hexo 博客绝对路径一键替换相对路径|正斜杠替换为反斜杠</h1><p>今天下午偶然的发现，解决了我很久以来一直想解决的问题，因为在 Hexo 博客上传的时候我一般是把图片插入进去，但是默认的路径是绝对路径，曾经在 Typora 设置里改过，但是效果也不好，今天想起了 Typora plugin，于是想基于 Typora plugin 开发一个插件</p>
+<p>首先感谢 Typora plugin 开发者 <a class="link"   target="_blank" rel="noopener" href="https://github.com/obgnail/typora_plugin/" >https://github.com/obgnail/typora_plugin/<i class="fa-solid fa-arrow-up-right ml-[0.2em] font-light align-text-top text-[0.7em] link-icon"></i></a></p>
+<p>真心感谢插件开发大佬😭😭😭😭😭😭😭😭😭😭😭</p>
+<p>我把问题抛给大佬，大佬轮子都给我造好了，而且还有礼貌，我说我写个安装文档提供给其他有需要的用户使用，他甚至还麻烦我</p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../images/Typora_plugin/ReplaceBackslash/image-20240208160233056.png"
+                      alt="image-20240208160233056"
+                ></p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../images/Typora_plugin/ReplaceBackslash/image-20240208160340371.png"
+                      alt="image-20240208160340371"
+                ></p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../images/Typora_plugin/ReplaceBackslash/image-20240208160411419.png"
+                      alt="image-20240208160411419"
+                ></p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../images/Typora_plugin/ReplaceBackslash/image-20240208164539253.png"
+                      alt="image-20240208164539253"
+                ></p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../images/Typora_plugin/ReplaceBackslash/image-20240208172549961.png"
+                      alt="image-20240208172549961"
+                ></p>
+<h2 id="脚本适用情况"><a href="#脚本适用情况" class="headerlink" title="脚本适用情况"></a>脚本适用情况</h2><p>该脚本主要实现功能是，Markdown 中所有的图片路径中正斜杠一键替换为反斜杠，并把包含..&#x2F;images&#x2F;的路径替换为相对路径，方便 Hexo 博客上传</p>
+<p>例如 Markdown 中文件路径是 <code>[示例图片](F:/Hexo/source../images/test.png)</code></p>
+<p>替换后的路径就是 <code>[示例图片](../images/test.png)</code></p>
+<p>本脚本适用于：Hexo 博客写作排版，Hexo 图片放在&#x2F;source&#x2F;文件下的 Hexo 博客作者</p>
+<h2 id="安装-Typora-plugin"><a href="#安装-Typora-plugin" class="headerlink" title="安装 Typora plugin"></a>安装 Typora plugin</h2><p>有关插件的安装教程可以看官方的仓库，Readme 写的很详细了</p>
+<p><a class="link"   target="_blank" rel="noopener" href="https://github.com/obgnail/typora_plugin/" >https://github.com/obgnail/typora_plugin/<i class="fa-solid fa-arrow-up-right ml-[0.2em] font-light align-text-top text-[0.7em] link-icon"></i></a></p>
+<h2 id="创建-JS"><a href="#创建-JS" class="headerlink" title="创建 JS"></a>创建 JS</h2><p>在 <code>./plugin/custom/plugins/ReplaceBackslash.js</code> 文件中创建 js 文件，把下面代码复制进去。</p>
+<div class="code-container" data-rel="Javascript"><figure class="iseeu highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">ReplaceBackslash</span> <span class="keyword">extends</span> <span class="title class_ inherited__">BaseCustomPlugin</span> &#123;</span><br><span class="line">    hotkey = <span class="function">() =&gt;</span> [<span class="variable language_">this</span>.<span class="property">config</span>.<span class="property">hotkey</span>]</span><br><span class="line">    callback = <span class="keyword">async</span> anchorNode =&gt; &#123;</span><br><span class="line">        <span class="keyword">const</span> filepath = <span class="variable language_">this</span>.<span class="property">utils</span>.<span class="title function_">getFilePath</span>();</span><br><span class="line">        <span class="keyword">const</span> content = <span class="keyword">await</span> <span class="variable language_">this</span>.<span class="property">utils</span>.<span class="property">Package</span>.<span class="property">Fs</span>.<span class="property">promises</span>.<span class="title function_">readFile</span>(filepath, <span class="string">&#x27;utf-8&#x27;</span>);</span><br><span class="line">        <span class="keyword">const</span> replacedContent = <span class="keyword">await</span> <span class="variable language_">this</span>.<span class="title function_">format</span>(content);</span><br><span class="line">        <span class="keyword">await</span> <span class="variable language_">this</span>.<span class="property">utils</span>.<span class="property">Package</span>.<span class="property">Fs</span>.<span class="property">promises</span>.<span class="title function_">writeFile</span>(filepath, replacedContent);</span><br><span class="line">        <span class="title class_">File</span>.<span class="title function_">reloadContent</span>(replacedContent, &#123; <span class="attr">fromDiskChange</span>: <span class="literal">false</span> &#125;);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    format = <span class="keyword">async</span> content =&gt; &#123;</span><br><span class="line">        <span class="keyword">const</span> dir = <span class="variable language_">this</span>.<span class="property">utils</span>.<span class="title function_">getCurrentDirPath</span>();</span><br><span class="line">        <span class="keyword">const</span> imgFolder = <span class="variable language_">this</span>.<span class="property">config</span>.<span class="property">img_folder</span>;</span><br><span class="line">        <span class="keyword">const</span> regexp = <span class="variable language_">this</span>.<span class="property">config</span>.<span class="property">ignore_image_div</span></span><br><span class="line">            ? <span class="keyword">new</span> <span class="title class_">RegExp</span>(<span class="string">&quot;!\\[.*?\\]\\((?&lt;src1&gt;.*)\\)&quot;</span>, <span class="string">&quot;g&quot;</span>)</span><br><span class="line">            : <span class="keyword">new</span> <span class="title class_">RegExp</span>(<span class="string">&quot;!\\[.*?\\]\\((?&lt;src1&gt;.*)\\)|&lt;img.*?src=\&quot;(?&lt;src2&gt;.*?)\&quot;&quot;</span>, <span class="string">&quot;g&quot;</span>);</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">await</span> <span class="variable language_">this</span>.<span class="title function_">asyncReplace</span>(content, regexp, <span class="title function_">async</span> (match, src1, src2) =&gt; &#123;</span><br><span class="line">            <span class="keyword">const</span> src = src1 || src2;</span><br><span class="line"></span><br><span class="line">            <span class="comment">// 跳过特殊格式的图片（如base64）和网络图片</span></span><br><span class="line">            <span class="keyword">if</span> (!src || <span class="variable language_">this</span>.<span class="property">utils</span>.<span class="title function_">isSpecialImage</span>(src) || <span class="variable language_">this</span>.<span class="property">utils</span>.<span class="title function_">isNetworkImage</span>(src)) <span class="keyword">return</span> match;</span><br><span class="line"></span><br><span class="line">            <span class="comment">// 检测图片是否存在于当前电脑中，若不存在，则不处理</span></span><br><span class="line">            <span class="comment">// 如果不希望检测，可以注释掉下面两行</span></span><br><span class="line">            <span class="keyword">const</span> realPath = <span class="keyword">await</span> <span class="variable language_">this</span>.<span class="title function_">checkImageExist</span>(dir, src);</span><br><span class="line">            <span class="keyword">if</span> (!realPath) &#123;</span><br><span class="line">                <span class="comment">// 如果路径中没有反斜杠，则检查是否位于指定的 img 文件夹中</span></span><br><span class="line">                <span class="keyword">if</span> (!src.<span class="title function_">includes</span>(<span class="string">&#x27;\\&#x27;</span>) &amp;&amp; !src.<span class="title function_">includes</span>(<span class="string">&#x27;/&#x27;</span>)) &#123;</span><br><span class="line">                    <span class="keyword">const</span> imgPath = <span class="variable language_">this</span>.<span class="property">utils</span>.<span class="property">Package</span>.<span class="property">Path</span>.<span class="title function_">resolve</span>(dir, imgFolder, src);</span><br><span class="line">                    <span class="keyword">if</span> (<span class="keyword">await</span> <span class="variable language_">this</span>.<span class="property">utils</span>.<span class="title function_">existPath</span>(imgPath)) &#123;</span><br><span class="line">                        <span class="comment">// 如果图片存在于指定的 img 文件夹中，则返回处理后的路径</span></span><br><span class="line">                        <span class="keyword">return</span> <span class="variable language_">this</span>.<span class="title function_">replaceBackslash</span>(match, src, imgPath);</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">                <span class="comment">// 如果路径中无反斜杠并且不在指定的 img 文件夹中，则保持原样</span></span><br><span class="line">                <span class="keyword">return</span> match;</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">            <span class="comment">// 进行路径替换并处理反斜杠</span></span><br><span class="line">            <span class="keyword">return</span> <span class="variable language_">this</span>.<span class="title function_">replaceBackslash</span>(match, src, realPath);</span><br><span class="line">        &#125;);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 替换路径逻辑</span></span><br><span class="line">    replaceBackslash = <span class="function">(<span class="params">match, src, realPath</span>) =&gt;</span> &#123;</span><br><span class="line">        <span class="comment">// 将路径中的反斜杠 \ 替换为斜杠 /</span></span><br><span class="line">        <span class="keyword">const</span> replacedSrc = realPath.<span class="title function_">replace</span>(<span class="regexp">/\\/g</span>, <span class="string">&#x27;/&#x27;</span>);</span><br><span class="line">        <span class="keyword">const</span> index = match.<span class="title function_">indexOf</span>(src);</span><br><span class="line">        <span class="keyword">return</span> match.<span class="title function_">slice</span>(<span class="number">0</span>, index) + match.<span class="title function_">slice</span>(index).<span class="title function_">replace</span>(src, replacedSrc);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    asyncReplace = <span class="function">(<span class="params">content, regexp, placement</span>) =&gt;</span> &#123;</span><br><span class="line">        <span class="keyword">let</span> match;</span><br><span class="line">        <span class="keyword">let</span> lastIndex = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">const</span> promises = [];</span><br><span class="line"></span><br><span class="line">        <span class="keyword">while</span> ((match = regexp.<span class="title function_">exec</span>(content))) &#123;</span><br><span class="line">            <span class="keyword">const</span> str = content.<span class="title function_">slice</span>(lastIndex, match.<span class="property">index</span>);</span><br><span class="line">            lastIndex = regexp.<span class="property">lastIndex</span>;</span><br><span class="line">            <span class="keyword">const</span> args = [match[<span class="number">0</span>], match.<span class="property">groups</span>?.<span class="property">src1</span>, match.<span class="property">groups</span>?.<span class="property">src2</span>, match.<span class="property">index</span>, match.<span class="property">input</span>];</span><br><span class="line">            <span class="keyword">const</span> promise = <span class="title function_">placement</span>(...args);</span><br><span class="line">            promises.<span class="title function_">push</span>(str, promise);</span><br><span class="line">        &#125;</span><br><span class="line">        promises.<span class="title function_">push</span>(content.<span class="title function_">slice</span>(lastIndex));</span><br><span class="line">        <span class="keyword">return</span> <span class="title class_">Promise</span>.<span class="title function_">all</span>(promises).<span class="title function_">then</span>(<span class="function"><span class="params">results</span> =&gt;</span> results.<span class="title function_">join</span>(<span class="string">&quot;&quot;</span>));</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    checkImageExist = <span class="title function_">async</span> (currentDir, path) =&gt; &#123;</span><br><span class="line">        <span class="keyword">let</span> absolutePath = <span class="variable language_">this</span>.<span class="property">utils</span>.<span class="property">Package</span>.<span class="property">Path</span>.<span class="title function_">resolve</span>(currentDir, path);</span><br><span class="line"></span><br><span class="line">        <span class="keyword">while</span> (!(<span class="keyword">await</span> <span class="variable language_">this</span>.<span class="property">utils</span>.<span class="title function_">existPath</span>(absolutePath))) &#123;</span><br><span class="line">            <span class="keyword">const</span> idx = absolutePath.<span class="title function_">lastIndexOf</span>(<span class="string">&quot;)&quot;</span>);</span><br><span class="line">            <span class="keyword">if</span> (idx === -<span class="number">1</span>) &#123;</span><br><span class="line">                <span class="keyword">return</span> <span class="literal">null</span>;</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                absolutePath = absolutePath.<span class="title function_">slice</span>(<span class="number">0</span>, idx);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> absolutePath;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="variable language_">module</span>.<span class="property">exports</span> = &#123; <span class="attr">plugin</span>: <span class="title class_">ReplaceBackslash</span> &#125;;</span><br><span class="line"></span><br></pre></td></tr></table></figure></div>
+
+<h2 id="启用插件"><a href="#启用插件" class="headerlink" title="启用插件"></a>启用插件</h2><ol>
+<li>修改 <code>./plugin/global/settings/custom_plugin.user.toml</code>，添加配置：</li>
+</ol>
+<div class="code-container" data-rel="Toml"><figure class="iseeu highlight toml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="section">[ReplaceBackslash]</span></span><br><span class="line"><span class="attr">name</span> = <span class="string">&quot;替换反斜杠为正斜杠&quot;</span></span><br><span class="line"><span class="attr">enable</span> = <span class="literal">true</span></span><br><span class="line"></span><br><span class="line"><span class="section">[ReplaceBackslash.config]</span></span><br><span class="line"><span class="comment"># 是否忽略html标签&lt;img src=&quot;example.jpg&quot;&gt;里的资源（markdown是支持插入html的，此选项问是否要忽略img标签）</span></span><br><span class="line"><span class="attr">ignore_image_div</span> = <span class="literal">false</span></span><br><span class="line"><span class="attr">img_folder</span> = <span class="string">&quot;img&quot;</span>          <span class="comment">#这里引号内的内容改为你自己的文件夹命名</span></span><br></pre></td></tr></table></figure></div>
+
+<p>这里引号内的内容改为你自己的文件夹命名</p>
+<h2 id="添加快捷方式"><a href="#添加快捷方式" class="headerlink" title="添加快捷方式"></a>添加快捷方式</h2><h3 id="添加快捷键"><a href="#添加快捷键" class="headerlink" title="添加快捷键"></a>添加快捷键</h3><p>修改 <code>./plugin/global/settings/custom_plugin.user.toml</code>，添加配置</p>
+<p>在上一步的基础上，继续添加一行代码</p>
+<div class="code-container" data-rel="Toml"><figure class="iseeu highlight toml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="section">[ReplaceBackslash.config]</span></span><br><span class="line"><span class="comment"># 是否忽略html标签&lt;img src=&quot;example.jpg&quot;&gt;里的资源（markdown是支持插入html的，此选项问是否要忽略img标签）</span></span><br><span class="line"><span class="attr">ignore_image_div</span> = <span class="literal">false</span></span><br><span class="line"><span class="attr">img_folder</span> = <span class="string">&quot;img&quot;</span></span><br><span class="line"><span class="comment"># 快捷键（若为&quot;&quot;，则不注册）</span></span><br><span class="line"><span class="attr">hotkey</span> = <span class="string">&quot;ctrl+shift+m&quot;</span></span><br></pre></td></tr></table></figure></div>
+
+<p>这里快捷键设置为 <code>ctrl+shift+m</code> 可以根据自己需要修改</p>
+<h3 id="添加快捷按钮"><a href="#添加快捷按钮" class="headerlink" title="添加快捷按钮"></a>添加快捷按钮</h3><p>在上一步的基础上，继续添加代码</p>
+<div class="code-container" data-rel="Toml"><figure class="iseeu highlight toml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="section">[quickButton]</span></span><br><span class="line"><span class="section">[quickButton.config]</span></span><br><span class="line"><span class="comment">#   disable:      禁用此按钮</span></span><br><span class="line"><span class="comment">#   coordinate:   按钮坐标。往上为x轴正方向，往左为y轴正方向，从零开始计数</span></span><br><span class="line"><span class="comment">#   icon:         按钮图标。填入css class。支持font-awesome-4.1.0和ionicons-2.0.1，所有的图标及其对应的css class请参考：https://www.adfwebmagazine.jp/wp-content/uploads/test_v4.1.pdf  和  https://ionic.io/ionicons/v2</span></span><br><span class="line"><span class="comment">#   size(可选):    图标大小。默认17px</span></span><br><span class="line"><span class="comment">#   color(可选):   图标颜色。默认跟随当前主题的配色方案</span></span><br><span class="line"><span class="comment">#   bgColor(可选): 图标背景色。默认跟随当前主题的配色方案</span></span><br><span class="line"><span class="comment">#   hint:         提示信息</span></span><br><span class="line"><span class="comment">#   callback:     回调函数。采用pluginName.MethodName的形式（功能就像hotkey.default.toml中的plugin参数和function参数的合体）</span></span><br><span class="line"><span class="comment">#                     MethodName请通过阅读源码查找。如果您不懂代码，但还是想添加按钮，有个碰运气技巧：在【右键菜单-&gt;常用插件-&gt;自定义插件下的插件】基本都是XXX.callback，其余插件基本都是XXX.call</span></span><br><span class="line"><span class="comment">#   evil(危险):    自定义回调函数。功能同hotkey.default.toml中的evil参数（它能用的，这里也能用）。这里的文本内容会被eval()。如果设置此参数，callback参数会失效</span></span><br><span class="line"><span class="attr">buttons</span> = [</span><br><span class="line">    <span class="comment"># 默认的按钮</span></span><br><span class="line">    &#123; disable = <span class="literal">false</span>, coordinate = [<span class="number">0</span>, <span class="number">0</span>], hint = <span class="string">&quot;直达底部&quot;</span>, size = <span class="string">&quot;28px&quot;</span>, icon = <span class="string">&quot;fa fa-angle-down&quot;</span>, callback = <span class="string">&quot;go_top.goBottom&quot;</span> &#125;,</span><br><span class="line">    &#123; disable = <span class="literal">false</span>, coordinate = [<span class="number">1</span>, <span class="number">0</span>], hint = <span class="string">&quot;直达顶部&quot;</span>, size = <span class="string">&quot;28px&quot;</span>, icon = <span class="string">&quot;fa fa-angle-up&quot;</span>, callback = <span class="string">&quot;go_top.goTop&quot;</span> &#125;,</span><br><span class="line">    &#123; disable = <span class="literal">false</span>, coordinate = [<span class="number">2</span>, <span class="number">0</span>], hint = <span class="string">&quot;文字风格&quot;</span>, size = <span class="string">&quot;17px&quot;</span>, icon = <span class="string">&quot;fa fa-font&quot;</span>, callback = <span class="string">&quot;text_stylize.call&quot;</span> &#125;,</span><br><span class="line">    &#123; disable = <span class="literal">false</span>, coordinate = [<span class="number">3</span>, <span class="number">0</span>], hint = <span class="string">&quot;混排优化&quot;</span>, size = <span class="string">&quot;17px&quot;</span>, icon = <span class="string">&quot;fa fa-align-justify&quot;</span>, callback = <span class="string">&quot;md_padding.call&quot;</span> &#125;,</span><br><span class="line">    &#123; disable = <span class="literal">false</span>, coordinate = [<span class="number">0</span>, <span class="number">1</span>], hint = <span class="string">&quot;思维导图&quot;</span>, size = <span class="string">&quot;22px&quot;</span>, icon = <span class="string">&quot;fa fa-code-fork&quot;</span>, callback = <span class="string">&quot;markmap.onButtonClick&quot;</span> &#125;,</span><br><span class="line">    &#123; disable = <span class="literal">false</span>, coordinate = [<span class="number">1</span>, <span class="number">1</span>], hint = <span class="string">&quot;图片管理&quot;</span>, size = <span class="string">&quot;17px&quot;</span>, icon = <span class="string">&quot;fa fa-image&quot;</span>, callback = <span class="string">&quot;imageReviewer.callback&quot;</span> &#125;,</span><br><span class="line">    &#123; disable = <span class="literal">false</span>, coordinate = [<span class="number">2</span>, <span class="number">1</span>], hint = <span class="string">&quot;书签管理&quot;</span>, size = <span class="string">&quot;17px&quot;</span>, icon = <span class="string">&quot;fa fa-bookmark&quot;</span>, callback = <span class="string">&quot;scrollBookmarker.callback&quot;</span> &#125;,</span><br><span class="line">    &#123; disable = <span class="literal">false</span>, coordinate = [<span class="number">3</span>, <span class="number">1</span>], hint = <span class="string">&quot;高亮搜索&quot;</span>, size = <span class="string">&quot;17px&quot;</span>, icon = <span class="string">&quot;fa fa-search&quot;</span>, callback = <span class="string">&quot;search_multi.call&quot;</span> &#125;,</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 你的按钮</span></span><br><span class="line">    &#123; disable = <span class="literal">false</span>, coordinate = [<span class="number">4</span>, <span class="number">1</span>], hint = <span class="string">&quot;正斜杠替换斜杠&quot;</span>, size = <span class="string">&quot;17px&quot;</span>, icon = <span class="string">&quot;fa fa-book&quot;</span>, callback = <span class="string">&quot;ReplaceBackslash.callback&quot;</span> &#125;,</span><br><span class="line">]</span><br></pre></td></tr></table></figure></div>
+
+<p>重启 Typora 就可以在右下角看到添加的快捷按钮</p>
+<h2 id="效果展示"><a href="#效果展示" class="headerlink" title="效果展示"></a>效果展示</h2><p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../images/Typora_plugin/ReplaceBackslash/end.gif"
+                      alt="end"
+                ></p>
+<h2 id="更新日志"><a href="#更新日志" class="headerlink" title="更新日志"></a>更新日志</h2><p>2024 年 2 月 8 日 ， 修了一处没有考虑到的 bug，原先只能转换绝对路径，对于（….&#x2F;images&#x2F;）形式的路径不会处理，修复后也包括了这种情况，具体改动可以查看编辑历史</p>
+<p>2024 年 2 月 8 日 ，重写了代码逻辑，改为先进行反斜杠替换，然后进行路径重写为相对路径</p>
+<p>2024 年 2 月 8 日 ，增加了一个实现效果 GIF 演示</p>
+<p>2024 年 2 月 8 日 ，受作者启发，将代码中硬编码的 ..&#x2F;images&#x2F; 改成一个配置选项，脚本使用者可以根据自己需要修改配置变量的内容</p>
+<p>2024 年 2 月 9 日 ，代码已更新，经过作者的施教，增强了图片路径的匹配，解决了原先替换全文\的问题，现在只替换图片路径，插件作者太强了</p>
+<p>如图</p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../images/Typora_plugin/ReplaceBackslash/39744b9eade1b1f68271869e78e3a50e.png"
+                      alt="39744b9eade1b1f68271869e78e3a50e"
+                ></p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../images/Typora_plugin/ReplaceBackslash/0096befcd128b3bf9346b755fe9e2ccf.png"
+                      alt="0096befcd128b3bf9346b755fe9e2ccf"
+                ></p>
+<p>2024 年 2 月 10 日，大佬帮忙抓虫，纠正了快捷键的配置</p>
+<p>2024 年 2 月 18 日，大佬指出错误，修改了快捷键的错误</p>
+<h2 id="鸣谢"><a href="#鸣谢" class="headerlink" title="鸣谢"></a>鸣谢</h2><p>感谢 Typora_plugin 作者，极大地方便了我的写作</p>
+<p>感谢 ChatGPT，给了我代码写作的开头</p>
+<ol>
+<li><a class="link"   target="_blank" rel="noopener" href="https://github.com/obgnail/typora_plugin/issues/467" >https://github.com/obgnail/typora_plugin/issues/467<i class="fa-solid fa-arrow-up-right ml-[0.2em] font-light align-text-top text-[0.7em] link-icon"></i></a></li>
+<li><a class="link"   target="_blank" rel="noopener" href="https://w1ndys.top/" >https://w1ndys.top/<i class="fa-solid fa-arrow-up-right ml-[0.2em] font-light align-text-top text-[0.7em] link-icon"></i></a></li>
+<li><a class="link"   target="_blank" rel="noopener" href="https://chat.openai.com/" >https://chat.openai.com/<i class="fa-solid fa-arrow-up-right ml-[0.2em] font-light align-text-top text-[0.7em] link-icon"></i></a></li>
+</ol>
+<hr>
+<p>文章来自 <a href="https://blog.w1ndys.top/posts/520cc65">https://blog.w1ndys.top/posts/520cc65</a></p>
+
+		</div>
+
+		
+		<div class="post-copyright-info w-full my-8 px-2 sm:px-6 md:px-8">
+			<div class="article-copyright-info-container">
+    <ul>
+        <li><strong>标题:</strong> 使用Typora_plugin实现Hexo博客绝对路径一键替换相对路径|正斜杠替换为反斜杠</li>
+        <li><strong>作者:</strong> W1ndys</li>
+        <li><strong>创建于
+                :</strong> 2024-02-08 15:24:23</li>
+        
+            <li>
+                <strong>更新于
+                    :</strong> 2025-02-23 13:37:18
+            </li>
+        
+        <li>
+            <strong>链接:</strong> https://blog.w1ndys.top/posts/520cc65.html
+        </li>
+        <li>
+            <strong>
+                版权声明:
+            </strong>
+            
+
+            
+                版权所有 &#169 W1ndys，禁止转载。
+            
+        </li>
+    </ul>
+</div>
+
+		</div>
+		
+
+		
+		<ul class="post-tags-box text-lg mt-1.5 flex-wrap justify-center flex md:hidden">
+			
+			<li class="tag-item mx-0.5">
+				<a href="/tags/Hexo/">#Hexo</a>&nbsp;
+			</li>
+			
+			<li class="tag-item mx-0.5">
+				<a href="/tags/Typora/">#Typora</a>&nbsp;
+			</li>
+			
+			<li class="tag-item mx-0.5">
+				<a href="/tags/Typora-plugin/">#Typora-plugin</a>&nbsp;
+			</li>
+			
+		</ul>
+		
+
+		
+
+		
+		<div class="article-nav my-8 flex justify-between items-center px-2 sm:px-6 md:px-8">
+			
+			<div class="article-prev border-border-color shadow-redefine-flat shadow-shadow-color-2 rounded-medium px-4 py-2 hover:shadow-redefine-flat-hover hover:shadow-shadow-color-2">
+				<a class="prev" rel="prev" href="/posts/51225c3e.html">
+					<span class="left arrow-icon flex justify-center items-center">
+						<i class="fa-solid fa-chevron-left"></i>
+					</span>
+					<span class="title flex justify-center items-center">
+						<span class="post-nav-title-item">Python+多吉云api实现脚本刷新CDN缓存</span>
+						<span class="post-nav-item">上一篇</span>
+					</span>
+				</a>
+			</div>
+			
+			
+			<div class="article-next border-border-color shadow-redefine-flat shadow-shadow-color-2 rounded-medium px-4 py-2 hover:shadow-redefine-flat-hover hover:shadow-shadow-color-2">
+				<a class="next" rel="next" href="/posts/bd3810d9.html">
+					<span class="title flex justify-center items-center">
+						<span class="post-nav-title-item">记录一次文件恢复</span>
+						<span class="post-nav-item">下一篇</span>
+					</span>
+					<span class="right arrow-icon flex justify-center items-center">
+						<i class="fa-solid fa-chevron-right"></i>
+					</span>
+				</a>
+			</div>
+			
+		</div>
+		
+
+
+		
+		<div class="comment-container px-2 sm:px-6 md:px-8 pb-8">
+			<div class="comments-container mt-10 w-full ">
+    <div id="comment-anchor" class="w-full h-2.5"></div>
+    <div class="comment-area-title w-full my-1.5 md:my-2.5 text-xl md:text-3xl font-bold">
+        评论
+    </div>
+    
+
+        
+            
+    <div id="giscus-container"></div>
+    <script data-swup-reload-script defer>
+        async function loadGiscus() {
+            const giscusConfig = {
+                'src': 'https://giscus.app/client.js',
+                'data-repo': 'W1ndys/Blog',
+                'data-repo-id': 'R_kgDOLaRaXw',
+                'data-category': 'Show and tell',
+                'data-category-id': 'DIC_kwDOLaRaX84CeBp5',
+                'data-mapping': 'url',
+                'data-strict': '0',
+                'data-reactions-enabled': '1',
+                'data-emit-metadata': '1',
+                'data-theme': 'preferred_color_scheme',
+                'data-lang': 'zh-CN',
+                'data-input-position': 'top',
+                'data-loading': 'lazy',
+                'crossorigin': 'anonymous',
+                'async': true
+            }
+            const giscusScript = document.createElement('script');
+            for (const key in giscusConfig) {
+                giscusScript.setAttribute(key, giscusConfig[key]);
+            }
+            document.getElementById('giscus-container').appendChild(giscusScript);
+        }
+        if ('true') {
+            let loadGiscusTimeout = setTimeout(() => {
+                loadGiscus();
+                clearTimeout(loadGiscusTimeout);
+            }, 1000);
+        } else {
+            document.addEventListener('DOMContentLoaded', loadGiscus);
+        }
+    </script>
+
+
+        
+        
+    
+</div>
+
+		</div>
+		
+	</div>
+
+	
+	<div class="toc-content-container">
+		<div class="post-toc-wrap">
+	<div class="post-toc">
+		<div class="toc-title">目录</div>
+		<div class="page-title">使用Typora_plugin实现Hexo博客绝对路径一键替换相对路径|正斜杠替换为反斜杠</div>
+		<ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8-Typora-plugin-%E5%AE%9E%E7%8E%B0-Hexo-%E5%8D%9A%E5%AE%A2%E7%BB%9D%E5%AF%B9%E8%B7%AF%E5%BE%84%E4%B8%80%E9%94%AE%E6%9B%BF%E6%8D%A2%E7%9B%B8%E5%AF%B9%E8%B7%AF%E5%BE%84-%E6%AD%A3%E6%96%9C%E6%9D%A0%E6%9B%BF%E6%8D%A2%E4%B8%BA%E5%8F%8D%E6%96%9C%E6%9D%A0"><span class="nav-text">使用 Typora_plugin 实现 Hexo 博客绝对路径一键替换相对路径|正斜杠替换为反斜杠</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%84%9A%E6%9C%AC%E9%80%82%E7%94%A8%E6%83%85%E5%86%B5"><span class="nav-text">脚本适用情况</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%89%E8%A3%85-Typora-plugin"><span class="nav-text">安装 Typora plugin</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%88%9B%E5%BB%BA-JS"><span class="nav-text">创建 JS</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%90%AF%E7%94%A8%E6%8F%92%E4%BB%B6"><span class="nav-text">启用插件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%B7%BB%E5%8A%A0%E5%BF%AB%E6%8D%B7%E6%96%B9%E5%BC%8F"><span class="nav-text">添加快捷方式</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%B7%BB%E5%8A%A0%E5%BF%AB%E6%8D%B7%E9%94%AE"><span class="nav-text">添加快捷键</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%B7%BB%E5%8A%A0%E5%BF%AB%E6%8D%B7%E6%8C%89%E9%92%AE"><span class="nav-text">添加快捷按钮</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%95%88%E6%9E%9C%E5%B1%95%E7%A4%BA"><span class="nav-text">效果展示</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9B%B4%E6%96%B0%E6%97%A5%E5%BF%97"><span class="nav-text">更新日志</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%B8%A3%E8%B0%A2"><span class="nav-text">鸣谢</span></a></li></ol></li></ol>
+
+	</div>
+</div>
+	</div>
+	
+</div>
+			</div>
+
+			
+		</div>
+
+		<div class="main-content-footer">
+			<footer class="footer mt-5 py-5 h-auto text-base text-third-text-color relative border-t-2 border-t-border-color">
+    <div class="info-container py-3 text-center">
+        
+            <div class="customize-info my-1">Powered by <a href="https://github.com/W1ndys" target="_blank">W1ndys</a></div>
+        
+        <div class="text-center">
+            &copy;
+            
+              <span>2023</span>
+              -
+            
+            2025&nbsp;&nbsp;<i class="fa-solid fa-heart fa-beat" style="--fa-animation-duration: 0.5s; color: #f54545"></i>&nbsp;&nbsp;<a href="/">W1ndys</a>
+            
+                
+                <p class="post-count space-x-0.5">
+                    <span>
+                        共撰写了 193 篇文章
+                    </span>
+                    
+                        <span>
+                            共 224.3k 字
+                        </span>
+                    
+                </p>
+            
+        </div>
+        
+            <script data-swup-reload-script src="https://cn.vercount.one/js"></script>
+            <div class="relative text-center lg:absolute lg:right-[20px] lg:top-1/2 lg:-translate-y-1/2 lg:text-right">
+                
+                    <span id="busuanzi_container_site_uv" class="lg:!block">
+                        <span class="text-sm">访问人数</span>
+                        <span id="busuanzi_value_site_uv"></span>
+                    </span>
+                
+                
+                    <span id="busuanzi_container_site_pv" class="lg:!block">
+                        <span class="text-sm">总访问量</span>
+                        <span id="busuanzi_value_site_pv"></span>
+                    </span>
+                
+            </div>
+        
+        <div class="relative text-center lg:absolute lg:left-[20px] lg:top-1/2 lg:-translate-y-1/2 lg:text-left">
+            <span class="lg:block text-sm">由 <?xml version="1.0" encoding="utf-8"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg class="relative top-[2px] inline-block align-baseline" version="1.1" id="圖層_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="1rem" height="1rem" viewBox="0 0 512 512" enable-background="new 0 0 512 512" xml:space="preserve"><path fill="#0E83CD" d="M256.4,25.8l-200,115.5L56,371.5l199.6,114.7l200-115.5l0.4-230.2L256.4,25.8z M349,354.6l-18.4,10.7l-18.6-11V275H200v79.6l-18.4,10.7l-18.6-11v-197l18.5-10.6l18.5,10.8V237h112v-79.6l18.5-10.6l18.5,10.8V354.6z"/></svg><a target="_blank" class="text-base" href="https://hexo.io">Hexo</a> 驱动</span>
+            <span class="text-sm lg:block">主题&nbsp;<a class="text-base" target="_blank" href="https://github.com/EvanNotFound/hexo-theme-redefine">Redefine v2.8.2</a></span>
+        </div>
+        
+        
+            <div>
+                博客已运行 <span class="odometer" id="runtime_days" ></span> 天 <span class="odometer" id="runtime_hours"></span> 小时 <span class="odometer" id="runtime_minutes"></span> 分钟 <span class="odometer" id="runtime_seconds"></span> 秒
+            </div>
+        
+        
+            <script data-swup-reload-script>
+                try {
+                    function odometer_init() {
+                    const elements = document.querySelectorAll('.odometer');
+                    elements.forEach(el => {
+                        new Odometer({
+                            el,
+                            format: '( ddd).dd',
+                            duration: 200
+                        });
+                    });
+                    }
+                    odometer_init();
+                } catch (error) {}
+            </script>
+        
+        
+            
+                
+        
+                
+        
+                
+
+                    
+                        <script data-swup-reload-script data-pjax src="/js/Capoo.js"></script>
+                    
+        
+        
+    </div>  
+</footer>
+		</div>
+	</div>
+
+	
+	<div class="post-tools">
+		<div class="post-tools-container">
+	<ul class="article-tools-list">
+		<!-- TOC aside toggle -->
+		
+		<li class="right-bottom-tools page-aside-toggle">
+			<i class="fa-regular fa-outdent"></i>
+		</li>
+		
+
+		<!-- go comment -->
+		
+		<li class="go-comment">
+			<i class="fa-regular fa-comments"></i>
+		</li>
+		
+	</ul>
+</div>
+	</div>
+	
+
+	<div class="right-side-tools-container">
+		<div class="side-tools-container">
+	<ul class="hidden-tools-list">
+		<li class="right-bottom-tools tool-font-adjust-plus flex justify-center items-center">
+			<i class="fa-regular fa-magnifying-glass-plus"></i>
+		</li>
+
+		<li class="right-bottom-tools tool-font-adjust-minus flex justify-center items-center">
+			<i class="fa-regular fa-magnifying-glass-minus"></i>
+		</li>
+
+		<li class="right-bottom-tools tool-dark-light-toggle flex justify-center items-center">
+			<i class="fa-regular fa-moon"></i>
+		</li>
+
+		<!-- rss -->
+		
+		<li class="right-bottom-tools rss flex justify-center items-center">
+			<a class="flex justify-center items-center" href="/atom.xml" target="_blank">
+				<i class="fa-regular fa-rss"></i>
+			</a>
+		</li>
+		
+
+		
+
+		<li class="right-bottom-tools tool-scroll-to-bottom flex justify-center items-center">
+			<i class="fa-regular fa-arrow-down"></i>
+		</li>
+	</ul>
+
+	<ul class="visible-tools-list">
+		<li class="right-bottom-tools toggle-tools-list flex justify-center items-center">
+			<i class="fa-regular fa-cog fa-spin"></i>
+		</li>
+		
+		<li class="right-bottom-tools tool-scroll-to-top flex justify-center items-center">
+			<i class="arrow-up fas fa-arrow-up"></i>
+			<span class="percent"></span>
+		</li>
+		
+		
+	</ul>
+</div>
+	</div>
+
+	<div class="image-viewer-container">
+	<img src="">
+</div>
+
+	
+	<div class="search-pop-overlay">
+	<div class="popup search-popup">
+		<div class="search-header">
+			<span class="search-input-field-pre">
+				<i class="fa-solid fa-keyboard"></i>
+			</span>
+			<div class="search-input-container">
+				<input autocomplete="off" autocorrect="off" autocapitalize="off" placeholder="站内搜索您需要的内容..." spellcheck="false" type="search" class="search-input">
+			</div>
+			<span class="popup-btn-close">
+				<i class="fa-solid fa-times"></i>
+			</span>
+		</div>
+		<div id="search-result">
+			<div id="no-result">
+				<i class="fa-solid fa-spinner fa-spin-pulse fa-5x fa-fw"></i>
+			</div>
+		</div>
+	</div>
+</div>
+	
+
+</main>
+
+
+<script  src="https://evan.beee.top/projects/hexo-theme-redefine@2.8.2/source/js/build/libs/Swup.min.js" ></script><script  src="https://evan.beee.top/projects/hexo-theme-redefine@2.8.2/source/js/build/libs/SwupSlideTheme.min.js" ></script><script  src="https://evan.beee.top/projects/hexo-theme-redefine@2.8.2/source/js/build/libs/SwupScriptsPlugin.min.js" ></script><script  src="https://evan.beee.top/projects/hexo-theme-redefine@2.8.2/source/js/build/libs/SwupProgressPlugin.min.js" ></script><script  src="https://evan.beee.top/projects/hexo-theme-redefine@2.8.2/source/js/build/libs/SwupScrollPlugin.min.js" ></script><script  src="https://evan.beee.top/projects/hexo-theme-redefine@2.8.2/source/js/build/libs/SwupPreloadPlugin.min.js" ></script>
+<script>
+    const swup = new Swup({
+        plugins: [
+            new SwupScriptsPlugin({
+                optin: true,
+            }),
+            new SwupProgressPlugin(),
+            new SwupScrollPlugin({
+                offset: 80,
+            }),
+            new SwupSlideTheme({
+                mainElement: ".main-content-body",
+            }),
+            new SwupPreloadPlugin(),
+        ],
+        containers: ["#swup"],
+    });
+</script>
+
+
+
+
+	<script type="module" src="https://evan.beee.top/projects/hexo-theme-redefine@2.8.2/source/js/build/tools/imageViewer.js" ></script><script type="module" src="https://evan.beee.top/projects/hexo-theme-redefine@2.8.2/source/js/build/utils.js" ></script><script type="module" src="https://evan.beee.top/projects/hexo-theme-redefine@2.8.2/source/js/build/main.js" ></script><script type="module" src="https://evan.beee.top/projects/hexo-theme-redefine@2.8.2/source/js/build/layouts/navbarShrink.js" ></script><script type="module" src="https://evan.beee.top/projects/hexo-theme-redefine@2.8.2/source/js/build/tools/scrollTopBottom.js" ></script><script type="module" src="https://evan.beee.top/projects/hexo-theme-redefine@2.8.2/source/js/build/tools/lightDarkSwitch.js" ></script><script type="module" src="https://evan.beee.top/projects/hexo-theme-redefine@2.8.2/source/js/build/layouts/categoryList.js" ></script>
+
+
+    <script type="module" src="https://evan.beee.top/projects/hexo-theme-redefine@2.8.2/source/js/build/tools/localSearch.js" ></script>
+
+
+
+    <script type="module" src="https://evan.beee.top/projects/hexo-theme-redefine@2.8.2/source/js/build/tools/codeBlock.js" ></script>
+
+
+
+    <script type="module" src="https://evan.beee.top/projects/hexo-theme-redefine@2.8.2/source/js/build/layouts/lazyload.js" ></script>
+
+
+
+    <script  src="https://evan.beee.top/projects/hexo-theme-redefine@2.8.2/source/js/build/tools/runtime.js" ></script>
+    <script  src="https://evan.beee.top/projects/hexo-theme-redefine@2.8.2/source/js/build/libs/odometer.min.js" ></script>
+    <link rel="stylesheet" href="https://evan.beee.top/projects/hexo-theme-redefine@2.8.2/source/assets/odometer-theme-minimal.css">
+
+
+
+  <script  src="https://evan.beee.top/projects/hexo-theme-redefine@2.8.2/source/js/build/libs/Typed.min.js" ></script>
+  <script type="module" src="https://evan.beee.top/projects/hexo-theme-redefine@2.8.2/source/js/build/plugins/typed.js" ></script>
+
+
+
+
+
+    <script  src="https://evan.beee.top/projects/hexo-theme-redefine@2.8.2/source/js/build/libs/minimasonry.min.js" ></script>
+    <script type="module" src="https://evan.beee.top/projects/hexo-theme-redefine@2.8.2/source/js/build/plugins/masonry.js" ></script>
+
+
+
+
+
+
+    <script type="module" src="https://evan.beee.top/projects/hexo-theme-redefine@2.8.2/source/js/build/tools/tocToggle.js" data-swup-reload-script></script><script type="module" src="https://evan.beee.top/projects/hexo-theme-redefine@2.8.2/source/js/build/layouts/toc.js" data-swup-reload-script></script><script type="module" src="https://evan.beee.top/projects/hexo-theme-redefine@2.8.2/source/js/build/plugins/tabs.js" data-swup-reload-script></script>
+
+
+<script  src="https://evan.beee.top/projects/hexo-theme-redefine@2.8.2/source/js/build/libs/moment-with-locales.min.js" data-swup-reload-script></script>
+<script type="module" src="https://evan.beee.top/projects/hexo-theme-redefine@2.8.2/source/js/build/layouts/essays.js" data-swup-reload-script></script>
+
+
+    <script  src="https://evan.beee.top/projects/hexo-theme-redefine@2.8.2/source/js/build/libs/pangu.min.js" ></script><script  src="https://evan.beee.top/projects/hexo-theme-redefine@2.8.2/source/js/build/plugins/pangu.js" ></script>
+
+
+
+    <script type="module" src="https://evan.beee.top/projects/hexo-theme-redefine@2.8.2/source/js/build/layouts/bookmarkNav.js" ></script>
+
+	
+</body>
+
+</html>

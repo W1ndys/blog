@@ -1,0 +1,1486 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="keywords" content="博客, 生活, 技术, 记录">
+    
+    <meta name="author" content="W1ndys">
+    <!-- preconnect -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    
+        
+        
+        
+            <link rel="preconnect" href="https://evan.beee.top" crossorigin>
+        
+    
+    <!--- Seo Part-->
+    
+    <link rel="canonical" href="https://blog.w1ndys.top/posts/dbf9c8f7.html"/>
+    <meta name="robots" content="index,follow">
+    <meta name="googlebot" content="index,follow">
+    <meta name="revisit-after" content="1 days">
+    
+    
+    
+        
+        <meta name="description" content="W1ndys小屋">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Crossing the Line Unit 42 Wireshark Quiz for RedLine Stealer">
+<meta property="og:url" content="https://blog.w1ndys.top/posts/dbf9c8f7.html">
+<meta property="og:site_name" content="W1ndys小屋">
+<meta property="og:description" content="W1ndys小屋">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://blog.w1ndys.top/images/redefine-og.webp">
+<meta property="article:published_time" content="2024-07-12T07:43:33.000Z">
+<meta property="article:modified_time" content="2025-02-23T05:37:18.710Z">
+<meta property="article:author" content="W1ndys">
+<meta property="article:tag" content="流量分析">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://blog.w1ndys.top/images/redefine-og.webp">
+    
+    
+    <!--- Icon Part-->
+    <link rel="icon" type="image/png" href="/images/favicon.ico" sizes="192x192">
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon.ico">
+    <meta name="theme-color" content="#A31F34">
+    <link rel="shortcut icon" href="/images/favicon.ico">
+    <!--- Page Info-->
+    
+    <title>
+        
+            Crossing the Line Unit 42 Wireshark Quiz for RedLine Stealer | W1ndys小屋
+        
+    </title>
+
+    <link rel="stylesheet" href="https://evan.beee.top/projects/hexo-theme-redefine@2.8.2/source/fonts/Chillax/chillax.css">
+
+    <!--- Inject Part-->
+    
+        
+            
+    
+            
+    
+            
+                
+                    <script data-swup-reload-script data-pjax charset="UTF-8" id="LA_COLLECT" src="//sdk.51.la/js-sdk-pro.min.js"></script>
+                
+    
+            
+                
+                    <script data-swup-reload-script data-pjax>LA.init({id:"3HPYFt9znqKItrHZ",ck:"3HPYFt9znqKItrHZ",autoTrack:true})</script>
+                
+    
+            
+                
+                    <link rel="stylesheet" type="text/css" href="/css/Capoo.css">
+                
+    
+
+    
+<link rel="stylesheet" href="/css/style.css">
+
+
+    
+        <link rel="stylesheet" href="https://evan.beee.top/projects/hexo-theme-redefine@2.8.2/source/css/build/tailwind.css">
+    
+
+    <link rel="stylesheet" href="https://evan.beee.top/projects/hexo-theme-redefine@2.8.2/source/fonts/GeistMono/geist-mono.css">
+    <link rel="stylesheet" href="https://evan.beee.top/projects/hexo-theme-redefine@2.8.2/source/fonts/Geist/geist.css">
+    <!--- Font Part-->
+    
+    
+    
+    
+    
+    
+        <script  src="https://evan.beee.top/projects/hexo-theme-redefine@2.8.2/source/js/build/libs/anime.min.js" ></script>
+    
+
+    <script id="hexo-configurations">
+    window.config = {"hostname":"blog.w1ndys.top","root":"/","language":"zh-CN","path":"search.xml"};
+    window.theme = {"articles":{"style":{"font_size":"16px","line_height":1.5,"image_border_radius":"14px","image_alignment":"center","image_caption":false,"link_icon":true,"delete_mask":true,"title_alignment":"left","headings_top_spacing":{"h1":"3.2rem","h2":"2.4rem","h3":"1.9rem","h4":"1.6rem","h5":"1.4rem","h6":"1.3rem"}},"word_count":{"enable":true,"count":true,"min2read":true},"author_label":{"enable":true,"auto":false,"list":[]},"code_block":{"copy":true,"style":"mac","highlight_theme":{"light":"github","dark":"vs2015"},"font":{"enable":false,"family":null,"url":null}},"toc":{"enable":true,"max_depth":3,"number":false,"expand":true,"init_open":true},"copyright":{"enable":true,"default":"all_rights_reserved"},"lazyload":true,"pangu_js":true,"recommendation":{"enable":false,"title":"推荐阅读","limit":3,"mobile_limit":2,"placeholder":"/images/wallhaven-wqery6-light.webp","skip_dirs":[]}},"colors":{"primary":"#A31F34","secondary":"#1890ff","default_mode":"light"},"global":{"fonts":{"chinese":{"enable":false,"family":null,"url":null},"english":{"enable":false,"family":null,"url":null},"title":{"enable":false,"family":null,"url":null}},"content_max_width":"1000px","sidebar_width":"210px","hover":{"shadow":true,"scale":true},"scroll_progress":{"bar":true,"percentage":true},"website_counter":{"url":"https://cn.vercount.one/js","enable":true,"site_pv":true,"site_uv":true,"post_pv":true},"single_page":true,"preloader":{"enable":true,"custom_message":"欢迎来到W1ndys小屋"},"open_graph":{"enable":true,"image":"/images/redefine-og.webp","description":"W1ndys小屋"},"google_analytics":{"enable":false,"id":null}},"home_banner":{"enable":true,"style":"fixed","image":{"light":"https://pic1.zhimg.com/80/v2-b4e05912f591b51b9fa3e8aa4b9cba45.png","dark":"https://pic1.zhimg.com/80/v2-b4e05912f591b51b9fa3e8aa4b9cba45.png"},"title":"W1ndys小屋","subtitle":{"text":["一言加载中..."],"hitokoto":{"enable":true,"show_author":true,"api":"https://v1.hitokoto.cn"},"typing_speed":100,"backing_speed":80,"starting_delay":500,"backing_delay":1500,"loop":true,"smart_backspace":true},"text_color":{"light":"#fff","dark":"#d1d1b6"},"text_style":{"title_size":"2.8rem","subtitle_size":"1.5rem","line_height":1.2},"custom_font":{"enable":false,"family":null,"url":null},"social_links":{"enable":true,"style":"default","links":{"github":"https://github.com/W1ndys","instagram":null,"zhihu":"https://www.zhihu.com/people/w1ndys","twitter":null,"email":"w1ndys@outlook.com"},"qrs":{"weixin":null}}},"plugins":{"feed":{"enable":true},"aplayer":{"enable":false,"type":"fixed","audios":[{"name":null,"artist":null,"url":null,"cover":null,"lrc":null}]},"mermaid":{"enable":false,"version":"11.4.1"}},"version":"2.8.2","navbar":{"auto_hide":true,"color":{"left":"#f78736","right":"#367df7","transparency":35},"width":{"home":"1200px","pages":"1000px"},"links":{"Home":{"path":"/","icon":"fa-regular fa-house"},"Archives":{"path":"/archives","icon":"fa-regular fa-archive"},"Categories":{"path":"/categories","icon":"fa-regular fa-folder"},"Tags":{"path":"/tags","icon":"fa-regular fa-tags"},"友链接力":{"icon":"fa-solid fa-train-subway","submenus":{"异次元之旅":"https://travel.moe/go.html?travel=on","MIIT Travel":"https://beian.miit.cn.com/go.php","虫洞 | 十年之约":"https://foreverblog.cn/go.html","博客录":"https://bokelu.suijiboke.gs","笔墨迹":"https://blogscn.fun/random.html","博客圈":"https://bokequan.cn/?suiji","开往":"https://www.travellings.cn/go.html"}},"Friends":{"path":"/links","icon":"fa-regular fa-link"},"书签":{"icon":"fa-solid fa-bookmark","path":"/bookmarks/"}},"search":{"enable":true,"preload":true}},"page_templates":{"friends_column":3,"tags_style":"blur"},"home":{"sidebar":{"enable":true,"position":"left","first_item":"menu","announcement":"Welcome to W1ndys's Blog","show_on_mobile":true,"links":{"Archives":{"path":"/archives","icon":"fa-regular fa-archive"},"Tags":{"path":"/tags","icon":"fa-regular fa-tags"},"Categories":{"path":"/categories","icon":"fa-regular fa-folder"}}},"article_date_format":"auto","excerpt_length":200,"categories":{"enable":true,"limit":5},"tags":{"enable":true,"limit":5}},"footerStart":"2023/08/22 05:20:00"};
+    window.lang_ago = {"second":"%s 秒前","minute":"%s 分钟前","hour":"%s 小时前","day":"%s 天前","week":"%s 周前","month":"%s 个月前","year":"%s 年前"};
+    window.data = {"masonry":true};
+  </script>
+    
+    <!--- Fontawesome Part-->
+    <link rel="stylesheet" href="https://evan.beee.top/projects/hexo-theme-redefine@2.8.2/source/fontawesome/fontawesome.min.css">
+    <link rel="stylesheet" href="https://evan.beee.top/projects/hexo-theme-redefine@2.8.2/source/fontawesome/brands.min.css">
+    <link rel="stylesheet" href="https://evan.beee.top/projects/hexo-theme-redefine@2.8.2/source/fontawesome/solid.min.css">
+    <link rel="stylesheet" href="https://evan.beee.top/projects/hexo-theme-redefine@2.8.2/source/fontawesome/regular.min.css">
+    
+    
+    
+    
+<meta name="generator" content="Hexo 7.3.0"><link rel="alternate" href="/atom.xml" title="W1ndys小屋" type="application/atom+xml">
+</head>
+
+
+
+<body>
+	<div class="progress-bar-container">
+	
+	<span class="scroll-progress-bar"></span>
+	
+
+	
+	<span class="pjax-progress-bar"></span>
+	<!--        <span class="swup-progress-icon">-->
+	<!--            <i class="fa-solid fa-circle-notch fa-spin"></i>-->
+	<!--        </span>-->
+	
+</div>
+
+<style>
+    :root {
+        --preloader-background-color: #fff;
+        --preloader-text-color: #000;
+    }
+
+    @media (prefers-color-scheme: dark) {
+        :root {
+            --preloader-background-color: #202124;
+            --preloader-text-color: #fff;
+        }
+    }
+
+    @media (prefers-color-scheme: light) {
+        :root {
+            --preloader-background-color: #fff;
+            --preloader-text-color: #000;
+        }
+    }
+
+    @media (max-width: 600px) {
+        .ml13 {
+            font-size: 2.6rem !important; /* Adjust this value as needed */
+        }
+    }
+
+    .preloader {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem; /* Tailwind 'gap-4' is 1rem */
+        align-items: center;
+        justify-content: center;
+        position: fixed;
+        padding: 12px;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh; /* 'h-screen' is 100% of the viewport height */
+        background-color: var(--preloader-background-color);
+        z-index: 1100; /* 'z-[1100]' sets the z-index */
+        transition: opacity 0.2s ease-in-out;
+    }
+
+    .ml13 {
+        font-size: 3.2rem;
+        /* text-transform: uppercase; */
+        color: var(--preloader-text-color);
+        letter-spacing: -1px;
+        font-weight: 500;
+        font-family: 'Chillax-Variable', sans-serif;
+        text-align: center;
+    }
+
+    .ml13 .word {
+        display: inline-flex;
+        flex-wrap: wrap;
+        white-space: nowrap;
+    }
+
+    .ml13 .letter {
+        display: inline-block;
+        line-height: 1em;
+    }
+</style>
+
+<div class="preloader">
+    <h2 class="ml13">
+        欢迎来到W1ndys小屋
+    </h2>
+    <script>
+        var textWrapper = document.querySelector('.ml13');
+        // Split text into words
+        var words = textWrapper.textContent.trim().split(' ');
+
+        // Clear the existing content
+        textWrapper.innerHTML = '';
+
+        // Wrap each word and its letters in spans
+        words.forEach(function(word) {
+            var wordSpan = document.createElement('span');
+            wordSpan.classList.add('word');
+            wordSpan.innerHTML = word.replace(/\S/g, "<span class='letter'>$&</span>");
+            textWrapper.appendChild(wordSpan);
+            textWrapper.appendChild(document.createTextNode(' ')); // Add space between words
+        });
+
+        var animation = anime.timeline({ loop: true })
+            .add({
+                targets: '.ml13 .letter',
+                translateY: [20, 0],
+                translateZ: 0,
+                opacity: [0, 1],
+                filter: ['blur(5px)', 'blur(0px)'],
+                easing: "easeOutExpo",
+                duration: 1200,
+                delay: (el, i) => 300 + 20 * i,
+            })
+            .add({
+                targets: '.ml13 .letter',
+                translateY: [0, -20],
+                opacity: [1, 0],
+                filter: ['blur(0px)', 'blur(5px)'],
+                easing: "easeInExpo",
+                duration: 1000,
+                delay: (el, i) => 15 * i,
+                complete: function() {
+                    hidePreloader();
+                }
+            }, '-=700');
+
+
+        let themeStatus = JSON.parse(localStorage.getItem('REDEFINE-THEME-STATUS'))?.isDark;
+
+        // If the theme status is not found in local storage, check the preferred color scheme
+        if (themeStatus === undefined || themeStatus === null) {
+            if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+                themeStatus = 'dark';
+            } else {
+                themeStatus = 'light';
+            }
+        }
+
+        // Now you can use the themeStatus variable in your code
+        if (themeStatus) {
+            document.documentElement.style.setProperty('--preloader-background-color', '#202124');
+            document.documentElement.style.setProperty('--preloader-text-color', '#fff');
+        } else {
+            document.documentElement.style.setProperty('--preloader-background-color', '#fff');
+            document.documentElement.style.setProperty('--preloader-text-color', '#000');
+        }
+
+        window.addEventListener('load', function () {
+            setTimeout(hidePreloader, 5000); // Call hidePreloader after 5000 milliseconds if not already called by animation
+        });
+
+        function hidePreloader() {
+            var preloader = document.querySelector('.preloader');
+            preloader.style.opacity = '0';
+            setTimeout(function () {
+                preloader.style.display = 'none';
+            }, 200);
+        }
+    </script>
+</div>
+
+<main class="page-container" id="swup">
+
+	
+
+	<div class="main-content-container flex flex-col justify-between min-h-dvh">
+		<div class="main-content-header">
+			<header class="navbar-container px-6 md:px-12">
+    <div class="navbar-content transition-navbar ">
+        <div class="left">
+            
+                <a class="logo-image h-8 w-8 sm:w-10 sm:h-10 mr-3" href="/">
+                    <img src="/images/haixian.svg" class="w-full h-full rounded-sm">
+                </a>
+            
+            <a class="logo-title" href="/">
+                
+                W1ndys小屋
+                
+            </a>
+        </div>
+
+        <div class="right">
+            <!-- PC -->
+            <div class="desktop">
+                <ul class="navbar-list">
+                    
+                        
+                            
+
+                            <li class="navbar-item">
+                                <!-- Menu -->
+                                <a class=""
+                                   href="/"
+                                        >
+                                    <i class="fa-regular fa-house fa-fw"></i>
+                                    首页
+                                    
+                                </a>
+
+                                <!-- Submenu -->
+                                
+                            </li>
+                    
+                        
+                            
+
+                            <li class="navbar-item">
+                                <!-- Menu -->
+                                <a class=""
+                                   href="/archives"
+                                        >
+                                    <i class="fa-regular fa-archive fa-fw"></i>
+                                    归档
+                                    
+                                </a>
+
+                                <!-- Submenu -->
+                                
+                            </li>
+                    
+                        
+                            
+
+                            <li class="navbar-item">
+                                <!-- Menu -->
+                                <a class=""
+                                   href="/categories"
+                                        >
+                                    <i class="fa-regular fa-folder fa-fw"></i>
+                                    分类
+                                    
+                                </a>
+
+                                <!-- Submenu -->
+                                
+                            </li>
+                    
+                        
+                            
+
+                            <li class="navbar-item">
+                                <!-- Menu -->
+                                <a class=""
+                                   href="/tags"
+                                        >
+                                    <i class="fa-regular fa-tags fa-fw"></i>
+                                    标签
+                                    
+                                </a>
+
+                                <!-- Submenu -->
+                                
+                            </li>
+                    
+                        
+                            
+
+                            <li class="navbar-item">
+                                <!-- Menu -->
+                                <a class="has-dropdown"
+                                   href="#"
+                                        onClick=&#34;return false;&#34;>
+                                    <i class="fa-solid fa-train-subway fa-fw"></i>
+                                    友链接力
+                                    <i class="fa-solid fa-chevron-down fa-fw"></i>
+                                </a>
+
+                                <!-- Submenu -->
+                                
+                                    <ul class="sub-menu">
+                                        
+                                            <li>
+                                                <a target="_blank" rel="noopener" href="https://travel.moe/go.html?travel=on">
+                                                    异次元之旅
+                                                </a>
+                                            </li>
+                                        
+                                            <li>
+                                                <a target="_blank" rel="noopener" href="https://beian.miit.cn.com/go.php">
+                                                    MIIT TRAVEL
+                                                </a>
+                                            </li>
+                                        
+                                            <li>
+                                                <a target="_blank" rel="noopener" href="https://foreverblog.cn/go.html">
+                                                    虫洞 | 十年之约
+                                                </a>
+                                            </li>
+                                        
+                                            <li>
+                                                <a target="_blank" rel="noopener" href="https://bokelu.suijiboke.gs">
+                                                    博客录
+                                                </a>
+                                            </li>
+                                        
+                                            <li>
+                                                <a target="_blank" rel="noopener" href="https://blogscn.fun/random.html">
+                                                    笔墨迹
+                                                </a>
+                                            </li>
+                                        
+                                            <li>
+                                                <a target="_blank" rel="noopener" href="https://bokequan.cn/?suiji">
+                                                    博客圈
+                                                </a>
+                                            </li>
+                                        
+                                            <li>
+                                                <a target="_blank" rel="noopener" href="https://www.travellings.cn/go.html">
+                                                    开往
+                                                </a>
+                                            </li>
+                                        
+                                    </ul>
+                                
+                            </li>
+                    
+                        
+                            
+
+                            <li class="navbar-item">
+                                <!-- Menu -->
+                                <a class=""
+                                   href="/links"
+                                        >
+                                    <i class="fa-regular fa-link fa-fw"></i>
+                                    友情链接
+                                    
+                                </a>
+
+                                <!-- Submenu -->
+                                
+                            </li>
+                    
+                        
+                            
+
+                            <li class="navbar-item">
+                                <!-- Menu -->
+                                <a class=""
+                                   href="/bookmarks/"
+                                        >
+                                    <i class="fa-solid fa-bookmark fa-fw"></i>
+                                    书签
+                                    
+                                </a>
+
+                                <!-- Submenu -->
+                                
+                            </li>
+                    
+                    
+                        <li class="navbar-item search search-popup-trigger">
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                        </li>
+                    
+                </ul>
+            </div>
+            <!-- Mobile -->
+            <div class="mobile">
+                
+                    <div class="icon-item search search-popup-trigger"><i class="fa-solid fa-magnifying-glass"></i>
+                    </div>
+                
+                <div class="icon-item navbar-bar">
+                    <div class="navbar-bar-middle"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Mobile sheet -->
+    <div class="navbar-drawer h-dvh w-full absolute top-0 left-0 bg-background-color flex flex-col justify-between">
+        <ul class="drawer-navbar-list flex flex-col px-4 justify-center items-start">
+            
+                
+                    
+
+                    <li class="drawer-navbar-item text-base my-1.5 flex flex-col w-full">
+                        
+                        <a class="py-1.5 px-2 flex flex-row items-center justify-between gap-1 hover:!text-primary active:!text-primary text-2xl font-semibold group border-b border-border-color hover:border-primary w-full "
+                           href="/"
+                        >
+                            <span>
+                                首页
+                            </span>
+                            
+                                <i class="fa-regular fa-house fa-sm fa-fw"></i>
+                            
+                        </a>
+                        
+
+                        
+                    </li>
+            
+                
+                    
+
+                    <li class="drawer-navbar-item text-base my-1.5 flex flex-col w-full">
+                        
+                        <a class="py-1.5 px-2 flex flex-row items-center justify-between gap-1 hover:!text-primary active:!text-primary text-2xl font-semibold group border-b border-border-color hover:border-primary w-full "
+                           href="/archives"
+                        >
+                            <span>
+                                归档
+                            </span>
+                            
+                                <i class="fa-regular fa-archive fa-sm fa-fw"></i>
+                            
+                        </a>
+                        
+
+                        
+                    </li>
+            
+                
+                    
+
+                    <li class="drawer-navbar-item text-base my-1.5 flex flex-col w-full">
+                        
+                        <a class="py-1.5 px-2 flex flex-row items-center justify-between gap-1 hover:!text-primary active:!text-primary text-2xl font-semibold group border-b border-border-color hover:border-primary w-full "
+                           href="/categories"
+                        >
+                            <span>
+                                分类
+                            </span>
+                            
+                                <i class="fa-regular fa-folder fa-sm fa-fw"></i>
+                            
+                        </a>
+                        
+
+                        
+                    </li>
+            
+                
+                    
+
+                    <li class="drawer-navbar-item text-base my-1.5 flex flex-col w-full">
+                        
+                        <a class="py-1.5 px-2 flex flex-row items-center justify-between gap-1 hover:!text-primary active:!text-primary text-2xl font-semibold group border-b border-border-color hover:border-primary w-full "
+                           href="/tags"
+                        >
+                            <span>
+                                标签
+                            </span>
+                            
+                                <i class="fa-regular fa-tags fa-sm fa-fw"></i>
+                            
+                        </a>
+                        
+
+                        
+                    </li>
+            
+                
+                    
+
+                    <li class="drawer-navbar-item-sub text-base my-1.5 flex flex-col w-full">
+                        
+                        <div class="py-1.5 px-2 flex flex-row items-center justify-between gap-1 hover:!text-primary active:!text-primary cursor-pointer text-2xl font-semibold group border-b border-border-color hover:border-primary w-full "
+                             navbar-data-toggle="submenu-友链接力"
+                        >
+                            <span>
+                                友链接力
+                            </span>
+                            
+                                <i class="fa-solid fa-chevron-right fa-sm fa-fw transition-all"></i>
+                            
+                        </div>
+                        
+
+                        
+                            <div class="flex-col items-start px-2 py-2 hidden" data-target="submenu-友链接力">
+                                
+                                    <div class="drawer-navbar-item text-base flex flex-col justify-center items-start hover:underline active:underline hover:underline-offset-1 rounded-3xl">
+                                        <a class=" text-third-text-color text-xl"
+                                           target="_blank" rel="noopener" href="https://travel.moe/go.html?travel=on">异次元之旅</a>
+                                    </div>
+                                
+                                    <div class="drawer-navbar-item text-base flex flex-col justify-center items-start hover:underline active:underline hover:underline-offset-1 rounded-3xl">
+                                        <a class=" text-third-text-color text-xl"
+                                           target="_blank" rel="noopener" href="https://beian.miit.cn.com/go.php">MIIT TRAVEL</a>
+                                    </div>
+                                
+                                    <div class="drawer-navbar-item text-base flex flex-col justify-center items-start hover:underline active:underline hover:underline-offset-1 rounded-3xl">
+                                        <a class=" text-third-text-color text-xl"
+                                           target="_blank" rel="noopener" href="https://foreverblog.cn/go.html">虫洞 | 十年之约</a>
+                                    </div>
+                                
+                                    <div class="drawer-navbar-item text-base flex flex-col justify-center items-start hover:underline active:underline hover:underline-offset-1 rounded-3xl">
+                                        <a class=" text-third-text-color text-xl"
+                                           target="_blank" rel="noopener" href="https://bokelu.suijiboke.gs">博客录</a>
+                                    </div>
+                                
+                                    <div class="drawer-navbar-item text-base flex flex-col justify-center items-start hover:underline active:underline hover:underline-offset-1 rounded-3xl">
+                                        <a class=" text-third-text-color text-xl"
+                                           target="_blank" rel="noopener" href="https://blogscn.fun/random.html">笔墨迹</a>
+                                    </div>
+                                
+                                    <div class="drawer-navbar-item text-base flex flex-col justify-center items-start hover:underline active:underline hover:underline-offset-1 rounded-3xl">
+                                        <a class=" text-third-text-color text-xl"
+                                           target="_blank" rel="noopener" href="https://bokequan.cn/?suiji">博客圈</a>
+                                    </div>
+                                
+                                    <div class="drawer-navbar-item text-base flex flex-col justify-center items-start hover:underline active:underline hover:underline-offset-1 rounded-3xl">
+                                        <a class=" text-third-text-color text-xl"
+                                           target="_blank" rel="noopener" href="https://www.travellings.cn/go.html">开往</a>
+                                    </div>
+                                
+                            </div>
+                        
+                    </li>
+            
+                
+                    
+
+                    <li class="drawer-navbar-item text-base my-1.5 flex flex-col w-full">
+                        
+                        <a class="py-1.5 px-2 flex flex-row items-center justify-between gap-1 hover:!text-primary active:!text-primary text-2xl font-semibold group border-b border-border-color hover:border-primary w-full "
+                           href="/links"
+                        >
+                            <span>
+                                友情链接
+                            </span>
+                            
+                                <i class="fa-regular fa-link fa-sm fa-fw"></i>
+                            
+                        </a>
+                        
+
+                        
+                    </li>
+            
+                
+                    
+
+                    <li class="drawer-navbar-item text-base my-1.5 flex flex-col w-full">
+                        
+                        <a class="py-1.5 px-2 flex flex-row items-center justify-between gap-1 hover:!text-primary active:!text-primary text-2xl font-semibold group border-b border-border-color hover:border-primary w-full "
+                           href="/bookmarks/"
+                        >
+                            <span>
+                                书签
+                            </span>
+                            
+                                <i class="fa-solid fa-bookmark fa-sm fa-fw"></i>
+                            
+                        </a>
+                        
+
+                        
+                    </li>
+            
+
+            
+            
+                
+                    
+                    
+                    
+            
+        </ul>
+
+        <div class="statistics flex justify-around my-2.5">
+    <a class="item tag-count-item flex flex-col justify-center items-center w-20" href="/tags">
+        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">161</div>
+        <div class="label text-third-text-color text-sm">标签</div>
+    </a>
+    <a class="item tag-count-item flex flex-col justify-center items-center w-20" href="/categories">
+        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">80</div>
+        <div class="label text-third-text-color text-sm">分类</div>
+    </a>
+    <a class="item tag-count-item flex flex-col justify-center items-center w-20" href="/archives">
+        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">193</div>
+        <div class="label text-third-text-color text-sm">文章</div>
+    </a>
+</div>
+    </div>
+
+    <div class="window-mask"></div>
+
+</header>
+
+
+		</div>
+
+		<div class="main-content-body transition-fade-up">
+			
+
+			<div class="main-content">
+				<div class="post-page-container flex relative justify-between box-border w-full h-full">
+	<div class="article-content-container">
+
+		<div class="article-title relative w-full">
+			
+			<div class="w-full flex items-center pt-6 justify-start">
+				<h1 class="article-title-regular text-second-text-color tracking-tight text-4xl md:text-6xl font-semibold px-2 sm:px-6 md:px-8 py-3">Crossing the Line Unit 42 Wireshark Quiz for RedLine Stealer</h1>
+			</div>
+			
+		</div>
+
+		
+		<div class="article-header flex flex-row gap-2 items-center px-2 sm:px-6 md:px-8">
+			<div class="avatar w-[46px] h-[46px] flex-shrink-0 rounded-medium border border-border-color p-[1px]">
+				<img src="https://avatars.githubusercontent.com/u/109416673">
+			</div>
+			<div class="info flex flex-col justify-between">
+				<div class="author flex items-center">
+					<span class="name text-default-text-color text-lg font-semibold">W1ndys</span>
+					
+					<span class="author-label ml-1.5 text-xs px-2 py-0.5 rounded-small text-third-text-color border border-shadow-color-1">Lv6</span>
+					
+				</div>
+				<div class="meta-info">
+					<div class="article-meta-info">
+    <span class="article-date article-meta-item">
+        <i class="fa-regular fa-pen-fancy"></i>&nbsp;
+        <span class="desktop">2024-07-12 15:43:33</span>
+        <span class="mobile">2024-07-12 15:43:33</span>
+        <span class="hover-info">创建</span>
+    </span>
+    
+        <span class="article-date article-meta-item">
+            <i class="fa-regular fa-wrench"></i>&nbsp;
+            <span class="desktop">2025-02-23 13:37:18</span>
+            <span class="mobile">2025-02-23 13:37:18</span>
+            <span class="hover-info">更新</span>
+        </span>
+    
+
+    
+        <span class="article-categories article-meta-item">
+            <i class="fa-regular fa-folders"></i>&nbsp;
+            <ul>
+                
+                
+                    
+                        
+                        <li>
+                            <a href="/categories/%E6%B5%81%E9%87%8F%E5%88%86%E6%9E%90/">流量分析</a>&nbsp;
+                        </li>
+                    
+                    
+                
+            </ul>
+        </span>
+    
+    
+        <span class="article-tags article-meta-item">
+            <i class="fa-regular fa-tags"></i>&nbsp;
+            <ul>
+                
+                    <li>
+                        <a href="/tags/%E6%B5%81%E9%87%8F%E5%88%86%E6%9E%90/">流量分析</a>&nbsp;
+                    </li>
+                
+            </ul>
+        </span>
+    
+
+    
+    
+        <span class="article-wordcount article-meta-item">
+            <i class="fa-regular fa-typewriter"></i>&nbsp;<span>2.1k 字</span>
+        </span>
+    
+    
+        <span class="article-min2read article-meta-item">
+            <i class="fa-regular fa-clock"></i>&nbsp;<span>9 分钟</span>
+        </span>
+    
+    
+        <span class="article-pv article-meta-item">
+            <i class="fa-regular fa-eye"></i>&nbsp;<span id="busuanzi_value_page_pv"></span>
+        </span>
+    
+</div>
+
+				</div>
+			</div>
+		</div>
+		
+
+		
+
+
+		<div class="article-content markdown-body px-2 sm:px-6 md:px-8 pb-8">
+			<h1 id="Crossing-the-Line-Unit-42-Wireshark-Quiz-for-RedLine-Stealer"><a href="#Crossing-the-Line-Unit-42-Wireshark-Quiz-for-RedLine-Stealer" class="headerlink" title="Crossing the Line Unit 42 Wireshark Quiz for RedLine Stealer"></a>Crossing the Line Unit 42 Wireshark Quiz for RedLine Stealer</h1><h2 id="Quiz-Questions"><a href="#Quiz-Questions" class="headerlink" title="Quiz Questions"></a>Quiz Questions</h2><h3 id="What-is-the-date-and-time-in-UTC-the-infection-started"><a href="#What-is-the-date-and-time-in-UTC-the-infection-started" class="headerlink" title="What is the date and time in UTC the infection started?"></a>What is the date and time in UTC the infection started?</h3><ul>
+<li>感染开始的 UTC 日期和时间是什么时候？</li>
+<li>感染于 2023 年 7 月 10 日 22：39 UTC 开始。</li>
+</ul>
+<h3 id="What-is-the-IP-address-of-the-infected-Windows-client"><a href="#What-is-the-IP-address-of-the-infected-Windows-client" class="headerlink" title="What is the IP address of the infected Windows client?"></a>What is the IP address of the infected Windows client?</h3><ul>
+<li>受感染的 Windows 客户端的 IP 地址是什么？</li>
+<li>受感染的 Windows 客户端 IP 地址：10.7.10 [.] 47</li>
+</ul>
+<h3 id="What-is-the-MAC-address-of-the-infected-Windows-client"><a href="#What-is-the-MAC-address-of-the-infected-Windows-client" class="headerlink" title="What is the MAC address of the infected Windows client?"></a>What is the MAC address of the infected Windows client?</h3><ul>
+<li>受感染的 Windows 客户端的 MAC 地址是什么？</li>
+<li>受感染的 Windows 客户端 MAC 地址：80：86：5b：ab：1e：c4</li>
+</ul>
+<h3 id="What-is-the-hostname-of-the-infected-Windows-client"><a href="#What-is-the-hostname-of-the-infected-Windows-client" class="headerlink" title="What is the hostname of the infected Windows client?"></a>What is the hostname of the infected Windows client?</h3><ul>
+<li>受感染的 Windows 客户端的主机名是什么？</li>
+<li>受感染的 Windows 主机名：DESKTOP-9PEA63H</li>
+</ul>
+<h3 id="What-is-the-user-account-name-from-the-infected-Windows-host"><a href="#What-is-the-user-account-name-from-the-infected-Windows-host" class="headerlink" title="What is the user account name from the infected Windows host?"></a>What is the user account name from the infected Windows host?</h3><ul>
+<li>受感染的 Windows 主机的用户帐户名称是什么？</li>
+<li>受感染的 Windows 客户端 IP 用户帐户名称：rwalters</li>
+</ul>
+<h3 id="What-type-of-information-did-this-RedLine-Stealer-try-to-steal"><a href="#What-type-of-information-did-this-RedLine-Stealer-try-to-steal" class="headerlink" title="What type of information did this RedLine Stealer try to steal?"></a>What type of information did this RedLine Stealer try to steal?</h3><ul>
+<li>这个 RedLine Stealer 试图窃取什么类型的信息？</li>
+<li>RedLine 恶意软件试图窃取的信息：<ul>
+<li>受害者桌面上的各种类型的文件</li>
+<li>受害者的“文档”文件夹中的各种类型的文件</li>
+<li>Chrome、Chromium、Edge、Opera、Vivaldi 和其他各种网络浏览器的用户数据</li>
+<li>各种加密货币钱包的数据和这些加密货币钱包的浏览器插件</li>
+<li>来自其他应用程序的 API 密钥和登录凭据</li>
+</ul>
+</li>
+</ul>
+<h2 id="Answer"><a href="#Answer" class="headerlink" title="Answer"></a>Answer</h2><h3 id="Pcap-分析：受害者详细信息"><a href="#Pcap-分析：受害者详细信息" class="headerlink" title="Pcap 分析：受害者详细信息"></a>Pcap 分析：受害者详细信息</h3><p><img src="/../images/Wireshark-sd/Crossing%20the%20Line%20Unit%2042%20Wireshark%20Quiz%20for%20RedLine%20Stealer/image-20240712095107113.png" alt="../images/Wireshark-sd/Crossing%20the%20Line%20Unit%2042%20Wireshark%20Quiz%20for%20RedLine%20Stealer/image-20240712095107113"></p>
+<p>感染于 2023 年 7 月 10 日 22：39 UTC 开始。</p>
+<p><img src="/../images/Wireshark-sd/Crossing%20the%20Line%20Unit%2042%20Wireshark%20Quiz%20for%20RedLine%20Stealer/image-20240712095823382.png" alt="../images/Wireshark-sd/Crossing%20the%20Line%20Unit%2042%20Wireshark%20Quiz%20for%20RedLine%20Stealer/image-20240712095823382"></p>
+<p>确定受感染者的 IP 地址和 MAC 地址</p>
+<p>通过筛选 nbns 确定受害者主机名</p>
+<p><img src="/../images/Wireshark-sd/Crossing%20the%20Line%20Unit%2042%20Wireshark%20Quiz%20for%20RedLine%20Stealer/image-20240712100105392.png" alt="../images/Wireshark-sd/Crossing%20the%20Line%20Unit%2042%20Wireshark%20Quiz%20for%20RedLine%20Stealer/image-20240712100105392"></p>
+<p><img src="/../images/Wireshark-sd/Crossing%20the%20Line%20Unit%2042%20Wireshark%20Quiz%20for%20RedLine%20Stealer/image-20240712100726654.png" alt="../images/Wireshark-sd/Crossing%20the%20Line%20Unit%2042%20Wireshark%20Quiz%20for%20RedLine%20Stealer/image-20240712100726654"></p>
+<p>通过 Kerberos 身份验证流量验证受害者的主机名和 Windows 用户帐户名。筛选 kerberos.CNameString 查找 Windows 用户帐户名 rwalters</p>
+<p><img src="/../images/Wireshark-sd/Crossing%20the%20Line%20Unit%2042%20Wireshark%20Quiz%20for%20RedLine%20Stealer/image-20240712100510846.png" alt="../images/Wireshark-sd/Crossing%20the%20Line%20Unit%2042%20Wireshark%20Quiz%20for%20RedLine%20Stealer/image-20240712100510846"></p>
+<h3 id="Pcap-分析：恶意-Web-流量"><a href="#Pcap-分析：恶意-Web-流量" class="headerlink" title="Pcap 分析：恶意 Web 流量"></a>Pcap 分析：恶意 Web 流量</h3><p>利用 <code>(http.request or tls.handshake.type eq 1) and !(ssdp)</code> 过滤出 Web 流量</p>
+<p>发现三个未加密的 HTTP GET 请求</p>
+<p><img src="/../images/Wireshark-sd/Crossing%20the%20Line%20Unit%2042%20Wireshark%20Quiz%20for%20RedLine%20Stealer/image-20240712100949555.png" alt="../images/Wireshark-sd/Crossing%20the%20Line%20Unit%2042%20Wireshark%20Quiz%20for%20RedLine%20Stealer/image-20240712100949555"></p>
+<p>追踪 623start [.] 的任一流量</p>
+<p><img src="/../images/Wireshark-sd/Crossing%20the%20Line%20Unit%2042%20Wireshark%20Quiz%20for%20RedLine%20Stealer/image-20240712101143122.png" alt="../images/Wireshark-sd/Crossing%20the%20Line%20Unit%2042%20Wireshark%20Quiz%20for%20RedLine%20Stealer/image-20240712101143122"></p>
+<p>TCP 流显示可能的 PowerShell 生成的流量。</p>
+<p>虽然 User-Agent 字符串可能被恶意软件或 Web 浏览器扩展欺骗，但 User-Agent 行中的 WindowsPowerShell 是一个可靠的指示器，表明此流量是由 PowerShell 脚本生成的。这两个 HTTP GET 请求的 URL 是：</p>
+<ul>
+<li>hxxp:&#x2F;&#x2F;623start [.] site&#x2F;?status &#x3D; start&amp;av &#x3D; Windows%20Defender</li>
+<li>hxxp:&#x2F;&#x2F;623start [.] site&#x2F;?status &#x3D; install</li>
+</ul>
+<p>这些请求都从服务器返回了 404 HTTP 错误。第一个 HTTP 请求报告了受害主机上使用的防病毒软件。在这种情况下，av &#x3D; Windows%20Defender 指示 Windows Defender 是防病毒软件。第二个 URL 报告此恶意软件的安装状态。</p>
+<p>最后一个未加密的 HTTP GET 请求是 hxxp:&#x2F;&#x2F;guiatelefonos [.] com&#x2F;data&#x2F;czx.jpg 中。遵循此 GET 请求的 TCP 流。TCP 流显示此 URL 重定向到同一 URL 的 HTTPS 版本</p>
+<p><img src="/../images/Wireshark-sd/Crossing%20the%20Line%20Unit%2042%20Wireshark%20Quiz%20for%20RedLine%20Stealer/image-20240712101437450.png" alt="../images/Wireshark-sd/Crossing%20the%20Line%20Unit%2042%20Wireshark%20Quiz%20for%20RedLine%20Stealer/image-20240712101437450"></p>
+<p>http URL 到 guiatelefonos [.] com 重定向到 HTTPS URL。</p>
+<p><code>hxxps://guiatelefonos [.] com/data/czx.jpg</code></p>
+<h3 id="Pcap-分析：RedLine-Stealer-数据泄露"><a href="#Pcap-分析：RedLine-Stealer-数据泄露" class="headerlink" title="Pcap 分析：RedLine Stealer 数据泄露"></a>Pcap 分析：RedLine Stealer 数据泄露</h3><p>使用下面命令过滤</p>
+<p><code>tcp.flags eq 0x0002 and !(tcp.port eq 443) and !(tcp.port eq 80) and !(ip.dst eq 10.7.10.0/24)</code></p>
+<p>此筛选器搜索表示 TCP 流开头的 TCP SYN 段。搜索将排除通过 TCP 端口 80 和 TCP 端口 443 的任何 Web 流量。此筛选器还会排除从此 AD 环境发送到内部 IP 地址的任何 SYN 段。结果显示发送到 194.26.135 的单个 TCP SYN 段 [.] 119 通过 TCP 端口 12432</p>
+<p><img src="/../images/Wireshark-sd/Crossing%20the%20Line%20Unit%2042%20Wireshark%20Quiz%20for%20RedLine%20Stealer/image-20240712101757863.png" alt="../images/Wireshark-sd/Crossing%20the%20Line%20Unit%2042%20Wireshark%20Quiz%20for%20RedLine%20Stealer/image-20240712101757863"></p>
+<p>来自 TCP 流的初始字符串包括 tcp:&#x2F;&#x2F;194.26.135 [.] 处的 C2 通道。119：12432&#x2F; 和使用 tempuri [.] 的 URL 组织。术语“tempuri”是“临时 URI”的缩写，域 tempuri [.] org 是 Microsoft 开发工具（如 Visual Studio）中使用的占位符命名空间 URI。在我们的 RedLine Stealer 感染的任何其他流量中均未看到此 tempuri 域。</p>
+<p>选择从服务器发送到受感染的 Windows 主机的数据</p>
+<p><img src="/../images/Wireshark-sd/Crossing%20the%20Line%20Unit%2042%20Wireshark%20Quiz%20for%20RedLine%20Stealer/image-20240712102141393.png" alt="../images/Wireshark-sd/Crossing%20the%20Line%20Unit%2042%20Wireshark%20Quiz%20for%20RedLine%20Stealer/image-20240712102141393"></p>
+<p>下图突出显示了这种感染在受害者的用户配置文件下寻找的数据。</p>
+<p><img src="/../images/Wireshark-sd/Crossing%20the%20Line%20Unit%2042%20Wireshark%20Quiz%20for%20RedLine%20Stealer/image-20240712104612459.png" alt="../images/Wireshark-sd/Crossing%20the%20Line%20Unit%2042%20Wireshark%20Quiz%20for%20RedLine%20Stealer/image-20240712104612459"></p>
+<p>该列表包括受害者桌面和受害者的“文档”文件夹上的通配符搜索。这包括文本文件、Word 文档和加密货币钱包文件，如下所示。</p>
+<ul>
+<li>%userprofile%\Desktop|<em>.txt，</em>.doc <em>，</em> key <em>，</em> wallet <em>，</em> seed*|0</li>
+<li>%userprofile%\Documents|<em>.txt，</em>.doc <em>，</em> key <em>，</em> wallet <em>，</em> seed*|0</li>
+</ul>
+<p>然后，该列表根据受害者在其用户配置文件中受害者的 AppData 目录下的预期位置指示来自不同应用程序的数据。该列表按字母顺序显示在下面。</p>
+<ul>
+<li>%USERPROFILE%\AppData\Local\360Browser\Browser\User Data</li>
+<li>%USERPROFILE%\AppData\Local\7Star\7Star\User Data</li>
+<li>%USERPROFILE%\AppData\Local\Amigo\User\User Data</li>
+<li>%USERPROFILE%\AppData\Local\Battle.net</li>
+<li>%USERPROFILE%\AppData\Local\BraveSoftware\Brave-Browser\User Data</li>
+<li>%USERPROFILE%\AppData\Local\CatalinaGroup\Citrio\User Data</li>
+<li>%USERPROFILE%\AppData\Local\CentBrowser\User Data</li>
+<li>%USERPROFILE%\AppData\Local\Chedot\User Data</li>
+<li>%USERPROFILE%\AppData\Local\Chromium\User Data</li>
+<li>%USERPROFILE%\AppData\Local\Chromodo\User Data</li>
+<li>%USERPROFILE%\AppData\Local\CocCoc\Browser\User Data</li>
+<li>%USERPROFILE%\AppData\Local\Comodo\Dragon\User Data</li>
+<li>%USERPROFILE%\AppData\Local\Comodo\User Data</li>
+<li>%USERPROFILE%\AppData\Local\Coowon\Coowon\User Data</li>
+<li>%USERPROFILE%\AppData\Local\CryptoTab Browser\User Data</li>
+<li>%USERPROFILE%\AppData\Local\Elements Browser\User Data</li>
+<li>%USERPROFILE%\AppData\Local\Epic Privacy Browser\User Data</li>
+<li>%USERPROFILE%\AppData\Local\Fenrir Inc\Sleipnir5\setting\modules\ChromiumViewer</li>
+<li>%USERPROFILE%\AppData\Local\Google(x86)\Chrome\User Data</li>
+<li>%USERPROFILE%\AppData\Local\Google\Chrome\User Data</li>
+<li>%USERPROFILE%\AppData\Local\Iridium\User Data</li>
+<li>%USERPROFILE%\AppData\Local\K-Melon\User Data</li>
+<li>%USERPROFILE%\AppData\Local\Kometa\User Data</li>
+<li>%USERPROFILE%\AppData\Local\liebao\User Data</li>
+<li>%USERPROFILE%\AppData\Local\Mail.Ru\Atom\User Data</li>
+<li>%USERPROFILE%\AppData\Local\MapleStudio\ChromePlus\User Data</li>
+<li>%USERPROFILE%\AppData\Local\Maxthon3\User Data</li>
+<li>%USERPROFILE%\AppData\Local\Microsoft\Edge\User Data</li>
+<li>%USERPROFILE%\AppData\Local\Nichrome\User Data</li>
+<li>%USERPROFILE%\AppData\Local\NVIDIA Corporation\NVIDIA GeForce Experience</li>
+<li>%USERPROFILE%\AppData\Local\Orbitum\User Data</li>
+<li>%USERPROFILE%\AppData\Local\QIP Surf\User Data</li>
+<li>%USERPROFILE%\AppData\Local\Sputnik\Sputnik\User Data</li>
+<li>%USERPROFILE%\AppData\Local\Steam</li>
+<li>%USERPROFILE%\AppData\Local\Torch\User Data</li>
+<li>%USERPROFILE%\AppData\Local\uCozMedia\Uran\User Data</li>
+<li>%USERPROFILE%\AppData\Local\Uran\User Data</li>
+<li>%USERPROFILE%\AppData\Local\Vivaldi\User Data</li>
+<li>%USERPROFILE%\AppData\Local\Yandex\YandexBrowser\User Data</li>
+<li>%USERPROFILE%\AppData\Roaming\8pecxstudios\Cyberfox</li>
+<li>%USERPROFILE%\AppData\Roaming\Comodo\IceDragon</li>
+<li>%USERPROFILE%\AppData\Roaming\K-Meleon</li>
+<li>%USERPROFILE%\AppData\Roaming\Moonchild Productions\Pale Moon</li>
+<li>%USERPROFILE%\AppData\Roaming\Mozilla\Firefox</li>
+<li>%USERPROFILE%\AppData\Roaming\NETGATE Technologies\BlackHaw</li>
+<li>%USERPROFILE%\AppData\Roaming\Opera Software\</li>
+<li>%USERPROFILE%\AppData\Roaming\Thunderbird</li>
+<li>%USERPROFILE%\AppData\Roaming\Waterfox</li>
+</ul>
+<p>再往下滚动一点，我们发现似乎是这种感染寻找的各种加密货币钱包，如下图 11 所示。这些数据包括基于 Chromium 的 Web 浏览器（如 Google Chrome 和 Microsoft Edge）使用的扩展程序的标识符。</p>
+<p><img src="/../images/Wireshark-sd/Crossing%20the%20Line%20Unit%2042%20Wireshark%20Quiz%20for%20RedLine%20Stealer/image-20240712104721040.png" alt="../images/Wireshark-sd/Crossing%20the%20Line%20Unit%2042%20Wireshark%20Quiz%20for%20RedLine%20Stealer/image-20240712104721040"></p>
+<p>下面列出了这些加密货币钱包浏览器扩展，按钱包名称的字母顺序排序。（阅读：基于 Chromium 的扩展字符串|扩展名称。</p>
+<ul>
+<li>fhilaheimglignddkjgofkcbgekhenbh|AtomicWallet</li>
+<li>fhbohimaelbohpjbbldcngcnapndodjp|BinanceChain</li>
+<li>fihkakfobkmkjojpchpfgcmhfjnmnfpi|BitAppWallet</li>
+<li>aodkkagnadcbobfpggfnjeongemjbjca|BoltX</li>
+<li>odbfpeeihdkbihmopkbjmoonfanlbfcl|BraveWallet</li>
+<li>aeachknmefphepccionboohckonoeemg|Coin98Wallet</li>
+<li>hnfanknocfeofbddgcijnmhnfnkdnaad|Coinbase</li>
+<li>blnieiiffboillknjnepogjhkgnoapac|EqualWallet</li>
+<li>hpglfhgfnhbgpjdenjgmdgoeiappafln|GuardaWallet</li>
+<li>nanjmdknhkinifnkgdcggcfnhdaammmj|GuildWallet</li>
+<li>fnnegphlobjdpkhecapkijjdkgcjhkib|HarmonyWallet</li>
+<li>kncchdigobghenbbaddojjnnaogfppfj|iWallet</li>
+<li>cjelfplplebdjjenllpjcblmjkfcffne|JaxxxLiberty</li>
+<li>pdadjkfkgcafgbceimcpbkalnfnepbnk|KardiaChain</li>
+<li>kpfopkelmapcoipemfendmdcghnegimn|LiqualityWallet</li>
+<li>dngmlblcodfobpdpecaadgfbcggfjfnm|MaiarDeFiWallet</li>
+<li>afbcbjpbpfadlkmhmclhkeeodmamcflc|MathWallet</li>
+<li>nkbihfbeogaeaoehlefnkodbefgpgknn|Metamask</li>
+<li>nlbmnnijcnlegkjjpcfjclmcfggfefdm|MewCx</li>
+<li>lpfcbjknijpeeillifnkikgncikgfhdo|NamiWallet</li>
+<li>jbdaocneiiinmjbjlgalhcelgbejmnid|NiftyWallet</li>
+<li>fhilaheimglignddkjgofkcbgekhenbh|Oxygen</li>
+<li>mgffkfbidihjpoaomajlbgchddlicgpn|PaliWallet</li>
+<li>bfnaelmomeimhlpmgjnjophhpkkoljpa|Phantom</li>
+<li>fnjhmkhhmkbjkkabndcnnogagogbneec|RoninWallet</li>
+<li>nkddgncdjgjfcddamfgcmfnlhccnimig|SaturnWallet</li>
+<li>aiifbnbfobpmeekipheeijimdpnlpgpp|TerraStation</li>
+<li>cgeeodpfagjceefieflmdfphplkenlfk|TonCrystal</li>
+<li>ibnejdfjmmkpcnlpebklmnkoeoihofec|Tronlink</li>
+<li>amkmjjmmflddogmhpjloimipbofnfjih|Wombat</li>
+<li>hmeobnfnfcmdkdcmlblgagmfpfboieaf|XdefiWallet</li>
+<li>ffnbelfdoeiohenkjibnmadjiehjhajb|YoroiWallet</li>
+</ul>
+<p>滚动到流的末尾，我们发现此感染会搜索可能安装在主机上的其他程序的 API 密钥和登录数据</p>
+<p><img src="/../images/Wireshark-sd/Crossing%20the%20Line%20Unit%2042%20Wireshark%20Quiz%20for%20RedLine%20Stealer/image-20240712104750858.png" alt="../images/Wireshark-sd/Crossing%20the%20Line%20Unit%2042%20Wireshark%20Quiz%20for%20RedLine%20Stealer/image-20240712104750858"></p>
+<p>此列表包括各种云平台、社交媒体应用程序和其他工具。下面是按字母顺序排序的列表。</p>
+<ul>
+<li>ALGOLIA_API_KEY</li>
+<li>AMAZON_AWS_ACCESS_KEY_ID</li>
+<li>AMAZON_AWS_SECRET_ACCESS_KEY</li>
+<li>AWS_ACCESS_KEY_ID</li>
+<li>AWS_SECRET_ACCESS_KEY</li>
+<li>AZURE_CLIENT_ID</li>
+<li>AZURE_CLIENT_SECRET</li>
+<li>AZURE_PASSWORD</li>
+<li>AZURE_USERNAME</li>
+<li>binance_api</li>
+<li>binance_secret</li>
+<li>BITTREX_API_KEY</li>
+<li>BITTREX_API_SECRET</li>
+<li>CF_PASSWORD</li>
+<li>CF_USERNAME</li>
+<li>CI_DEPLOY_PASSWORD</li>
+<li>CI_DEPLOY_PASSWORD</li>
+<li>CI_DEPLOY_USER</li>
+<li>CI_DEPLOY_USER</li>
+<li>CI_JOB_JWT</li>
+<li>CI_JOB_JWT_V2</li>
+<li>CI_JOB_TOKEN</li>
+<li>CIRCLE_TOKEN</li>
+<li>CODECLIMATE_REPO_TOKEN</li>
+<li>CONSUMER_KEY</li>
+<li>CONSUMER_SECRET</li>
+<li>COVERALLS_REPO_TOKEN</li>
+<li>DIGITALOCEAN_ACCESS_TOKEN</li>
+<li>DOCKER_EMAIL</li>
+<li>DOCKER_PASSWORD</li>
+<li>DOCKER_USERNAME</li>
+<li>DOCKERHUB_PASSWORD</li>
+<li>FACEBOOK_ACCESS_TOKEN</li>
+<li>FACEBOOK_APP_ID</li>
+<li>FACEBOOK_APP_SECRET</li>
+<li>FIREBASE_TOKEN</li>
+<li>FOSSA_API_KEY</li>
+<li>GH_ENTERPRISE_TOKEN</li>
+<li>GH_TOKEN</li>
+<li>GITLAB_USER_LOGIN</li>
+<li>GOOGLE_API_KEY</li>
+<li>GOOGLE_APPLICATION_CREDENTIALS</li>
+<li>HEROKU_API_KEY</li>
+<li>HEROKU_API_USER</li>
+<li>MAILGUN_API_KEY</li>
+<li>MCLI_PRIVATE_API_KEY</li>
+<li>MCLI_PUBLIC_API_KEY</li>
+<li>MSI_ENDPOINT</li>
+<li>MSI_SECRET</li>
+<li>NGROK_AUTH_TOKEN</li>
+<li>NGROK_TOKEN</li>
+<li>NPM_AUTH_TOKEN</li>
+<li>OKTA_AUTHN_GROUPID</li>
+<li>OKTA_CLIENT_ORGURL</li>
+<li>OKTA_CLIENT_TOKEN</li>
+<li>OKTA_OAUTH2_CLIENTID</li>
+<li>OKTA_OAUTH2_CLIENTSECRET</li>
+<li>OS_PASSWORD</li>
+<li>OS_USERNAME</li>
+<li>PERCY_TOKEN</li>
+<li>SAUCE_ACCESS_KEY</li>
+<li>SAUCE_USERNAME</li>
+<li>SENTRY_AUTH_TOKEN</li>
+<li>SLACK_TOKEN</li>
+<li>square_access_token</li>
+<li>square_oauth_secret</li>
+<li>STRIPE_API_KEY</li>
+<li>STRIPE_DEVICE_NAME</li>
+<li>SURGE_LOGIN</li>
+<li>SURGE_TOKEN</li>
+<li>TOKEN</li>
+<li>TRAVIS_OS_NAME</li>
+<li>TRAVIS_SECURE_ENV_VARS</li>
+<li>TRAVIS_SUDO</li>
+<li>TWILIO_ACCOUNT_SID</li>
+<li>VAULT_CLIENT_KEY</li>
+<li>VAULT_TOKEN</li>
+<li>VULTR_ACCESS</li>
+<li>VULTR_SECRET</li>
+</ul>
+<p>接下来，切换 TCP 流窗口以查看从受感染主机发送到服务器的数据。这揭示了受感染受害者的 Windows 桌面的屏幕截图已发送到 C2 服务器的迹象</p>
+<p><img src="/../images/Wireshark-sd/Crossing%20the%20Line%20Unit%2042%20Wireshark%20Quiz%20for%20RedLine%20Stealer/image-20240712104854395.png" alt="../images/Wireshark-sd/Crossing%20the%20Line%20Unit%2042%20Wireshark%20Quiz%20for%20RedLine%20Stealer/image-20240712104854395"></p>
+<p>转换成原始数据保存，使用十六进制编辑器删除 png 图像开始之前的内容</p>
+<p><img src="/../images/Wireshark-sd/Crossing%20the%20Line%20Unit%2042%20Wireshark%20Quiz%20for%20RedLine%20Stealer/image-20240712105403785.png" alt="../images/Wireshark-sd/Crossing%20the%20Line%20Unit%2042%20Wireshark%20Quiz%20for%20RedLine%20Stealer/image-20240712105403785"></p>
+<p>拿到图片</p>
+<p><img src="/../images/Wireshark-sd/Crossing%20the%20Line%20Unit%2042%20Wireshark%20Quiz%20for%20RedLine%20Stealer/image-20240712105430195.png" alt="../images/Wireshark-sd/Crossing%20the%20Line%20Unit%2042%20Wireshark%20Quiz%20for%20RedLine%20Stealer/image-20240712105430195"></p>
+<p>屏幕截图显示了一个 PowerShell 窗口，其中包含来自 Web 流量连接的数据。</p>
+<p>查看映像后，返回 TCP 流 （tcp.stream eq 71），将其作为 ASCII 数据查看，然后选择仅从受感染的 Windows 主机到 C2 服务器的流量。滚动到末尾以查看发送到 C2 服务器的其他数据。</p>
+<p>更多地了解受感染的 Windows 主机将有助于我们更好地了解这些数据。受感染的 Windows 主机是最小安装，它只有一组登录凭据存储在 Microsoft Edge 浏览器中。主机在用户的“文档”文件夹中只存储了一个 Word 文档。该文件被命名为 Top_secret_ducment.docx。</p>
+<p>在这个 TCP 流的末尾，我们找到了正在运行的进程列表，如下图 17 所示。我们还可以从受感染的主机中找到硬件信息，从 Edge 浏览器找到登录凭据，以及名为 Top_secret_ducment.docx 的文件。</p>
+<p><img src="/../images/Wireshark-sd/Crossing%20the%20Line%20Unit%2042%20Wireshark%20Quiz%20for%20RedLine%20Stealer/image-20240712154112040.png" alt="../images/Wireshark-sd/Crossing%20the%20Line%20Unit%2042%20Wireshark%20Quiz%20for%20RedLine%20Stealer/image-20240712154112040"></p>
+<p>正在运行的进程、硬件信息、登录凭据和 Word 文档从受感染的 Windows 主机泄露。</p>
+<p>运行进程列表还显示了 powershell.exe 运行 C：\Users\rwalters\Documents\mystery_file.ps1 文件的进程。该 .ps1 文件生成了此 Wireshark 测验的感染流量。</p>
+
+		</div>
+
+		
+		<div class="post-copyright-info w-full my-8 px-2 sm:px-6 md:px-8">
+			<div class="article-copyright-info-container">
+    <ul>
+        <li><strong>标题:</strong> Crossing the Line Unit 42 Wireshark Quiz for RedLine Stealer</li>
+        <li><strong>作者:</strong> W1ndys</li>
+        <li><strong>创建于
+                :</strong> 2024-07-12 15:43:33</li>
+        
+            <li>
+                <strong>更新于
+                    :</strong> 2025-02-23 13:37:18
+            </li>
+        
+        <li>
+            <strong>链接:</strong> https://blog.w1ndys.top/posts/dbf9c8f7.html
+        </li>
+        <li>
+            <strong>
+                版权声明:
+            </strong>
+            
+
+            
+                版权所有 &#169 W1ndys，禁止转载。
+            
+        </li>
+    </ul>
+</div>
+
+		</div>
+		
+
+		
+		<ul class="post-tags-box text-lg mt-1.5 flex-wrap justify-center flex md:hidden">
+			
+			<li class="tag-item mx-0.5">
+				<a href="/tags/%E6%B5%81%E9%87%8F%E5%88%86%E6%9E%90/">#流量分析</a>&nbsp;
+			</li>
+			
+		</ul>
+		
+
+		
+
+		
+		<div class="article-nav my-8 flex justify-between items-center px-2 sm:px-6 md:px-8">
+			
+			<div class="article-prev border-border-color shadow-redefine-flat shadow-shadow-color-2 rounded-medium px-4 py-2 hover:shadow-redefine-flat-hover hover:shadow-shadow-color-2">
+				<a class="prev" rel="prev" href="/posts/4702aed9.html">
+					<span class="left arrow-icon flex justify-center items-center">
+						<i class="fa-solid fa-chevron-left"></i>
+					</span>
+					<span class="title flex justify-center items-center">
+						<span class="post-nav-title-item">网络安全实训5——扩展访问控制列表</span>
+						<span class="post-nav-item">上一篇</span>
+					</span>
+				</a>
+			</div>
+			
+			
+			<div class="article-next border-border-color shadow-redefine-flat shadow-shadow-color-2 rounded-medium px-4 py-2 hover:shadow-redefine-flat-hover hover:shadow-shadow-color-2">
+				<a class="next" rel="next" href="/posts/bbe417ed.html">
+					<span class="title flex justify-center items-center">
+						<span class="post-nav-title-item">网络安全实训4——克隆网站</span>
+						<span class="post-nav-item">下一篇</span>
+					</span>
+					<span class="right arrow-icon flex justify-center items-center">
+						<i class="fa-solid fa-chevron-right"></i>
+					</span>
+				</a>
+			</div>
+			
+		</div>
+		
+
+
+		
+		<div class="comment-container px-2 sm:px-6 md:px-8 pb-8">
+			<div class="comments-container mt-10 w-full ">
+    <div id="comment-anchor" class="w-full h-2.5"></div>
+    <div class="comment-area-title w-full my-1.5 md:my-2.5 text-xl md:text-3xl font-bold">
+        评论
+    </div>
+    
+
+        
+            
+    <div id="giscus-container"></div>
+    <script data-swup-reload-script defer>
+        async function loadGiscus() {
+            const giscusConfig = {
+                'src': 'https://giscus.app/client.js',
+                'data-repo': 'W1ndys/Blog',
+                'data-repo-id': 'R_kgDOLaRaXw',
+                'data-category': 'Show and tell',
+                'data-category-id': 'DIC_kwDOLaRaX84CeBp5',
+                'data-mapping': 'url',
+                'data-strict': '0',
+                'data-reactions-enabled': '1',
+                'data-emit-metadata': '1',
+                'data-theme': 'preferred_color_scheme',
+                'data-lang': 'zh-CN',
+                'data-input-position': 'top',
+                'data-loading': 'lazy',
+                'crossorigin': 'anonymous',
+                'async': true
+            }
+            const giscusScript = document.createElement('script');
+            for (const key in giscusConfig) {
+                giscusScript.setAttribute(key, giscusConfig[key]);
+            }
+            document.getElementById('giscus-container').appendChild(giscusScript);
+        }
+        if ('true') {
+            let loadGiscusTimeout = setTimeout(() => {
+                loadGiscus();
+                clearTimeout(loadGiscusTimeout);
+            }, 1000);
+        } else {
+            document.addEventListener('DOMContentLoaded', loadGiscus);
+        }
+    </script>
+
+
+        
+        
+    
+</div>
+
+		</div>
+		
+	</div>
+
+	
+	<div class="toc-content-container">
+		<div class="post-toc-wrap">
+	<div class="post-toc">
+		<div class="toc-title">目录</div>
+		<div class="page-title">Crossing the Line Unit 42 Wireshark Quiz for RedLine Stealer</div>
+		<ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Crossing-the-Line-Unit-42-Wireshark-Quiz-for-RedLine-Stealer"><span class="nav-text">Crossing the Line Unit 42 Wireshark Quiz for RedLine Stealer</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Quiz-Questions"><span class="nav-text">Quiz Questions</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#What-is-the-date-and-time-in-UTC-the-infection-started"><span class="nav-text">What is the date and time in UTC the infection started?</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#What-is-the-IP-address-of-the-infected-Windows-client"><span class="nav-text">What is the IP address of the infected Windows client?</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#What-is-the-MAC-address-of-the-infected-Windows-client"><span class="nav-text">What is the MAC address of the infected Windows client?</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#What-is-the-hostname-of-the-infected-Windows-client"><span class="nav-text">What is the hostname of the infected Windows client?</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#What-is-the-user-account-name-from-the-infected-Windows-host"><span class="nav-text">What is the user account name from the infected Windows host?</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#What-type-of-information-did-this-RedLine-Stealer-try-to-steal"><span class="nav-text">What type of information did this RedLine Stealer try to steal?</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Answer"><span class="nav-text">Answer</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Pcap-%E5%88%86%E6%9E%90%EF%BC%9A%E5%8F%97%E5%AE%B3%E8%80%85%E8%AF%A6%E7%BB%86%E4%BF%A1%E6%81%AF"><span class="nav-text">Pcap 分析：受害者详细信息</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Pcap-%E5%88%86%E6%9E%90%EF%BC%9A%E6%81%B6%E6%84%8F-Web-%E6%B5%81%E9%87%8F"><span class="nav-text">Pcap 分析：恶意 Web 流量</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Pcap-%E5%88%86%E6%9E%90%EF%BC%9ARedLine-Stealer-%E6%95%B0%E6%8D%AE%E6%B3%84%E9%9C%B2"><span class="nav-text">Pcap 分析：RedLine Stealer 数据泄露</span></a></li></ol></li></ol></li></ol>
+
+	</div>
+</div>
+	</div>
+	
+</div>
+			</div>
+
+			
+		</div>
+
+		<div class="main-content-footer">
+			<footer class="footer mt-5 py-5 h-auto text-base text-third-text-color relative border-t-2 border-t-border-color">
+    <div class="info-container py-3 text-center">
+        
+            <div class="customize-info my-1">Powered by <a href="https://github.com/W1ndys" target="_blank">W1ndys</a></div>
+        
+        <div class="text-center">
+            &copy;
+            
+              <span>2023</span>
+              -
+            
+            2025&nbsp;&nbsp;<i class="fa-solid fa-heart fa-beat" style="--fa-animation-duration: 0.5s; color: #f54545"></i>&nbsp;&nbsp;<a href="/">W1ndys</a>
+            
+                
+                <p class="post-count space-x-0.5">
+                    <span>
+                        共撰写了 193 篇文章
+                    </span>
+                    
+                        <span>
+                            共 224.3k 字
+                        </span>
+                    
+                </p>
+            
+        </div>
+        
+            <script data-swup-reload-script src="https://cn.vercount.one/js"></script>
+            <div class="relative text-center lg:absolute lg:right-[20px] lg:top-1/2 lg:-translate-y-1/2 lg:text-right">
+                
+                    <span id="busuanzi_container_site_uv" class="lg:!block">
+                        <span class="text-sm">访问人数</span>
+                        <span id="busuanzi_value_site_uv"></span>
+                    </span>
+                
+                
+                    <span id="busuanzi_container_site_pv" class="lg:!block">
+                        <span class="text-sm">总访问量</span>
+                        <span id="busuanzi_value_site_pv"></span>
+                    </span>
+                
+            </div>
+        
+        <div class="relative text-center lg:absolute lg:left-[20px] lg:top-1/2 lg:-translate-y-1/2 lg:text-left">
+            <span class="lg:block text-sm">由 <?xml version="1.0" encoding="utf-8"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg class="relative top-[2px] inline-block align-baseline" version="1.1" id="圖層_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="1rem" height="1rem" viewBox="0 0 512 512" enable-background="new 0 0 512 512" xml:space="preserve"><path fill="#0E83CD" d="M256.4,25.8l-200,115.5L56,371.5l199.6,114.7l200-115.5l0.4-230.2L256.4,25.8z M349,354.6l-18.4,10.7l-18.6-11V275H200v79.6l-18.4,10.7l-18.6-11v-197l18.5-10.6l18.5,10.8V237h112v-79.6l18.5-10.6l18.5,10.8V354.6z"/></svg><a target="_blank" class="text-base" href="https://hexo.io">Hexo</a> 驱动</span>
+            <span class="text-sm lg:block">主题&nbsp;<a class="text-base" target="_blank" href="https://github.com/EvanNotFound/hexo-theme-redefine">Redefine v2.8.2</a></span>
+        </div>
+        
+        
+            <div>
+                博客已运行 <span class="odometer" id="runtime_days" ></span> 天 <span class="odometer" id="runtime_hours"></span> 小时 <span class="odometer" id="runtime_minutes"></span> 分钟 <span class="odometer" id="runtime_seconds"></span> 秒
+            </div>
+        
+        
+            <script data-swup-reload-script>
+                try {
+                    function odometer_init() {
+                    const elements = document.querySelectorAll('.odometer');
+                    elements.forEach(el => {
+                        new Odometer({
+                            el,
+                            format: '( ddd).dd',
+                            duration: 200
+                        });
+                    });
+                    }
+                    odometer_init();
+                } catch (error) {}
+            </script>
+        
+        
+            
+                
+        
+                
+        
+                
+
+                    
+                        <script data-swup-reload-script data-pjax src="/js/Capoo.js"></script>
+                    
+        
+        
+    </div>  
+</footer>
+		</div>
+	</div>
+
+	
+	<div class="post-tools">
+		<div class="post-tools-container">
+	<ul class="article-tools-list">
+		<!-- TOC aside toggle -->
+		
+		<li class="right-bottom-tools page-aside-toggle">
+			<i class="fa-regular fa-outdent"></i>
+		</li>
+		
+
+		<!-- go comment -->
+		
+		<li class="go-comment">
+			<i class="fa-regular fa-comments"></i>
+		</li>
+		
+	</ul>
+</div>
+	</div>
+	
+
+	<div class="right-side-tools-container">
+		<div class="side-tools-container">
+	<ul class="hidden-tools-list">
+		<li class="right-bottom-tools tool-font-adjust-plus flex justify-center items-center">
+			<i class="fa-regular fa-magnifying-glass-plus"></i>
+		</li>
+
+		<li class="right-bottom-tools tool-font-adjust-minus flex justify-center items-center">
+			<i class="fa-regular fa-magnifying-glass-minus"></i>
+		</li>
+
+		<li class="right-bottom-tools tool-dark-light-toggle flex justify-center items-center">
+			<i class="fa-regular fa-moon"></i>
+		</li>
+
+		<!-- rss -->
+		
+		<li class="right-bottom-tools rss flex justify-center items-center">
+			<a class="flex justify-center items-center" href="/atom.xml" target="_blank">
+				<i class="fa-regular fa-rss"></i>
+			</a>
+		</li>
+		
+
+		
+
+		<li class="right-bottom-tools tool-scroll-to-bottom flex justify-center items-center">
+			<i class="fa-regular fa-arrow-down"></i>
+		</li>
+	</ul>
+
+	<ul class="visible-tools-list">
+		<li class="right-bottom-tools toggle-tools-list flex justify-center items-center">
+			<i class="fa-regular fa-cog fa-spin"></i>
+		</li>
+		
+		<li class="right-bottom-tools tool-scroll-to-top flex justify-center items-center">
+			<i class="arrow-up fas fa-arrow-up"></i>
+			<span class="percent"></span>
+		</li>
+		
+		
+	</ul>
+</div>
+	</div>
+
+	<div class="image-viewer-container">
+	<img src="">
+</div>
+
+	
+	<div class="search-pop-overlay">
+	<div class="popup search-popup">
+		<div class="search-header">
+			<span class="search-input-field-pre">
+				<i class="fa-solid fa-keyboard"></i>
+			</span>
+			<div class="search-input-container">
+				<input autocomplete="off" autocorrect="off" autocapitalize="off" placeholder="站内搜索您需要的内容..." spellcheck="false" type="search" class="search-input">
+			</div>
+			<span class="popup-btn-close">
+				<i class="fa-solid fa-times"></i>
+			</span>
+		</div>
+		<div id="search-result">
+			<div id="no-result">
+				<i class="fa-solid fa-spinner fa-spin-pulse fa-5x fa-fw"></i>
+			</div>
+		</div>
+	</div>
+</div>
+	
+
+</main>
+
+
+<script  src="https://evan.beee.top/projects/hexo-theme-redefine@2.8.2/source/js/build/libs/Swup.min.js" ></script><script  src="https://evan.beee.top/projects/hexo-theme-redefine@2.8.2/source/js/build/libs/SwupSlideTheme.min.js" ></script><script  src="https://evan.beee.top/projects/hexo-theme-redefine@2.8.2/source/js/build/libs/SwupScriptsPlugin.min.js" ></script><script  src="https://evan.beee.top/projects/hexo-theme-redefine@2.8.2/source/js/build/libs/SwupProgressPlugin.min.js" ></script><script  src="https://evan.beee.top/projects/hexo-theme-redefine@2.8.2/source/js/build/libs/SwupScrollPlugin.min.js" ></script><script  src="https://evan.beee.top/projects/hexo-theme-redefine@2.8.2/source/js/build/libs/SwupPreloadPlugin.min.js" ></script>
+<script>
+    const swup = new Swup({
+        plugins: [
+            new SwupScriptsPlugin({
+                optin: true,
+            }),
+            new SwupProgressPlugin(),
+            new SwupScrollPlugin({
+                offset: 80,
+            }),
+            new SwupSlideTheme({
+                mainElement: ".main-content-body",
+            }),
+            new SwupPreloadPlugin(),
+        ],
+        containers: ["#swup"],
+    });
+</script>
+
+
+
+
+	<script type="module" src="https://evan.beee.top/projects/hexo-theme-redefine@2.8.2/source/js/build/tools/imageViewer.js" ></script><script type="module" src="https://evan.beee.top/projects/hexo-theme-redefine@2.8.2/source/js/build/utils.js" ></script><script type="module" src="https://evan.beee.top/projects/hexo-theme-redefine@2.8.2/source/js/build/main.js" ></script><script type="module" src="https://evan.beee.top/projects/hexo-theme-redefine@2.8.2/source/js/build/layouts/navbarShrink.js" ></script><script type="module" src="https://evan.beee.top/projects/hexo-theme-redefine@2.8.2/source/js/build/tools/scrollTopBottom.js" ></script><script type="module" src="https://evan.beee.top/projects/hexo-theme-redefine@2.8.2/source/js/build/tools/lightDarkSwitch.js" ></script><script type="module" src="https://evan.beee.top/projects/hexo-theme-redefine@2.8.2/source/js/build/layouts/categoryList.js" ></script>
+
+
+    <script type="module" src="https://evan.beee.top/projects/hexo-theme-redefine@2.8.2/source/js/build/tools/localSearch.js" ></script>
+
+
+
+    <script type="module" src="https://evan.beee.top/projects/hexo-theme-redefine@2.8.2/source/js/build/tools/codeBlock.js" ></script>
+
+
+
+    <script type="module" src="https://evan.beee.top/projects/hexo-theme-redefine@2.8.2/source/js/build/layouts/lazyload.js" ></script>
+
+
+
+    <script  src="https://evan.beee.top/projects/hexo-theme-redefine@2.8.2/source/js/build/tools/runtime.js" ></script>
+    <script  src="https://evan.beee.top/projects/hexo-theme-redefine@2.8.2/source/js/build/libs/odometer.min.js" ></script>
+    <link rel="stylesheet" href="https://evan.beee.top/projects/hexo-theme-redefine@2.8.2/source/assets/odometer-theme-minimal.css">
+
+
+
+  <script  src="https://evan.beee.top/projects/hexo-theme-redefine@2.8.2/source/js/build/libs/Typed.min.js" ></script>
+  <script type="module" src="https://evan.beee.top/projects/hexo-theme-redefine@2.8.2/source/js/build/plugins/typed.js" ></script>
+
+
+
+
+
+    <script  src="https://evan.beee.top/projects/hexo-theme-redefine@2.8.2/source/js/build/libs/minimasonry.min.js" ></script>
+    <script type="module" src="https://evan.beee.top/projects/hexo-theme-redefine@2.8.2/source/js/build/plugins/masonry.js" ></script>
+
+
+
+
+
+
+    <script type="module" src="https://evan.beee.top/projects/hexo-theme-redefine@2.8.2/source/js/build/tools/tocToggle.js" data-swup-reload-script></script><script type="module" src="https://evan.beee.top/projects/hexo-theme-redefine@2.8.2/source/js/build/layouts/toc.js" data-swup-reload-script></script><script type="module" src="https://evan.beee.top/projects/hexo-theme-redefine@2.8.2/source/js/build/plugins/tabs.js" data-swup-reload-script></script>
+
+
+<script  src="https://evan.beee.top/projects/hexo-theme-redefine@2.8.2/source/js/build/libs/moment-with-locales.min.js" data-swup-reload-script></script>
+<script type="module" src="https://evan.beee.top/projects/hexo-theme-redefine@2.8.2/source/js/build/layouts/essays.js" data-swup-reload-script></script>
+
+
+    <script  src="https://evan.beee.top/projects/hexo-theme-redefine@2.8.2/source/js/build/libs/pangu.min.js" ></script><script  src="https://evan.beee.top/projects/hexo-theme-redefine@2.8.2/source/js/build/plugins/pangu.js" ></script>
+
+
+
+    <script type="module" src="https://evan.beee.top/projects/hexo-theme-redefine@2.8.2/source/js/build/layouts/bookmarkNav.js" ></script>
+
+	
+</body>
+
+</html>

@@ -1,0 +1,1702 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="keywords" content="博客, 生活, 技术, 记录">
+    
+    <meta name="author" content="W1ndys">
+    <!-- preconnect -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    
+        
+        
+        
+            <link rel="preconnect" href="https://evan.beee.top" crossorigin>
+        
+    
+    <!--- Seo Part-->
+    
+    <link rel="canonical" href="https://blog.w1ndys.top/posts/c0eaf0d7.html"/>
+    <meta name="robots" content="index,follow">
+    <meta name="googlebot" content="index,follow">
+    <meta name="revisit-after" content="1 days">
+    
+    
+    
+        
+        <meta name="description" content="W1ndys小屋">
+<meta property="og:type" content="article">
+<meta property="og:title" content="数据结构期中考试wp">
+<meta property="og:url" content="https://blog.w1ndys.top/posts/c0eaf0d7.html">
+<meta property="og:site_name" content="W1ndys小屋">
+<meta property="og:description" content="W1ndys小屋">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://blog.w1ndys.top/images/redefine-og.webp">
+<meta property="article:published_time" content="2023-11-03T06:16:00.000Z">
+<meta property="article:modified_time" content="2025-02-23T05:37:18.718Z">
+<meta property="article:author" content="W1ndys">
+<meta property="article:tag" content="数据结构作业">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://blog.w1ndys.top/images/redefine-og.webp">
+    
+    
+    <!--- Icon Part-->
+    <link rel="icon" type="image/png" href="/images/favicon.ico" sizes="192x192">
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon.ico">
+    <meta name="theme-color" content="#A31F34">
+    <link rel="shortcut icon" href="/images/favicon.ico">
+    <!--- Page Info-->
+    
+    <title>
+        
+            数据结构期中考试wp | W1ndys小屋
+        
+    </title>
+
+    <link rel="stylesheet" href="https://evan.beee.top/projects/hexo-theme-redefine@2.8.2/source/fonts/Chillax/chillax.css">
+
+    <!--- Inject Part-->
+    
+        
+            
+    
+            
+    
+            
+                
+                    <script data-swup-reload-script data-pjax charset="UTF-8" id="LA_COLLECT" src="//sdk.51.la/js-sdk-pro.min.js"></script>
+                
+    
+            
+                
+                    <script data-swup-reload-script data-pjax>LA.init({id:"3HPYFt9znqKItrHZ",ck:"3HPYFt9znqKItrHZ",autoTrack:true})</script>
+                
+    
+            
+                
+                    <link rel="stylesheet" type="text/css" href="/css/Capoo.css">
+                
+    
+
+    
+<link rel="stylesheet" href="/css/style.css">
+
+
+    
+        <link rel="stylesheet" href="https://evan.beee.top/projects/hexo-theme-redefine@2.8.2/source/css/build/tailwind.css">
+    
+
+    <link rel="stylesheet" href="https://evan.beee.top/projects/hexo-theme-redefine@2.8.2/source/fonts/GeistMono/geist-mono.css">
+    <link rel="stylesheet" href="https://evan.beee.top/projects/hexo-theme-redefine@2.8.2/source/fonts/Geist/geist.css">
+    <!--- Font Part-->
+    
+    
+    
+    
+    
+    
+        <script  src="https://evan.beee.top/projects/hexo-theme-redefine@2.8.2/source/js/build/libs/anime.min.js" ></script>
+    
+
+    <script id="hexo-configurations">
+    window.config = {"hostname":"blog.w1ndys.top","root":"/","language":"zh-CN","path":"search.xml"};
+    window.theme = {"articles":{"style":{"font_size":"16px","line_height":1.5,"image_border_radius":"14px","image_alignment":"center","image_caption":false,"link_icon":true,"delete_mask":true,"title_alignment":"left","headings_top_spacing":{"h1":"3.2rem","h2":"2.4rem","h3":"1.9rem","h4":"1.6rem","h5":"1.4rem","h6":"1.3rem"}},"word_count":{"enable":true,"count":true,"min2read":true},"author_label":{"enable":true,"auto":false,"list":[]},"code_block":{"copy":true,"style":"mac","highlight_theme":{"light":"github","dark":"vs2015"},"font":{"enable":false,"family":null,"url":null}},"toc":{"enable":true,"max_depth":3,"number":false,"expand":true,"init_open":true},"copyright":{"enable":true,"default":"all_rights_reserved"},"lazyload":true,"pangu_js":true,"recommendation":{"enable":false,"title":"推荐阅读","limit":3,"mobile_limit":2,"placeholder":"/images/wallhaven-wqery6-light.webp","skip_dirs":[]}},"colors":{"primary":"#A31F34","secondary":"#1890ff","default_mode":"light"},"global":{"fonts":{"chinese":{"enable":false,"family":null,"url":null},"english":{"enable":false,"family":null,"url":null},"title":{"enable":false,"family":null,"url":null}},"content_max_width":"1000px","sidebar_width":"210px","hover":{"shadow":true,"scale":true},"scroll_progress":{"bar":true,"percentage":true},"website_counter":{"url":"https://cn.vercount.one/js","enable":true,"site_pv":true,"site_uv":true,"post_pv":true},"single_page":true,"preloader":{"enable":true,"custom_message":"欢迎来到W1ndys小屋"},"open_graph":{"enable":true,"image":"/images/redefine-og.webp","description":"W1ndys小屋"},"google_analytics":{"enable":false,"id":null}},"home_banner":{"enable":true,"style":"fixed","image":{"light":"https://pic1.zhimg.com/80/v2-b4e05912f591b51b9fa3e8aa4b9cba45.png","dark":"https://pic1.zhimg.com/80/v2-b4e05912f591b51b9fa3e8aa4b9cba45.png"},"title":"W1ndys小屋","subtitle":{"text":["一言加载中..."],"hitokoto":{"enable":true,"show_author":true,"api":"https://v1.hitokoto.cn"},"typing_speed":100,"backing_speed":80,"starting_delay":500,"backing_delay":1500,"loop":true,"smart_backspace":true},"text_color":{"light":"#fff","dark":"#d1d1b6"},"text_style":{"title_size":"2.8rem","subtitle_size":"1.5rem","line_height":1.2},"custom_font":{"enable":false,"family":null,"url":null},"social_links":{"enable":true,"style":"default","links":{"github":"https://github.com/W1ndys","instagram":null,"zhihu":"https://www.zhihu.com/people/w1ndys","twitter":null,"email":"w1ndys@outlook.com"},"qrs":{"weixin":null}}},"plugins":{"feed":{"enable":true},"aplayer":{"enable":false,"type":"fixed","audios":[{"name":null,"artist":null,"url":null,"cover":null,"lrc":null}]},"mermaid":{"enable":false,"version":"11.4.1"}},"version":"2.8.2","navbar":{"auto_hide":true,"color":{"left":"#f78736","right":"#367df7","transparency":35},"width":{"home":"1200px","pages":"1000px"},"links":{"Home":{"path":"/","icon":"fa-regular fa-house"},"Archives":{"path":"/archives","icon":"fa-regular fa-archive"},"Categories":{"path":"/categories","icon":"fa-regular fa-folder"},"Tags":{"path":"/tags","icon":"fa-regular fa-tags"},"友链接力":{"icon":"fa-solid fa-train-subway","submenus":{"异次元之旅":"https://travel.moe/go.html?travel=on","MIIT Travel":"https://beian.miit.cn.com/go.php","虫洞 | 十年之约":"https://foreverblog.cn/go.html","博客录":"https://bokelu.suijiboke.gs","笔墨迹":"https://blogscn.fun/random.html","博客圈":"https://bokequan.cn/?suiji","开往":"https://www.travellings.cn/go.html"}},"Friends":{"path":"/links","icon":"fa-regular fa-link"},"书签":{"icon":"fa-solid fa-bookmark","path":"/bookmarks/"}},"search":{"enable":true,"preload":true}},"page_templates":{"friends_column":3,"tags_style":"blur"},"home":{"sidebar":{"enable":true,"position":"left","first_item":"menu","announcement":"Welcome to W1ndys's Blog","show_on_mobile":true,"links":{"Archives":{"path":"/archives","icon":"fa-regular fa-archive"},"Tags":{"path":"/tags","icon":"fa-regular fa-tags"},"Categories":{"path":"/categories","icon":"fa-regular fa-folder"}}},"article_date_format":"auto","excerpt_length":200,"categories":{"enable":true,"limit":5},"tags":{"enable":true,"limit":5}},"footerStart":"2023/08/22 05:20:00"};
+    window.lang_ago = {"second":"%s 秒前","minute":"%s 分钟前","hour":"%s 小时前","day":"%s 天前","week":"%s 周前","month":"%s 个月前","year":"%s 年前"};
+    window.data = {"masonry":true};
+  </script>
+    
+    <!--- Fontawesome Part-->
+    <link rel="stylesheet" href="https://evan.beee.top/projects/hexo-theme-redefine@2.8.2/source/fontawesome/fontawesome.min.css">
+    <link rel="stylesheet" href="https://evan.beee.top/projects/hexo-theme-redefine@2.8.2/source/fontawesome/brands.min.css">
+    <link rel="stylesheet" href="https://evan.beee.top/projects/hexo-theme-redefine@2.8.2/source/fontawesome/solid.min.css">
+    <link rel="stylesheet" href="https://evan.beee.top/projects/hexo-theme-redefine@2.8.2/source/fontawesome/regular.min.css">
+    
+    
+    
+    
+<meta name="generator" content="Hexo 7.3.0"><link rel="alternate" href="/atom.xml" title="W1ndys小屋" type="application/atom+xml">
+</head>
+
+
+
+<body>
+	<div class="progress-bar-container">
+	
+	<span class="scroll-progress-bar"></span>
+	
+
+	
+	<span class="pjax-progress-bar"></span>
+	<!--        <span class="swup-progress-icon">-->
+	<!--            <i class="fa-solid fa-circle-notch fa-spin"></i>-->
+	<!--        </span>-->
+	
+</div>
+
+<style>
+    :root {
+        --preloader-background-color: #fff;
+        --preloader-text-color: #000;
+    }
+
+    @media (prefers-color-scheme: dark) {
+        :root {
+            --preloader-background-color: #202124;
+            --preloader-text-color: #fff;
+        }
+    }
+
+    @media (prefers-color-scheme: light) {
+        :root {
+            --preloader-background-color: #fff;
+            --preloader-text-color: #000;
+        }
+    }
+
+    @media (max-width: 600px) {
+        .ml13 {
+            font-size: 2.6rem !important; /* Adjust this value as needed */
+        }
+    }
+
+    .preloader {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem; /* Tailwind 'gap-4' is 1rem */
+        align-items: center;
+        justify-content: center;
+        position: fixed;
+        padding: 12px;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh; /* 'h-screen' is 100% of the viewport height */
+        background-color: var(--preloader-background-color);
+        z-index: 1100; /* 'z-[1100]' sets the z-index */
+        transition: opacity 0.2s ease-in-out;
+    }
+
+    .ml13 {
+        font-size: 3.2rem;
+        /* text-transform: uppercase; */
+        color: var(--preloader-text-color);
+        letter-spacing: -1px;
+        font-weight: 500;
+        font-family: 'Chillax-Variable', sans-serif;
+        text-align: center;
+    }
+
+    .ml13 .word {
+        display: inline-flex;
+        flex-wrap: wrap;
+        white-space: nowrap;
+    }
+
+    .ml13 .letter {
+        display: inline-block;
+        line-height: 1em;
+    }
+</style>
+
+<div class="preloader">
+    <h2 class="ml13">
+        欢迎来到W1ndys小屋
+    </h2>
+    <script>
+        var textWrapper = document.querySelector('.ml13');
+        // Split text into words
+        var words = textWrapper.textContent.trim().split(' ');
+
+        // Clear the existing content
+        textWrapper.innerHTML = '';
+
+        // Wrap each word and its letters in spans
+        words.forEach(function(word) {
+            var wordSpan = document.createElement('span');
+            wordSpan.classList.add('word');
+            wordSpan.innerHTML = word.replace(/\S/g, "<span class='letter'>$&</span>");
+            textWrapper.appendChild(wordSpan);
+            textWrapper.appendChild(document.createTextNode(' ')); // Add space between words
+        });
+
+        var animation = anime.timeline({ loop: true })
+            .add({
+                targets: '.ml13 .letter',
+                translateY: [20, 0],
+                translateZ: 0,
+                opacity: [0, 1],
+                filter: ['blur(5px)', 'blur(0px)'],
+                easing: "easeOutExpo",
+                duration: 1200,
+                delay: (el, i) => 300 + 20 * i,
+            })
+            .add({
+                targets: '.ml13 .letter',
+                translateY: [0, -20],
+                opacity: [1, 0],
+                filter: ['blur(0px)', 'blur(5px)'],
+                easing: "easeInExpo",
+                duration: 1000,
+                delay: (el, i) => 15 * i,
+                complete: function() {
+                    hidePreloader();
+                }
+            }, '-=700');
+
+
+        let themeStatus = JSON.parse(localStorage.getItem('REDEFINE-THEME-STATUS'))?.isDark;
+
+        // If the theme status is not found in local storage, check the preferred color scheme
+        if (themeStatus === undefined || themeStatus === null) {
+            if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+                themeStatus = 'dark';
+            } else {
+                themeStatus = 'light';
+            }
+        }
+
+        // Now you can use the themeStatus variable in your code
+        if (themeStatus) {
+            document.documentElement.style.setProperty('--preloader-background-color', '#202124');
+            document.documentElement.style.setProperty('--preloader-text-color', '#fff');
+        } else {
+            document.documentElement.style.setProperty('--preloader-background-color', '#fff');
+            document.documentElement.style.setProperty('--preloader-text-color', '#000');
+        }
+
+        window.addEventListener('load', function () {
+            setTimeout(hidePreloader, 5000); // Call hidePreloader after 5000 milliseconds if not already called by animation
+        });
+
+        function hidePreloader() {
+            var preloader = document.querySelector('.preloader');
+            preloader.style.opacity = '0';
+            setTimeout(function () {
+                preloader.style.display = 'none';
+            }, 200);
+        }
+    </script>
+</div>
+
+<main class="page-container" id="swup">
+
+	
+
+	<div class="main-content-container flex flex-col justify-between min-h-dvh">
+		<div class="main-content-header">
+			<header class="navbar-container px-6 md:px-12">
+    <div class="navbar-content transition-navbar ">
+        <div class="left">
+            
+                <a class="logo-image h-8 w-8 sm:w-10 sm:h-10 mr-3" href="/">
+                    <img src="/images/haixian.svg" class="w-full h-full rounded-sm">
+                </a>
+            
+            <a class="logo-title" href="/">
+                
+                W1ndys小屋
+                
+            </a>
+        </div>
+
+        <div class="right">
+            <!-- PC -->
+            <div class="desktop">
+                <ul class="navbar-list">
+                    
+                        
+                            
+
+                            <li class="navbar-item">
+                                <!-- Menu -->
+                                <a class=""
+                                   href="/"
+                                        >
+                                    <i class="fa-regular fa-house fa-fw"></i>
+                                    首页
+                                    
+                                </a>
+
+                                <!-- Submenu -->
+                                
+                            </li>
+                    
+                        
+                            
+
+                            <li class="navbar-item">
+                                <!-- Menu -->
+                                <a class=""
+                                   href="/archives"
+                                        >
+                                    <i class="fa-regular fa-archive fa-fw"></i>
+                                    归档
+                                    
+                                </a>
+
+                                <!-- Submenu -->
+                                
+                            </li>
+                    
+                        
+                            
+
+                            <li class="navbar-item">
+                                <!-- Menu -->
+                                <a class=""
+                                   href="/categories"
+                                        >
+                                    <i class="fa-regular fa-folder fa-fw"></i>
+                                    分类
+                                    
+                                </a>
+
+                                <!-- Submenu -->
+                                
+                            </li>
+                    
+                        
+                            
+
+                            <li class="navbar-item">
+                                <!-- Menu -->
+                                <a class=""
+                                   href="/tags"
+                                        >
+                                    <i class="fa-regular fa-tags fa-fw"></i>
+                                    标签
+                                    
+                                </a>
+
+                                <!-- Submenu -->
+                                
+                            </li>
+                    
+                        
+                            
+
+                            <li class="navbar-item">
+                                <!-- Menu -->
+                                <a class="has-dropdown"
+                                   href="#"
+                                        onClick=&#34;return false;&#34;>
+                                    <i class="fa-solid fa-train-subway fa-fw"></i>
+                                    友链接力
+                                    <i class="fa-solid fa-chevron-down fa-fw"></i>
+                                </a>
+
+                                <!-- Submenu -->
+                                
+                                    <ul class="sub-menu">
+                                        
+                                            <li>
+                                                <a target="_blank" rel="noopener" href="https://travel.moe/go.html?travel=on">
+                                                    异次元之旅
+                                                </a>
+                                            </li>
+                                        
+                                            <li>
+                                                <a target="_blank" rel="noopener" href="https://beian.miit.cn.com/go.php">
+                                                    MIIT TRAVEL
+                                                </a>
+                                            </li>
+                                        
+                                            <li>
+                                                <a target="_blank" rel="noopener" href="https://foreverblog.cn/go.html">
+                                                    虫洞 | 十年之约
+                                                </a>
+                                            </li>
+                                        
+                                            <li>
+                                                <a target="_blank" rel="noopener" href="https://bokelu.suijiboke.gs">
+                                                    博客录
+                                                </a>
+                                            </li>
+                                        
+                                            <li>
+                                                <a target="_blank" rel="noopener" href="https://blogscn.fun/random.html">
+                                                    笔墨迹
+                                                </a>
+                                            </li>
+                                        
+                                            <li>
+                                                <a target="_blank" rel="noopener" href="https://bokequan.cn/?suiji">
+                                                    博客圈
+                                                </a>
+                                            </li>
+                                        
+                                            <li>
+                                                <a target="_blank" rel="noopener" href="https://www.travellings.cn/go.html">
+                                                    开往
+                                                </a>
+                                            </li>
+                                        
+                                    </ul>
+                                
+                            </li>
+                    
+                        
+                            
+
+                            <li class="navbar-item">
+                                <!-- Menu -->
+                                <a class=""
+                                   href="/links"
+                                        >
+                                    <i class="fa-regular fa-link fa-fw"></i>
+                                    友情链接
+                                    
+                                </a>
+
+                                <!-- Submenu -->
+                                
+                            </li>
+                    
+                        
+                            
+
+                            <li class="navbar-item">
+                                <!-- Menu -->
+                                <a class=""
+                                   href="/bookmarks/"
+                                        >
+                                    <i class="fa-solid fa-bookmark fa-fw"></i>
+                                    书签
+                                    
+                                </a>
+
+                                <!-- Submenu -->
+                                
+                            </li>
+                    
+                    
+                        <li class="navbar-item search search-popup-trigger">
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                        </li>
+                    
+                </ul>
+            </div>
+            <!-- Mobile -->
+            <div class="mobile">
+                
+                    <div class="icon-item search search-popup-trigger"><i class="fa-solid fa-magnifying-glass"></i>
+                    </div>
+                
+                <div class="icon-item navbar-bar">
+                    <div class="navbar-bar-middle"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Mobile sheet -->
+    <div class="navbar-drawer h-dvh w-full absolute top-0 left-0 bg-background-color flex flex-col justify-between">
+        <ul class="drawer-navbar-list flex flex-col px-4 justify-center items-start">
+            
+                
+                    
+
+                    <li class="drawer-navbar-item text-base my-1.5 flex flex-col w-full">
+                        
+                        <a class="py-1.5 px-2 flex flex-row items-center justify-between gap-1 hover:!text-primary active:!text-primary text-2xl font-semibold group border-b border-border-color hover:border-primary w-full "
+                           href="/"
+                        >
+                            <span>
+                                首页
+                            </span>
+                            
+                                <i class="fa-regular fa-house fa-sm fa-fw"></i>
+                            
+                        </a>
+                        
+
+                        
+                    </li>
+            
+                
+                    
+
+                    <li class="drawer-navbar-item text-base my-1.5 flex flex-col w-full">
+                        
+                        <a class="py-1.5 px-2 flex flex-row items-center justify-between gap-1 hover:!text-primary active:!text-primary text-2xl font-semibold group border-b border-border-color hover:border-primary w-full "
+                           href="/archives"
+                        >
+                            <span>
+                                归档
+                            </span>
+                            
+                                <i class="fa-regular fa-archive fa-sm fa-fw"></i>
+                            
+                        </a>
+                        
+
+                        
+                    </li>
+            
+                
+                    
+
+                    <li class="drawer-navbar-item text-base my-1.5 flex flex-col w-full">
+                        
+                        <a class="py-1.5 px-2 flex flex-row items-center justify-between gap-1 hover:!text-primary active:!text-primary text-2xl font-semibold group border-b border-border-color hover:border-primary w-full "
+                           href="/categories"
+                        >
+                            <span>
+                                分类
+                            </span>
+                            
+                                <i class="fa-regular fa-folder fa-sm fa-fw"></i>
+                            
+                        </a>
+                        
+
+                        
+                    </li>
+            
+                
+                    
+
+                    <li class="drawer-navbar-item text-base my-1.5 flex flex-col w-full">
+                        
+                        <a class="py-1.5 px-2 flex flex-row items-center justify-between gap-1 hover:!text-primary active:!text-primary text-2xl font-semibold group border-b border-border-color hover:border-primary w-full "
+                           href="/tags"
+                        >
+                            <span>
+                                标签
+                            </span>
+                            
+                                <i class="fa-regular fa-tags fa-sm fa-fw"></i>
+                            
+                        </a>
+                        
+
+                        
+                    </li>
+            
+                
+                    
+
+                    <li class="drawer-navbar-item-sub text-base my-1.5 flex flex-col w-full">
+                        
+                        <div class="py-1.5 px-2 flex flex-row items-center justify-between gap-1 hover:!text-primary active:!text-primary cursor-pointer text-2xl font-semibold group border-b border-border-color hover:border-primary w-full "
+                             navbar-data-toggle="submenu-友链接力"
+                        >
+                            <span>
+                                友链接力
+                            </span>
+                            
+                                <i class="fa-solid fa-chevron-right fa-sm fa-fw transition-all"></i>
+                            
+                        </div>
+                        
+
+                        
+                            <div class="flex-col items-start px-2 py-2 hidden" data-target="submenu-友链接力">
+                                
+                                    <div class="drawer-navbar-item text-base flex flex-col justify-center items-start hover:underline active:underline hover:underline-offset-1 rounded-3xl">
+                                        <a class=" text-third-text-color text-xl"
+                                           target="_blank" rel="noopener" href="https://travel.moe/go.html?travel=on">异次元之旅</a>
+                                    </div>
+                                
+                                    <div class="drawer-navbar-item text-base flex flex-col justify-center items-start hover:underline active:underline hover:underline-offset-1 rounded-3xl">
+                                        <a class=" text-third-text-color text-xl"
+                                           target="_blank" rel="noopener" href="https://beian.miit.cn.com/go.php">MIIT TRAVEL</a>
+                                    </div>
+                                
+                                    <div class="drawer-navbar-item text-base flex flex-col justify-center items-start hover:underline active:underline hover:underline-offset-1 rounded-3xl">
+                                        <a class=" text-third-text-color text-xl"
+                                           target="_blank" rel="noopener" href="https://foreverblog.cn/go.html">虫洞 | 十年之约</a>
+                                    </div>
+                                
+                                    <div class="drawer-navbar-item text-base flex flex-col justify-center items-start hover:underline active:underline hover:underline-offset-1 rounded-3xl">
+                                        <a class=" text-third-text-color text-xl"
+                                           target="_blank" rel="noopener" href="https://bokelu.suijiboke.gs">博客录</a>
+                                    </div>
+                                
+                                    <div class="drawer-navbar-item text-base flex flex-col justify-center items-start hover:underline active:underline hover:underline-offset-1 rounded-3xl">
+                                        <a class=" text-third-text-color text-xl"
+                                           target="_blank" rel="noopener" href="https://blogscn.fun/random.html">笔墨迹</a>
+                                    </div>
+                                
+                                    <div class="drawer-navbar-item text-base flex flex-col justify-center items-start hover:underline active:underline hover:underline-offset-1 rounded-3xl">
+                                        <a class=" text-third-text-color text-xl"
+                                           target="_blank" rel="noopener" href="https://bokequan.cn/?suiji">博客圈</a>
+                                    </div>
+                                
+                                    <div class="drawer-navbar-item text-base flex flex-col justify-center items-start hover:underline active:underline hover:underline-offset-1 rounded-3xl">
+                                        <a class=" text-third-text-color text-xl"
+                                           target="_blank" rel="noopener" href="https://www.travellings.cn/go.html">开往</a>
+                                    </div>
+                                
+                            </div>
+                        
+                    </li>
+            
+                
+                    
+
+                    <li class="drawer-navbar-item text-base my-1.5 flex flex-col w-full">
+                        
+                        <a class="py-1.5 px-2 flex flex-row items-center justify-between gap-1 hover:!text-primary active:!text-primary text-2xl font-semibold group border-b border-border-color hover:border-primary w-full "
+                           href="/links"
+                        >
+                            <span>
+                                友情链接
+                            </span>
+                            
+                                <i class="fa-regular fa-link fa-sm fa-fw"></i>
+                            
+                        </a>
+                        
+
+                        
+                    </li>
+            
+                
+                    
+
+                    <li class="drawer-navbar-item text-base my-1.5 flex flex-col w-full">
+                        
+                        <a class="py-1.5 px-2 flex flex-row items-center justify-between gap-1 hover:!text-primary active:!text-primary text-2xl font-semibold group border-b border-border-color hover:border-primary w-full "
+                           href="/bookmarks/"
+                        >
+                            <span>
+                                书签
+                            </span>
+                            
+                                <i class="fa-solid fa-bookmark fa-sm fa-fw"></i>
+                            
+                        </a>
+                        
+
+                        
+                    </li>
+            
+
+            
+            
+                
+                    
+                    
+                    
+            
+        </ul>
+
+        <div class="statistics flex justify-around my-2.5">
+    <a class="item tag-count-item flex flex-col justify-center items-center w-20" href="/tags">
+        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">161</div>
+        <div class="label text-third-text-color text-sm">标签</div>
+    </a>
+    <a class="item tag-count-item flex flex-col justify-center items-center w-20" href="/categories">
+        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">80</div>
+        <div class="label text-third-text-color text-sm">分类</div>
+    </a>
+    <a class="item tag-count-item flex flex-col justify-center items-center w-20" href="/archives">
+        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">193</div>
+        <div class="label text-third-text-color text-sm">文章</div>
+    </a>
+</div>
+    </div>
+
+    <div class="window-mask"></div>
+
+</header>
+
+
+		</div>
+
+		<div class="main-content-body transition-fade-up">
+			
+
+			<div class="main-content">
+				<div class="post-page-container flex relative justify-between box-border w-full h-full">
+	<div class="article-content-container">
+
+		<div class="article-title relative w-full">
+			
+			<div class="w-full flex items-center pt-6 justify-start">
+				<h1 class="article-title-regular text-second-text-color tracking-tight text-4xl md:text-6xl font-semibold px-2 sm:px-6 md:px-8 py-3">数据结构期中考试wp</h1>
+			</div>
+			
+		</div>
+
+		
+		<div class="article-header flex flex-row gap-2 items-center px-2 sm:px-6 md:px-8">
+			<div class="avatar w-[46px] h-[46px] flex-shrink-0 rounded-medium border border-border-color p-[1px]">
+				<img src="https://avatars.githubusercontent.com/u/109416673">
+			</div>
+			<div class="info flex flex-col justify-between">
+				<div class="author flex items-center">
+					<span class="name text-default-text-color text-lg font-semibold">W1ndys</span>
+					
+					<span class="author-label ml-1.5 text-xs px-2 py-0.5 rounded-small text-third-text-color border border-shadow-color-1">Lv6</span>
+					
+				</div>
+				<div class="meta-info">
+					<div class="article-meta-info">
+    <span class="article-date article-meta-item">
+        <i class="fa-regular fa-pen-fancy"></i>&nbsp;
+        <span class="desktop">2023-11-03 14:16</span>
+        <span class="mobile">2023-11-03 14:16</span>
+        <span class="hover-info">创建</span>
+    </span>
+    
+        <span class="article-date article-meta-item">
+            <i class="fa-regular fa-wrench"></i>&nbsp;
+            <span class="desktop">2025-02-23 13:37:18</span>
+            <span class="mobile">2025-02-23 13:37:18</span>
+            <span class="hover-info">更新</span>
+        </span>
+    
+
+    
+        <span class="article-categories article-meta-item">
+            <i class="fa-regular fa-folders"></i>&nbsp;
+            <ul>
+                
+                
+                    
+                        
+                        <li>
+                            <a href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">学习笔记</a>&nbsp;
+                        </li>
+                    
+                    
+                
+                    
+                        
+                            <li>></li>
+                        
+                        <li>
+                            <a href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%BD%9C%E4%B8%9A/">数据结构作业</a>&nbsp;
+                        </li>
+                    
+                    
+                
+                    
+                        
+                            <li>></li>
+                        
+                        <li>
+                            <a href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%BD%9C%E4%B8%9A/%E8%80%83%E8%AF%95/">考试</a>&nbsp;
+                        </li>
+                    
+                    
+                
+            </ul>
+        </span>
+    
+    
+        <span class="article-tags article-meta-item">
+            <i class="fa-regular fa-tags"></i>&nbsp;
+            <ul>
+                
+                    <li>
+                        <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%BD%9C%E4%B8%9A/">数据结构作业</a>&nbsp;
+                    </li>
+                
+            </ul>
+        </span>
+    
+
+    
+    
+        <span class="article-wordcount article-meta-item">
+            <i class="fa-regular fa-typewriter"></i>&nbsp;<span>9.1k 字</span>
+        </span>
+    
+    
+        <span class="article-min2read article-meta-item">
+            <i class="fa-regular fa-clock"></i>&nbsp;<span>33 分钟</span>
+        </span>
+    
+    
+        <span class="article-pv article-meta-item">
+            <i class="fa-regular fa-eye"></i>&nbsp;<span id="busuanzi_value_page_pv"></span>
+        </span>
+    
+</div>
+
+				</div>
+			</div>
+		</div>
+		
+
+		
+
+
+		<div class="article-content markdown-body px-2 sm:px-6 md:px-8 pb-8">
+			<blockquote>
+<p>以下内容全部来自ChatGPT和Microsoft bing ai解答，正确率为85%左右，<font color='red'>仅参考，本人对本页答案概不负责</font></p>
+</blockquote>
+<h1 id="一、选择题"><a href="#一、选择题" class="headerlink" title="一、选择题"></a>一、选择题</h1><ol>
+<li>对于数据结构的描述，下列说法中不正确的是( )。</li>
+</ol>
+<p><font color='red'>相同的逻辑结构对应的存储结构也必相同</font></p>
+<p>数据结构由逻辑结构、存储结构和基本操作三方面组成</p>
+<p>对数据结构基本操作的实现与存储结构有关</p>
+<p>数据的存储结构是数据的逻辑结构的机内实现</p>
+<blockquote>
+<p>选项 <em>A</em> 是不正确的。相同的逻辑结构并不意味着存储结构也必须相同。逻辑结构是数据对象之间的抽象关系，而存储结构是这些关系在计算机内部的具体表示。例如，线性表的逻辑结构可以通过数组（顺序存储结构）或链表（链式存储结构）来实现，这两种存储结构有着不同的特性和操作复杂性。因此，即使逻辑结构相同，存储结构也可以不同。其他选项 <em>B</em>、<em>C</em> 和 <em>D</em> 都是正确的。数据结构确实由逻辑结构、存储结构和基本操作三方面组成（<em>B</em>），对数据结构基本操作的实现确实与存储结构有关（<em>C</em>），数据的存储结构是数据的逻辑结构的机内实现（<em>D</em>）。</p>
+</blockquote>
+<ol start="2">
+<li>顺序存储结构中数据元素之间的逻辑关系是由（ ）表示的。</li>
+</ol>
+<p>线性结构</p>
+<p>非线性结构</p>
+<p><font color='red'>存储位置</font></p>
+<p>指针</p>
+<blockquote>
+<p>在顺序存储结构中，数据元素之间的逻辑关系是由<strong>存储位置</strong>表示的。所以正确答案是选项 <em>C</em>。在顺序存储结构中，元素之间的逻辑关系（例如线性关系）通过它们在内存中的物理位置来表示。相邻的元素在内存中也是相邻的。这与链式存储结构不同，在链式存储结构中，元素之间的逻辑关系是通过指针表示的。选项 <em>A</em> 和 <em>B</em> 描述的是数据结构的类型，而不是数据元素之间的逻辑关系如何表示。选项 <em>D</em> 是链式存储结构中数据元素之间逻辑关系的表示方式，而不是顺序存储结构。</p>
+</blockquote>
+<ol start="3">
+<li>链接存储结构中数据元素之间的逻辑关系是由( )表示的。</li>
+</ol>
+<p>线性结构</p>
+<p>非线性结构</p>
+<p>存储位置</p>
+<p><font color='red'>指针</font></p>
+<blockquote>
+<p>在链接存储结构中，数据元素之间的逻辑关系是由指针表示的。指针指向了下一个数据元素的位置，从而建立了数据元素之间的联系。</p>
+<p>因此，选项 D 是正确的。</p>
+</blockquote>
+<ol start="4">
+<li>算法指的是( )。</li>
+</ol>
+<p><font color='red'>对特定问题求解步骤的一种描述,是指令的有限序列</font></p>
+<p>计算机程序</p>
+<p>解决问题的计算方法</p>
+<p>数据处理</p>
+<blockquote>
+<p>算法指的是对特定问题求解步骤的一种描述，是指令的有限序列。它是解决问题或执行任务的明确指令集合，旨在通过一系列定义明确的步骤来完成特定任务。算法通常是一系列可执行的操作，能够从初始状态转移到所需的最终状态。</p>
+<p>因此，选项 A 是正确的。</p>
+</blockquote>
+<ol start="5">
+<li>假设时间复杂度为O（n^2）的算法在有200个元素的数组上运行需要3.1 ms，则有400个元素的数组上运行需要(   )ms。</li>
+</ol>
+<p>3.1</p>
+<p>6.2</p>
+<p><font color='red'>12.4</font></p>
+<p>9.61</p>
+<blockquote>
+<p>根据时间复杂度为 O(n^2) 的算法特点，当数组元素的数量增加一倍时，运行时间将增加为原来的平方倍。因此，200 个元素变为 400 个元素，相当于增加了一倍。根据这个关系，我们可以预计运行时间将是原来的 2^2 &#x3D; 4 倍。即 3.1 ms * 4 &#x3D; 12.4 ms。</p>
+<p>因此，有 400 个元素的数组上运行时间将是 12.4 ms。选项 C 中的 12.4 是正确的。</p>
+</blockquote>
+<ol start="6">
+<li>算法分析的两个主要方面是( )。</li>
+</ol>
+<p><font color='red'>空间性能和时间性能</font></p>
+<p>正确性和简明性</p>
+<p>可读性和文档性</p>
+<p>数据复杂性和程序复杂性</p>
+<blockquote>
+<p>算法分析的两个主要方面是空间性能和时间性能。在算法设计和评估过程中，我们通常关注算法所需的内存空间以及它执行所需的时间。这些指标可以帮助我们评估算法的效率和可行性，从而选择最适合特定问题的算法。</p>
+<p>因此，选项 A 是正确的。</p>
+</blockquote>
+<ol start="7">
+<li>下面( )不是算法所必须具备的特性。</li>
+</ol>
+<p>有穷性</p>
+<p>确切性</p>
+<p><font color='red'>高效性</font></p>
+<p>可行性</p>
+<blockquote>
+<p>从定义上讲，算法必须具备“有穷性”、“确切性”和“可行性”，因为算法必须是能够在有限步骤内完成的、每个步骤都必须确切且无歧义，并且必须是可行实施的。因此，这些特性是算法的基本要求。</p>
+<p>然而，“高效性”并非是算法必须具备的特性。尽管我们通常希望算法是高效的，但并非所有算法都需要是最高效的。因此，选项 C 中的“高效性”是不是算法所必须具备的特性。</p>
+</blockquote>
+<ol start="8">
+<li>链表不具有的特点是( )。</li>
+</ol>
+<p><font color='red'>可随机访问任一元素</font></p>
+<p>插入删除不需要移动元素</p>
+<p>不必事先估计存储空间</p>
+<p>所需空间与线性表长度成正比</p>
+<blockquote>
+<p>链表不具备的特点是可随机访问任一元素。链表中的元素并非按照其在内存中的物理位置顺序存储，因此不能像数组那样通过下标直接访问特定位置的元素。如果要访问链表中的某个特定元素，需要从头节点开始遍历链表直到找到该元素。</p>
+<p>因此，选项 A 中的“可随机访问任一元素”是链表不具备的特点。</p>
+</blockquote>
+<ol start="9">
+<li>线性表采用链接存储时，其地址( )。</li>
+</ol>
+<p>必须是连续的</p>
+<p>部分地址必须是连续的</p>
+<p>一定是不连续的</p>
+<p><font color='red'>连续与否均可以</font></p>
+<blockquote>
+<p>线性表采用链接存储时，其地址可以是不连续的。在链接存储结构中，元素之间并不要求在物理内存中是连续存储的，相邻元素之间通过指针进行连接。这使得链表结构能够动态地分配和释放内存，避免了因为插入或删除操作导致的大量数据移动。</p>
+<p>因此，选项 D 中的“连续与否均可以”是正确的。</p>
+</blockquote>
+<p>10.循环单链表的主要优点是( )。</p>
+<p>不再需要头指针了</p>
+<p>从表中任一结点出发都能扫描到整个链表</p>
+<p>已知某个结点的位置后,能够容易找到它的直接前趋</p>
+<p><font color='red'>在进行插入、删除操作时，能更好地保证链表不断开</font></p>
+<blockquote>
+<p>循环单链表的主要优点是在进行插入、删除操作时，能更好地保证链表不断开。循环单链表的尾节点指向头节点，形成一个闭环，这使得在进行插入和删除操作时更加方便，因为不需要处理头尾节点的特殊情况。</p>
+<p>因此，选项 D 中的“在进行插入、删除操作时，能更好地保证链表不断开”是循环单链表的主要优点。</p>
+</blockquote>
+<p>11.若线性表中最常用的操作是在最后一个结点之后插入一个节点和删除最后一个结点，则采用( )存储方法最节省时间。</p>
+<p>单链表</p>
+<p><font color='red'>循环双链表</font></p>
+<p>单循环链表</p>
+<p>带尾指针的单循环链表</p>
+<blockquote>
+<p>循环单链表的主要优点是<strong>从表中任一结点出发都能扫描到整个链表</strong>。所以，正确答案是选项 <em>B</em>。在循环单链表中，最后一个元素的指针字段指向链表的第一个元素，形成一个闭环。这意味着我们可以从任何一个元素开始，通过顺序访问每个元素的指针字段，遍历整个链表。然而，循环单链表仍然需要头指针来标识链表的起始位置（选项 <em>A</em> 是错误的）。已知某个结点的位置后，找到它的直接前趋在单链表（包括循环单链表）中并不容易，因为我们只能从头开始遍历链表（选项 <em>C</em> 是错误的）。在进行插入、删除操作时，无论是单链表还是循环单链表，我们都需要确保操作后链表不会断开（选项 <em>D</em> 是错误的）。</p>
+</blockquote>
+<p>12.从栈顶指针为top的链栈中删除一个结点 ,用x保存被删除结点的值，则执行( )。</p>
+<p>x&#x3D;top; top&#x3D;top-&gt; next;</p>
+<p>x&#x3D;top-&gt; data;</p>
+<p>top&#x3D;top-&gt; next; x&#x3D; top-&gt; data;</p>
+<p><font color='red'>x&#x3D;top-&gt; data; top&#x3D; top-&gt; next;</font></p>
+<blockquote>
+<p>在从栈顶指针为top的链栈中删除一个节点时，我们首先需要保存被删除节点的值，然后更新栈顶指针。栈顶指针需要指向被删除节点的下一个节点，因为栈是先进后出的数据结构，所以删除的是栈顶元素。</p>
+<p>因此，正确的操作是:</p>
+<div class="code-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">x = top-&gt;data; // 保存被删除节点的值</span><br><span class="line">top = top-&gt;next; // 更新栈顶指针</span><br></pre></td></tr></table></figure></div>
+
+<p>所以选项是D。</p>
+</blockquote>
+<p>13.设计一个判别表达式中左右扩号是否配对的算法,采用( )数据结构最佳。</p>
+<p>顺序表</p>
+<p><font color='red'>栈</font></p>
+<p>队列</p>
+<p>链表</p>
+<blockquote>
+<p>对于判别表达式中左右括号是否配对的算法，最适合使用的数据结构是栈。栈是一种后进先出（LIFO）的数据结构，可以用来检查括号是否匹配。具体的算法可以使用栈来存储左括号，并在遇到右括号时弹出相应的左括号进行匹配。</p>
+<p>因此，选项 B 中的栈是最佳的数据结构。</p>
+</blockquote>
+<p>14.将数组称为随机存取结构是因为（ ）。</p>
+<p>数组元素是随机的</p>
+<p><font color='red'>对数组任意元素的存取时间是相等的</font></p>
+<p>随时可以对数组进行访问</p>
+<p>数组的存储结构是不定的</p>
+<blockquote>
+<p>将数组称为随机存取结构是因为对数组任意元素的存取时间是相等的。这是因为数组在内存中是连续存储的，每个元素都可以通过偏移量直接计算出其地址，因此可以在 O(1) 的时间复杂度内访问任意索引处的元素。</p>
+<p>因此，选项 B 中的“对数组任意元素的存取时间是相等的”是描述数组作为随机存取结构的原因。</p>
+</blockquote>
+<p>15.设有两个字符串p和q，求p在q中首次出现的位置的运算称作（ ）。</p>
+<p>连接</p>
+<p><font color='red'>模式匹配</font></p>
+<p>求字串</p>
+<p>求串长</p>
+<blockquote>
+<p>求p在q中首次出现的位置的运算称为模式匹配。模式匹配是计算机科学中的一个重要概念，用于确定一个字符串是否包含另一个字符串作为子字符串，并返回其出现的位置。在这种情况下，给定字符串p和q，我们试图找到q中第一次出现p的位置。</p>
+<p>因此，选项 B 中的“模式匹配”是描述这种运算的术语。</p>
+</blockquote>
+<p>16.设栈S和队列Q的初始状态为空，元素e1，e2，e3，e4，e5，e6依次通过栈S，一个元素出栈后即进入队列Q。若6个元素出队列的顺序是e2，e4，e3，e6，e5，e1，则栈S的容量至少应该是( )。</p>
+<p><font color='red'>6</font></p>
+<p>4</p>
+<p>3</p>
+<p>2</p>
+<blockquote>
+<p>根据题意，元素首先通过栈 S，然后一个一个地出栈并进入队列 Q。最后出队列的元素顺序是 e2，e4，e3，e6，e5，e1。这意味着栈 S 中的元素在被进入队列 Q 之前必须按照逆序排列。</p>
+<p>因此，栈 S 的最小容量应至少是 6，因为栈 S 需要依次容纳 e1，e5，e6，e3，e4，e2 这 6 个元素。</p>
+<p>因此，选项 A 中的 6 是正确的。</p>
+</blockquote>
+<p>17.一个栈的入栈序列是1，2，3，4，5，则栈的不可能的输出序列是( )。</p>
+<p>54321</p>
+<p>45321</p>
+<p><font color='red'>43512</font></p>
+<p>12345</p>
+<blockquote>
+<p>对于给定的入栈序列1，2，3，4，5，栈的不可能的输出序列是 43512。这是因为在一个栈中，要取出一个元素，需要将位于栈顶的元素弹出，然后才能取出下一个元素。因此，输出序列中的第一个数字应该是栈中元素的最底部元素，然后逐渐依次向上取出。所以，顺序 4、3、5、1、2 不可能是给定入栈序列的输出序列。</p>
+<p>其他选项中的序列都是可能的栈输出序列，但 43512 不是。</p>
+</blockquote>
+<ol start="18">
+<li>栈和队的主要区别在于（ ）。</li>
+</ol>
+<p>它们的逻辑结构不同</p>
+<p>它们的存储结构不同</p>
+<p>所包含的运算不同</p>
+<p><font color='red'>插入、删除运算的限定不一样</font></p>
+<blockquote>
+<p>栈和队列的主要区别在于它们的插入和删除运算的限定不同。栈是一种后进先出（LIFO）的数据结构，只允许在一端进行插入和删除操作，而队列是一种先进先出（FIFO）的数据结构，只允许在一端插入，在另一端删除。</p>
+<p>因此，选项 D 中的“插入、删除运算的限定不一样”是栈和队列的主要区别。</p>
+</blockquote>
+<ol start="19">
+<li>设模式T&#x3D;“abcabc”，则该模式的next值为( )。</li>
+</ol>
+<p>{-1，0，0，1，2，3}</p>
+<p><font color='red'>{-1，0，0，0，1，2}</font></p>
+<p>{-1，0，0，1，1，2}</p>
+<p>{1，0，0，0，2，3}</p>
+<blockquote>
+<p>自己算算就行了，这题原本错了</p>
+</blockquote>
+<ol start="20">
+<li>若一个栈的输入序列是1，2，3，… ,n,输出序列的第一个元素是n，则第 i个输出元素是( )。</li>
+</ol>
+<p>不确定</p>
+<p>n-i</p>
+<p>n-i-1</p>
+<p><font color='red'>n-i+1</font></p>
+<blockquote>
+<p>对于一个栈的输入序列是1，2，3，…，n，输出序列的第一个元素是n，则第 i 个输出元素是 n-i+1。这是因为栈是一种后进先出（LIFO）的数据结构，所以最后一个进入栈的元素会最先被弹出，倒数第二个进入栈的元素会第二个被弹出，以此类推。</p>
+<p>因此，选项 D 中的 n-i+1 是第 i 个输出元素的正确表示。</p>
+</blockquote>
+<p>21.设线性表有n个元素，以下操作中,( )在顺序表上实现比在单链表上实现的效率更高。</p>
+<p><font color='red'>输出第i(1≤i≤n)个元素值</font></p>
+<p>交换第1个和第2个元素的值</p>
+<p>顺序输出所有n个元素</p>
+<p>查找与给定值x相等的元素在线性表中的序号</p>
+<blockquote>
+<p>在顺序表和单链表上实现的效率比较如下：</p>
+<ul>
+<li><strong>输出第i(1≤i≤n)个元素值</strong>：在顺序表上实现的效率更高。因为顺序表可以直接通过索引访问任何位置的元素，时间复杂度为O(1)。而在单链表中，我们需要从头开始遍历到第i个元素，时间复杂度为O(n)。</li>
+<li><strong>交换第1个和第2个元素的值</strong>：在单链表上实现的效率更高。因为在单链表中，我们可以直接改变节点的链接，而不需要移动元素本身。而在顺序表中，我们需要移动元素本身，这可能涉及到大量的数据复制。</li>
+<li><strong>顺序输出所有n个元素</strong>：在顺序表和单链表上实现的效率相同。因为无论是顺序表还是单链表，我们都需要遍历所有的元素，时间复杂度都是O(n)。</li>
+<li><strong>查找与给定值x相等的元素在线性表中的序号</strong>：在顺序表和单链表上实现的效率相同。因为无论是顺序表还是单链表，我们都需要遍历所有的元素来查找给定值，时间复杂度都是O(n)。</li>
+</ul>
+<p>所以，在这些操作中，只有<strong>输出第i(1≤i≤n)个元素值</strong>这个操作在顺序表上实现比在单链表上实现的效率更高。</p>
+</blockquote>
+<p>22.对于n个元素组成的线性表,建立一个有序单链表的时间复杂度是( )。</p>
+<blockquote>
+<p>建立一个有序单链表的时间复杂度是<font color='red'>O(n^2)。</font></p>
+<p>在一个有序单链表中插入一个元素需要在链表中找到合适的位置，这可能需要从头开始遍历链表，直到找到合适的位置为止。插入一个元素的平均时间复杂度为O(n)。如果要建立一个有序单链表，需要将n个元素一个个插入，因此总的时间复杂度为O(n) * O(n) &#x3D; O(n^2)。</p>
+</blockquote>
+<p>23.设数组S[n]作为两个栈S1和S2的存储空间，对任何一个栈只有当S[n]全满时才不能进行进栈操作。为这两个栈分配空间的最佳方案是( )。</p>
+<p><font color='red'>S1的栈底位置为0,S2的栈底位置为n-1</font></p>
+<p>S1的栈底位置为0,S2的栈底位置为n&#x2F;2</p>
+<p>S1的栈底位置为0,S2的栈底位置为n</p>
+<p>S1的栈底位置为0,S2的栈底位置为1</p>
+<blockquote>
+<p>为了最大限度地利用存储空间，我们应该将S1的栈底位置设置为0，将S2的栈底位置设置为n-1。这样可以使两个栈的空间分配在整个数组的两端，最大化利用数组的空间。所以最佳方案是：</p>
+<p>S1的栈底位置为0，S2的栈底位置为n-1。</p>
+</blockquote>
+<p>24.一个队列的入队顺序是1、2、3和4,则队列的输出顺序是( )。</p>
+<p>4321</p>
+<p><font color='red'>1234</font></p>
+<p>1432</p>
+<p>3241</p>
+<blockquote>
+<p>一个队列的特点是先进先出(FIFO)，即最先进入队列的元素最先出队列。根据题目给出的入队顺序，元素1首先进入队列，然后是2、3、4。因此，出队顺序应为1234。</p>
+<p>所以，队列的输出顺序是1234。</p>
+</blockquote>
+<p>25.对特殊矩阵采用压缩存储的目的主要是为了( )。</p>
+<p>表达变得简单</p>
+<p>对矩阵元素的存取变得简单</p>
+<p>去掉矩阵中的多余元素</p>
+<p><font color='red'>减少不必要的存储空间</font></p>
+<blockquote>
+<p>对特殊矩阵采用压缩存储的主要目的是为了<strong>减少不必要的存储空间</strong>。通过识别和利用矩阵中的特殊结构或特殊规律，可以使用更少的存储空间来表示矩阵，从而减少存储开销。这样可以节省存储空间，并降低存储和传输成本。</p>
+</blockquote>
+<p>26.在解决计算机主机与打印机之间速度不匹配问题时通常设置一个打印缓冲区，该缓冲区应该是一个( )结构。</p>
+<p>栈</p>
+<p><font color='red'>队列</font></p>
+<p>数组</p>
+<p>线性表</p>
+<blockquote>
+<p>在解决计算机主机与打印机之间速度不匹配问题时，通常设置一个打印缓冲区，该缓冲区应该是一个队列结构。</p>
+<p>使用队列结构可以保证打印作业按照先来先服务的原则进行处理。当打印机的处理速度慢于计算机主机的传输速度时，打印缓冲区可以暂时存储待打印的作业，然后按照顺序逐一传输到打印机进行打印。</p>
+</blockquote>
+<p>27.若某线性表中最常用的操作是取第i个元素和找第i个元素的前驱，则采用（ ）存储方法最节省时间。</p>
+<p><font color='red'>顺序表</font></p>
+<p>单链表</p>
+<p>双链表</p>
+<p>单循环链表</p>
+<blockquote>
+<p>若某线性表中最常用的操作是取第 i 个元素和找第 i 个元素的前驱，采用<strong>顺序表</strong>存储方法最节省时间。顺序表可以通过下标直接访问元素，时间复杂度为 O(1)，而单链表、双链表以及单循环链表在取第 i 个元素的操作中需要遍历至第 i 个节点，时间复杂度为 O(i)。因此，在此情况下，采用顺序表存储方法可以最节省时间。</p>
+</blockquote>
+<ol start="28">
+<li>在一个单链表中，已知q所指结点是p所指结点的直接前驱，若在q和p之间插入s所指结点，则执行( )操作。</li>
+</ol>
+<p>s-&gt;next&#x3D;p-&gt;next; p-&gt; next&#x3D;s;</p>
+<p><font color='red'>q-&gt;next&#x3D;s; s-&gt;next&#x3D;p;</font></p>
+<p>p-&gt;next&#x3D;s-&gt;next; s-&gt;next&#x3D;p;</p>
+<p>p-&gt;next&#x3D;s; s-&gt;next&#x3D;q;</p>
+<blockquote>
+<p>在一个单链表中，已知 q 所指结点是 p 所指结点的直接前驱，若在 q 和 p 之间插入 s 所指结点，应执行以下操作：</p>
+<p>q-&gt;next&#x3D;s; s-&gt;next&#x3D;p;</p>
+<p>这样可以将 s 插入到 q 和 p 之间，完成链表的插入操作。</p>
+</blockquote>
+<p>29.关于矩阵压缩存储，下面的说法中，不正确的是( )。</p>
+<p>对称矩阵只需存放包括主对角线元素在内的下(或上)三角的元素即可</p>
+<p>对角矩阵只需存放非零元素即可</p>
+<p>稀疏矩阵中值为零的元素较多，因此可以采用三元组表方法存储</p>
+<p><font color='red'>稀疏矩阵中大量值为零的元素分布有规律，因此可以采用三元组表方法存储</font></p>
+<blockquote>
+<p>关于矩阵压缩存储，不正确的说法是：</p>
+<p>稀疏矩阵中大量值为零的元素分布有规律，因此可以采用三元组表方法存储。</p>
+<p>虽然稀疏矩阵中大量值为零的元素可以采用三元组表方法存储，但并不一定有规律。使用三元组表方法存储的目的是为了有效地表示稀疏矩阵，并且避免存储大量无效的零元素，而不是基于元素分布的规律。</p>
+</blockquote>
+<p>30.关于数组，下面的说法中，不正确的是( )。</p>
+<p>数组是一种线性结构</p>
+<p>数组是一种定长的线性结构</p>
+<p>除了插入与删除操作外，数组的基本操作还有存取、修改、检索和排序等</p>
+<p><font color='red'>数组的基本操作有存取、修改、检索和排序等，没有插入与删除操作</font></p>
+<blockquote>
+<p>关于数组，不正确的说法是：</p>
+<p>数组的基本操作有存取、修改、检索和排序等，没有插入与删除操作。</p>
+<p>实际上，数组是一种定长的线性结构，长度在创建时被固定。在插入和删除元素时，需要移动其他元素以保持数组的连续性，这会导致较高的时间复杂度。因此，数组的插入和删除操作相对效率较低。</p>
+</blockquote>
+<h1 id="二、判断题"><a href="#二、判断题" class="headerlink" title="二、判断题"></a>二、判断题</h1><p>31.稀疏矩阵压缩存储后，必会失去随机存取功能。</p>
+<p>正确</p>
+<p><font color='red'>错误</font></p>
+<blockquote>
+<p>稀疏矩阵压缩存储后，并不一定会失去随机存取功能。虽然压缩存储可能会限制某些随机存取功能，但这取决于具体的压缩算法和数据结构。例如，使用三元组表等压缩方式仍然可以支持随机存取功能，只是在稀疏矩阵中的零元素可能不会占据存储空间。因此，这个说法是不正确的。</p>
+</blockquote>
+<p>32.将数组称为随机存取结构是因为随时可以对数组进行存取访问。</p>
+<p><font color='red'>正确</font></p>
+<p>错误</p>
+<blockquote>
+<p>将数组称为随机存取结构是因为可以通过下标直接随机访问数组中的元素，因此说法是正确的。数组允许按照元素的索引进行快速访问，这意味着可以通过指定元素的索引位置来直接访问或修改元素的值。这种随机访问的特性使得数组成为一种支持高效随机访问的数据结构。</p>
+</blockquote>
+<p>33.有n个元素依次进栈，则出栈序列有(n-1)&#x2F;2种。</p>
+<p>正确</p>
+<p><font color='red'>错误</font></p>
+<blockquote>
+<p>这个说法是错误的。出栈序列的数量不一定是 (n-1)&#x2F;2。实际上，对于给定的n个元素，有许多不同的出栈序列可能。出栈序列的数量取决于具体的排列组合情况，而不是简单地等于 (n-1)&#x2F;2。具体的出栈序列数量需要根据出栈顺序的特定限制条件进行计算。</p>
+</blockquote>
+<p>34.栈可以作为实现过程调用的一种数据结构。</p>
+<p><font color='red'>正确</font></p>
+<p>错误</p>
+<blockquote>
+<p>栈可以作为实现过程调用的一种数据结构，因此这个说法是正确的。在程序执行过程中，当一个过程调用另一个过程时，会将返回地址、参数和局部变量等信息存储在栈中。这些信息以堆栈的形式保存，即后调用的函数压栈，先调用的函数出栈。栈的特点使得它非常适合用于实现过程调用和递归等计算机程序中。</p>
+</blockquote>
+<p>35.在栈满的情况下不能做进栈操作，否则将产生“上溢”。</p>
+<p><font color='red'>正确</font></p>
+<p>错误</p>
+<blockquote>
+<p>在栈满的情况下进行进栈操作将导致栈上溢，这会导致数据丢失或程序异常终止。因此，这个说法是正确的。栈有一个容量限制，当栈已满时，无法再进行进栈操作。如果强行进行进栈操作，将导致栈上溢（stack overflow），可能会损坏其他数据或引发程序异常。因此，在实现栈时，通常需要考虑栈上溢的情况并进行相应的处理。</p>
+</blockquote>
+<p>36.在循环队列中，front指向队头元素的前一个位置rear指向队尾元素的位置，则队满的条件是front&#x3D;rear。</p>
+<p>正确</p>
+<p><font color='red'>错误</font></p>
+<blockquote>
+<p>在循环队列中，通常采用取模运算来实现循环。front 指向队头元素的位置，rear 指向队尾元素的下一个位置。因此，队满的条件是 <code>(rear + 1) % n == front</code>，其中 <code>n</code> 是队列的最大容量。</p>
+<p>因此，说法是错误的。队满的条件不是 <code>front = rear</code>，而是 <code>(rear + 1) % n == front</code>。</p>
+</blockquote>
+<p>37.在单链表中，要取得某个元素，只要知道该元素所在结点的地址即可，因此单链表是随机存取结构。</p>
+<p>正确</p>
+<p><font color='red'>错误</font></p>
+<blockquote>
+<p>在单链表中，虽然可以通过知道该元素所在结点的地址来访问该元素，但这种访问方式并不属于随机存取，因为单链表不支持通过下标或索引直接访问元素。单链表只能通过从头结点开始逐个遍历查找的方式来找到指定位置的元素，这导致了访问的时间复杂度是 O(n)。因此，单链表并不属于随机存取结构。</p>
+</blockquote>
+<p>38.每种数据结构都具备三个基本操作：插入、删除和查找。</p>
+<p>正确</p>
+<p><font color='red'>错误</font></p>
+<blockquote>
+<p>这个说法是不准确的。尽管许多数据结构确实具有插入、删除和查找等基本操作，但并不是每种数据结构都具备这三种基本操作。不同类型的数据结构可能有不同的设计目标和特定的操作。有些数据结构可能只支持其中一些操作，而另一些数据结构可能具有不同的基本操作。因此，不能将每种数据结构都简单地归纳为具有这三个基本操作。</p>
+</blockquote>
+<p>39.线性结构的基本特征是：每个元素有且仅有一个直接前驱和一个直接后继。</p>
+<p>正确</p>
+<p><font color='red'>错误</font></p>
+<blockquote>
+<p>线性结构的基本特征是每个元素最多只有一个直接前驱和一个直接后继，而不是有且仅有一个。这意味着某些元素可以没有直接前驱或直接后继（比如第一个元素和最后一个元素）。因此，说法是错误的。</p>
+</blockquote>
+<p>40.算法的时间复杂度都要通过算法中的基本语句的执行次数来确定。</p>
+<p><font color='red'>正确</font></p>
+<p>错误</p>
+<blockquote>
+<p>这个说法是正确的。算法的时间复杂度是通过对算法中的基本语句执行次数的分析来确定的。基本语句通常是指算法中执行最频繁的操作，例如赋值语句、比较语句、算术运算等。通过计算基本语句执行的次数，可以得出算法的时间复杂度，从而评估算法的执行效率。</p>
+</blockquote>
+<h1 id="三、简答题"><a href="#三、简答题" class="headerlink" title="三、简答题"></a>三、简答题</h1><ol>
+<li><h2 id="试解释数据结构、数据类型、抽象数据类型的概念"><a href="#试解释数据结构、数据类型、抽象数据类型的概念" class="headerlink" title="试解释数据结构、数据类型、抽象数据类型的概念"></a>试解释数据结构、数据类型、抽象数据类型的概念</h2></li>
+</ol>
+<ul>
+<li><strong>数据结构</strong>：数据结构是计算机科学中一种特殊的方式，它可以使我们在计算机中更有效地存储和组织数据。例如，我们可以使用数组、链表、栈、队列、图和树等数据结构来存储和管理数据。</li>
+<li><strong>数据类型</strong>：数据类型是编程语言中的一个概念，它定义了一组数据的值的集合和这组数据上可进行的操作。例如，整数类型（int）定义了整数的集合，我们可以对这些整数进行加法、减法、乘法和除法等操作。</li>
+<li><strong>抽象数据类型（ADT）</strong>：抽象数据类型是一种逻辑描述，它定义了一组数据和在这组数据上可进行的操作，但并未指定这些操作的具体实现。例如，栈ADT定义了一组元素和两个基本操作：push（将元素添加到栈顶）和 pop（从栈顶移除元素）。然而，栈ADT并未指定这些操作应如何实现。我们可以使用数组或链表来实现栈ADT。</li>
+</ul>
+<ol start="2">
+<li><h2 id="以下为单链表在指定位置插入元素的-C-代码，请将划线处代码补充完整。"><a href="#以下为单链表在指定位置插入元素的-C-代码，请将划线处代码补充完整。" class="headerlink" title="以下为单链表在指定位置插入元素的 C++代码，请将划线处代码补充完整。"></a>以下为单链表在指定位置插入元素的 C++代码，请将划线处代码补充完整。</h2><p>以下是将划线处代码补充完整的 C++ 代码：</p>
+<div class="code-container" data-rel="Cpp"><figure class="iseeu highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">template</span> &lt;<span class="keyword">typename</span> DataType&gt;</span><br><span class="line"><span class="type">void</span> LinkList&lt;DataType&gt;::<span class="built_in">Insert</span>(<span class="type">int</span> i, DataType x)</span><br><span class="line">&#123;</span><br><span class="line">    Node&lt;DataType&gt; *p = first, *s = <span class="literal">nullptr</span>;</span><br><span class="line">    <span class="type">int</span> count = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">while</span> (p != <span class="literal">nullptr</span> &amp;&amp; count &lt; i - <span class="number">1</span>) <span class="comment">// (1) 划线处</span></span><br><span class="line">    &#123;</span><br><span class="line">        p = p-&gt;next;</span><br><span class="line">        count++;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> (p == <span class="literal">nullptr</span>)</span><br><span class="line">        <span class="keyword">throw</span> <span class="string">&quot;插入位置错误&quot;</span>;</span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">    &#123;</span><br><span class="line">        s = <span class="keyword">new</span> <span class="built_in">Node</span>&lt;DataType&gt;(x);</span><br><span class="line">        s-&gt;next = p-&gt;next; <span class="comment">// (2) 划线处</span></span><br><span class="line">        p-&gt;next = s; <span class="comment">// (3) 划线处</span></span><br><span class="line">        <span class="keyword">if</span> (p == last) <span class="comment">// (4) 划线处</span></span><br><span class="line">            last = s;</span><br><span class="line">        length++; <span class="comment">// (5) 划线处</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+
+<p>在这段代码中：</p>
+<ol>
+<li>划线处 (1) 是 while 循环的条件，用于寻找指定位置的插入点。</li>
+<li>划线处 (2) 将新节点 s 的 next 指针指向 p 后面的节点。</li>
+<li>划线处 (3) 将 p 的 next 指针指向新节点 s。</li>
+<li>划线处 (4) 检查是否是在链表末尾插入，如果是，则更新 last 指针。</li>
+<li>划线处 (5) 增加链表的长度。</li>
+</ol>
+</li>
+<li><h2 id="如下为循环队列的实现代码，给出了类定义、构造函数、入队和出队函数，请-补充完整划线处代码。"><a href="#如下为循环队列的实现代码，给出了类定义、构造函数、入队和出队函数，请-补充完整划线处代码。" class="headerlink" title="如下为循环队列的实现代码，给出了类定义、构造函数、入队和出队函数，请 补充完整划线处代码。"></a>如下为循环队列的实现代码，给出了类定义、构造函数、入队和出队函数，请 补充完整划线处代码。</h2><p>以下是补充完整划线处代码的实现：</p>
+<div class="code-container" data-rel="Cpp"><figure class="iseeu highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">const</span> <span class="type">int</span> QueueSize = <span class="number">100</span>;</span><br><span class="line"><span class="keyword">template</span> &lt;<span class="keyword">typename</span> DataType&gt;</span><br><span class="line"><span class="keyword">class</span> <span class="title class_">CirQueue</span></span><br><span class="line">&#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="built_in">CirQueue</span>();</span><br><span class="line">    ~<span class="built_in">CirQueue</span>();</span><br><span class="line">    <span class="function"><span class="type">void</span> <span class="title">EnQueue</span><span class="params">(DataType x)</span></span>;</span><br><span class="line">    <span class="function">DataType <span class="title">DeQueue</span><span class="params">()</span></span>;</span><br><span class="line">    <span class="function">DataType <span class="title">GetHead</span><span class="params">()</span></span>;</span><br><span class="line">    <span class="function"><span class="type">int</span> <span class="title">Empty</span><span class="params">()</span></span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">private</span>:</span><br><span class="line">    DataType data[QueueSize];</span><br><span class="line">    <span class="type">int</span> front, rear;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">template</span> &lt;<span class="keyword">typename</span> DataType&gt;</span><br><span class="line">CirQueue&lt;DataType&gt;::<span class="built_in">CirQueue</span>()</span><br><span class="line">&#123;</span><br><span class="line">    front = rear = <span class="number">0</span>; <span class="comment">// (1) 划线处</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">template</span> &lt;<span class="keyword">typename</span> DataType&gt;</span><br><span class="line"><span class="type">void</span> CirQueue&lt;DataType&gt;::<span class="built_in">EnQueue</span>(DataType x)</span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">if</span> ((rear + <span class="number">1</span>) % QueueSize == front) <span class="comment">// (2) 划线处</span></span><br><span class="line">        <span class="keyword">throw</span> <span class="string">&quot;队满，上溢出&quot;</span>;</span><br><span class="line">    rear = (rear + <span class="number">1</span>) % QueueSize; <span class="comment">// (3) 划线处</span></span><br><span class="line">    data[rear] = x;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">template</span> &lt;<span class="keyword">typename</span> DataType&gt;</span><br><span class="line">DataType CirQueue&lt;DataType&gt;::<span class="built_in">DeQueue</span>()</span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">if</span> (front == rear) <span class="comment">// (4) 划线处</span></span><br><span class="line">        <span class="keyword">throw</span> <span class="string">&quot;下溢&quot;</span>;</span><br><span class="line">    front = (front + <span class="number">1</span>) % QueueSize; <span class="comment">// (5) 划线处</span></span><br><span class="line">    <span class="keyword">return</span> data[front];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+
+<p>在代码中：</p>
+<ol>
+<li>划线处 (1) 完成了循环队列的构造函数，将 front 和 rear 初始化为 0。</li>
+<li>划线处 (2) 是判断队列是否已满的条件。</li>
+<li>划线处 (3) 更新 rear 的位置，使其指向下一个入队元素应该存放的位置。</li>
+<li>划线处 (4) 是判断队列是否为空的条件。</li>
+<li>划线处 (5) 更新 front 的位置，使其指向下一个出队元素的位置。</li>
+</ol>
+</li>
+<li><h2 id="如下代码为顺序表和单链表的-C-类定义，请补充划线处缺失的代码，并对-含义进行注释。"><a href="#如下代码为顺序表和单链表的-C-类定义，请补充划线处缺失的代码，并对-含义进行注释。" class="headerlink" title="如下代码为顺序表和单链表的 C++类定义，请补充划线处缺失的代码，并对 含义进行注释。"></a>如下代码为顺序表和单链表的 C++类定义，请补充划线处缺失的代码，并对 含义进行注释。</h2><p>&lt;1&gt; 顺序表：</p>
+<div class="code-container" data-rel="Cpp"><figure class="iseeu highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">const</span> <span class="type">int</span> MaxSize = <span class="number">100</span>;</span><br><span class="line"><span class="keyword">template</span> &lt;<span class="keyword">typename</span> DataType&gt;</span><br><span class="line"><span class="keyword">class</span> <span class="title class_">SeqList</span></span><br><span class="line">&#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="built_in">SeqList</span>();</span><br><span class="line">    <span class="built_in">SeqList</span>(DataType a[], <span class="type">int</span> n);</span><br><span class="line">    ~<span class="built_in">SeqList</span>();</span><br><span class="line">    <span class="function"><span class="type">int</span> <span class="title">Length</span><span class="params">()</span></span>;</span><br><span class="line">    <span class="function"><span class="type">int</span> <span class="title">Empty</span><span class="params">()</span></span>;</span><br><span class="line">    <span class="function"><span class="type">void</span> <span class="title">PrintList</span><span class="params">()</span></span>;</span><br><span class="line">    <span class="function">DataType <span class="title">Get</span><span class="params">(<span class="type">int</span> i)</span></span>;</span><br><span class="line">    <span class="function"><span class="type">int</span> <span class="title">Locate</span><span class="params">(DataType x)</span></span>;</span><br><span class="line">    <span class="function"><span class="type">void</span> <span class="title">Insert</span><span class="params">(<span class="type">int</span> i, DataType x)</span></span>;</span><br><span class="line">    <span class="function">DataType <span class="title">Delete</span><span class="params">(<span class="type">int</span> i)</span></span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">private</span>:</span><br><span class="line">    DataType data[MaxSize]; <span class="comment">// (1) 顺序表的数据存储数组</span></span><br><span class="line">    <span class="type">int</span> length; <span class="comment">// (2) 顺序表的当前长度</span></span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></div>
+
+<p>&lt;2&gt; 单链表：</p>
+<div class="code-container" data-rel="Cpp"><figure class="iseeu highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">template</span> &lt;<span class="keyword">typename</span> DataType&gt;</span><br><span class="line"><span class="keyword">struct</span> <span class="title class_">Node</span></span><br><span class="line">&#123;</span><br><span class="line">    DataType data; <span class="comment">// (3) 节点中存储的数据</span></span><br><span class="line">    Node&lt;DataType&gt; *next; <span class="comment">// (4) 指向下一个节点的指针</span></span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">template</span> &lt;<span class="keyword">typename</span> DataType&gt;</span><br><span class="line"><span class="keyword">class</span> <span class="title class_">LinkList</span></span><br><span class="line">&#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="built_in">LinkList</span>();</span><br><span class="line">    <span class="built_in">LinkList</span>(DataType a[], <span class="type">int</span> n);</span><br><span class="line">    ~<span class="built_in">LinkList</span>();</span><br><span class="line">    <span class="function"><span class="type">void</span> <span class="title">PrintList</span><span class="params">()</span></span>;</span><br><span class="line">    <span class="function"><span class="type">int</span> <span class="title">Length</span><span class="params">()</span></span>;</span><br><span class="line">    <span class="function">DataType <span class="title">Get</span><span class="params">(<span class="type">int</span> i)</span></span>;</span><br><span class="line">    <span class="function"><span class="type">int</span> <span class="title">Locate</span><span class="params">(DataType x)</span></span>;</span><br><span class="line">    <span class="function"><span class="type">void</span> <span class="title">Insert</span><span class="params">(<span class="type">int</span> i, DataType x)</span></span>;</span><br><span class="line">    <span class="function">DataType <span class="title">Delete</span><span class="params">(<span class="type">int</span> i)</span></span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">private</span>:</span><br><span class="line">    Node&lt;DataType&gt; *first; <span class="comment">// (5) 单链表的头指针</span></span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></div>
+
+<p>在代码中：</p>
+<ol>
+<li>划线处 (1) 是顺序表的数据存储数组。</li>
+<li>划线处 (2) 是顺序表的当前长度。</li>
+<li>划线处 (3) 是单链表节点中存储的数据。</li>
+<li>划线处 (4) 是指向下一个节点的指针。</li>
+<li>划线处 (5) 是单链表的头指针。</li>
+</ol>
+</li>
+<li><h2 id="以下为顺序栈的定义、初始化和压栈操作的实现，请补充完整划线部分代码。"><a href="#以下为顺序栈的定义、初始化和压栈操作的实现，请补充完整划线部分代码。" class="headerlink" title="以下为顺序栈的定义、初始化和压栈操作的实现，请补充完整划线部分代码。"></a>以下为顺序栈的定义、初始化和压栈操作的实现，请补充完整划线部分代码。</h2><p>以下是补充完整划线部分代码的实现：</p>
+<div class="code-container" data-rel="Cpp"><figure class="iseeu highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">const</span> <span class="type">int</span> StackSize = <span class="number">100</span>;</span><br><span class="line"><span class="keyword">template</span> &lt;<span class="keyword">typename</span> DataType&gt;</span><br><span class="line"><span class="keyword">class</span> <span class="title class_">SeqStack</span></span><br><span class="line">&#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="built_in">SeqStack</span>();</span><br><span class="line">    ~<span class="built_in">SeqStack</span>();</span><br><span class="line">    <span class="function"><span class="type">void</span> <span class="title">Push</span><span class="params">(DataType x)</span></span>;</span><br><span class="line">    <span class="function">DataType <span class="title">Pop</span><span class="params">()</span></span>;</span><br><span class="line">    <span class="function">DataType <span class="title">GetTop</span><span class="params">()</span></span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">private</span>:</span><br><span class="line">    DataType data[StackSize]; <span class="comment">// (1) 划线处</span></span><br><span class="line">    <span class="type">int</span> top; <span class="comment">// (2) 划线处</span></span><br><span class="line">&#125;;</span><br><span class="line"><span class="keyword">template</span> &lt;<span class="keyword">typename</span> DataType&gt;</span><br><span class="line">SeqStack&lt;DataType&gt;::<span class="built_in">SeqStack</span>()</span><br><span class="line">&#123;</span><br><span class="line">    top = <span class="number">-1</span>; <span class="comment">// (3) 划线处</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">template</span> &lt;<span class="keyword">typename</span> DataType&gt;</span><br><span class="line"><span class="type">void</span> SeqStack&lt;DataType&gt;::<span class="built_in">Push</span>(DataType x)</span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">if</span> (top == StackSize - <span class="number">1</span>) <span class="comment">// (4) 划线处</span></span><br><span class="line">    &#123;</span><br><span class="line">        cout &lt;&lt; <span class="string">&quot;栈满&quot;</span> &lt;&lt; endl;</span><br><span class="line">        <span class="keyword">throw</span> <span class="string">&quot;上溢&quot;</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    top++; <span class="comment">// (5) 划线处</span></span><br><span class="line">    data[top] = x;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+
+<p>在代码中：</p>
+<ol>
+<li>划线处 (1) 定义了顺序栈的数据存储数组。</li>
+<li>划线处 (2) 定义了顺序栈的栈顶指针。</li>
+<li>划线处 (3) 是顺序栈的构造函数，初始化栈顶指针 top 为 -1。</li>
+<li>划线处 (4) 是判断栈是否已满的条件。</li>
+<li>划线处 (5) 是实现元素压栈操作，将栈顶指针 top 向上移动一个位置，并将元素 x 压入栈顶。</li>
+</ol>
+</li>
+<li><h2 id="设目标主串为-S-“BBCABCDABABCDABD”，模式串为-T-“ABCDABD”"><a href="#设目标主串为-S-“BBCABCDABABCDABD”，模式串为-T-“ABCDABD”" class="headerlink" title="设目标主串为 S&#x3D;“BBCABCDABABCDABD”，模式串为 T&#x3D;“ABCDABD”"></a>设目标主串为 S&#x3D;“BBCABCDABABCDABD”，模式串为 T&#x3D;“ABCDABD”</h2><ol>
+<li><p>简述按 BF 算法对主串 S 进行模式匹配的过程; </p>
+<blockquote>
+<p> BF（Brute-Force）算法是一种简单直接的字符串匹配算法。其匹配过程为： 从主串 S 的第一个字符开始，依次和模式串 T 进行匹配。如果当前字符匹配成功，则继续比较下一个字符，直到模式串 T 完全匹配或者匹配失败。如果匹配失败，则将模式串向右移动一位，再次和主串进行匹配。这个过程会一直持续到找到匹配的子串或者主串遍历完毕。</p>
+</blockquote>
+</li>
+<li><p>手工计算模式串 T 的 next 值; </p>
+<blockquote>
+<p>手工计算模式串 T 的 next 数组的过程如下：</p>
+<p>T &#x3D; “ABCDABD” </p>
+<p>首先，next[0] &#x3D; -1，next[1] &#x3D; 0（规定 next 数组下标从 0 开始）。</p>
+<p>依次计算 next 数组的值： </p>
+<p>对于第 i 个字符，如果 T[next[i]] &#x3D;&#x3D; T[i-1]，则 next[i+1] &#x3D; next[i] + 1； </p>
+<p>否则，将 next[i+1] 更新为 0。</p>
+</blockquote>
+</li>
+<li><p>简述利用求得的 next 数组，按 KMP 算法对主串 S 进行模式匹配的过程。</p>
+<blockquote>
+<p> KMP 算法利用模式串 T 的 next 数组在匹配过程中避免不必要的回溯。匹配过程如下： 从主串 S 的第一个字符开始，同时从模式串 T 的第一个字符开始进行匹配。 如果当前字符匹配成功，则继续比较下一个字符。 如果匹配失败，根据 next 数组进行回溯操作，将模式串 T 向右移动相应的位数，使得模式串能够对齐主串中的下一个字符，继续匹配。 如果模式串完全匹配成功，则返回匹配的起始位置；否则，主串遍历完毕仍未找到匹配子串，则匹配失败。</p>
+</blockquote>
+</li>
+</ol>
+<h1 id="四、附加题"><a href="#四、附加题" class="headerlink" title="四、附加题"></a>四、附加题</h1><p>请认真思考，谈一下你对数据结构课程的建议。（限 100 字以上，共 10 分）</p>
+<blockquote>
+<p>这题没什么好说的</p>
+</blockquote>
+</li>
+</ol>
+
+		</div>
+
+		
+		<div class="post-copyright-info w-full my-8 px-2 sm:px-6 md:px-8">
+			<div class="article-copyright-info-container">
+    <ul>
+        <li><strong>标题:</strong> 数据结构期中考试wp</li>
+        <li><strong>作者:</strong> W1ndys</li>
+        <li><strong>创建于
+                :</strong> 2023-11-03 14:16:00</li>
+        
+            <li>
+                <strong>更新于
+                    :</strong> 2025-02-23 13:37:18
+            </li>
+        
+        <li>
+            <strong>链接:</strong> https://blog.w1ndys.top/posts/c0eaf0d7.html
+        </li>
+        <li>
+            <strong>
+                版权声明:
+            </strong>
+            
+
+            
+                版权所有 &#169 W1ndys，禁止转载。
+            
+        </li>
+    </ul>
+</div>
+
+		</div>
+		
+
+		
+		<ul class="post-tags-box text-lg mt-1.5 flex-wrap justify-center flex md:hidden">
+			
+			<li class="tag-item mx-0.5">
+				<a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%BD%9C%E4%B8%9A/">#数据结构作业</a>&nbsp;
+			</li>
+			
+		</ul>
+		
+
+		
+
+		
+		<div class="article-nav my-8 flex justify-between items-center px-2 sm:px-6 md:px-8">
+			
+			<div class="article-prev border-border-color shadow-redefine-flat shadow-shadow-color-2 rounded-medium px-4 py-2 hover:shadow-redefine-flat-hover hover:shadow-shadow-color-2">
+				<a class="prev" rel="prev" href="/posts/12c45bcf.html">
+					<span class="left arrow-icon flex justify-center items-center">
+						<i class="fa-solid fa-chevron-left"></i>
+					</span>
+					<span class="title flex justify-center items-center">
+						<span class="post-nav-title-item">超星学习通/刷课脚本安装教程</span>
+						<span class="post-nav-item">上一篇</span>
+					</span>
+				</a>
+			</div>
+			
+			
+			<div class="article-next border-border-color shadow-redefine-flat shadow-shadow-color-2 rounded-medium px-4 py-2 hover:shadow-redefine-flat-hover hover:shadow-shadow-color-2">
+				<a class="next" rel="next" href="/posts/6430770.html">
+					<span class="title flex justify-center items-center">
+						<span class="post-nav-title-item">当代大学生国家安全教育___2023章节测试答案超星尔雅</span>
+						<span class="post-nav-item">下一篇</span>
+					</span>
+					<span class="right arrow-icon flex justify-center items-center">
+						<i class="fa-solid fa-chevron-right"></i>
+					</span>
+				</a>
+			</div>
+			
+		</div>
+		
+
+
+		
+		<div class="comment-container px-2 sm:px-6 md:px-8 pb-8">
+			<div class="comments-container mt-10 w-full ">
+    <div id="comment-anchor" class="w-full h-2.5"></div>
+    <div class="comment-area-title w-full my-1.5 md:my-2.5 text-xl md:text-3xl font-bold">
+        评论
+    </div>
+    
+
+        
+            
+    <div id="giscus-container"></div>
+    <script data-swup-reload-script defer>
+        async function loadGiscus() {
+            const giscusConfig = {
+                'src': 'https://giscus.app/client.js',
+                'data-repo': 'W1ndys/Blog',
+                'data-repo-id': 'R_kgDOLaRaXw',
+                'data-category': 'Show and tell',
+                'data-category-id': 'DIC_kwDOLaRaX84CeBp5',
+                'data-mapping': 'url',
+                'data-strict': '0',
+                'data-reactions-enabled': '1',
+                'data-emit-metadata': '1',
+                'data-theme': 'preferred_color_scheme',
+                'data-lang': 'zh-CN',
+                'data-input-position': 'top',
+                'data-loading': 'lazy',
+                'crossorigin': 'anonymous',
+                'async': true
+            }
+            const giscusScript = document.createElement('script');
+            for (const key in giscusConfig) {
+                giscusScript.setAttribute(key, giscusConfig[key]);
+            }
+            document.getElementById('giscus-container').appendChild(giscusScript);
+        }
+        if ('true') {
+            let loadGiscusTimeout = setTimeout(() => {
+                loadGiscus();
+                clearTimeout(loadGiscusTimeout);
+            }, 1000);
+        } else {
+            document.addEventListener('DOMContentLoaded', loadGiscus);
+        }
+    </script>
+
+
+        
+        
+    
+</div>
+
+		</div>
+		
+	</div>
+
+	
+	<div class="toc-content-container">
+		<div class="post-toc-wrap">
+	<div class="post-toc">
+		<div class="toc-title">目录</div>
+		<div class="page-title">数据结构期中考试wp</div>
+		<ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%B8%80%E3%80%81%E9%80%89%E6%8B%A9%E9%A2%98"><span class="nav-text">一、选择题</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%BA%8C%E3%80%81%E5%88%A4%E6%96%AD%E9%A2%98"><span class="nav-text">二、判断题</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%B8%89%E3%80%81%E7%AE%80%E7%AD%94%E9%A2%98"><span class="nav-text">三、简答题</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%AF%95%E8%A7%A3%E9%87%8A%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E3%80%81%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E3%80%81%E6%8A%BD%E8%B1%A1%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E7%9A%84%E6%A6%82%E5%BF%B5"><span class="nav-text">试解释数据结构、数据类型、抽象数据类型的概念</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BB%A5%E4%B8%8B%E4%B8%BA%E5%8D%95%E9%93%BE%E8%A1%A8%E5%9C%A8%E6%8C%87%E5%AE%9A%E4%BD%8D%E7%BD%AE%E6%8F%92%E5%85%A5%E5%85%83%E7%B4%A0%E7%9A%84-C-%E4%BB%A3%E7%A0%81%EF%BC%8C%E8%AF%B7%E5%B0%86%E5%88%92%E7%BA%BF%E5%A4%84%E4%BB%A3%E7%A0%81%E8%A1%A5%E5%85%85%E5%AE%8C%E6%95%B4%E3%80%82"><span class="nav-text">以下为单链表在指定位置插入元素的 C++代码，请将划线处代码补充完整。</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%A6%82%E4%B8%8B%E4%B8%BA%E5%BE%AA%E7%8E%AF%E9%98%9F%E5%88%97%E7%9A%84%E5%AE%9E%E7%8E%B0%E4%BB%A3%E7%A0%81%EF%BC%8C%E7%BB%99%E5%87%BA%E4%BA%86%E7%B1%BB%E5%AE%9A%E4%B9%89%E3%80%81%E6%9E%84%E9%80%A0%E5%87%BD%E6%95%B0%E3%80%81%E5%85%A5%E9%98%9F%E5%92%8C%E5%87%BA%E9%98%9F%E5%87%BD%E6%95%B0%EF%BC%8C%E8%AF%B7-%E8%A1%A5%E5%85%85%E5%AE%8C%E6%95%B4%E5%88%92%E7%BA%BF%E5%A4%84%E4%BB%A3%E7%A0%81%E3%80%82"><span class="nav-text">如下为循环队列的实现代码，给出了类定义、构造函数、入队和出队函数，请 补充完整划线处代码。</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%A6%82%E4%B8%8B%E4%BB%A3%E7%A0%81%E4%B8%BA%E9%A1%BA%E5%BA%8F%E8%A1%A8%E5%92%8C%E5%8D%95%E9%93%BE%E8%A1%A8%E7%9A%84-C-%E7%B1%BB%E5%AE%9A%E4%B9%89%EF%BC%8C%E8%AF%B7%E8%A1%A5%E5%85%85%E5%88%92%E7%BA%BF%E5%A4%84%E7%BC%BA%E5%A4%B1%E7%9A%84%E4%BB%A3%E7%A0%81%EF%BC%8C%E5%B9%B6%E5%AF%B9-%E5%90%AB%E4%B9%89%E8%BF%9B%E8%A1%8C%E6%B3%A8%E9%87%8A%E3%80%82"><span class="nav-text">如下代码为顺序表和单链表的 C++类定义，请补充划线处缺失的代码，并对 含义进行注释。</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BB%A5%E4%B8%8B%E4%B8%BA%E9%A1%BA%E5%BA%8F%E6%A0%88%E7%9A%84%E5%AE%9A%E4%B9%89%E3%80%81%E5%88%9D%E5%A7%8B%E5%8C%96%E5%92%8C%E5%8E%8B%E6%A0%88%E6%93%8D%E4%BD%9C%E7%9A%84%E5%AE%9E%E7%8E%B0%EF%BC%8C%E8%AF%B7%E8%A1%A5%E5%85%85%E5%AE%8C%E6%95%B4%E5%88%92%E7%BA%BF%E9%83%A8%E5%88%86%E4%BB%A3%E7%A0%81%E3%80%82"><span class="nav-text">以下为顺序栈的定义、初始化和压栈操作的实现，请补充完整划线部分代码。</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%AE%BE%E7%9B%AE%E6%A0%87%E4%B8%BB%E4%B8%B2%E4%B8%BA-S-%E2%80%9CBBCABCDABABCDABD%E2%80%9D%EF%BC%8C%E6%A8%A1%E5%BC%8F%E4%B8%B2%E4%B8%BA-T-%E2%80%9CABCDABD%E2%80%9D"><span class="nav-text">设目标主串为 S&#x3D;“BBCABCDABABCDABD”，模式串为 T&#x3D;“ABCDABD”</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%9B%9B%E3%80%81%E9%99%84%E5%8A%A0%E9%A2%98"><span class="nav-text">四、附加题</span></a></li></ol>
+
+	</div>
+</div>
+	</div>
+	
+</div>
+			</div>
+
+			
+		</div>
+
+		<div class="main-content-footer">
+			<footer class="footer mt-5 py-5 h-auto text-base text-third-text-color relative border-t-2 border-t-border-color">
+    <div class="info-container py-3 text-center">
+        
+            <div class="customize-info my-1">Powered by <a href="https://github.com/W1ndys" target="_blank">W1ndys</a></div>
+        
+        <div class="text-center">
+            &copy;
+            
+              <span>2023</span>
+              -
+            
+            2025&nbsp;&nbsp;<i class="fa-solid fa-heart fa-beat" style="--fa-animation-duration: 0.5s; color: #f54545"></i>&nbsp;&nbsp;<a href="/">W1ndys</a>
+            
+                
+                <p class="post-count space-x-0.5">
+                    <span>
+                        共撰写了 193 篇文章
+                    </span>
+                    
+                        <span>
+                            共 224.3k 字
+                        </span>
+                    
+                </p>
+            
+        </div>
+        
+            <script data-swup-reload-script src="https://cn.vercount.one/js"></script>
+            <div class="relative text-center lg:absolute lg:right-[20px] lg:top-1/2 lg:-translate-y-1/2 lg:text-right">
+                
+                    <span id="busuanzi_container_site_uv" class="lg:!block">
+                        <span class="text-sm">访问人数</span>
+                        <span id="busuanzi_value_site_uv"></span>
+                    </span>
+                
+                
+                    <span id="busuanzi_container_site_pv" class="lg:!block">
+                        <span class="text-sm">总访问量</span>
+                        <span id="busuanzi_value_site_pv"></span>
+                    </span>
+                
+            </div>
+        
+        <div class="relative text-center lg:absolute lg:left-[20px] lg:top-1/2 lg:-translate-y-1/2 lg:text-left">
+            <span class="lg:block text-sm">由 <?xml version="1.0" encoding="utf-8"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg class="relative top-[2px] inline-block align-baseline" version="1.1" id="圖層_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="1rem" height="1rem" viewBox="0 0 512 512" enable-background="new 0 0 512 512" xml:space="preserve"><path fill="#0E83CD" d="M256.4,25.8l-200,115.5L56,371.5l199.6,114.7l200-115.5l0.4-230.2L256.4,25.8z M349,354.6l-18.4,10.7l-18.6-11V275H200v79.6l-18.4,10.7l-18.6-11v-197l18.5-10.6l18.5,10.8V237h112v-79.6l18.5-10.6l18.5,10.8V354.6z"/></svg><a target="_blank" class="text-base" href="https://hexo.io">Hexo</a> 驱动</span>
+            <span class="text-sm lg:block">主题&nbsp;<a class="text-base" target="_blank" href="https://github.com/EvanNotFound/hexo-theme-redefine">Redefine v2.8.2</a></span>
+        </div>
+        
+        
+            <div>
+                博客已运行 <span class="odometer" id="runtime_days" ></span> 天 <span class="odometer" id="runtime_hours"></span> 小时 <span class="odometer" id="runtime_minutes"></span> 分钟 <span class="odometer" id="runtime_seconds"></span> 秒
+            </div>
+        
+        
+            <script data-swup-reload-script>
+                try {
+                    function odometer_init() {
+                    const elements = document.querySelectorAll('.odometer');
+                    elements.forEach(el => {
+                        new Odometer({
+                            el,
+                            format: '( ddd).dd',
+                            duration: 200
+                        });
+                    });
+                    }
+                    odometer_init();
+                } catch (error) {}
+            </script>
+        
+        
+            
+                
+        
+                
+        
+                
+
+                    
+                        <script data-swup-reload-script data-pjax src="/js/Capoo.js"></script>
+                    
+        
+        
+    </div>  
+</footer>
+		</div>
+	</div>
+
+	
+	<div class="post-tools">
+		<div class="post-tools-container">
+	<ul class="article-tools-list">
+		<!-- TOC aside toggle -->
+		
+		<li class="right-bottom-tools page-aside-toggle">
+			<i class="fa-regular fa-outdent"></i>
+		</li>
+		
+
+		<!-- go comment -->
+		
+		<li class="go-comment">
+			<i class="fa-regular fa-comments"></i>
+		</li>
+		
+	</ul>
+</div>
+	</div>
+	
+
+	<div class="right-side-tools-container">
+		<div class="side-tools-container">
+	<ul class="hidden-tools-list">
+		<li class="right-bottom-tools tool-font-adjust-plus flex justify-center items-center">
+			<i class="fa-regular fa-magnifying-glass-plus"></i>
+		</li>
+
+		<li class="right-bottom-tools tool-font-adjust-minus flex justify-center items-center">
+			<i class="fa-regular fa-magnifying-glass-minus"></i>
+		</li>
+
+		<li class="right-bottom-tools tool-dark-light-toggle flex justify-center items-center">
+			<i class="fa-regular fa-moon"></i>
+		</li>
+
+		<!-- rss -->
+		
+		<li class="right-bottom-tools rss flex justify-center items-center">
+			<a class="flex justify-center items-center" href="/atom.xml" target="_blank">
+				<i class="fa-regular fa-rss"></i>
+			</a>
+		</li>
+		
+
+		
+
+		<li class="right-bottom-tools tool-scroll-to-bottom flex justify-center items-center">
+			<i class="fa-regular fa-arrow-down"></i>
+		</li>
+	</ul>
+
+	<ul class="visible-tools-list">
+		<li class="right-bottom-tools toggle-tools-list flex justify-center items-center">
+			<i class="fa-regular fa-cog fa-spin"></i>
+		</li>
+		
+		<li class="right-bottom-tools tool-scroll-to-top flex justify-center items-center">
+			<i class="arrow-up fas fa-arrow-up"></i>
+			<span class="percent"></span>
+		</li>
+		
+		
+	</ul>
+</div>
+	</div>
+
+	<div class="image-viewer-container">
+	<img src="">
+</div>
+
+	
+	<div class="search-pop-overlay">
+	<div class="popup search-popup">
+		<div class="search-header">
+			<span class="search-input-field-pre">
+				<i class="fa-solid fa-keyboard"></i>
+			</span>
+			<div class="search-input-container">
+				<input autocomplete="off" autocorrect="off" autocapitalize="off" placeholder="站内搜索您需要的内容..." spellcheck="false" type="search" class="search-input">
+			</div>
+			<span class="popup-btn-close">
+				<i class="fa-solid fa-times"></i>
+			</span>
+		</div>
+		<div id="search-result">
+			<div id="no-result">
+				<i class="fa-solid fa-spinner fa-spin-pulse fa-5x fa-fw"></i>
+			</div>
+		</div>
+	</div>
+</div>
+	
+
+</main>
+
+
+<script  src="https://evan.beee.top/projects/hexo-theme-redefine@2.8.2/source/js/build/libs/Swup.min.js" ></script><script  src="https://evan.beee.top/projects/hexo-theme-redefine@2.8.2/source/js/build/libs/SwupSlideTheme.min.js" ></script><script  src="https://evan.beee.top/projects/hexo-theme-redefine@2.8.2/source/js/build/libs/SwupScriptsPlugin.min.js" ></script><script  src="https://evan.beee.top/projects/hexo-theme-redefine@2.8.2/source/js/build/libs/SwupProgressPlugin.min.js" ></script><script  src="https://evan.beee.top/projects/hexo-theme-redefine@2.8.2/source/js/build/libs/SwupScrollPlugin.min.js" ></script><script  src="https://evan.beee.top/projects/hexo-theme-redefine@2.8.2/source/js/build/libs/SwupPreloadPlugin.min.js" ></script>
+<script>
+    const swup = new Swup({
+        plugins: [
+            new SwupScriptsPlugin({
+                optin: true,
+            }),
+            new SwupProgressPlugin(),
+            new SwupScrollPlugin({
+                offset: 80,
+            }),
+            new SwupSlideTheme({
+                mainElement: ".main-content-body",
+            }),
+            new SwupPreloadPlugin(),
+        ],
+        containers: ["#swup"],
+    });
+</script>
+
+
+
+
+	<script type="module" src="https://evan.beee.top/projects/hexo-theme-redefine@2.8.2/source/js/build/tools/imageViewer.js" ></script><script type="module" src="https://evan.beee.top/projects/hexo-theme-redefine@2.8.2/source/js/build/utils.js" ></script><script type="module" src="https://evan.beee.top/projects/hexo-theme-redefine@2.8.2/source/js/build/main.js" ></script><script type="module" src="https://evan.beee.top/projects/hexo-theme-redefine@2.8.2/source/js/build/layouts/navbarShrink.js" ></script><script type="module" src="https://evan.beee.top/projects/hexo-theme-redefine@2.8.2/source/js/build/tools/scrollTopBottom.js" ></script><script type="module" src="https://evan.beee.top/projects/hexo-theme-redefine@2.8.2/source/js/build/tools/lightDarkSwitch.js" ></script><script type="module" src="https://evan.beee.top/projects/hexo-theme-redefine@2.8.2/source/js/build/layouts/categoryList.js" ></script>
+
+
+    <script type="module" src="https://evan.beee.top/projects/hexo-theme-redefine@2.8.2/source/js/build/tools/localSearch.js" ></script>
+
+
+
+    <script type="module" src="https://evan.beee.top/projects/hexo-theme-redefine@2.8.2/source/js/build/tools/codeBlock.js" ></script>
+
+
+
+    <script type="module" src="https://evan.beee.top/projects/hexo-theme-redefine@2.8.2/source/js/build/layouts/lazyload.js" ></script>
+
+
+
+    <script  src="https://evan.beee.top/projects/hexo-theme-redefine@2.8.2/source/js/build/tools/runtime.js" ></script>
+    <script  src="https://evan.beee.top/projects/hexo-theme-redefine@2.8.2/source/js/build/libs/odometer.min.js" ></script>
+    <link rel="stylesheet" href="https://evan.beee.top/projects/hexo-theme-redefine@2.8.2/source/assets/odometer-theme-minimal.css">
+
+
+
+  <script  src="https://evan.beee.top/projects/hexo-theme-redefine@2.8.2/source/js/build/libs/Typed.min.js" ></script>
+  <script type="module" src="https://evan.beee.top/projects/hexo-theme-redefine@2.8.2/source/js/build/plugins/typed.js" ></script>
+
+
+
+
+
+    <script  src="https://evan.beee.top/projects/hexo-theme-redefine@2.8.2/source/js/build/libs/minimasonry.min.js" ></script>
+    <script type="module" src="https://evan.beee.top/projects/hexo-theme-redefine@2.8.2/source/js/build/plugins/masonry.js" ></script>
+
+
+
+
+
+
+    <script type="module" src="https://evan.beee.top/projects/hexo-theme-redefine@2.8.2/source/js/build/tools/tocToggle.js" data-swup-reload-script></script><script type="module" src="https://evan.beee.top/projects/hexo-theme-redefine@2.8.2/source/js/build/layouts/toc.js" data-swup-reload-script></script><script type="module" src="https://evan.beee.top/projects/hexo-theme-redefine@2.8.2/source/js/build/plugins/tabs.js" data-swup-reload-script></script>
+
+
+<script  src="https://evan.beee.top/projects/hexo-theme-redefine@2.8.2/source/js/build/libs/moment-with-locales.min.js" data-swup-reload-script></script>
+<script type="module" src="https://evan.beee.top/projects/hexo-theme-redefine@2.8.2/source/js/build/layouts/essays.js" data-swup-reload-script></script>
+
+
+    <script  src="https://evan.beee.top/projects/hexo-theme-redefine@2.8.2/source/js/build/libs/pangu.min.js" ></script><script  src="https://evan.beee.top/projects/hexo-theme-redefine@2.8.2/source/js/build/plugins/pangu.js" ></script>
+
+
+
+    <script type="module" src="https://evan.beee.top/projects/hexo-theme-redefine@2.8.2/source/js/build/layouts/bookmarkNav.js" ></script>
+
+	
+</body>
+
+</html>

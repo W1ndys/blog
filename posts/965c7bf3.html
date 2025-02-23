@@ -1,0 +1,2222 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="keywords" content="博客, 生活, 技术, 记录">
+    
+    <meta name="author" content="W1ndys">
+    <!-- preconnect -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    
+        
+        
+        
+            <link rel="preconnect" href="https://evan.beee.top" crossorigin>
+        
+    
+    <!--- Seo Part-->
+    
+    <link rel="canonical" href="https://blog.w1ndys.top/posts/965c7bf3.html"/>
+    <meta name="robots" content="index,follow">
+    <meta name="googlebot" content="index,follow">
+    <meta name="revisit-after" content="1 days">
+    
+    
+    
+        
+        <meta name="description" content="W1ndys小屋">
+<meta property="og:type" content="article">
+<meta property="og:title" content="CTF密码学常见密码形式">
+<meta property="og:url" content="https://blog.w1ndys.top/posts/965c7bf3.html">
+<meta property="og:site_name" content="W1ndys小屋">
+<meta property="og:description" content="W1ndys小屋">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://blog.w1ndys.top/images/redefine-og.webp">
+<meta property="article:published_time" content="2023-10-04T13:01:00.000Z">
+<meta property="article:modified_time" content="2025-02-23T05:37:18.711Z">
+<meta property="article:author" content="W1ndys">
+<meta property="article:tag" content="CTF">
+<meta property="article:tag" content="Crypto">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://blog.w1ndys.top/images/redefine-og.webp">
+    
+    
+    <!--- Icon Part-->
+    <link rel="icon" type="image/png" href="/images/favicon.ico" sizes="192x192">
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon.ico">
+    <meta name="theme-color" content="#A31F34">
+    <link rel="shortcut icon" href="/images/favicon.ico">
+    <!--- Page Info-->
+    
+    <title>
+        
+            CTF密码学常见密码形式 | W1ndys小屋
+        
+    </title>
+
+    <link rel="stylesheet" href="https://evan.beee.top/projects/hexo-theme-redefine@2.8.2/source/fonts/Chillax/chillax.css">
+
+    <!--- Inject Part-->
+    
+        
+            
+    
+            
+    
+            
+                
+                    <script data-swup-reload-script data-pjax charset="UTF-8" id="LA_COLLECT" src="//sdk.51.la/js-sdk-pro.min.js"></script>
+                
+    
+            
+                
+                    <script data-swup-reload-script data-pjax>LA.init({id:"3HPYFt9znqKItrHZ",ck:"3HPYFt9znqKItrHZ",autoTrack:true})</script>
+                
+    
+            
+                
+                    <link rel="stylesheet" type="text/css" href="/css/Capoo.css">
+                
+    
+
+    
+<link rel="stylesheet" href="/css/style.css">
+
+
+    
+        <link rel="stylesheet" href="https://evan.beee.top/projects/hexo-theme-redefine@2.8.2/source/css/build/tailwind.css">
+    
+
+    <link rel="stylesheet" href="https://evan.beee.top/projects/hexo-theme-redefine@2.8.2/source/fonts/GeistMono/geist-mono.css">
+    <link rel="stylesheet" href="https://evan.beee.top/projects/hexo-theme-redefine@2.8.2/source/fonts/Geist/geist.css">
+    <!--- Font Part-->
+    
+    
+    
+    
+    
+    
+        <script  src="https://evan.beee.top/projects/hexo-theme-redefine@2.8.2/source/js/build/libs/anime.min.js" ></script>
+    
+
+    <script id="hexo-configurations">
+    window.config = {"hostname":"blog.w1ndys.top","root":"/","language":"zh-CN","path":"search.xml"};
+    window.theme = {"articles":{"style":{"font_size":"16px","line_height":1.5,"image_border_radius":"14px","image_alignment":"center","image_caption":false,"link_icon":true,"delete_mask":true,"title_alignment":"left","headings_top_spacing":{"h1":"3.2rem","h2":"2.4rem","h3":"1.9rem","h4":"1.6rem","h5":"1.4rem","h6":"1.3rem"}},"word_count":{"enable":true,"count":true,"min2read":true},"author_label":{"enable":true,"auto":false,"list":[]},"code_block":{"copy":true,"style":"mac","highlight_theme":{"light":"github","dark":"vs2015"},"font":{"enable":false,"family":null,"url":null}},"toc":{"enable":true,"max_depth":3,"number":false,"expand":true,"init_open":true},"copyright":{"enable":true,"default":"all_rights_reserved"},"lazyload":true,"pangu_js":true,"recommendation":{"enable":false,"title":"推荐阅读","limit":3,"mobile_limit":2,"placeholder":"/images/wallhaven-wqery6-light.webp","skip_dirs":[]}},"colors":{"primary":"#A31F34","secondary":"#1890ff","default_mode":"light"},"global":{"fonts":{"chinese":{"enable":false,"family":null,"url":null},"english":{"enable":false,"family":null,"url":null},"title":{"enable":false,"family":null,"url":null}},"content_max_width":"1000px","sidebar_width":"210px","hover":{"shadow":true,"scale":true},"scroll_progress":{"bar":true,"percentage":true},"website_counter":{"url":"https://cn.vercount.one/js","enable":true,"site_pv":true,"site_uv":true,"post_pv":true},"single_page":true,"preloader":{"enable":true,"custom_message":"欢迎来到W1ndys小屋"},"open_graph":{"enable":true,"image":"/images/redefine-og.webp","description":"W1ndys小屋"},"google_analytics":{"enable":false,"id":null}},"home_banner":{"enable":true,"style":"fixed","image":{"light":"https://pic1.zhimg.com/80/v2-b4e05912f591b51b9fa3e8aa4b9cba45.png","dark":"https://pic1.zhimg.com/80/v2-b4e05912f591b51b9fa3e8aa4b9cba45.png"},"title":"W1ndys小屋","subtitle":{"text":["一言加载中..."],"hitokoto":{"enable":true,"show_author":true,"api":"https://v1.hitokoto.cn"},"typing_speed":100,"backing_speed":80,"starting_delay":500,"backing_delay":1500,"loop":true,"smart_backspace":true},"text_color":{"light":"#fff","dark":"#d1d1b6"},"text_style":{"title_size":"2.8rem","subtitle_size":"1.5rem","line_height":1.2},"custom_font":{"enable":false,"family":null,"url":null},"social_links":{"enable":true,"style":"default","links":{"github":"https://github.com/W1ndys","instagram":null,"zhihu":"https://www.zhihu.com/people/w1ndys","twitter":null,"email":"w1ndys@outlook.com"},"qrs":{"weixin":null}}},"plugins":{"feed":{"enable":true},"aplayer":{"enable":false,"type":"fixed","audios":[{"name":null,"artist":null,"url":null,"cover":null,"lrc":null}]},"mermaid":{"enable":false,"version":"11.4.1"}},"version":"2.8.2","navbar":{"auto_hide":true,"color":{"left":"#f78736","right":"#367df7","transparency":35},"width":{"home":"1200px","pages":"1000px"},"links":{"Home":{"path":"/","icon":"fa-regular fa-house"},"Archives":{"path":"/archives","icon":"fa-regular fa-archive"},"Categories":{"path":"/categories","icon":"fa-regular fa-folder"},"Tags":{"path":"/tags","icon":"fa-regular fa-tags"},"友链接力":{"icon":"fa-solid fa-train-subway","submenus":{"异次元之旅":"https://travel.moe/go.html?travel=on","MIIT Travel":"https://beian.miit.cn.com/go.php","虫洞 | 十年之约":"https://foreverblog.cn/go.html","博客录":"https://bokelu.suijiboke.gs","笔墨迹":"https://blogscn.fun/random.html","博客圈":"https://bokequan.cn/?suiji","开往":"https://www.travellings.cn/go.html"}},"Friends":{"path":"/links","icon":"fa-regular fa-link"},"书签":{"icon":"fa-solid fa-bookmark","path":"/bookmarks/"}},"search":{"enable":true,"preload":true}},"page_templates":{"friends_column":3,"tags_style":"blur"},"home":{"sidebar":{"enable":true,"position":"left","first_item":"menu","announcement":"Welcome to W1ndys's Blog","show_on_mobile":true,"links":{"Archives":{"path":"/archives","icon":"fa-regular fa-archive"},"Tags":{"path":"/tags","icon":"fa-regular fa-tags"},"Categories":{"path":"/categories","icon":"fa-regular fa-folder"}}},"article_date_format":"auto","excerpt_length":200,"categories":{"enable":true,"limit":5},"tags":{"enable":true,"limit":5}},"footerStart":"2023/08/22 05:20:00"};
+    window.lang_ago = {"second":"%s 秒前","minute":"%s 分钟前","hour":"%s 小时前","day":"%s 天前","week":"%s 周前","month":"%s 个月前","year":"%s 年前"};
+    window.data = {"masonry":true};
+  </script>
+    
+    <!--- Fontawesome Part-->
+    <link rel="stylesheet" href="https://evan.beee.top/projects/hexo-theme-redefine@2.8.2/source/fontawesome/fontawesome.min.css">
+    <link rel="stylesheet" href="https://evan.beee.top/projects/hexo-theme-redefine@2.8.2/source/fontawesome/brands.min.css">
+    <link rel="stylesheet" href="https://evan.beee.top/projects/hexo-theme-redefine@2.8.2/source/fontawesome/solid.min.css">
+    <link rel="stylesheet" href="https://evan.beee.top/projects/hexo-theme-redefine@2.8.2/source/fontawesome/regular.min.css">
+    
+    
+    
+    
+<meta name="generator" content="Hexo 7.3.0"><link rel="alternate" href="/atom.xml" title="W1ndys小屋" type="application/atom+xml">
+</head>
+
+
+
+<body>
+	<div class="progress-bar-container">
+	
+	<span class="scroll-progress-bar"></span>
+	
+
+	
+	<span class="pjax-progress-bar"></span>
+	<!--        <span class="swup-progress-icon">-->
+	<!--            <i class="fa-solid fa-circle-notch fa-spin"></i>-->
+	<!--        </span>-->
+	
+</div>
+
+<style>
+    :root {
+        --preloader-background-color: #fff;
+        --preloader-text-color: #000;
+    }
+
+    @media (prefers-color-scheme: dark) {
+        :root {
+            --preloader-background-color: #202124;
+            --preloader-text-color: #fff;
+        }
+    }
+
+    @media (prefers-color-scheme: light) {
+        :root {
+            --preloader-background-color: #fff;
+            --preloader-text-color: #000;
+        }
+    }
+
+    @media (max-width: 600px) {
+        .ml13 {
+            font-size: 2.6rem !important; /* Adjust this value as needed */
+        }
+    }
+
+    .preloader {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem; /* Tailwind 'gap-4' is 1rem */
+        align-items: center;
+        justify-content: center;
+        position: fixed;
+        padding: 12px;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh; /* 'h-screen' is 100% of the viewport height */
+        background-color: var(--preloader-background-color);
+        z-index: 1100; /* 'z-[1100]' sets the z-index */
+        transition: opacity 0.2s ease-in-out;
+    }
+
+    .ml13 {
+        font-size: 3.2rem;
+        /* text-transform: uppercase; */
+        color: var(--preloader-text-color);
+        letter-spacing: -1px;
+        font-weight: 500;
+        font-family: 'Chillax-Variable', sans-serif;
+        text-align: center;
+    }
+
+    .ml13 .word {
+        display: inline-flex;
+        flex-wrap: wrap;
+        white-space: nowrap;
+    }
+
+    .ml13 .letter {
+        display: inline-block;
+        line-height: 1em;
+    }
+</style>
+
+<div class="preloader">
+    <h2 class="ml13">
+        欢迎来到W1ndys小屋
+    </h2>
+    <script>
+        var textWrapper = document.querySelector('.ml13');
+        // Split text into words
+        var words = textWrapper.textContent.trim().split(' ');
+
+        // Clear the existing content
+        textWrapper.innerHTML = '';
+
+        // Wrap each word and its letters in spans
+        words.forEach(function(word) {
+            var wordSpan = document.createElement('span');
+            wordSpan.classList.add('word');
+            wordSpan.innerHTML = word.replace(/\S/g, "<span class='letter'>$&</span>");
+            textWrapper.appendChild(wordSpan);
+            textWrapper.appendChild(document.createTextNode(' ')); // Add space between words
+        });
+
+        var animation = anime.timeline({ loop: true })
+            .add({
+                targets: '.ml13 .letter',
+                translateY: [20, 0],
+                translateZ: 0,
+                opacity: [0, 1],
+                filter: ['blur(5px)', 'blur(0px)'],
+                easing: "easeOutExpo",
+                duration: 1200,
+                delay: (el, i) => 300 + 20 * i,
+            })
+            .add({
+                targets: '.ml13 .letter',
+                translateY: [0, -20],
+                opacity: [1, 0],
+                filter: ['blur(0px)', 'blur(5px)'],
+                easing: "easeInExpo",
+                duration: 1000,
+                delay: (el, i) => 15 * i,
+                complete: function() {
+                    hidePreloader();
+                }
+            }, '-=700');
+
+
+        let themeStatus = JSON.parse(localStorage.getItem('REDEFINE-THEME-STATUS'))?.isDark;
+
+        // If the theme status is not found in local storage, check the preferred color scheme
+        if (themeStatus === undefined || themeStatus === null) {
+            if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+                themeStatus = 'dark';
+            } else {
+                themeStatus = 'light';
+            }
+        }
+
+        // Now you can use the themeStatus variable in your code
+        if (themeStatus) {
+            document.documentElement.style.setProperty('--preloader-background-color', '#202124');
+            document.documentElement.style.setProperty('--preloader-text-color', '#fff');
+        } else {
+            document.documentElement.style.setProperty('--preloader-background-color', '#fff');
+            document.documentElement.style.setProperty('--preloader-text-color', '#000');
+        }
+
+        window.addEventListener('load', function () {
+            setTimeout(hidePreloader, 5000); // Call hidePreloader after 5000 milliseconds if not already called by animation
+        });
+
+        function hidePreloader() {
+            var preloader = document.querySelector('.preloader');
+            preloader.style.opacity = '0';
+            setTimeout(function () {
+                preloader.style.display = 'none';
+            }, 200);
+        }
+    </script>
+</div>
+
+<main class="page-container" id="swup">
+
+	
+
+	<div class="main-content-container flex flex-col justify-between min-h-dvh">
+		<div class="main-content-header">
+			<header class="navbar-container px-6 md:px-12">
+    <div class="navbar-content transition-navbar ">
+        <div class="left">
+            
+                <a class="logo-image h-8 w-8 sm:w-10 sm:h-10 mr-3" href="/">
+                    <img src="/images/haixian.svg" class="w-full h-full rounded-sm">
+                </a>
+            
+            <a class="logo-title" href="/">
+                
+                W1ndys小屋
+                
+            </a>
+        </div>
+
+        <div class="right">
+            <!-- PC -->
+            <div class="desktop">
+                <ul class="navbar-list">
+                    
+                        
+                            
+
+                            <li class="navbar-item">
+                                <!-- Menu -->
+                                <a class=""
+                                   href="/"
+                                        >
+                                    <i class="fa-regular fa-house fa-fw"></i>
+                                    首页
+                                    
+                                </a>
+
+                                <!-- Submenu -->
+                                
+                            </li>
+                    
+                        
+                            
+
+                            <li class="navbar-item">
+                                <!-- Menu -->
+                                <a class=""
+                                   href="/archives"
+                                        >
+                                    <i class="fa-regular fa-archive fa-fw"></i>
+                                    归档
+                                    
+                                </a>
+
+                                <!-- Submenu -->
+                                
+                            </li>
+                    
+                        
+                            
+
+                            <li class="navbar-item">
+                                <!-- Menu -->
+                                <a class=""
+                                   href="/categories"
+                                        >
+                                    <i class="fa-regular fa-folder fa-fw"></i>
+                                    分类
+                                    
+                                </a>
+
+                                <!-- Submenu -->
+                                
+                            </li>
+                    
+                        
+                            
+
+                            <li class="navbar-item">
+                                <!-- Menu -->
+                                <a class=""
+                                   href="/tags"
+                                        >
+                                    <i class="fa-regular fa-tags fa-fw"></i>
+                                    标签
+                                    
+                                </a>
+
+                                <!-- Submenu -->
+                                
+                            </li>
+                    
+                        
+                            
+
+                            <li class="navbar-item">
+                                <!-- Menu -->
+                                <a class="has-dropdown"
+                                   href="#"
+                                        onClick=&#34;return false;&#34;>
+                                    <i class="fa-solid fa-train-subway fa-fw"></i>
+                                    友链接力
+                                    <i class="fa-solid fa-chevron-down fa-fw"></i>
+                                </a>
+
+                                <!-- Submenu -->
+                                
+                                    <ul class="sub-menu">
+                                        
+                                            <li>
+                                                <a target="_blank" rel="noopener" href="https://travel.moe/go.html?travel=on">
+                                                    异次元之旅
+                                                </a>
+                                            </li>
+                                        
+                                            <li>
+                                                <a target="_blank" rel="noopener" href="https://beian.miit.cn.com/go.php">
+                                                    MIIT TRAVEL
+                                                </a>
+                                            </li>
+                                        
+                                            <li>
+                                                <a target="_blank" rel="noopener" href="https://foreverblog.cn/go.html">
+                                                    虫洞 | 十年之约
+                                                </a>
+                                            </li>
+                                        
+                                            <li>
+                                                <a target="_blank" rel="noopener" href="https://bokelu.suijiboke.gs">
+                                                    博客录
+                                                </a>
+                                            </li>
+                                        
+                                            <li>
+                                                <a target="_blank" rel="noopener" href="https://blogscn.fun/random.html">
+                                                    笔墨迹
+                                                </a>
+                                            </li>
+                                        
+                                            <li>
+                                                <a target="_blank" rel="noopener" href="https://bokequan.cn/?suiji">
+                                                    博客圈
+                                                </a>
+                                            </li>
+                                        
+                                            <li>
+                                                <a target="_blank" rel="noopener" href="https://www.travellings.cn/go.html">
+                                                    开往
+                                                </a>
+                                            </li>
+                                        
+                                    </ul>
+                                
+                            </li>
+                    
+                        
+                            
+
+                            <li class="navbar-item">
+                                <!-- Menu -->
+                                <a class=""
+                                   href="/links"
+                                        >
+                                    <i class="fa-regular fa-link fa-fw"></i>
+                                    友情链接
+                                    
+                                </a>
+
+                                <!-- Submenu -->
+                                
+                            </li>
+                    
+                        
+                            
+
+                            <li class="navbar-item">
+                                <!-- Menu -->
+                                <a class=""
+                                   href="/bookmarks/"
+                                        >
+                                    <i class="fa-solid fa-bookmark fa-fw"></i>
+                                    书签
+                                    
+                                </a>
+
+                                <!-- Submenu -->
+                                
+                            </li>
+                    
+                    
+                        <li class="navbar-item search search-popup-trigger">
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                        </li>
+                    
+                </ul>
+            </div>
+            <!-- Mobile -->
+            <div class="mobile">
+                
+                    <div class="icon-item search search-popup-trigger"><i class="fa-solid fa-magnifying-glass"></i>
+                    </div>
+                
+                <div class="icon-item navbar-bar">
+                    <div class="navbar-bar-middle"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Mobile sheet -->
+    <div class="navbar-drawer h-dvh w-full absolute top-0 left-0 bg-background-color flex flex-col justify-between">
+        <ul class="drawer-navbar-list flex flex-col px-4 justify-center items-start">
+            
+                
+                    
+
+                    <li class="drawer-navbar-item text-base my-1.5 flex flex-col w-full">
+                        
+                        <a class="py-1.5 px-2 flex flex-row items-center justify-between gap-1 hover:!text-primary active:!text-primary text-2xl font-semibold group border-b border-border-color hover:border-primary w-full "
+                           href="/"
+                        >
+                            <span>
+                                首页
+                            </span>
+                            
+                                <i class="fa-regular fa-house fa-sm fa-fw"></i>
+                            
+                        </a>
+                        
+
+                        
+                    </li>
+            
+                
+                    
+
+                    <li class="drawer-navbar-item text-base my-1.5 flex flex-col w-full">
+                        
+                        <a class="py-1.5 px-2 flex flex-row items-center justify-between gap-1 hover:!text-primary active:!text-primary text-2xl font-semibold group border-b border-border-color hover:border-primary w-full "
+                           href="/archives"
+                        >
+                            <span>
+                                归档
+                            </span>
+                            
+                                <i class="fa-regular fa-archive fa-sm fa-fw"></i>
+                            
+                        </a>
+                        
+
+                        
+                    </li>
+            
+                
+                    
+
+                    <li class="drawer-navbar-item text-base my-1.5 flex flex-col w-full">
+                        
+                        <a class="py-1.5 px-2 flex flex-row items-center justify-between gap-1 hover:!text-primary active:!text-primary text-2xl font-semibold group border-b border-border-color hover:border-primary w-full "
+                           href="/categories"
+                        >
+                            <span>
+                                分类
+                            </span>
+                            
+                                <i class="fa-regular fa-folder fa-sm fa-fw"></i>
+                            
+                        </a>
+                        
+
+                        
+                    </li>
+            
+                
+                    
+
+                    <li class="drawer-navbar-item text-base my-1.5 flex flex-col w-full">
+                        
+                        <a class="py-1.5 px-2 flex flex-row items-center justify-between gap-1 hover:!text-primary active:!text-primary text-2xl font-semibold group border-b border-border-color hover:border-primary w-full "
+                           href="/tags"
+                        >
+                            <span>
+                                标签
+                            </span>
+                            
+                                <i class="fa-regular fa-tags fa-sm fa-fw"></i>
+                            
+                        </a>
+                        
+
+                        
+                    </li>
+            
+                
+                    
+
+                    <li class="drawer-navbar-item-sub text-base my-1.5 flex flex-col w-full">
+                        
+                        <div class="py-1.5 px-2 flex flex-row items-center justify-between gap-1 hover:!text-primary active:!text-primary cursor-pointer text-2xl font-semibold group border-b border-border-color hover:border-primary w-full "
+                             navbar-data-toggle="submenu-友链接力"
+                        >
+                            <span>
+                                友链接力
+                            </span>
+                            
+                                <i class="fa-solid fa-chevron-right fa-sm fa-fw transition-all"></i>
+                            
+                        </div>
+                        
+
+                        
+                            <div class="flex-col items-start px-2 py-2 hidden" data-target="submenu-友链接力">
+                                
+                                    <div class="drawer-navbar-item text-base flex flex-col justify-center items-start hover:underline active:underline hover:underline-offset-1 rounded-3xl">
+                                        <a class=" text-third-text-color text-xl"
+                                           target="_blank" rel="noopener" href="https://travel.moe/go.html?travel=on">异次元之旅</a>
+                                    </div>
+                                
+                                    <div class="drawer-navbar-item text-base flex flex-col justify-center items-start hover:underline active:underline hover:underline-offset-1 rounded-3xl">
+                                        <a class=" text-third-text-color text-xl"
+                                           target="_blank" rel="noopener" href="https://beian.miit.cn.com/go.php">MIIT TRAVEL</a>
+                                    </div>
+                                
+                                    <div class="drawer-navbar-item text-base flex flex-col justify-center items-start hover:underline active:underline hover:underline-offset-1 rounded-3xl">
+                                        <a class=" text-third-text-color text-xl"
+                                           target="_blank" rel="noopener" href="https://foreverblog.cn/go.html">虫洞 | 十年之约</a>
+                                    </div>
+                                
+                                    <div class="drawer-navbar-item text-base flex flex-col justify-center items-start hover:underline active:underline hover:underline-offset-1 rounded-3xl">
+                                        <a class=" text-third-text-color text-xl"
+                                           target="_blank" rel="noopener" href="https://bokelu.suijiboke.gs">博客录</a>
+                                    </div>
+                                
+                                    <div class="drawer-navbar-item text-base flex flex-col justify-center items-start hover:underline active:underline hover:underline-offset-1 rounded-3xl">
+                                        <a class=" text-third-text-color text-xl"
+                                           target="_blank" rel="noopener" href="https://blogscn.fun/random.html">笔墨迹</a>
+                                    </div>
+                                
+                                    <div class="drawer-navbar-item text-base flex flex-col justify-center items-start hover:underline active:underline hover:underline-offset-1 rounded-3xl">
+                                        <a class=" text-third-text-color text-xl"
+                                           target="_blank" rel="noopener" href="https://bokequan.cn/?suiji">博客圈</a>
+                                    </div>
+                                
+                                    <div class="drawer-navbar-item text-base flex flex-col justify-center items-start hover:underline active:underline hover:underline-offset-1 rounded-3xl">
+                                        <a class=" text-third-text-color text-xl"
+                                           target="_blank" rel="noopener" href="https://www.travellings.cn/go.html">开往</a>
+                                    </div>
+                                
+                            </div>
+                        
+                    </li>
+            
+                
+                    
+
+                    <li class="drawer-navbar-item text-base my-1.5 flex flex-col w-full">
+                        
+                        <a class="py-1.5 px-2 flex flex-row items-center justify-between gap-1 hover:!text-primary active:!text-primary text-2xl font-semibold group border-b border-border-color hover:border-primary w-full "
+                           href="/links"
+                        >
+                            <span>
+                                友情链接
+                            </span>
+                            
+                                <i class="fa-regular fa-link fa-sm fa-fw"></i>
+                            
+                        </a>
+                        
+
+                        
+                    </li>
+            
+                
+                    
+
+                    <li class="drawer-navbar-item text-base my-1.5 flex flex-col w-full">
+                        
+                        <a class="py-1.5 px-2 flex flex-row items-center justify-between gap-1 hover:!text-primary active:!text-primary text-2xl font-semibold group border-b border-border-color hover:border-primary w-full "
+                           href="/bookmarks/"
+                        >
+                            <span>
+                                书签
+                            </span>
+                            
+                                <i class="fa-solid fa-bookmark fa-sm fa-fw"></i>
+                            
+                        </a>
+                        
+
+                        
+                    </li>
+            
+
+            
+            
+                
+                    
+                    
+                    
+            
+        </ul>
+
+        <div class="statistics flex justify-around my-2.5">
+    <a class="item tag-count-item flex flex-col justify-center items-center w-20" href="/tags">
+        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">161</div>
+        <div class="label text-third-text-color text-sm">标签</div>
+    </a>
+    <a class="item tag-count-item flex flex-col justify-center items-center w-20" href="/categories">
+        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">80</div>
+        <div class="label text-third-text-color text-sm">分类</div>
+    </a>
+    <a class="item tag-count-item flex flex-col justify-center items-center w-20" href="/archives">
+        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">193</div>
+        <div class="label text-third-text-color text-sm">文章</div>
+    </a>
+</div>
+    </div>
+
+    <div class="window-mask"></div>
+
+</header>
+
+
+		</div>
+
+		<div class="main-content-body transition-fade-up">
+			
+
+			<div class="main-content">
+				<div class="post-page-container flex relative justify-between box-border w-full h-full">
+	<div class="article-content-container">
+
+		<div class="article-title relative w-full">
+			
+			<div class="w-full flex items-center pt-6 justify-start">
+				<h1 class="article-title-regular text-second-text-color tracking-tight text-4xl md:text-6xl font-semibold px-2 sm:px-6 md:px-8 py-3">CTF密码学常见密码形式</h1>
+			</div>
+			
+		</div>
+
+		
+		<div class="article-header flex flex-row gap-2 items-center px-2 sm:px-6 md:px-8">
+			<div class="avatar w-[46px] h-[46px] flex-shrink-0 rounded-medium border border-border-color p-[1px]">
+				<img src="https://avatars.githubusercontent.com/u/109416673">
+			</div>
+			<div class="info flex flex-col justify-between">
+				<div class="author flex items-center">
+					<span class="name text-default-text-color text-lg font-semibold">W1ndys</span>
+					
+					<span class="author-label ml-1.5 text-xs px-2 py-0.5 rounded-small text-third-text-color border border-shadow-color-1">Lv6</span>
+					
+				</div>
+				<div class="meta-info">
+					<div class="article-meta-info">
+    <span class="article-date article-meta-item">
+        <i class="fa-regular fa-pen-fancy"></i>&nbsp;
+        <span class="desktop">2023-10-04 21:01</span>
+        <span class="mobile">2023-10-04 21:01</span>
+        <span class="hover-info">创建</span>
+    </span>
+    
+        <span class="article-date article-meta-item">
+            <i class="fa-regular fa-wrench"></i>&nbsp;
+            <span class="desktop">2025-02-23 13:37:18</span>
+            <span class="mobile">2025-02-23 13:37:18</span>
+            <span class="hover-info">更新</span>
+        </span>
+    
+
+    
+        <span class="article-categories article-meta-item">
+            <i class="fa-regular fa-folders"></i>&nbsp;
+            <ul>
+                
+                
+                    
+                        
+                        <li>
+                            <a href="/categories/CTF/">CTF</a>&nbsp;
+                        </li>
+                    
+                    
+                
+                    
+                        
+                            <li>></li>
+                        
+                        <li>
+                            <a href="/categories/CTF/Crypto/">Crypto</a>&nbsp;
+                        </li>
+                    
+                    
+                
+            </ul>
+        </span>
+    
+    
+        <span class="article-tags article-meta-item">
+            <i class="fa-regular fa-tags"></i>&nbsp;
+            <ul>
+                
+                    <li>
+                        <a href="/tags/CTF/">CTF</a>&nbsp;
+                    </li>
+                
+                    <li>
+                        | <a href="/tags/Crypto/">Crypto</a>&nbsp;
+                    </li>
+                
+            </ul>
+        </span>
+    
+
+    
+    
+        <span class="article-wordcount article-meta-item">
+            <i class="fa-regular fa-typewriter"></i>&nbsp;<span>6.5k 字</span>
+        </span>
+    
+    
+        <span class="article-min2read article-meta-item">
+            <i class="fa-regular fa-clock"></i>&nbsp;<span>25 分钟</span>
+        </span>
+    
+    
+        <span class="article-pv article-meta-item">
+            <i class="fa-regular fa-eye"></i>&nbsp;<span id="busuanzi_value_page_pv"></span>
+        </span>
+    
+</div>
+
+				</div>
+			</div>
+		</div>
+		
+
+		
+
+
+		<div class="article-content markdown-body px-2 sm:px-6 md:px-8 pb-8">
+			<blockquote>
+<p>声明：本文基于<a class="link"   target="_blank" rel="noopener" href="https://cloud.tencent.com/developer/article/1748394" >https://cloud.tencent.com/developer/article/1748394<i class="fa-solid fa-arrow-up-right ml-[0.2em] font-light align-text-top text-[0.7em] link-icon"></i></a></p>
+<p>这篇文章进行修改，转载请注明来源，感谢支持</p>
+<p>未写完，持续更新中……</p>
+</blockquote>
+<h1 id="MD5、sha1、HMAC算法、NTLM等相似加密类型"><a href="#MD5、sha1、HMAC算法、NTLM等相似加密类型" class="headerlink" title="MD5、sha1、HMAC算法、NTLM等相似加密类型"></a>MD5、sha1、HMAC算法、NTLM等相似加密类型</h1><h2 id="常用解密网站"><a href="#常用解密网站" class="headerlink" title="常用解密网站"></a>常用解密网站</h2><ul>
+<li><a class="link"   target="_blank" rel="noopener" href="https://www.somd5.com/" >https://www.somd5.com/<i class="fa-solid fa-arrow-up-right ml-[0.2em] font-light align-text-top text-[0.7em] link-icon"></i></a></li>
+<li><a class="link"   target="_blank" rel="noopener" href="https://pmd5.com/" >https://pmd5.com/<i class="fa-solid fa-arrow-up-right ml-[0.2em] font-light align-text-top text-[0.7em] link-icon"></i></a></li>
+<li><a class="link"   target="_blank" rel="noopener" href="http://www.ttmd5.com/%EF%BC%88%E5%B8%A6%E6%89%B9%E9%87%8F%E8%A7%A3%E5%AF%86%E5%B7%A5%E5%85%B7%EF%BC%89" >http://www.ttmd5.com/（带批量解密工具）<i class="fa-solid fa-arrow-up-right ml-[0.2em] font-light align-text-top text-[0.7em] link-icon"></i></a></li>
+</ul>
+<h2 id="1、MD5——示例21232F297A57A5A743894A0E4A801FC3"><a href="#1、MD5——示例21232F297A57A5A743894A0E4A801FC3" class="headerlink" title="1、MD5——示例21232F297A57A5A743894A0E4A801FC3"></a>1、MD5——示例<code>21232F297A57A5A743894A0E4A801FC3</code></h2><p><strong>一般MD5值是32位由数字“0-9”和字母“a-f”所组成的字符串</strong>，如图。如果出现这个范围以外的字符说明这可能是个错误的md5值，就没必要再拿去解密了。16位值是取的是8~24位。</p>
+<p>根据md5加密后的特征（md5加密后是16位或者32位的字符，由字母和数字组成，字母大小写统一）可以尝试md5解密。<br>（TIP：有时候我们获得到的 md5 是 16 位的，其实那 16 位是 32 位 md5 的长度，是从 32 位 md5 值来的。是将 32 位 md5 去掉前八位，去掉后八位得到的）</p>
+<p><strong>md5的三个特征：</strong></p>
+<ol>
+<li><strong>确定性</strong>：一个原始数据的MD5值是唯一的，同一个原始数据不可能会计算出多个不同的MD5值。</li>
+<li><strong>碰撞性</strong>：原始数据与其MD5值并不是一一对应的，有可能多个原始数据计算出来的MD5值是一样的，这就是碰撞。</li>
+<li><strong>不可逆</strong>：也就是说如果告诉你一个MD5值，你是无法通过它还原出它的原始数据的，这不是你的技术不够强，这是由它的算法所决定的。因为根据第2点，一个给定的MD5值是可能对应多个原始数据的，并且理论上讲是可以对应无限多个原始数据，所有无法确定到底是由哪个原始数据产生的。</li>
+</ol>
+<h2 id="2、sha1——示例d033e22ae348aeb5660fc2140aec35850c4da997"><a href="#2、sha1——示例d033e22ae348aeb5660fc2140aec35850c4da997" class="headerlink" title="2、sha1——示例d033e22ae348aeb5660fc2140aec35850c4da997"></a>2、sha1——示例<code>d033e22ae348aeb5660fc2140aec35850c4da997</code></h2><p>这种加密的密文特征跟MD5差不多，只不过位数是40</p>
+<h2 id="3、HMAC算法——示例5b696ae7da9442ead7adc24d03cedb65"><a href="#3、HMAC算法——示例5b696ae7da9442ead7adc24d03cedb65" class="headerlink" title="3、HMAC算法——示例5b696ae7da9442ead7adc24d03cedb65"></a>3、HMAC算法——示例<code>5b696ae7da9442ead7adc24d03cedb65</code></h2><p>HMAC (Hash-based Message Authentication Code) 常用于接口签名验证，这种算法就是在前两种加密的基础上引入了秘钥，而秘钥又只有传输双方才知道，所以基本上是破解不了的</p>
+<h2 id="3、NTLM——示例209c6174da490caeb422f3fa5a7ae634"><a href="#3、NTLM——示例209c6174da490caeb422f3fa5a7ae634" class="headerlink" title="3、NTLM——示例209c6174da490caeb422f3fa5a7ae634"></a>3、NTLM——示例<code>209c6174da490caeb422f3fa5a7ae634</code></h2><p>这种加密是Windows的哈希密码，是 Windows NT 早期版本的标准安全协议。与它相同的还有Domain Cached Credentials（域哈希）。</p>
+<h2 id="相似加密类型"><a href="#相似加密类型" class="headerlink" title="相似加密类型"></a>相似加密类型</h2><table>
+<thead>
+<tr>
+<th align="left">#</th>
+<th align="left">算法</th>
+<th align="left">长度</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">1</td>
+<td align="left">md5</td>
+<td align="left">32&#x2F;16</td>
+</tr>
+<tr>
+<td align="left">2</td>
+<td align="left">sha1</td>
+<td align="left">40</td>
+</tr>
+<tr>
+<td align="left">3</td>
+<td align="left">sha256</td>
+<td align="left">64</td>
+</tr>
+<tr>
+<td align="left">4</td>
+<td align="left">sha512</td>
+<td align="left">128</td>
+</tr>
+<tr>
+<td align="left">5</td>
+<td align="left">adler32</td>
+<td align="left">8</td>
+</tr>
+<tr>
+<td align="left">6</td>
+<td align="left">crc32</td>
+<td align="left">8</td>
+</tr>
+<tr>
+<td align="left">7</td>
+<td align="left">crc32b</td>
+<td align="left">8</td>
+</tr>
+<tr>
+<td align="left">8</td>
+<td align="left">fnv132</td>
+<td align="left">8</td>
+</tr>
+<tr>
+<td align="left">9</td>
+<td align="left">fnv164</td>
+<td align="left">16</td>
+</tr>
+<tr>
+<td align="left">10</td>
+<td align="left">fnv1a32</td>
+<td align="left">8</td>
+</tr>
+<tr>
+<td align="left">11</td>
+<td align="left">fnv1a64</td>
+<td align="left">16</td>
+</tr>
+<tr>
+<td align="left">12</td>
+<td align="left">gost</td>
+<td align="left">64</td>
+</tr>
+<tr>
+<td align="left">13</td>
+<td align="left">gost-crypto</td>
+<td align="left">64</td>
+</tr>
+<tr>
+<td align="left">14</td>
+<td align="left">haval128,3</td>
+<td align="left">32</td>
+</tr>
+<tr>
+<td align="left">15</td>
+<td align="left">haval128,4</td>
+<td align="left">32</td>
+</tr>
+<tr>
+<td align="left">16</td>
+<td align="left">haval128,5</td>
+<td align="left">32</td>
+</tr>
+<tr>
+<td align="left">17</td>
+<td align="left">haval160,3</td>
+<td align="left">40</td>
+</tr>
+<tr>
+<td align="left">18</td>
+<td align="left">haval160,4</td>
+<td align="left">40</td>
+</tr>
+<tr>
+<td align="left">19</td>
+<td align="left">haval160,5</td>
+<td align="left">40</td>
+</tr>
+<tr>
+<td align="left">20</td>
+<td align="left">haval192,3</td>
+<td align="left">48</td>
+</tr>
+<tr>
+<td align="left">21</td>
+<td align="left">haval192,4</td>
+<td align="left">48</td>
+</tr>
+<tr>
+<td align="left">22</td>
+<td align="left">haval192,5</td>
+<td align="left">48</td>
+</tr>
+<tr>
+<td align="left">23</td>
+<td align="left">haval224,3</td>
+<td align="left">56</td>
+</tr>
+<tr>
+<td align="left">24</td>
+<td align="left">haval224,4</td>
+<td align="left">56</td>
+</tr>
+<tr>
+<td align="left">25</td>
+<td align="left">haval224,5</td>
+<td align="left">56</td>
+</tr>
+<tr>
+<td align="left">26</td>
+<td align="left">haval256,3</td>
+<td align="left">64</td>
+</tr>
+<tr>
+<td align="left">27</td>
+<td align="left">haval256,4</td>
+<td align="left">64</td>
+</tr>
+<tr>
+<td align="left">28</td>
+<td align="left">haval256,5</td>
+<td align="left">64</td>
+</tr>
+<tr>
+<td align="left">29</td>
+<td align="left">joaat</td>
+<td align="left">8</td>
+</tr>
+<tr>
+<td align="left">30</td>
+<td align="left">md2</td>
+<td align="left">32</td>
+</tr>
+<tr>
+<td align="left">31</td>
+<td align="left">md4</td>
+<td align="left">32</td>
+</tr>
+<tr>
+<td align="left">32</td>
+<td align="left">ripemd128</td>
+<td align="left">32</td>
+</tr>
+<tr>
+<td align="left">33</td>
+<td align="left">ripemd160</td>
+<td align="left">40</td>
+</tr>
+<tr>
+<td align="left">34</td>
+<td align="left">ripemd256</td>
+<td align="left">64</td>
+</tr>
+<tr>
+<td align="left">35</td>
+<td align="left">ripemd320</td>
+<td align="left">80</td>
+</tr>
+<tr>
+<td align="left">36</td>
+<td align="left">sha224</td>
+<td align="left">56</td>
+</tr>
+<tr>
+<td align="left">37</td>
+<td align="left">sha3-224</td>
+<td align="left">56</td>
+</tr>
+<tr>
+<td align="left">38</td>
+<td align="left">sha3-256</td>
+<td align="left">64</td>
+</tr>
+<tr>
+<td align="left">39</td>
+<td align="left">sha3-384</td>
+<td align="left">96</td>
+</tr>
+<tr>
+<td align="left">40</td>
+<td align="left">sha3-512</td>
+<td align="left">128</td>
+</tr>
+<tr>
+<td align="left">41</td>
+<td align="left">sha384</td>
+<td align="left">96</td>
+</tr>
+<tr>
+<td align="left">42</td>
+<td align="left">sha512&#x2F;224</td>
+<td align="left">56</td>
+</tr>
+<tr>
+<td align="left">43</td>
+<td align="left">sha512&#x2F;256</td>
+<td align="left">64</td>
+</tr>
+<tr>
+<td align="left">44</td>
+<td align="left">snefru</td>
+<td align="left">64</td>
+</tr>
+<tr>
+<td align="left">45</td>
+<td align="left">snefru256</td>
+<td align="left">64</td>
+</tr>
+<tr>
+<td align="left">46</td>
+<td align="left">tiger128,3</td>
+<td align="left">32</td>
+</tr>
+<tr>
+<td align="left">47</td>
+<td align="left">tiger128,4</td>
+<td align="left">32</td>
+</tr>
+<tr>
+<td align="left">48</td>
+<td align="left">tiger160,3</td>
+<td align="left">40</td>
+</tr>
+<tr>
+<td align="left">49</td>
+<td align="left">tiger160,4</td>
+<td align="left">40</td>
+</tr>
+<tr>
+<td align="left">50</td>
+<td align="left">tiger192,3</td>
+<td align="left">48</td>
+</tr>
+<tr>
+<td align="left">51</td>
+<td align="left">tiger192,4</td>
+<td align="left">48</td>
+</tr>
+<tr>
+<td align="left">52</td>
+<td align="left">whirlpool</td>
+<td align="left">128</td>
+</tr>
+<tr>
+<td align="left">53</td>
+<td align="left">mysql</td>
+<td align="left">老MYSQL数据库用的，16位，且第1位和第7位必须为0-8</td>
+</tr>
+<tr>
+<td align="left">54</td>
+<td align="left">mysql5</td>
+<td align="left">40</td>
+</tr>
+<tr>
+<td align="left">55</td>
+<td align="left">NTLM</td>
+<td align="left">32</td>
+</tr>
+<tr>
+<td align="left">56</td>
+<td align="left">Domain Cached Credentials</td>
+<td align="left">32</td>
+</tr>
+</tbody></table>
+<h1 id="Base64、Base58、Base32、Base16、Base85、Base100等相似加密类型"><a href="#Base64、Base58、Base32、Base16、Base85、Base100等相似加密类型" class="headerlink" title="Base64、Base58、Base32、Base16、Base85、Base100等相似加密类型"></a>Base64、Base58、Base32、Base16、Base85、Base100等相似加密类型</h1><h2 id="1、Base64——示例YWRtaW4tcm9vdA"><a href="#1、Base64——示例YWRtaW4tcm9vdA" class="headerlink" title="1、Base64——示例YWRtaW4tcm9vdA=="></a>1、Base64——示例<code>YWRtaW4tcm9vdA==</code></h2><p><strong>一般情况下密文尾部都会有两个等号，明文很少的时候则没有</strong></p>
+<p>Base64编码要求把3个8位字节（3<em>8&#x3D;24）转化为4个6位的字节（4</em>6&#x3D;24），之后在6位的前面补两个0，形成8位一个字节的形式。 如果剩下的字符不足3个字节，则用0填充，输出字符使用‘&#x3D;’，因此编码后输出的文本末尾可能会出现1或2个‘&#x3D;’，如图。</p>
+<p>为了保证所输出的编码位可读字符，Base64制定了一个编码表，以便进行统一转换。编码表的大小为2^6&#x3D;64，这也是Base64名称的由来。</p>
+<p><strong>Base64编码表</strong></p>
+<table>
+<thead>
+<tr>
+<th align="left">码值</th>
+<th align="left">字符</th>
+<th align="left">码值</th>
+<th align="left">字符</th>
+<th align="left">码值</th>
+<th align="left">字符</th>
+<th align="left">码值</th>
+<th align="left">字符</th>
+<th align="left">码值</th>
+<th align="left">字符</th>
+<th align="left">码值</th>
+<th align="left">字符</th>
+<th align="left">码值</th>
+<th align="left">字符</th>
+<th align="left">码值</th>
+<th align="left">字符</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">0</td>
+<td align="left">A</td>
+<td align="left">8</td>
+<td align="left">I</td>
+<td align="left">16</td>
+<td align="left">Q</td>
+<td align="left">24</td>
+<td align="left">Y</td>
+<td align="left">32</td>
+<td align="left">g</td>
+<td align="left">40</td>
+<td align="left">o</td>
+<td align="left">48</td>
+<td align="left">w</td>
+<td align="left">56</td>
+<td align="left">4</td>
+</tr>
+<tr>
+<td align="left">1</td>
+<td align="left">B</td>
+<td align="left">9</td>
+<td align="left">J</td>
+<td align="left">17</td>
+<td align="left">R</td>
+<td align="left">25</td>
+<td align="left">Z</td>
+<td align="left">33</td>
+<td align="left">h</td>
+<td align="left">41</td>
+<td align="left">p</td>
+<td align="left">49</td>
+<td align="left">x</td>
+<td align="left">57</td>
+<td align="left">5</td>
+</tr>
+<tr>
+<td align="left">2</td>
+<td align="left">C</td>
+<td align="left">10</td>
+<td align="left">K</td>
+<td align="left">18</td>
+<td align="left">S</td>
+<td align="left">26</td>
+<td align="left">a</td>
+<td align="left">34</td>
+<td align="left">i</td>
+<td align="left">42</td>
+<td align="left">q</td>
+<td align="left">50</td>
+<td align="left">y</td>
+<td align="left">58</td>
+<td align="left">6</td>
+</tr>
+<tr>
+<td align="left">3</td>
+<td align="left">D</td>
+<td align="left">11</td>
+<td align="left">L</td>
+<td align="left">19</td>
+<td align="left">T</td>
+<td align="left">27</td>
+<td align="left">b</td>
+<td align="left">35</td>
+<td align="left">j</td>
+<td align="left">43</td>
+<td align="left">r</td>
+<td align="left">51</td>
+<td align="left">z</td>
+<td align="left">59</td>
+<td align="left">7</td>
+</tr>
+<tr>
+<td align="left">4</td>
+<td align="left">E</td>
+<td align="left">12</td>
+<td align="left">M</td>
+<td align="left">20</td>
+<td align="left">U</td>
+<td align="left">28</td>
+<td align="left">c</td>
+<td align="left">36</td>
+<td align="left">k</td>
+<td align="left">44</td>
+<td align="left">s</td>
+<td align="left">52</td>
+<td align="left">0</td>
+<td align="left">60</td>
+<td align="left">8</td>
+</tr>
+<tr>
+<td align="left">5</td>
+<td align="left">F</td>
+<td align="left">13</td>
+<td align="left">N</td>
+<td align="left">21</td>
+<td align="left">V</td>
+<td align="left">29</td>
+<td align="left">d</td>
+<td align="left">37</td>
+<td align="left">l</td>
+<td align="left">45</td>
+<td align="left">t</td>
+<td align="left">53</td>
+<td align="left">1</td>
+<td align="left">61</td>
+<td align="left">9</td>
+</tr>
+<tr>
+<td align="left">6</td>
+<td align="left">G</td>
+<td align="left">14</td>
+<td align="left">O</td>
+<td align="left">22</td>
+<td align="left">W</td>
+<td align="left">30</td>
+<td align="left">e</td>
+<td align="left">38</td>
+<td align="left">m</td>
+<td align="left">46</td>
+<td align="left">u</td>
+<td align="left">54</td>
+<td align="left">2</td>
+<td align="left">62</td>
+<td align="left">+</td>
+</tr>
+<tr>
+<td align="left">7</td>
+<td align="left">H</td>
+<td align="left">15</td>
+<td align="left">P</td>
+<td align="left">23</td>
+<td align="left">X</td>
+<td align="left">31</td>
+<td align="left">f</td>
+<td align="left">39</td>
+<td align="left">n</td>
+<td align="left">47</td>
+<td align="left">v</td>
+<td align="left">55</td>
+<td align="left">3</td>
+<td align="left">63</td>
+<td align="left">&#x2F;</td>
+</tr>
+</tbody></table>
+<h2 id="Base64使用注意问题"><a href="#Base64使用注意问题" class="headerlink" title="Base64使用注意问题"></a>Base64使用注意问题</h2><h3 id="一、Base64和URL传参问题"><a href="#一、Base64和URL传参问题" class="headerlink" title="一、Base64和URL传参问题"></a>一、Base64和URL传参问题</h3><p>标准的Base64并不适合直接放在URL里传输，因为URL编码器会把标准Base64中的“&#x2F;”和“+”字符变为形如“%XX”的形式，而这些“%”号在存入数据库时还需要再进行转换，因为ANSI SQL中已将“%”号用作通配符。</p>
+<p>为解决此问题，可采用一种用于URL的改进Base64编码，它在末尾填充’&#x3D;’号，并将标准Base64中的“+”和“&#x2F;”分别改成了“-”和“_”，这样就免去了在URL编解码和数据库存储时所要作的转换，避免了编码信息长度在此过程中的增加，并统一了数据库、表单等处对象标识符的格式。</p>
+<h3 id="二、Base64和URL传参问题改善"><a href="#二、Base64和URL传参问题改善" class="headerlink" title="二、Base64和URL传参问题改善"></a>二、Base64和URL传参问题改善</h3><p>另有一种用于正则表达式的改进Base64变种，它将“+”和“&#x2F;”改成了“!”和“-”，因为“+”,“*”以及前面在IRCu中用到的“[”和“]”在正则表达式中都可能具有特殊含义。</p>
+<p>此外还有一些变种，它们将“+&#x2F;”改为“*-”或“.*”（用作编程语言中的标识符名称）或“.-”（用于XML中的Nmtoken）甚至“_:”（用于XML中的Name）。</p>
+<h3 id="三、Base64转换后比原有的字符串长1-3"><a href="#三、Base64转换后比原有的字符串长1-3" class="headerlink" title="三、Base64转换后比原有的字符串长1&#x2F;3"></a>三、Base64转换后比原有的字符串长1&#x2F;3</h3><p>Base64要求把每三个8Bit的字节转换为四个6Bit的字节（3<em>8 &#x3D; 4</em>6 &#x3D; 24），然后把6Bit再添两位高位0，组成四个8Bit的字节，也就是说，转换后的字符串理论上将要比原来的长1&#x2F;3。</p>
+<h3 id="四、Base64转换总结"><a href="#四、Base64转换总结" class="headerlink" title="四、Base64转换总结"></a>四、Base64转换总结</h3><p>Base64转换，最好是不要用在加密上，尤其是参数加密，很容易出问题。</p>
+<h2 id="2、Base58——示例6tmHCZvhgfNjQu"><a href="#2、Base58——示例6tmHCZvhgfNjQu" class="headerlink" title="2、Base58——示例6tmHCZvhgfNjQu"></a>2、Base58——示例<code>6tmHCZvhgfNjQu</code></h2><p><strong>它最大的特点是没有等号</strong></p>
+<p>Base58是用于比特币（Bitcoin）中使用的一种独特的编码方式，主要用于产生Bitcoin的钱包地址。</p>
+<p>相比Base64，Base58不使用数字”0”，字母大写”O”，字母大写”I”，和字母小写”l”，以及”+“和”&#x2F;“符号。</p>
+<p>比特币的Base58字母表：</p>
+<p>123456789ABCDEFGHJKLMNPQRSTUVWXYZabcdefghijkmnopqrstuvwxyz</p>
+<p>简单的说：Base58一种编码方式，跟十进制，十六进制一样，不过更短更省空间。</p>
+<p><strong>Base58的原理是什么？</strong></p>
+<p>二进制：0和1</p>
+<p>十进制：1到10</p>
+<p>十六进制：十进制的基础上加上了A-F 六个字母</p>
+<p>Base58可以理解为一种58进制。</p>
+<p>Base58包含了阿拉伯数字、小写英文字母，大写英文字母。</p>
+<p>但是去掉了一些容易混淆的数字和字母：0（数字0）、O（o的大写字母）、l（ L的小写字母）、I（i的大写字母）</p>
+<h2 id="3、Base32——示例GEZDGNBVGY3TQOJQGE"><a href="#3、Base32——示例GEZDGNBVGY3TQOJQGE" class="headerlink" title="3、Base32——示例GEZDGNBVGY3TQOJQGE======"></a>3、Base32——示例<code>GEZDGNBVGY3TQOJQGE======</code></h2><p><strong>他的特点是明文超过十个后面就会有很多等号</strong></p>
+<p>Base32使用了ASCII编码中可打印的32个字符(大写字母AZ和数字27)对任意字节数据进行编码.Base32将串起来的二进制数据按照5个二进制位分为一组，由于传输数据的单位是字节(即8个二进制位).所以分割之前的二进制位数是40的倍数(40是5和8的最小公倍数).如果不足40位，则在编码后数据补充”&#x3D;”，一个”&#x3D;”相当于一个组(5个二进制位)，编码后的数据是原先的8&#x2F;5倍. <strong>Base32编码表</strong></p>
+<table>
+<thead>
+<tr>
+<th align="left">值</th>
+<th align="left">符号</th>
+<th align="left">值</th>
+<th align="left">符号</th>
+<th align="left">值</th>
+<th align="left">符号</th>
+<th align="left">值</th>
+<th align="left">符号</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">0</td>
+<td align="left">A</td>
+<td align="left">8</td>
+<td align="left">I</td>
+<td align="left">16</td>
+<td align="left">Q</td>
+<td align="left">24</td>
+<td align="left">Y</td>
+</tr>
+<tr>
+<td align="left">1</td>
+<td align="left">B</td>
+<td align="left">9</td>
+<td align="left">J</td>
+<td align="left">17</td>
+<td align="left">R</td>
+<td align="left">25</td>
+<td align="left">Z</td>
+</tr>
+<tr>
+<td align="left">2</td>
+<td align="left">C</td>
+<td align="left">10</td>
+<td align="left">K</td>
+<td align="left">18</td>
+<td align="left">S</td>
+<td align="left">26</td>
+<td align="left">2</td>
+</tr>
+<tr>
+<td align="left">3</td>
+<td align="left">D</td>
+<td align="left">11</td>
+<td align="left">L</td>
+<td align="left">19</td>
+<td align="left">T</td>
+<td align="left">27</td>
+<td align="left">3</td>
+</tr>
+<tr>
+<td align="left">4</td>
+<td align="left">E</td>
+<td align="left">12</td>
+<td align="left">M</td>
+<td align="left">20</td>
+<td align="left">U</td>
+<td align="left">28</td>
+<td align="left">4</td>
+</tr>
+<tr>
+<td align="left">5</td>
+<td align="left">F</td>
+<td align="left">13</td>
+<td align="left">N</td>
+<td align="left">21</td>
+<td align="left">V</td>
+<td align="left">29</td>
+<td align="left">5</td>
+</tr>
+<tr>
+<td align="left">6</td>
+<td align="left">G</td>
+<td align="left">14</td>
+<td align="left">O</td>
+<td align="left">22</td>
+<td align="left">W</td>
+<td align="left">30</td>
+<td align="left">6</td>
+</tr>
+<tr>
+<td align="left">7</td>
+<td align="left">H</td>
+<td align="left">15</td>
+<td align="left">P</td>
+<td align="left">23</td>
+<td align="left">X</td>
+<td align="left">31</td>
+<td align="left">7</td>
+</tr>
+<tr>
+<td align="left">填充</td>
+<td align="left">&#x3D;</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+</tbody></table>
+<p>Base32将任意字符串按照字节进行切分，并将每个字节对应的二进制值（不足8比特高位补0）串联起来，按照5比特一组进行切分，并将每组二进制值转换成十进制来对应32个可打印字符中的一个。</p>
+<p>由于数据的二进制传输是按照8比特一组进行（即一个字节），因此Base32按5比特切分的二进制数据必须是40比特的倍数（5和8的最小公倍数）。例如输入单字节字符“%”，它对应的二进制值是“100101”，前面补两个0变成“00100101”（二进制值不足8比特的都要在高位加0直到8比特），从左侧开始按照5比特切分成两组：“00100”和“101”，后一组不足5比特，则在末尾填充0直到5比特，变成“00100”和“10100”，这两组二进制数分别转换成十进制数，通过上述表格即可找到其对应的可打印字符“E”和“U”，但是这里只用到两组共10比特，还差30比特达到40比特，按照5比特一组还需6组，则在末尾填充6个“&#x3D;”。填充“&#x3D;”符号的作用是方便一些程序的标准化运行，大多数情况下不添加也无关紧要，而且，在URL中使用时必须去掉“&#x3D;”符号。</p>
+<p><strong>与Base64相比，Base32具有许多优点：</strong></p>
+<ul>
+<li>适合不区分大小写的文件系统，更利于人类口语交流或记忆。</li>
+<li>结果可以用作文件名，因为它不包含路径分隔符 “&#x2F;”等符号。</li>
+<li>排除了视觉上容易混淆的字符，因此可以准确的人工录入。（例如，RFC4648符号集忽略了数字“1”、“8”和“0”，因为它们可能与字母“I”，“B”和“O”混淆）。</li>
+<li>排除填充符号“&#x3D;”的结果可以包含在URL中，而不编码任何字符。</li>
+</ul>
+<p>Base32也比Base16有优势：</p>
+<ul>
+<li>Base32比Base16占用的空间更小。（1000比特数据Base32需要200个字符，而Base16则为250个字符）</li>
+</ul>
+<p>Base32的缺点：</p>
+<ul>
+<li>Base32比Base64多占用大约20％的空间。因为Base32使用8个ASCII字符去编码原数据中的5个字节数据，而Base64是使用4个ASCII字符去编码原数据中的3个字节数据。</li>
+</ul>
+<h2 id="4、Base16——示例61646D696E"><a href="#4、Base16——示例61646D696E" class="headerlink" title="4、Base16——示例61646D696E"></a>4、Base16——示例<code>61646D696E</code></h2><p><strong>它的特点是没有等号并且数字要多于字母</strong></p>
+<p>Base16编码的方式：</p>
+<p>1.将数据(根据ASCII编码，UTF-8编码等)转成对应的二进制数，不足8比特位高位补0。然后将所有的二进制全部串起来，4个二进制位为一组，转化成对应十进制数。</p>
+<p>2.根据十进制数值找到Base16编码表里面对应的字符。Base16是4个比特位表示一个字符，所以原始是1个字节(8个比特位)刚好可以分成两组,也就是说原先如果使用ASCII编码后的一个字符，现在转化成两个字符。数据量是原先的2倍。</p>
+<table>
+<thead>
+<tr>
+<th align="left">值</th>
+<th align="left">编码</th>
+<th align="left">值</th>
+<th align="left">编码</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">0</td>
+<td align="left">0</td>
+<td align="left">8</td>
+<td align="left">8</td>
+</tr>
+<tr>
+<td align="left">1</td>
+<td align="left">1</td>
+<td align="left">9</td>
+<td align="left">9</td>
+</tr>
+<tr>
+<td align="left">2</td>
+<td align="left">2</td>
+<td align="left">10</td>
+<td align="left">A</td>
+</tr>
+<tr>
+<td align="left">3</td>
+<td align="left">3</td>
+<td align="left">11</td>
+<td align="left">B</td>
+</tr>
+<tr>
+<td align="left">4</td>
+<td align="left">4</td>
+<td align="left">12</td>
+<td align="left">C</td>
+</tr>
+<tr>
+<td align="left">5</td>
+<td align="left">5</td>
+<td align="left">13</td>
+<td align="left">D</td>
+</tr>
+<tr>
+<td align="left">6</td>
+<td align="left">6</td>
+<td align="left">14</td>
+<td align="left">E</td>
+</tr>
+<tr>
+<td align="left">7</td>
+<td align="left">7</td>
+<td align="left">15</td>
+<td align="left">F</td>
+</tr>
+</tbody></table>
+<p>Base16编码是一个标准的十六进制字符串（注意是字符串而不是数值），更易被人类和计算机使用，因为它并不包含任何控制字符，以及Base64和Base32中的“&#x3D;”符号。</p>
+<h2 id="5、Base85——示例-X4hDWe0rkE-G-OdP4CT-N"><a href="#5、Base85——示例-X4hDWe0rkE-G-OdP4CT-N" class="headerlink" title="5、Base85——示例@:X4hDWe0rkE(G[OdP4CT]N#"></a>5、Base85——示例<code>@:X4hDWe0rkE(G[OdP4CT]N#</code></h2><p><strong>特点是奇怪的字符比较多，但是很难出现等号</strong></p>
+<h2 id="6、Base100——示例👘👛👤👠👥"><a href="#6、Base100——示例👘👛👤👠👥" class="headerlink" title="6、Base100——示例👘👛👤👠👥"></a>6、Base100——示例<code>👘👛👤👠👥</code></h2><p><strong>特点就是一堆Emoji表情</strong></p>
+<p>Base100编码&#x2F;解码工具（又名：Emoji表情符号编码&#x2F;解码），可将文本内容编码为Emoji表情符号；同时也可以将编码后的Emoji表情符号内容解码为文本。</p>
+<h3 id="常用解密网站："><a href="#常用解密网站：" class="headerlink" title="常用解密网站："></a><strong>常用解密网站：</strong></h3><p>Base64：</p>
+<ul>
+<li><a class="link"   href="https://cloud.tencent.com/developer/tools/blog-entry?target=https://tool.oschina.net/encrypt?type=3" >tool.oschina.net<i class="fa-solid fa-arrow-up-right ml-[0.2em] font-light align-text-top text-[0.7em] link-icon"></i></a></li>
+<li><a class="link"   href="https://cloud.tencent.com/developer/tools/blog-entry?target=https://www.sojson.com/base64.html" >www.sojson.com<i class="fa-solid fa-arrow-up-right ml-[0.2em] font-light align-text-top text-[0.7em] link-icon"></i></a></li>
+<li><a class="link"   href="https://cloud.tencent.com/developer/tools/blog-entry?target=https://base64.us/" >base64.us<i class="fa-solid fa-arrow-up-right ml-[0.2em] font-light align-text-top text-[0.7em] link-icon"></i></a></li>
+</ul>
+<p>Base58：<a class="link"   href="https://cloud.tencent.com/developer/tools/blog-entry?target=http://www.metools.info/code/c74.html" >www.metools.info<i class="fa-solid fa-arrow-up-right ml-[0.2em] font-light align-text-top text-[0.7em] link-icon"></i></a> Base32、16：<a class="link"   href="https://cloud.tencent.com/developer/tools/blog-entry?target=https://www.qqxiuzi.cn/bianma/base.php" >www.qqxiuzi.cn<i class="fa-solid fa-arrow-up-right ml-[0.2em] font-light align-text-top text-[0.7em] link-icon"></i></a> Base100：<a class="link"   href="https://cloud.tencent.com/developer/tools/blog-entry?target=http://www.atoolbox.net/Tool.php?Id=936" >www.atoolbox.net<i class="fa-solid fa-arrow-up-right ml-[0.2em] font-light align-text-top text-[0.7em] link-icon"></i></a></p>
+<h1 id="AES、DES、RC4、Rabbit、Triple-DES（3DES）"><a href="#AES、DES、RC4、Rabbit、Triple-DES（3DES）" class="headerlink" title="AES、DES、RC4、Rabbit、Triple DES（3DES）"></a>AES、DES、RC4、Rabbit、Triple DES（3DES）</h1><p>这些都是非对称性加密算法，就是引入了密钥，密文特征与Base64类似，放个图，就不多说了</p>
+<h1 id="Unicode、HTML实体编码、16进制Unicode"><a href="#Unicode、HTML实体编码、16进制Unicode" class="headerlink" title="Unicode、HTML实体编码、16进制Unicode"></a>Unicode、HTML实体编码、16进制Unicode</h1><h2 id="1、Unicode——汉字示例这、字母示例t、数字符号示例5"><a href="#1、Unicode——汉字示例这、字母示例t、数字符号示例5" class="headerlink" title="1、Unicode——汉字示例这、字母示例t、数字符号示例5"></a>1、Unicode——汉字示例<code>这</code>、字母示例<code>t</code>、数字符号示例<code>5</code></h2><p><strong>可以说Unicode与HTML实体编码是一个东西</strong></p>
+<p>Unicode（统一码、万国码、单一码）是一种在计算机上使用的字符编码。Unicode 是为了解决传统的字符编码方案的局限而产生的，它为每种语言中的每个字符设定了统一并且唯一的二进制编码，以满足跨语言、跨平台进行文本转换、处理的要求。1990年开始研发，1994年正式公布。</p>
+<h2 id="2、HTML实体编码——示例与Unicode相同"><a href="#2、HTML实体编码——示例与Unicode相同" class="headerlink" title="2、HTML实体编码——示例与Unicode相同"></a>2、HTML实体编码——示例与Unicode相同</h2><p>字符实体是用一个编号写入HTML代码中来代替一个字符，在使用浏览器访问网页时会将这个编号解析还原为字符以供阅读。</p>
+<p>这么做的目的主要有两个： １、解决HTML代码编写中的一些问题。例如需要在网页上显示小于号（&lt;）和大于号（&gt;），由于它们是HTML的预留标签，可能会被误解析。这时就需要将小于号和大于号写成字符实体： 小于号这样写：&lt; 或 &lt; 大于号这样写：&gt; 或 &gt; 前面的写法称为实体名称，后面的写法则是实体编号。<a class="link"   href="https://cloud.tencent.com/developer/tools/blog-entry?target=https://www.qqxiuzi.cn/wz/zixun/1681.htm" >ISO-8859-1字符集<i class="fa-solid fa-arrow-up-right ml-[0.2em] font-light align-text-top text-[0.7em] link-icon"></i></a>（西欧语言）中两百多个字符设定了实体名称，而对于其它所有字符都可以用实体编号来代替。 ２、网页编码采用了特定语言的编码，却需要显示来自其它语言的字符。例如，网页编码采用了西欧语言ISO-8859-1，却要在网页中显示中文，这时必须将中文字符以实体形式写入HTML代码中。</p>
+<h2 id="2、16进制Unicode——示例-u8fd9-u662f-u4e00"><a href="#2、16进制Unicode——示例-u8fd9-u662f-u4e00" class="headerlink" title="2、16进制Unicode——示例\u8fd9\u662f\u4e00"></a>2、16进制Unicode——示例<code>\u8fd9\u662f\u4e00</code></h2><h3 id="常用解密网站：-1"><a href="#常用解密网站：-1" class="headerlink" title="常用解密网站："></a><strong>常用解密网站：</strong></h3><ul>
+<li>Unicode：<a class="link"   href="https://cloud.tencent.com/developer/tools/blog-entry?target=https://www.sojson.com/unicode.html" >www.sojson.com<i class="fa-solid fa-arrow-up-right ml-[0.2em] font-light align-text-top text-[0.7em] link-icon"></i></a></li>
+<li>16进制Unicode：<a class="link"   href="https://cloud.tencent.com/developer/tools/blog-entry?target=http://www.msxindl.com/tools/unicode16.asp" >www.msxindl.com<i class="fa-solid fa-arrow-up-right ml-[0.2em] font-light align-text-top text-[0.7em] link-icon"></i></a></li>
+<li>HTML字符实体：<a class="link"   href="https://cloud.tencent.com/developer/tools/blog-entry?target=https://www.qqxiuzi.cn/bianma/zifushiti.php" >www.qqxiuzi.cn<i class="fa-solid fa-arrow-up-right ml-[0.2em] font-light align-text-top text-[0.7em] link-icon"></i></a></li>
+</ul>
+<h1 id="Escape编码-加密、Unescape解码-解密、-u编码、-u解码"><a href="#Escape编码-加密、Unescape解码-解密、-u编码、-u解码" class="headerlink" title="Escape编码&#x2F;加密、Unescape解码&#x2F;解密、%u编码、%u解码"></a>Escape编码&#x2F;加密、Unescape解码&#x2F;解密、%u编码、%u解码</h1><p><strong>特征：以<code>%u</code>开头</strong></p>
+<p><strong>Escape&#x2F;Unescape加密解码&#x2F;编码解码</strong>,又叫%u编码，从以往经验看编码字符串出现有”u”，它是unicode编码，那么Escape编码采用是那一种unicode实现形式呢。其实是UTF-16BE模式。这样一来问题非常简单了。 <strong>Escape编码&#x2F;加密</strong>,就是字符对应UTF-16 16进制表示方式前面加%u。<strong>Unescape解码&#x2F;解密</strong>，就是去掉”%u”后，将16进制字符还原后，由utf-16转码到自己目标字符。如：字符“中”，UTF-16BE是：“6d93”，因此Escape是“%u6d93”，反之也一样！因为目前%字符，常用作URL编码，所以%u这样编码已经逐渐被废弃了！</p>
+<p>基本类型只对汉字进行编码，复杂类型是所有字符均可</p>
+<h3 id="常用解密网站：-2"><a href="#常用解密网站：-2" class="headerlink" title="常用解密网站："></a><strong>常用解密网站：</strong></h3><p><a class="link"   href="https://cloud.tencent.com/developer/tools/blog-entry?target=http://web.chacuo.net/charsetescape/" >http://web.chacuo.net/charsetescape/<i class="fa-solid fa-arrow-up-right ml-[0.2em] font-light align-text-top text-[0.7em] link-icon"></i></a></p>
+<h1 id="URL、Hex编码"><a href="#URL、Hex编码" class="headerlink" title="URL、Hex编码"></a>URL、Hex编码</h1><p><strong>这两种加密的密文是一样的，不同的是当你用url编码网站时是不会把http进行编码的，而Hex编码则全部转化了</strong></p>
+<p>encodeURIComponent() 函数 与 encodeURI() 函数的区别 请注意 encodeURIComponent() 函数 与 encodeURI() 函数的区别之处，前者假定它的参数是 URI 的一部分（比如协议、主机名、路径或查询字符串）。因此 encodeURIComponent() 函数将转义用于分隔 URI 各个部分的标点符号。</p>
+<h3 id="常用解密网站：-3"><a href="#常用解密网站：-3" class="headerlink" title="常用解密网站："></a><strong>常用解密网站：</strong></h3><p>Hex编码：<a class="link"   href="https://cloud.tencent.com/developer/tools/blog-entry?target=https://www.107000.com/T-Hex" >https://www.107000.com/T-Hex<i class="fa-solid fa-arrow-up-right ml-[0.2em] font-light align-text-top text-[0.7em] link-icon"></i></a> URL 编码：<a class="link"   href="https://cloud.tencent.com/developer/tools/blog-entry?target=https://www.sojson.com/encodeurl.html" >https://www.sojson.com/encodeurl.html<i class="fa-solid fa-arrow-up-right ml-[0.2em] font-light align-text-top text-[0.7em] link-icon"></i></a></p>
+<h1 id="凯撒密码、维吉尼亚密码、栅栏密码基础型、栅栏密码W型"><a href="#凯撒密码、维吉尼亚密码、栅栏密码基础型、栅栏密码W型" class="headerlink" title="凯撒密码、维吉尼亚密码、栅栏密码基础型、栅栏密码W型"></a>凯撒密码、维吉尼亚密码、栅栏密码基础型、栅栏密码W型</h1><p>这几类密码原理都是移位调换加密，破解难度低</p>
+<p><strong>常用解密网站</strong></p>
+<ul>
+<li>维基利亚密码<a class="link"   target="_blank" rel="noopener" href="https://ctf.bugku.com/tool/vigenere" >https://ctf.bugku.com/tool/vigenere<i class="fa-solid fa-arrow-up-right ml-[0.2em] font-light align-text-top text-[0.7em] link-icon"></i></a></li>
+<li>栅栏密码<a class="link"   target="_blank" rel="noopener" href="https://ctf.bugku.com/tool/railfence" >https://ctf.bugku.com/tool/railfence<i class="fa-solid fa-arrow-up-right ml-[0.2em] font-light align-text-top text-[0.7em] link-icon"></i></a></li>
+<li>凯撒密码<a class="link"   target="_blank" rel="noopener" href="https://ctf.bugku.com/tool/caesar" >https://ctf.bugku.com/tool/caesar<i class="fa-solid fa-arrow-up-right ml-[0.2em] font-light align-text-top text-[0.7em] link-icon"></i></a></li>
+</ul>
+<h2 id="1、凯撒密码——示例iodj-khoor-zrug-123"><a href="#1、凯撒密码——示例iodj-khoor-zrug-123" class="headerlink" title="1、凯撒密码——示例iodj{khoor_zrug_123}"></a>1、凯撒密码——示例<code>iodj&#123;khoor_zrug_123&#125;</code></h2><p><strong>只对字母进行加密，常用于CTF比赛中</strong></p>
+<p>凯撒密码最早由古罗马军事统帅盖乌斯·尤利乌斯·凯撒在军队中用来传递加密信息，故称凯撒密码。此为一种位移加密手段，只对26个（大小写）字母进行位移加密，规则相当简单，容易被破解。下面是明文字母表移回3位的对比： 明文字母表 X Y Z A B C D E F G H I J K L M N O P Q R S T U V W 密文字母表 A B C D E F G H I J K L M N O P Q R S T U V W X Y Z 然后A变成D，B变成E，Z变成C。 字母最多可移动25位（按字母表）。通常为向后移动，如果您想向前移动1位，则相当于向后移动25位，位移选择为25位。</p>
+<h2 id="2、维吉尼亚密码——示例fmcg-iglmq-wptd-123"><a href="#2、维吉尼亚密码——示例fmcg-iglmq-wptd-123" class="headerlink" title="2、维吉尼亚密码——示例fmcg{iglmq_wptd_123}"></a>2、维吉尼亚密码——示例<code>fmcg&#123;iglmq_wptd_123&#125;</code></h2><p><strong>可以说是凯撒密码的加强版，引入了密钥</strong></p>
+<p>维吉尼亚密码，它将凯撒密码的所有26种排列放到一个表中，形成26行26列的加密字母表。此外，维吉尼亚密码必须有一个由字母组成的密钥，至少有一个字母，最多与明文字母有相同数量的字母。 在凯撒密码中，每个字母都会进行一定偏移值转换，例如，当偏移值是3时，则B被转换为E，C转换成F…。在维吉尼亚密码加密中，则是由具有不同偏移的凯撒密码构成的。 要生成密码，需要使用表格方法，此表(如图所示)包含26行字母表，每一行从上一行到左行被一位偏移。加密时使用哪一行字母表是基于密钥的，在加密过程中密钥会不断变化。 例如，假设明文为： BTTACKATDAFG 选择一个关键字并重复它以获得密钥，例如，当关键字是LIMN时，键是： LIMNLIMNLIMN 在明文中的第一个字母B，对应于密钥中的第一个字母L，使用加密字母表中的L行字母进行加密，得到第一个字母的密文M。同样，第二个明文字母是T，它用表中的I行加密，得到第二个密文B。通过类比，我们可以得到： 明文：BTTACKATDAFG 键：LIMNLIMNLIMN 密文：MBFNNSMGOIRT 解密的过程是加密的逆过程。例如，密钥的第一个字母对应的L行字母表，发现密文的第一个字母M位于B列，因此明文的第一个字母是B。密钥的第二个字母对应于I行字母表，而密文的第二个字母B位于该行的T列中，因此明文的第二个字母是T。等等，你可以得到明文。</p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="http://www.metools.info/res/imgs/weijiniyamima.png"
+                      alt="维基利亚密码码表"
+                ></p>
+<h2 id="3、栅栏密码基础型"><a href="#3、栅栏密码基础型" class="headerlink" title="3、栅栏密码基础型"></a>3、栅栏密码基础型</h2><p><strong>栅栏密码是按一定规则将明文内容互相调换了位置</strong></p>
+<p>栅栏密码(Rail fence Cipher)基础型加密方式，是一种简单的移动字符位置的加密方法，首先把加密的明文分成N个一组，然后把每组的第1、第2、第M个字符连起来，形成无规律的密文字符串。</p>
+<p>例如字符串“123456789abc”，首先将字符串分成3组，如下排列： 1234 5678 9abc 依次取每一组字符，组成加密后密文：“15926a37b48c”。</p>
+<h2 id="4、栅栏密码W型"><a href="#4、栅栏密码W型" class="headerlink" title="4、栅栏密码W型"></a>4、栅栏密码W型</h2><p>栅栏密码W型加密算法： 栅栏密码(Rail fence Cipher)，扩展变种W型，采用先把明文类似”W”形状进行排列，然后再按栏目顺序1-N，取每一栏的所有字符值，组成加密后密文。 比如字符串“123456789”，采用栏目数为3的时，明文将采用如下排列： 1—5—9 -2-4-6-8- –3—-7– 取每一栏所有字符串，组成加密后密文：“159246837”。 W型栅栏密码加密方式，比传统型栅栏密码加密方法，算法略有增强，但目前已只能用于学习算法验证。</p>
+<h3 id=""><a href="#" class="headerlink" title=""></a></h3><h1 id="文本隐藏加密、零宽隐写"><a href="#文本隐藏加密、零宽隐写" class="headerlink" title="文本隐藏加密、零宽隐写"></a>文本隐藏加密、零宽隐写</h1><h2 id="1、文本隐藏加密"><a href="#1、文本隐藏加密" class="headerlink" title="1、文本隐藏加密"></a>1、文本隐藏加密</h2><p><strong>特征：加密过的密文会比原文的字节数多，当你按删除键的时候会发现某一处要按好多下才能把前面的字删掉</strong></p>
+<p>原理**：它的原理是在密文中加入了不可见字符组成的编码，例如上述看似九个字符的一句话，通过<a class="link"   target="_blank" rel="noopener" href="https://www.qqxiuzi.cn/zh/zishu-zijieshu/" >字数查询<i class="fa-solid fa-arrow-up-right ml-[0.2em] font-light align-text-top text-[0.7em] link-icon"></i></a>可知它实际上有87个字符，多出的字符是由<a class="link"   target="_blank" rel="noopener" href="https://www.qqxiuzi.cn/zh/space.html" >零宽空格<i class="fa-solid fa-arrow-up-right ml-[0.2em] font-light align-text-top text-[0.7em] link-icon"></i></a>实现的编码，因为零宽空格不占据空间，所以看不出它的存在。</p>
+<p><strong>使用</strong>：在进行文本隐藏加密时，将需要隐藏的文字写在括号中，就像这样“你好（有才华），我好喜欢你（画的画）！”，然后加密即可隐藏括号内的文字。同时可以设定一个密码，这样只有知道密码的人才能解密隐藏的文字。密码可以是数字、字母和下划线，最多九位。</p>
+<h2 id="2、零宽隐写"><a href="#2、零宽隐写" class="headerlink" title="2、零宽隐写"></a>2、零宽隐写</h2><p><strong>特征：解密后明文与密文会分开显示，密文一般隐藏在第一个字后面，不信你试试，保证你十下之内删不完</strong></p>
+<p>与上面文本隐藏加密的原理一样，但过程不一样</p>
+<h3 id="常用解密网站：-4"><a href="#常用解密网站：-4" class="headerlink" title="常用解密网站："></a><strong>常用解密网站：</strong></h3><p>文本隐藏加密：<a class="link"   href="https://cloud.tencent.com/developer/tools/blog-entry?target=https://www.qqxiuzi.cn/bianma/yincangjiami.php" >www.qqxiuzi.cn<i class="fa-solid fa-arrow-up-right ml-[0.2em] font-light align-text-top text-[0.7em] link-icon"></i></a> 零宽隐写：<a class="link"   href="https://cloud.tencent.com/developer/tools/blog-entry?target=https://yuanfux.github.io/zero-width-web/" >yuanfux.github.io<i class="fa-solid fa-arrow-up-right ml-[0.2em] font-light align-text-top text-[0.7em] link-icon"></i></a></p>
+<h1 id="特殊暗号类加密"><a href="#特殊暗号类加密" class="headerlink" title="特殊暗号类加密"></a>特殊暗号类加密</h1><p>这类加密都是特征性比较强的，易辨别</p>
+<h2 id="1、猪圈密码"><a href="#1、猪圈密码" class="headerlink" title="1、猪圈密码"></a>1、猪圈密码</h2><p><strong>特点：只能对字母加解密并且符号无法复制，粘贴后会直接显示明文</strong></p>
+<p>猪圈密码（亦称朱高密码、共济会暗号、共济会密码或共济会员密码），是一种以格子为基础的简单替代式密码，曾经是美国内战时盟军使用的密码，目前仅在密码教学、各种竞赛中使用。</p>
+<p><a class="link"   href="https://cloud.tencent.com/developer/tools/blog-entry?target=http://www.metools.info/code/c90.html" >http://www.metools.info/code/c90.html<i class="fa-solid fa-arrow-up-right ml-[0.2em] font-light align-text-top text-[0.7em] link-icon"></i></a></p>
+<h2 id="2、与佛论禅"><a href="#2、与佛论禅" class="headerlink" title="2、与佛论禅"></a>2、与佛论禅</h2><p>**特点：就是你看不懂的佛语</p>
+<h3 id="常用解密网站：-5"><a href="#常用解密网站：-5" class="headerlink" title="常用解密网站："></a><strong>常用解密网站：</strong></h3><p><a class="link"   href="https://cloud.tencent.com/developer/tools/blog-entry?target=http://www.keyfc.net/bbs/tools/tudoucode.aspx" >http://www.keyfc.net/bbs/tools/tudoucode.aspx<i class="fa-solid fa-arrow-up-right ml-[0.2em] font-light align-text-top text-[0.7em] link-icon"></i></a></p>
+<h2 id="3、百家姓暗号"><a href="#3、百家姓暗号" class="headerlink" title="3、百家姓暗号"></a>3、百家姓暗号</h2><p>特征：不要多说当你看到一串百家姓的时候多半就是这个暗号了</p>
+<p>当他解密的的时候前面会多一串固定字符</p>
+<h3 id="常用解密网站：-6"><a href="#常用解密网站：-6" class="headerlink" title="常用解密网站："></a><strong>常用解密网站：</strong></h3><ul>
+<li><a class="link"   href="https://cloud.tencent.com/developer/tools/blog-entry?target=https://www.ahz0.com/bjx.html" >https://www.ahz0.com/bjx.html<i class="fa-solid fa-arrow-up-right ml-[0.2em] font-light align-text-top text-[0.7em] link-icon"></i></a></li>
+<li><a class="link"   href="https://cloud.tencent.com/developer/tools/blog-entry?target=https://www.w168.net/anhao.html" >https://www.w168.net/anhao.html<i class="fa-solid fa-arrow-up-right ml-[0.2em] font-light align-text-top text-[0.7em] link-icon"></i></a></li>
+<li><a class="link"   href="https://cloud.tencent.com/developer/tools/blog-entry?target=https://api.dujin.org/baijiaxing/" >https://api.dujin.org/baijiaxing/<i class="fa-solid fa-arrow-up-right ml-[0.2em] font-light align-text-top text-[0.7em] link-icon"></i></a></li>
+<li><a class="link"   href="https://cloud.tencent.com/developer/tools/blog-entry?target=https://www.ddosi.com/ah.html" >https://www.ddosi.com/ah.html<i class="fa-solid fa-arrow-up-right ml-[0.2em] font-light align-text-top text-[0.7em] link-icon"></i></a></li>
+</ul>
+<h2 id="4、卡尔达诺栅格码"><a href="#4、卡尔达诺栅格码" class="headerlink" title="4、卡尔达诺栅格码"></a>4、卡尔达诺栅格码</h2><p><strong>特征：把明文伪装成垃圾邮件，看着这么多内容，其实我只是加密了admin</strong></p>
+<h3 id="常用解密网站：-7"><a href="#常用解密网站：-7" class="headerlink" title="常用解密网站："></a><strong>常用解密网站：</strong></h3><p><a class="link"   href="https://cloud.tencent.com/developer/tools/blog-entry?target=https://www.spammimic.com/" >https://www.spammimic.com/<i class="fa-solid fa-arrow-up-right ml-[0.2em] font-light align-text-top text-[0.7em] link-icon"></i></a></p>
+<h2 id="5、莫尔斯电码"><a href="#5、莫尔斯电码" class="headerlink" title="5、莫尔斯电码"></a>5、莫尔斯电码</h2><p><strong>特征：密文由不规律的<code>.</code>、<code>/</code>、<code>-</code>组成</strong></p>
+<ul>
+<li>摩尔斯电码（Morse alphabet）（又译为摩斯电码）是一种时通时断的信号代码，这种信号代码通过不同的排列顺序来表达不同的英文字母、数字和标点符号等。</li>
+<li>由美国人摩尔斯（Samuel Finley Breese Morse）于1837年发明，为摩尔斯电报机的发明（1835年）提供了条件。</li>
+<li>摩尔密码加密的字符只有字符，数字，标点，不区分大小写，支持中文汉字</li>
+<li>中文摩斯加密解密：本工具摩尔密码加密是互联网上唯一一个可以对中文进行摩斯编码的工具。</li>
+</ul>
+<h4 id="莫尔斯电码加密列表-Morse-Code-List"><a href="#莫尔斯电码加密列表-Morse-Code-List" class="headerlink" title="莫尔斯电码加密列表 | Morse Code List"></a>莫尔斯电码加密列表 | Morse Code List</h4><h5 id="一、26个字母的莫尔斯电码加密"><a href="#一、26个字母的莫尔斯电码加密" class="headerlink" title="一、26个字母的莫尔斯电码加密"></a>一、26个字母的莫尔斯电码加密</h5><table>
+<thead>
+<tr>
+<th align="left">字符</th>
+<th align="left">电码符号</th>
+<th align="left">字符</th>
+<th align="left">电码符号</th>
+<th align="left">字符</th>
+<th align="left">电码符号</th>
+<th align="left">字符</th>
+<th align="left">电码符号</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">A</td>
+<td align="left">．━</td>
+<td align="left">B</td>
+<td align="left">━ ．．．</td>
+<td align="left">C</td>
+<td align="left">━ ．━ ．</td>
+<td align="left">D</td>
+<td align="left">━ ．．</td>
+</tr>
+<tr>
+<td align="left">E</td>
+<td align="left">．</td>
+<td align="left">F</td>
+<td align="left">．．━ ．</td>
+<td align="left">G</td>
+<td align="left">━ ━ ．</td>
+<td align="left">H</td>
+<td align="left">．．．．</td>
+</tr>
+<tr>
+<td align="left">I</td>
+<td align="left">．．</td>
+<td align="left">J</td>
+<td align="left">．━ ━ ━</td>
+<td align="left">K</td>
+<td align="left">━ ．━</td>
+<td align="left">L</td>
+<td align="left">．━ ．．</td>
+</tr>
+<tr>
+<td align="left">M</td>
+<td align="left">━ ━</td>
+<td align="left">N</td>
+<td align="left">━ ．</td>
+<td align="left">O</td>
+<td align="left">━ ━ ━</td>
+<td align="left">P</td>
+<td align="left">．━ ━ ．</td>
+</tr>
+<tr>
+<td align="left">Q</td>
+<td align="left">━ ━ ．━</td>
+<td align="left">R</td>
+<td align="left">．━ ．</td>
+<td align="left">S</td>
+<td align="left">．．．</td>
+<td align="left">T</td>
+<td align="left">━</td>
+</tr>
+<tr>
+<td align="left">U</td>
+<td align="left">．．━</td>
+<td align="left">V</td>
+<td align="left">．．．━</td>
+<td align="left">W</td>
+<td align="left">．━ ━</td>
+<td align="left">X</td>
+<td align="left">━ ．．━</td>
+</tr>
+<tr>
+<td align="left">Y</td>
+<td align="left">━ ．━ ━</td>
+<td align="left">Z</td>
+<td align="left">━ ━ ．．</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+</tbody></table>
+<h5 id="二、数字的莫尔斯电码加密"><a href="#二、数字的莫尔斯电码加密" class="headerlink" title="二、数字的莫尔斯电码加密"></a>二、数字的莫尔斯电码加密</h5><table>
+<thead>
+<tr>
+<th align="left">字符</th>
+<th align="left">电码符号</th>
+<th align="left">字符</th>
+<th align="left">电码符号</th>
+<th align="left">字符</th>
+<th align="left">电码符号</th>
+<th align="left">字符</th>
+<th align="left">电码符号</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">0</td>
+<td align="left">━ ━ ━ ━ ━</td>
+<td align="left">1</td>
+<td align="left">．━ ━ ━ ━</td>
+<td align="left">2</td>
+<td align="left">．．━ ━ ━</td>
+<td align="left">3</td>
+<td align="left">．．．━ ━</td>
+</tr>
+<tr>
+<td align="left">4</td>
+<td align="left">．．．．━</td>
+<td align="left">5</td>
+<td align="left">．．．．．</td>
+<td align="left">6</td>
+<td align="left">━ ．．．．</td>
+<td align="left">7</td>
+<td align="left">━ ━ ．．．</td>
+</tr>
+<tr>
+<td align="left">8</td>
+<td align="left">━ ━ ━ ．．</td>
+<td align="left">9</td>
+<td align="left">━ ━ ━ ━ ．</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+</tbody></table>
+<h5 id="三、标点符号的莫尔斯电码加密"><a href="#三、标点符号的莫尔斯电码加密" class="headerlink" title="三、标点符号的莫尔斯电码加密"></a>三、标点符号的莫尔斯电码加密</h5><table>
+<thead>
+<tr>
+<th align="left">字符</th>
+<th align="left">电码符号</th>
+<th align="left">字符</th>
+<th align="left">电码符号</th>
+<th align="left">字符</th>
+<th align="left">电码符号</th>
+<th align="left">字符</th>
+<th align="left">电码符号</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">.</td>
+<td align="left">．━ ．━ ．━</td>
+<td align="left">:</td>
+<td align="left">━ ━ ━ ．．．</td>
+<td align="left">,</td>
+<td align="left">━ ━ ．．━ ━</td>
+<td align="left">;</td>
+<td align="left">━ ．━ ．━ ．</td>
+</tr>
+<tr>
+<td align="left">?</td>
+<td align="left">．．━ ━ ．．</td>
+<td align="left">&#x3D;</td>
+<td align="left">━ ．．．━</td>
+<td align="left">’</td>
+<td align="left">．━ ━ ━ ━ ．</td>
+<td align="left">&#x2F;</td>
+<td align="left">━ ．．━ ．</td>
+</tr>
+<tr>
+<td align="left">!</td>
+<td align="left">━ ．━ ．━ ━</td>
+<td align="left">━</td>
+<td align="left">━ ．．．．━</td>
+<td align="left">_</td>
+<td align="left">．．━ ━ ．━</td>
+<td align="left">“</td>
+<td align="left">．━ ．．━ ．</td>
+</tr>
+<tr>
+<td align="left">(</td>
+<td align="left">━ ．━ ━ ．</td>
+<td align="left">)</td>
+<td align="left">━ ．━ ━ ．━</td>
+<td align="left">$</td>
+<td align="left">．．．━ ．．━</td>
+<td align="left">&amp;</td>
+<td align="left">． ．．．</td>
+</tr>
+<tr>
+<td align="left">@</td>
+<td align="left">．━ ━ ．━ ．</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+</tbody></table>
+<h3 id="常用解密网站：-8"><a href="#常用解密网站：-8" class="headerlink" title="常用解密网站："></a><strong>常用解密网站：</strong></h3><p><a class="link"   href="https://cloud.tencent.com/developer/tools/blog-entry?target=https://www.atool99.com/morse.php" >https://www.atool99.com/morse.php<i class="fa-solid fa-arrow-up-right ml-[0.2em] font-light align-text-top text-[0.7em] link-icon"></i></a></p>
+<h2 id="6、Quoted-Printable"><a href="#6、Quoted-Printable" class="headerlink" title="6、Quoted-Printable"></a>6、Quoted-Printable</h2><p><strong>这种编码常用与邮件处理，只能对汉字进行编码，特征是&#x3D;加两个大写字母或数字组合</strong></p>
+<h3 id="常用解密网站：-9"><a href="#常用解密网站：-9" class="headerlink" title="常用解密网站："></a><strong>常用解密网站：</strong></h3><ul>
+<li><a class="link"   href="https://cloud.tencent.com/developer/tools/blog-entry?target=http://www.mxcz.net/tools/QuotedPrintable.aspx" >http://www.mxcz.net/tools/QuotedPrintable.aspx<i class="fa-solid fa-arrow-up-right ml-[0.2em] font-light align-text-top text-[0.7em] link-icon"></i></a></li>
+</ul>
+<h2 id="7、ROT13"><a href="#7、ROT13" class="headerlink" title="7、ROT13"></a>7、ROT13</h2><p><strong>特征：它与凯撒密码差不多都是字母替换，你看到一句特别奇怪的语句可能就是它编码的</strong></p>
+<p>ROT13（回转13位，Template:lang，有时中间加了个减号称作ROT-13）是一种简易的置换暗码。它是一种在网路论坛用作隐藏八卦（spoiler）、妙句、谜题解答以及某些脏话的工具，目的是逃过版主或管理员的匆匆一瞥。 ROT13被描述成「杂志字谜上下颠倒解答的Usenet对等体」（Usenet equivalent of a magazine printing the answer to a quiz upside down.）Template:cite web ROT13也是过去在古罗马开发的凯撒加密的一种变体。</p>
+<h3 id="常用解密网站：-10"><a href="#常用解密网站：-10" class="headerlink" title="常用解密网站："></a><strong>常用解密网站：</strong></h3><p><a class="link"   href="https://cloud.tencent.com/developer/tools/blog-entry?target=http://www.mxcz.net/tools/rot13.aspx" >http://www.mxcz.net/tools/rot13.aspx<i class="fa-solid fa-arrow-up-right ml-[0.2em] font-light align-text-top text-[0.7em] link-icon"></i></a></p>
+<h2 id="8、文本加密为汉字"><a href="#8、文本加密为汉字" class="headerlink" title="8、文本加密为汉字"></a>8、文本加密为汉字</h2><p><strong>特征：将明文加密成各种繁体字后面带俩等号</strong></p>
+<p>它不仅可以加密成汉字，还可以加密成以下几种类型</p>
+<p>汉字 数字 字母 音乐符号 国际标 盲文 韩文 日文 文 彝文 头符号 花朵符号 俄文</p>
+<h3 id="常用解密网站：-11"><a href="#常用解密网站：-11" class="headerlink" title="常用解密网站："></a><strong>常用解密网站：</strong></h3><p><a class="link"   href="https://cloud.tencent.com/developer/tools/blog-entry?target=https://www.qqxiuzi.cn/bianma/wenbenjiami.php" >https://www.qqxiuzi.cn/bianma/wenbenjiami.php<i class="fa-solid fa-arrow-up-right ml-[0.2em] font-light align-text-top text-[0.7em] link-icon"></i></a></p>
+<h1 id="js专用加密"><a href="#js专用加密" class="headerlink" title="js专用加密"></a>js专用加密</h1><h2 id="1、颜文字js加密"><a href="#1、颜文字js加密" class="headerlink" title="1、颜文字js加密"></a>1、颜文字js加密</h2><p><strong>特征：一堆颜文字构成的js代码，在F12中可直接解密执行</strong></p>
+<h3 id="常用解密网站：-12"><a href="#常用解密网站：-12" class="headerlink" title="常用解密网站："></a><strong>常用解密网站：</strong></h3><p><a class="link"   href="https://cloud.tencent.com/developer/tools/blog-entry?target=https://utf-8.jp/public/aaencode.html" >https://utf-8.jp/public/aaencode.html<i class="fa-solid fa-arrow-up-right ml-[0.2em] font-light align-text-top text-[0.7em] link-icon"></i></a></p>
+<h2 id="2、jother编码"><a href="#2、jother编码" class="headerlink" title="2、jother编码"></a>2、jother编码</h2><p><strong>特征：只用<code>! + ( ) [ ] &#123; &#125;</code>这八个字符就能完成对任意字符串的编码。也可在F12中解密执行</strong></p>
+<h3 id="常用解密网站：-13"><a href="#常用解密网站：-13" class="headerlink" title="常用解密网站："></a><strong>常用解密网站：</strong></h3><p><a class="link"   target="_blank" rel="noopener" href="http://tmxk.org/jother/" >http://tmxk.org/jother/<i class="fa-solid fa-arrow-up-right ml-[0.2em] font-light align-text-top text-[0.7em] link-icon"></i></a></p>
+<h2 id="3、JSFuck编码"><a href="#3、JSFuck编码" class="headerlink" title="3、JSFuck编码"></a>3、JSFuck编码</h2><p><strong>特征：与jother很像，只是少了<code>&#123; &#125;</code></strong></p>
+<h3 id="常用解密网站：-14"><a href="#常用解密网站：-14" class="headerlink" title="常用解密网站："></a><strong>常用解密网站：</strong></h3><p><a class="link"   target="_blank" rel="noopener" href="https://jsfuck.com/" >https://jsfuck.com/<i class="fa-solid fa-arrow-up-right ml-[0.2em] font-light align-text-top text-[0.7em] link-icon"></i></a></p>
+
+		</div>
+
+		
+		<div class="post-copyright-info w-full my-8 px-2 sm:px-6 md:px-8">
+			<div class="article-copyright-info-container">
+    <ul>
+        <li><strong>标题:</strong> CTF密码学常见密码形式</li>
+        <li><strong>作者:</strong> W1ndys</li>
+        <li><strong>创建于
+                :</strong> 2023-10-04 21:01:00</li>
+        
+            <li>
+                <strong>更新于
+                    :</strong> 2025-02-23 13:37:18
+            </li>
+        
+        <li>
+            <strong>链接:</strong> https://blog.w1ndys.top/posts/965c7bf3.html
+        </li>
+        <li>
+            <strong>
+                版权声明:
+            </strong>
+            
+
+            
+                版权所有 &#169 W1ndys，禁止转载。
+            
+        </li>
+    </ul>
+</div>
+
+		</div>
+		
+
+		
+		<ul class="post-tags-box text-lg mt-1.5 flex-wrap justify-center flex md:hidden">
+			
+			<li class="tag-item mx-0.5">
+				<a href="/tags/CTF/">#CTF</a>&nbsp;
+			</li>
+			
+			<li class="tag-item mx-0.5">
+				<a href="/tags/Crypto/">#Crypto</a>&nbsp;
+			</li>
+			
+		</ul>
+		
+
+		
+
+		
+		<div class="article-nav my-8 flex justify-between items-center px-2 sm:px-6 md:px-8">
+			
+			<div class="article-prev border-border-color shadow-redefine-flat shadow-shadow-color-2 rounded-medium px-4 py-2 hover:shadow-redefine-flat-hover hover:shadow-shadow-color-2">
+				<a class="prev" rel="prev" href="/posts/85db357.html">
+					<span class="left arrow-icon flex justify-center items-center">
+						<i class="fa-solid fa-chevron-left"></i>
+					</span>
+					<span class="title flex justify-center items-center">
+						<span class="post-nav-title-item">CTF-crypto&amp;misc常用解密工具</span>
+						<span class="post-nav-item">上一篇</span>
+					</span>
+				</a>
+			</div>
+			
+			
+			<div class="article-next border-border-color shadow-redefine-flat shadow-shadow-color-2 rounded-medium px-4 py-2 hover:shadow-redefine-flat-hover hover:shadow-shadow-color-2">
+				<a class="next" rel="next" href="/posts/4311d78.html">
+					<span class="title flex justify-center items-center">
+						<span class="post-nav-title-item">DS作业-4-Ch3-22网安物联网-20230927</span>
+						<span class="post-nav-item">下一篇</span>
+					</span>
+					<span class="right arrow-icon flex justify-center items-center">
+						<i class="fa-solid fa-chevron-right"></i>
+					</span>
+				</a>
+			</div>
+			
+		</div>
+		
+
+
+		
+		<div class="comment-container px-2 sm:px-6 md:px-8 pb-8">
+			<div class="comments-container mt-10 w-full ">
+    <div id="comment-anchor" class="w-full h-2.5"></div>
+    <div class="comment-area-title w-full my-1.5 md:my-2.5 text-xl md:text-3xl font-bold">
+        评论
+    </div>
+    
+
+        
+            
+    <div id="giscus-container"></div>
+    <script data-swup-reload-script defer>
+        async function loadGiscus() {
+            const giscusConfig = {
+                'src': 'https://giscus.app/client.js',
+                'data-repo': 'W1ndys/Blog',
+                'data-repo-id': 'R_kgDOLaRaXw',
+                'data-category': 'Show and tell',
+                'data-category-id': 'DIC_kwDOLaRaX84CeBp5',
+                'data-mapping': 'url',
+                'data-strict': '0',
+                'data-reactions-enabled': '1',
+                'data-emit-metadata': '1',
+                'data-theme': 'preferred_color_scheme',
+                'data-lang': 'zh-CN',
+                'data-input-position': 'top',
+                'data-loading': 'lazy',
+                'crossorigin': 'anonymous',
+                'async': true
+            }
+            const giscusScript = document.createElement('script');
+            for (const key in giscusConfig) {
+                giscusScript.setAttribute(key, giscusConfig[key]);
+            }
+            document.getElementById('giscus-container').appendChild(giscusScript);
+        }
+        if ('true') {
+            let loadGiscusTimeout = setTimeout(() => {
+                loadGiscus();
+                clearTimeout(loadGiscusTimeout);
+            }, 1000);
+        } else {
+            document.addEventListener('DOMContentLoaded', loadGiscus);
+        }
+    </script>
+
+
+        
+        
+    
+</div>
+
+		</div>
+		
+	</div>
+
+	
+	<div class="toc-content-container">
+		<div class="post-toc-wrap">
+	<div class="post-toc">
+		<div class="toc-title">目录</div>
+		<div class="page-title">CTF密码学常见密码形式</div>
+		<ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#MD5%E3%80%81sha1%E3%80%81HMAC%E7%AE%97%E6%B3%95%E3%80%81NTLM%E7%AD%89%E7%9B%B8%E4%BC%BC%E5%8A%A0%E5%AF%86%E7%B1%BB%E5%9E%8B"><span class="nav-text">MD5、sha1、HMAC算法、NTLM等相似加密类型</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B8%B8%E7%94%A8%E8%A7%A3%E5%AF%86%E7%BD%91%E7%AB%99"><span class="nav-text">常用解密网站</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1%E3%80%81MD5%E2%80%94%E2%80%94%E7%A4%BA%E4%BE%8B21232F297A57A5A743894A0E4A801FC3"><span class="nav-text">1、MD5——示例21232F297A57A5A743894A0E4A801FC3</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2%E3%80%81sha1%E2%80%94%E2%80%94%E7%A4%BA%E4%BE%8Bd033e22ae348aeb5660fc2140aec35850c4da997"><span class="nav-text">2、sha1——示例d033e22ae348aeb5660fc2140aec35850c4da997</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3%E3%80%81HMAC%E7%AE%97%E6%B3%95%E2%80%94%E2%80%94%E7%A4%BA%E4%BE%8B5b696ae7da9442ead7adc24d03cedb65"><span class="nav-text">3、HMAC算法——示例5b696ae7da9442ead7adc24d03cedb65</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3%E3%80%81NTLM%E2%80%94%E2%80%94%E7%A4%BA%E4%BE%8B209c6174da490caeb422f3fa5a7ae634"><span class="nav-text">3、NTLM——示例209c6174da490caeb422f3fa5a7ae634</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%9B%B8%E4%BC%BC%E5%8A%A0%E5%AF%86%E7%B1%BB%E5%9E%8B"><span class="nav-text">相似加密类型</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Base64%E3%80%81Base58%E3%80%81Base32%E3%80%81Base16%E3%80%81Base85%E3%80%81Base100%E7%AD%89%E7%9B%B8%E4%BC%BC%E5%8A%A0%E5%AF%86%E7%B1%BB%E5%9E%8B"><span class="nav-text">Base64、Base58、Base32、Base16、Base85、Base100等相似加密类型</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1%E3%80%81Base64%E2%80%94%E2%80%94%E7%A4%BA%E4%BE%8BYWRtaW4tcm9vdA"><span class="nav-text">1、Base64——示例YWRtaW4tcm9vdA&#x3D;&#x3D;</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Base64%E4%BD%BF%E7%94%A8%E6%B3%A8%E6%84%8F%E9%97%AE%E9%A2%98"><span class="nav-text">Base64使用注意问题</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%80%E3%80%81Base64%E5%92%8CURL%E4%BC%A0%E5%8F%82%E9%97%AE%E9%A2%98"><span class="nav-text">一、Base64和URL传参问题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BA%8C%E3%80%81Base64%E5%92%8CURL%E4%BC%A0%E5%8F%82%E9%97%AE%E9%A2%98%E6%94%B9%E5%96%84"><span class="nav-text">二、Base64和URL传参问题改善</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%89%E3%80%81Base64%E8%BD%AC%E6%8D%A2%E5%90%8E%E6%AF%94%E5%8E%9F%E6%9C%89%E7%9A%84%E5%AD%97%E7%AC%A6%E4%B8%B2%E9%95%BF1-3"><span class="nav-text">三、Base64转换后比原有的字符串长1&#x2F;3</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9B%9B%E3%80%81Base64%E8%BD%AC%E6%8D%A2%E6%80%BB%E7%BB%93"><span class="nav-text">四、Base64转换总结</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2%E3%80%81Base58%E2%80%94%E2%80%94%E7%A4%BA%E4%BE%8B6tmHCZvhgfNjQu"><span class="nav-text">2、Base58——示例6tmHCZvhgfNjQu</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3%E3%80%81Base32%E2%80%94%E2%80%94%E7%A4%BA%E4%BE%8BGEZDGNBVGY3TQOJQGE"><span class="nav-text">3、Base32——示例GEZDGNBVGY3TQOJQGE&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4%E3%80%81Base16%E2%80%94%E2%80%94%E7%A4%BA%E4%BE%8B61646D696E"><span class="nav-text">4、Base16——示例61646D696E</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5%E3%80%81Base85%E2%80%94%E2%80%94%E7%A4%BA%E4%BE%8B-X4hDWe0rkE-G-OdP4CT-N"><span class="nav-text">5、Base85——示例@:X4hDWe0rkE(G[OdP4CT]N#</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6%E3%80%81Base100%E2%80%94%E2%80%94%E7%A4%BA%E4%BE%8B%F0%9F%91%98%F0%9F%91%9B%F0%9F%91%A4%F0%9F%91%A0%F0%9F%91%A5"><span class="nav-text">6、Base100——示例👘👛👤👠👥</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%B8%B8%E7%94%A8%E8%A7%A3%E5%AF%86%E7%BD%91%E7%AB%99%EF%BC%9A"><span class="nav-text">常用解密网站：</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#AES%E3%80%81DES%E3%80%81RC4%E3%80%81Rabbit%E3%80%81Triple-DES%EF%BC%883DES%EF%BC%89"><span class="nav-text">AES、DES、RC4、Rabbit、Triple DES（3DES）</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Unicode%E3%80%81HTML%E5%AE%9E%E4%BD%93%E7%BC%96%E7%A0%81%E3%80%8116%E8%BF%9B%E5%88%B6Unicode"><span class="nav-text">Unicode、HTML实体编码、16进制Unicode</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1%E3%80%81Unicode%E2%80%94%E2%80%94%E6%B1%89%E5%AD%97%E7%A4%BA%E4%BE%8B%E8%BF%99%E3%80%81%E5%AD%97%E6%AF%8D%E7%A4%BA%E4%BE%8Bt%E3%80%81%E6%95%B0%E5%AD%97%E7%AC%A6%E5%8F%B7%E7%A4%BA%E4%BE%8B5"><span class="nav-text">1、Unicode——汉字示例这、字母示例t、数字符号示例5</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2%E3%80%81HTML%E5%AE%9E%E4%BD%93%E7%BC%96%E7%A0%81%E2%80%94%E2%80%94%E7%A4%BA%E4%BE%8B%E4%B8%8EUnicode%E7%9B%B8%E5%90%8C"><span class="nav-text">2、HTML实体编码——示例与Unicode相同</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2%E3%80%8116%E8%BF%9B%E5%88%B6Unicode%E2%80%94%E2%80%94%E7%A4%BA%E4%BE%8B-u8fd9-u662f-u4e00"><span class="nav-text">2、16进制Unicode——示例\u8fd9\u662f\u4e00</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%B8%B8%E7%94%A8%E8%A7%A3%E5%AF%86%E7%BD%91%E7%AB%99%EF%BC%9A-1"><span class="nav-text">常用解密网站：</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Escape%E7%BC%96%E7%A0%81-%E5%8A%A0%E5%AF%86%E3%80%81Unescape%E8%A7%A3%E7%A0%81-%E8%A7%A3%E5%AF%86%E3%80%81-u%E7%BC%96%E7%A0%81%E3%80%81-u%E8%A7%A3%E7%A0%81"><span class="nav-text">Escape编码&#x2F;加密、Unescape解码&#x2F;解密、%u编码、%u解码</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%B8%B8%E7%94%A8%E8%A7%A3%E5%AF%86%E7%BD%91%E7%AB%99%EF%BC%9A-2"><span class="nav-text">常用解密网站：</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#URL%E3%80%81Hex%E7%BC%96%E7%A0%81"><span class="nav-text">URL、Hex编码</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%B8%B8%E7%94%A8%E8%A7%A3%E5%AF%86%E7%BD%91%E7%AB%99%EF%BC%9A-3"><span class="nav-text">常用解密网站：</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%87%AF%E6%92%92%E5%AF%86%E7%A0%81%E3%80%81%E7%BB%B4%E5%90%89%E5%B0%BC%E4%BA%9A%E5%AF%86%E7%A0%81%E3%80%81%E6%A0%85%E6%A0%8F%E5%AF%86%E7%A0%81%E5%9F%BA%E7%A1%80%E5%9E%8B%E3%80%81%E6%A0%85%E6%A0%8F%E5%AF%86%E7%A0%81W%E5%9E%8B"><span class="nav-text">凯撒密码、维吉尼亚密码、栅栏密码基础型、栅栏密码W型</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1%E3%80%81%E5%87%AF%E6%92%92%E5%AF%86%E7%A0%81%E2%80%94%E2%80%94%E7%A4%BA%E4%BE%8Biodj-khoor-zrug-123"><span class="nav-text">1、凯撒密码——示例iodj{khoor_zrug_123}</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2%E3%80%81%E7%BB%B4%E5%90%89%E5%B0%BC%E4%BA%9A%E5%AF%86%E7%A0%81%E2%80%94%E2%80%94%E7%A4%BA%E4%BE%8Bfmcg-iglmq-wptd-123"><span class="nav-text">2、维吉尼亚密码——示例fmcg{iglmq_wptd_123}</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3%E3%80%81%E6%A0%85%E6%A0%8F%E5%AF%86%E7%A0%81%E5%9F%BA%E7%A1%80%E5%9E%8B"><span class="nav-text">3、栅栏密码基础型</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4%E3%80%81%E6%A0%85%E6%A0%8F%E5%AF%86%E7%A0%81W%E5%9E%8B"><span class="nav-text">4、栅栏密码W型</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-text"></span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%96%87%E6%9C%AC%E9%9A%90%E8%97%8F%E5%8A%A0%E5%AF%86%E3%80%81%E9%9B%B6%E5%AE%BD%E9%9A%90%E5%86%99"><span class="nav-text">文本隐藏加密、零宽隐写</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1%E3%80%81%E6%96%87%E6%9C%AC%E9%9A%90%E8%97%8F%E5%8A%A0%E5%AF%86"><span class="nav-text">1、文本隐藏加密</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2%E3%80%81%E9%9B%B6%E5%AE%BD%E9%9A%90%E5%86%99"><span class="nav-text">2、零宽隐写</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%B8%B8%E7%94%A8%E8%A7%A3%E5%AF%86%E7%BD%91%E7%AB%99%EF%BC%9A-4"><span class="nav-text">常用解密网站：</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%89%B9%E6%AE%8A%E6%9A%97%E5%8F%B7%E7%B1%BB%E5%8A%A0%E5%AF%86"><span class="nav-text">特殊暗号类加密</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1%E3%80%81%E7%8C%AA%E5%9C%88%E5%AF%86%E7%A0%81"><span class="nav-text">1、猪圈密码</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2%E3%80%81%E4%B8%8E%E4%BD%9B%E8%AE%BA%E7%A6%85"><span class="nav-text">2、与佛论禅</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%B8%B8%E7%94%A8%E8%A7%A3%E5%AF%86%E7%BD%91%E7%AB%99%EF%BC%9A-5"><span class="nav-text">常用解密网站：</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3%E3%80%81%E7%99%BE%E5%AE%B6%E5%A7%93%E6%9A%97%E5%8F%B7"><span class="nav-text">3、百家姓暗号</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%B8%B8%E7%94%A8%E8%A7%A3%E5%AF%86%E7%BD%91%E7%AB%99%EF%BC%9A-6"><span class="nav-text">常用解密网站：</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4%E3%80%81%E5%8D%A1%E5%B0%94%E8%BE%BE%E8%AF%BA%E6%A0%85%E6%A0%BC%E7%A0%81"><span class="nav-text">4、卡尔达诺栅格码</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%B8%B8%E7%94%A8%E8%A7%A3%E5%AF%86%E7%BD%91%E7%AB%99%EF%BC%9A-7"><span class="nav-text">常用解密网站：</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5%E3%80%81%E8%8E%AB%E5%B0%94%E6%96%AF%E7%94%B5%E7%A0%81"><span class="nav-text">5、莫尔斯电码</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%B8%B8%E7%94%A8%E8%A7%A3%E5%AF%86%E7%BD%91%E7%AB%99%EF%BC%9A-8"><span class="nav-text">常用解密网站：</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6%E3%80%81Quoted-Printable"><span class="nav-text">6、Quoted-Printable</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%B8%B8%E7%94%A8%E8%A7%A3%E5%AF%86%E7%BD%91%E7%AB%99%EF%BC%9A-9"><span class="nav-text">常用解密网站：</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#7%E3%80%81ROT13"><span class="nav-text">7、ROT13</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%B8%B8%E7%94%A8%E8%A7%A3%E5%AF%86%E7%BD%91%E7%AB%99%EF%BC%9A-10"><span class="nav-text">常用解密网站：</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#8%E3%80%81%E6%96%87%E6%9C%AC%E5%8A%A0%E5%AF%86%E4%B8%BA%E6%B1%89%E5%AD%97"><span class="nav-text">8、文本加密为汉字</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%B8%B8%E7%94%A8%E8%A7%A3%E5%AF%86%E7%BD%91%E7%AB%99%EF%BC%9A-11"><span class="nav-text">常用解密网站：</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#js%E4%B8%93%E7%94%A8%E5%8A%A0%E5%AF%86"><span class="nav-text">js专用加密</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1%E3%80%81%E9%A2%9C%E6%96%87%E5%AD%97js%E5%8A%A0%E5%AF%86"><span class="nav-text">1、颜文字js加密</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%B8%B8%E7%94%A8%E8%A7%A3%E5%AF%86%E7%BD%91%E7%AB%99%EF%BC%9A-12"><span class="nav-text">常用解密网站：</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2%E3%80%81jother%E7%BC%96%E7%A0%81"><span class="nav-text">2、jother编码</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%B8%B8%E7%94%A8%E8%A7%A3%E5%AF%86%E7%BD%91%E7%AB%99%EF%BC%9A-13"><span class="nav-text">常用解密网站：</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3%E3%80%81JSFuck%E7%BC%96%E7%A0%81"><span class="nav-text">3、JSFuck编码</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%B8%B8%E7%94%A8%E8%A7%A3%E5%AF%86%E7%BD%91%E7%AB%99%EF%BC%9A-14"><span class="nav-text">常用解密网站：</span></a></li></ol></li></ol></li></ol>
+
+	</div>
+</div>
+	</div>
+	
+</div>
+			</div>
+
+			
+		</div>
+
+		<div class="main-content-footer">
+			<footer class="footer mt-5 py-5 h-auto text-base text-third-text-color relative border-t-2 border-t-border-color">
+    <div class="info-container py-3 text-center">
+        
+            <div class="customize-info my-1">Powered by <a href="https://github.com/W1ndys" target="_blank">W1ndys</a></div>
+        
+        <div class="text-center">
+            &copy;
+            
+              <span>2023</span>
+              -
+            
+            2025&nbsp;&nbsp;<i class="fa-solid fa-heart fa-beat" style="--fa-animation-duration: 0.5s; color: #f54545"></i>&nbsp;&nbsp;<a href="/">W1ndys</a>
+            
+                
+                <p class="post-count space-x-0.5">
+                    <span>
+                        共撰写了 193 篇文章
+                    </span>
+                    
+                        <span>
+                            共 224.3k 字
+                        </span>
+                    
+                </p>
+            
+        </div>
+        
+            <script data-swup-reload-script src="https://cn.vercount.one/js"></script>
+            <div class="relative text-center lg:absolute lg:right-[20px] lg:top-1/2 lg:-translate-y-1/2 lg:text-right">
+                
+                    <span id="busuanzi_container_site_uv" class="lg:!block">
+                        <span class="text-sm">访问人数</span>
+                        <span id="busuanzi_value_site_uv"></span>
+                    </span>
+                
+                
+                    <span id="busuanzi_container_site_pv" class="lg:!block">
+                        <span class="text-sm">总访问量</span>
+                        <span id="busuanzi_value_site_pv"></span>
+                    </span>
+                
+            </div>
+        
+        <div class="relative text-center lg:absolute lg:left-[20px] lg:top-1/2 lg:-translate-y-1/2 lg:text-left">
+            <span class="lg:block text-sm">由 <?xml version="1.0" encoding="utf-8"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg class="relative top-[2px] inline-block align-baseline" version="1.1" id="圖層_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="1rem" height="1rem" viewBox="0 0 512 512" enable-background="new 0 0 512 512" xml:space="preserve"><path fill="#0E83CD" d="M256.4,25.8l-200,115.5L56,371.5l199.6,114.7l200-115.5l0.4-230.2L256.4,25.8z M349,354.6l-18.4,10.7l-18.6-11V275H200v79.6l-18.4,10.7l-18.6-11v-197l18.5-10.6l18.5,10.8V237h112v-79.6l18.5-10.6l18.5,10.8V354.6z"/></svg><a target="_blank" class="text-base" href="https://hexo.io">Hexo</a> 驱动</span>
+            <span class="text-sm lg:block">主题&nbsp;<a class="text-base" target="_blank" href="https://github.com/EvanNotFound/hexo-theme-redefine">Redefine v2.8.2</a></span>
+        </div>
+        
+        
+            <div>
+                博客已运行 <span class="odometer" id="runtime_days" ></span> 天 <span class="odometer" id="runtime_hours"></span> 小时 <span class="odometer" id="runtime_minutes"></span> 分钟 <span class="odometer" id="runtime_seconds"></span> 秒
+            </div>
+        
+        
+            <script data-swup-reload-script>
+                try {
+                    function odometer_init() {
+                    const elements = document.querySelectorAll('.odometer');
+                    elements.forEach(el => {
+                        new Odometer({
+                            el,
+                            format: '( ddd).dd',
+                            duration: 200
+                        });
+                    });
+                    }
+                    odometer_init();
+                } catch (error) {}
+            </script>
+        
+        
+            
+                
+        
+                
+        
+                
+
+                    
+                        <script data-swup-reload-script data-pjax src="/js/Capoo.js"></script>
+                    
+        
+        
+    </div>  
+</footer>
+		</div>
+	</div>
+
+	
+	<div class="post-tools">
+		<div class="post-tools-container">
+	<ul class="article-tools-list">
+		<!-- TOC aside toggle -->
+		
+		<li class="right-bottom-tools page-aside-toggle">
+			<i class="fa-regular fa-outdent"></i>
+		</li>
+		
+
+		<!-- go comment -->
+		
+		<li class="go-comment">
+			<i class="fa-regular fa-comments"></i>
+		</li>
+		
+	</ul>
+</div>
+	</div>
+	
+
+	<div class="right-side-tools-container">
+		<div class="side-tools-container">
+	<ul class="hidden-tools-list">
+		<li class="right-bottom-tools tool-font-adjust-plus flex justify-center items-center">
+			<i class="fa-regular fa-magnifying-glass-plus"></i>
+		</li>
+
+		<li class="right-bottom-tools tool-font-adjust-minus flex justify-center items-center">
+			<i class="fa-regular fa-magnifying-glass-minus"></i>
+		</li>
+
+		<li class="right-bottom-tools tool-dark-light-toggle flex justify-center items-center">
+			<i class="fa-regular fa-moon"></i>
+		</li>
+
+		<!-- rss -->
+		
+		<li class="right-bottom-tools rss flex justify-center items-center">
+			<a class="flex justify-center items-center" href="/atom.xml" target="_blank">
+				<i class="fa-regular fa-rss"></i>
+			</a>
+		</li>
+		
+
+		
+
+		<li class="right-bottom-tools tool-scroll-to-bottom flex justify-center items-center">
+			<i class="fa-regular fa-arrow-down"></i>
+		</li>
+	</ul>
+
+	<ul class="visible-tools-list">
+		<li class="right-bottom-tools toggle-tools-list flex justify-center items-center">
+			<i class="fa-regular fa-cog fa-spin"></i>
+		</li>
+		
+		<li class="right-bottom-tools tool-scroll-to-top flex justify-center items-center">
+			<i class="arrow-up fas fa-arrow-up"></i>
+			<span class="percent"></span>
+		</li>
+		
+		
+	</ul>
+</div>
+	</div>
+
+	<div class="image-viewer-container">
+	<img src="">
+</div>
+
+	
+	<div class="search-pop-overlay">
+	<div class="popup search-popup">
+		<div class="search-header">
+			<span class="search-input-field-pre">
+				<i class="fa-solid fa-keyboard"></i>
+			</span>
+			<div class="search-input-container">
+				<input autocomplete="off" autocorrect="off" autocapitalize="off" placeholder="站内搜索您需要的内容..." spellcheck="false" type="search" class="search-input">
+			</div>
+			<span class="popup-btn-close">
+				<i class="fa-solid fa-times"></i>
+			</span>
+		</div>
+		<div id="search-result">
+			<div id="no-result">
+				<i class="fa-solid fa-spinner fa-spin-pulse fa-5x fa-fw"></i>
+			</div>
+		</div>
+	</div>
+</div>
+	
+
+</main>
+
+
+<script  src="https://evan.beee.top/projects/hexo-theme-redefine@2.8.2/source/js/build/libs/Swup.min.js" ></script><script  src="https://evan.beee.top/projects/hexo-theme-redefine@2.8.2/source/js/build/libs/SwupSlideTheme.min.js" ></script><script  src="https://evan.beee.top/projects/hexo-theme-redefine@2.8.2/source/js/build/libs/SwupScriptsPlugin.min.js" ></script><script  src="https://evan.beee.top/projects/hexo-theme-redefine@2.8.2/source/js/build/libs/SwupProgressPlugin.min.js" ></script><script  src="https://evan.beee.top/projects/hexo-theme-redefine@2.8.2/source/js/build/libs/SwupScrollPlugin.min.js" ></script><script  src="https://evan.beee.top/projects/hexo-theme-redefine@2.8.2/source/js/build/libs/SwupPreloadPlugin.min.js" ></script>
+<script>
+    const swup = new Swup({
+        plugins: [
+            new SwupScriptsPlugin({
+                optin: true,
+            }),
+            new SwupProgressPlugin(),
+            new SwupScrollPlugin({
+                offset: 80,
+            }),
+            new SwupSlideTheme({
+                mainElement: ".main-content-body",
+            }),
+            new SwupPreloadPlugin(),
+        ],
+        containers: ["#swup"],
+    });
+</script>
+
+
+
+
+	<script type="module" src="https://evan.beee.top/projects/hexo-theme-redefine@2.8.2/source/js/build/tools/imageViewer.js" ></script><script type="module" src="https://evan.beee.top/projects/hexo-theme-redefine@2.8.2/source/js/build/utils.js" ></script><script type="module" src="https://evan.beee.top/projects/hexo-theme-redefine@2.8.2/source/js/build/main.js" ></script><script type="module" src="https://evan.beee.top/projects/hexo-theme-redefine@2.8.2/source/js/build/layouts/navbarShrink.js" ></script><script type="module" src="https://evan.beee.top/projects/hexo-theme-redefine@2.8.2/source/js/build/tools/scrollTopBottom.js" ></script><script type="module" src="https://evan.beee.top/projects/hexo-theme-redefine@2.8.2/source/js/build/tools/lightDarkSwitch.js" ></script><script type="module" src="https://evan.beee.top/projects/hexo-theme-redefine@2.8.2/source/js/build/layouts/categoryList.js" ></script>
+
+
+    <script type="module" src="https://evan.beee.top/projects/hexo-theme-redefine@2.8.2/source/js/build/tools/localSearch.js" ></script>
+
+
+
+    <script type="module" src="https://evan.beee.top/projects/hexo-theme-redefine@2.8.2/source/js/build/tools/codeBlock.js" ></script>
+
+
+
+    <script type="module" src="https://evan.beee.top/projects/hexo-theme-redefine@2.8.2/source/js/build/layouts/lazyload.js" ></script>
+
+
+
+    <script  src="https://evan.beee.top/projects/hexo-theme-redefine@2.8.2/source/js/build/tools/runtime.js" ></script>
+    <script  src="https://evan.beee.top/projects/hexo-theme-redefine@2.8.2/source/js/build/libs/odometer.min.js" ></script>
+    <link rel="stylesheet" href="https://evan.beee.top/projects/hexo-theme-redefine@2.8.2/source/assets/odometer-theme-minimal.css">
+
+
+
+  <script  src="https://evan.beee.top/projects/hexo-theme-redefine@2.8.2/source/js/build/libs/Typed.min.js" ></script>
+  <script type="module" src="https://evan.beee.top/projects/hexo-theme-redefine@2.8.2/source/js/build/plugins/typed.js" ></script>
+
+
+
+
+
+    <script  src="https://evan.beee.top/projects/hexo-theme-redefine@2.8.2/source/js/build/libs/minimasonry.min.js" ></script>
+    <script type="module" src="https://evan.beee.top/projects/hexo-theme-redefine@2.8.2/source/js/build/plugins/masonry.js" ></script>
+
+
+
+
+
+
+    <script type="module" src="https://evan.beee.top/projects/hexo-theme-redefine@2.8.2/source/js/build/tools/tocToggle.js" data-swup-reload-script></script><script type="module" src="https://evan.beee.top/projects/hexo-theme-redefine@2.8.2/source/js/build/layouts/toc.js" data-swup-reload-script></script><script type="module" src="https://evan.beee.top/projects/hexo-theme-redefine@2.8.2/source/js/build/plugins/tabs.js" data-swup-reload-script></script>
+
+
+<script  src="https://evan.beee.top/projects/hexo-theme-redefine@2.8.2/source/js/build/libs/moment-with-locales.min.js" data-swup-reload-script></script>
+<script type="module" src="https://evan.beee.top/projects/hexo-theme-redefine@2.8.2/source/js/build/layouts/essays.js" data-swup-reload-script></script>
+
+
+    <script  src="https://evan.beee.top/projects/hexo-theme-redefine@2.8.2/source/js/build/libs/pangu.min.js" ></script><script  src="https://evan.beee.top/projects/hexo-theme-redefine@2.8.2/source/js/build/plugins/pangu.js" ></script>
+
+
+
+    <script type="module" src="https://evan.beee.top/projects/hexo-theme-redefine@2.8.2/source/js/build/layouts/bookmarkNav.js" ></script>
+
+	
+</body>
+
+</html>

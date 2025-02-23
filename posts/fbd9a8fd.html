@@ -1,0 +1,2296 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="keywords" content="博客, 生活, 技术, 记录">
+    
+    <meta name="author" content="W1ndys">
+    <!-- preconnect -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    
+        
+        
+        
+            <link rel="preconnect" href="https://evan.beee.top" crossorigin>
+        
+    
+    <!--- Seo Part-->
+    
+    <link rel="canonical" href="https://blog.w1ndys.top/posts/fbd9a8fd.html"/>
+    <meta name="robots" content="index,follow">
+    <meta name="googlebot" content="index,follow">
+    <meta name="revisit-after" content="1 days">
+    
+    
+    
+        
+        <meta name="description" content="W1ndys小屋">
+<meta property="og:type" content="article">
+<meta property="og:title" content="卷卷bot使用手册">
+<meta property="og:url" content="https://blog.w1ndys.top/posts/fbd9a8fd.html">
+<meta property="og:site_name" content="W1ndys小屋">
+<meta property="og:description" content="W1ndys小屋">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://blog.w1ndys.top/images/redefine-og.webp">
+<meta property="article:published_time" content="2025-01-01T11:48:25.000Z">
+<meta property="article:modified_time" content="2025-02-23T05:37:18.715Z">
+<meta property="article:author" content="W1ndys">
+<meta property="article:tag" content="Python">
+<meta property="article:tag" content="QQbot">
+<meta property="article:tag" content="QQ机器人">
+<meta property="article:tag" content="NapCatQQ">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://blog.w1ndys.top/images/redefine-og.webp">
+    
+    
+    <!--- Icon Part-->
+    <link rel="icon" type="image/png" href="/images/favicon.ico" sizes="192x192">
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon.ico">
+    <meta name="theme-color" content="#A31F34">
+    <link rel="shortcut icon" href="/images/favicon.ico">
+    <!--- Page Info-->
+    
+    <title>
+        
+            卷卷bot使用手册 | W1ndys小屋
+        
+    </title>
+
+    <link rel="stylesheet" href="https://evan.beee.top/projects/hexo-theme-redefine@2.8.2/source/fonts/Chillax/chillax.css">
+
+    <!--- Inject Part-->
+    
+        
+            
+    
+            
+    
+            
+                
+                    <script data-swup-reload-script data-pjax charset="UTF-8" id="LA_COLLECT" src="//sdk.51.la/js-sdk-pro.min.js"></script>
+                
+    
+            
+                
+                    <script data-swup-reload-script data-pjax>LA.init({id:"3HPYFt9znqKItrHZ",ck:"3HPYFt9znqKItrHZ",autoTrack:true})</script>
+                
+    
+            
+                
+                    <link rel="stylesheet" type="text/css" href="/css/Capoo.css">
+                
+    
+
+    
+<link rel="stylesheet" href="/css/style.css">
+
+
+    
+        <link rel="stylesheet" href="https://evan.beee.top/projects/hexo-theme-redefine@2.8.2/source/css/build/tailwind.css">
+    
+
+    <link rel="stylesheet" href="https://evan.beee.top/projects/hexo-theme-redefine@2.8.2/source/fonts/GeistMono/geist-mono.css">
+    <link rel="stylesheet" href="https://evan.beee.top/projects/hexo-theme-redefine@2.8.2/source/fonts/Geist/geist.css">
+    <!--- Font Part-->
+    
+    
+    
+    
+    
+    
+        <script  src="https://evan.beee.top/projects/hexo-theme-redefine@2.8.2/source/js/build/libs/anime.min.js" ></script>
+    
+
+    <script id="hexo-configurations">
+    window.config = {"hostname":"blog.w1ndys.top","root":"/","language":"zh-CN","path":"search.xml"};
+    window.theme = {"articles":{"style":{"font_size":"16px","line_height":1.5,"image_border_radius":"14px","image_alignment":"center","image_caption":false,"link_icon":true,"delete_mask":true,"title_alignment":"left","headings_top_spacing":{"h1":"3.2rem","h2":"2.4rem","h3":"1.9rem","h4":"1.6rem","h5":"1.4rem","h6":"1.3rem"}},"word_count":{"enable":true,"count":true,"min2read":true},"author_label":{"enable":true,"auto":false,"list":[]},"code_block":{"copy":true,"style":"mac","highlight_theme":{"light":"github","dark":"vs2015"},"font":{"enable":false,"family":null,"url":null}},"toc":{"enable":true,"max_depth":3,"number":false,"expand":true,"init_open":true},"copyright":{"enable":true,"default":"all_rights_reserved"},"lazyload":true,"pangu_js":true,"recommendation":{"enable":false,"title":"推荐阅读","limit":3,"mobile_limit":2,"placeholder":"/images/wallhaven-wqery6-light.webp","skip_dirs":[]}},"colors":{"primary":"#A31F34","secondary":"#1890ff","default_mode":"light"},"global":{"fonts":{"chinese":{"enable":false,"family":null,"url":null},"english":{"enable":false,"family":null,"url":null},"title":{"enable":false,"family":null,"url":null}},"content_max_width":"1000px","sidebar_width":"210px","hover":{"shadow":true,"scale":true},"scroll_progress":{"bar":true,"percentage":true},"website_counter":{"url":"https://cn.vercount.one/js","enable":true,"site_pv":true,"site_uv":true,"post_pv":true},"single_page":true,"preloader":{"enable":true,"custom_message":"欢迎来到W1ndys小屋"},"open_graph":{"enable":true,"image":"/images/redefine-og.webp","description":"W1ndys小屋"},"google_analytics":{"enable":false,"id":null}},"home_banner":{"enable":true,"style":"fixed","image":{"light":"https://pic1.zhimg.com/80/v2-b4e05912f591b51b9fa3e8aa4b9cba45.png","dark":"https://pic1.zhimg.com/80/v2-b4e05912f591b51b9fa3e8aa4b9cba45.png"},"title":"W1ndys小屋","subtitle":{"text":["一言加载中..."],"hitokoto":{"enable":true,"show_author":true,"api":"https://v1.hitokoto.cn"},"typing_speed":100,"backing_speed":80,"starting_delay":500,"backing_delay":1500,"loop":true,"smart_backspace":true},"text_color":{"light":"#fff","dark":"#d1d1b6"},"text_style":{"title_size":"2.8rem","subtitle_size":"1.5rem","line_height":1.2},"custom_font":{"enable":false,"family":null,"url":null},"social_links":{"enable":true,"style":"default","links":{"github":"https://github.com/W1ndys","instagram":null,"zhihu":"https://www.zhihu.com/people/w1ndys","twitter":null,"email":"w1ndys@outlook.com"},"qrs":{"weixin":null}}},"plugins":{"feed":{"enable":true},"aplayer":{"enable":false,"type":"fixed","audios":[{"name":null,"artist":null,"url":null,"cover":null,"lrc":null}]},"mermaid":{"enable":false,"version":"11.4.1"}},"version":"2.8.2","navbar":{"auto_hide":true,"color":{"left":"#f78736","right":"#367df7","transparency":35},"width":{"home":"1200px","pages":"1000px"},"links":{"Home":{"path":"/","icon":"fa-regular fa-house"},"Archives":{"path":"/archives","icon":"fa-regular fa-archive"},"Categories":{"path":"/categories","icon":"fa-regular fa-folder"},"Tags":{"path":"/tags","icon":"fa-regular fa-tags"},"友链接力":{"icon":"fa-solid fa-train-subway","submenus":{"异次元之旅":"https://travel.moe/go.html?travel=on","MIIT Travel":"https://beian.miit.cn.com/go.php","虫洞 | 十年之约":"https://foreverblog.cn/go.html","博客录":"https://bokelu.suijiboke.gs","笔墨迹":"https://blogscn.fun/random.html","博客圈":"https://bokequan.cn/?suiji","开往":"https://www.travellings.cn/go.html"}},"Friends":{"path":"/links","icon":"fa-regular fa-link"},"书签":{"icon":"fa-solid fa-bookmark","path":"/bookmarks/"}},"search":{"enable":true,"preload":true}},"page_templates":{"friends_column":3,"tags_style":"blur"},"home":{"sidebar":{"enable":true,"position":"left","first_item":"menu","announcement":"Welcome to W1ndys's Blog","show_on_mobile":true,"links":{"Archives":{"path":"/archives","icon":"fa-regular fa-archive"},"Tags":{"path":"/tags","icon":"fa-regular fa-tags"},"Categories":{"path":"/categories","icon":"fa-regular fa-folder"}}},"article_date_format":"auto","excerpt_length":200,"categories":{"enable":true,"limit":5},"tags":{"enable":true,"limit":5}},"footerStart":"2023/08/22 05:20:00"};
+    window.lang_ago = {"second":"%s 秒前","minute":"%s 分钟前","hour":"%s 小时前","day":"%s 天前","week":"%s 周前","month":"%s 个月前","year":"%s 年前"};
+    window.data = {"masonry":true};
+  </script>
+    
+    <!--- Fontawesome Part-->
+    <link rel="stylesheet" href="https://evan.beee.top/projects/hexo-theme-redefine@2.8.2/source/fontawesome/fontawesome.min.css">
+    <link rel="stylesheet" href="https://evan.beee.top/projects/hexo-theme-redefine@2.8.2/source/fontawesome/brands.min.css">
+    <link rel="stylesheet" href="https://evan.beee.top/projects/hexo-theme-redefine@2.8.2/source/fontawesome/solid.min.css">
+    <link rel="stylesheet" href="https://evan.beee.top/projects/hexo-theme-redefine@2.8.2/source/fontawesome/regular.min.css">
+    
+    
+    
+    
+<meta name="generator" content="Hexo 7.3.0"><link rel="alternate" href="/atom.xml" title="W1ndys小屋" type="application/atom+xml">
+</head>
+
+
+
+<body>
+	<div class="progress-bar-container">
+	
+	<span class="scroll-progress-bar"></span>
+	
+
+	
+	<span class="pjax-progress-bar"></span>
+	<!--        <span class="swup-progress-icon">-->
+	<!--            <i class="fa-solid fa-circle-notch fa-spin"></i>-->
+	<!--        </span>-->
+	
+</div>
+
+<style>
+    :root {
+        --preloader-background-color: #fff;
+        --preloader-text-color: #000;
+    }
+
+    @media (prefers-color-scheme: dark) {
+        :root {
+            --preloader-background-color: #202124;
+            --preloader-text-color: #fff;
+        }
+    }
+
+    @media (prefers-color-scheme: light) {
+        :root {
+            --preloader-background-color: #fff;
+            --preloader-text-color: #000;
+        }
+    }
+
+    @media (max-width: 600px) {
+        .ml13 {
+            font-size: 2.6rem !important; /* Adjust this value as needed */
+        }
+    }
+
+    .preloader {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem; /* Tailwind 'gap-4' is 1rem */
+        align-items: center;
+        justify-content: center;
+        position: fixed;
+        padding: 12px;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh; /* 'h-screen' is 100% of the viewport height */
+        background-color: var(--preloader-background-color);
+        z-index: 1100; /* 'z-[1100]' sets the z-index */
+        transition: opacity 0.2s ease-in-out;
+    }
+
+    .ml13 {
+        font-size: 3.2rem;
+        /* text-transform: uppercase; */
+        color: var(--preloader-text-color);
+        letter-spacing: -1px;
+        font-weight: 500;
+        font-family: 'Chillax-Variable', sans-serif;
+        text-align: center;
+    }
+
+    .ml13 .word {
+        display: inline-flex;
+        flex-wrap: wrap;
+        white-space: nowrap;
+    }
+
+    .ml13 .letter {
+        display: inline-block;
+        line-height: 1em;
+    }
+</style>
+
+<div class="preloader">
+    <h2 class="ml13">
+        欢迎来到W1ndys小屋
+    </h2>
+    <script>
+        var textWrapper = document.querySelector('.ml13');
+        // Split text into words
+        var words = textWrapper.textContent.trim().split(' ');
+
+        // Clear the existing content
+        textWrapper.innerHTML = '';
+
+        // Wrap each word and its letters in spans
+        words.forEach(function(word) {
+            var wordSpan = document.createElement('span');
+            wordSpan.classList.add('word');
+            wordSpan.innerHTML = word.replace(/\S/g, "<span class='letter'>$&</span>");
+            textWrapper.appendChild(wordSpan);
+            textWrapper.appendChild(document.createTextNode(' ')); // Add space between words
+        });
+
+        var animation = anime.timeline({ loop: true })
+            .add({
+                targets: '.ml13 .letter',
+                translateY: [20, 0],
+                translateZ: 0,
+                opacity: [0, 1],
+                filter: ['blur(5px)', 'blur(0px)'],
+                easing: "easeOutExpo",
+                duration: 1200,
+                delay: (el, i) => 300 + 20 * i,
+            })
+            .add({
+                targets: '.ml13 .letter',
+                translateY: [0, -20],
+                opacity: [1, 0],
+                filter: ['blur(0px)', 'blur(5px)'],
+                easing: "easeInExpo",
+                duration: 1000,
+                delay: (el, i) => 15 * i,
+                complete: function() {
+                    hidePreloader();
+                }
+            }, '-=700');
+
+
+        let themeStatus = JSON.parse(localStorage.getItem('REDEFINE-THEME-STATUS'))?.isDark;
+
+        // If the theme status is not found in local storage, check the preferred color scheme
+        if (themeStatus === undefined || themeStatus === null) {
+            if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+                themeStatus = 'dark';
+            } else {
+                themeStatus = 'light';
+            }
+        }
+
+        // Now you can use the themeStatus variable in your code
+        if (themeStatus) {
+            document.documentElement.style.setProperty('--preloader-background-color', '#202124');
+            document.documentElement.style.setProperty('--preloader-text-color', '#fff');
+        } else {
+            document.documentElement.style.setProperty('--preloader-background-color', '#fff');
+            document.documentElement.style.setProperty('--preloader-text-color', '#000');
+        }
+
+        window.addEventListener('load', function () {
+            setTimeout(hidePreloader, 5000); // Call hidePreloader after 5000 milliseconds if not already called by animation
+        });
+
+        function hidePreloader() {
+            var preloader = document.querySelector('.preloader');
+            preloader.style.opacity = '0';
+            setTimeout(function () {
+                preloader.style.display = 'none';
+            }, 200);
+        }
+    </script>
+</div>
+
+<main class="page-container" id="swup">
+
+	
+
+	<div class="main-content-container flex flex-col justify-between min-h-dvh">
+		<div class="main-content-header">
+			<header class="navbar-container px-6 md:px-12">
+    <div class="navbar-content transition-navbar ">
+        <div class="left">
+            
+                <a class="logo-image h-8 w-8 sm:w-10 sm:h-10 mr-3" href="/">
+                    <img src="/images/haixian.svg" class="w-full h-full rounded-sm">
+                </a>
+            
+            <a class="logo-title" href="/">
+                
+                W1ndys小屋
+                
+            </a>
+        </div>
+
+        <div class="right">
+            <!-- PC -->
+            <div class="desktop">
+                <ul class="navbar-list">
+                    
+                        
+                            
+
+                            <li class="navbar-item">
+                                <!-- Menu -->
+                                <a class=""
+                                   href="/"
+                                        >
+                                    <i class="fa-regular fa-house fa-fw"></i>
+                                    首页
+                                    
+                                </a>
+
+                                <!-- Submenu -->
+                                
+                            </li>
+                    
+                        
+                            
+
+                            <li class="navbar-item">
+                                <!-- Menu -->
+                                <a class=""
+                                   href="/archives"
+                                        >
+                                    <i class="fa-regular fa-archive fa-fw"></i>
+                                    归档
+                                    
+                                </a>
+
+                                <!-- Submenu -->
+                                
+                            </li>
+                    
+                        
+                            
+
+                            <li class="navbar-item">
+                                <!-- Menu -->
+                                <a class=""
+                                   href="/categories"
+                                        >
+                                    <i class="fa-regular fa-folder fa-fw"></i>
+                                    分类
+                                    
+                                </a>
+
+                                <!-- Submenu -->
+                                
+                            </li>
+                    
+                        
+                            
+
+                            <li class="navbar-item">
+                                <!-- Menu -->
+                                <a class=""
+                                   href="/tags"
+                                        >
+                                    <i class="fa-regular fa-tags fa-fw"></i>
+                                    标签
+                                    
+                                </a>
+
+                                <!-- Submenu -->
+                                
+                            </li>
+                    
+                        
+                            
+
+                            <li class="navbar-item">
+                                <!-- Menu -->
+                                <a class="has-dropdown"
+                                   href="#"
+                                        onClick=&#34;return false;&#34;>
+                                    <i class="fa-solid fa-train-subway fa-fw"></i>
+                                    友链接力
+                                    <i class="fa-solid fa-chevron-down fa-fw"></i>
+                                </a>
+
+                                <!-- Submenu -->
+                                
+                                    <ul class="sub-menu">
+                                        
+                                            <li>
+                                                <a target="_blank" rel="noopener" href="https://travel.moe/go.html?travel=on">
+                                                    异次元之旅
+                                                </a>
+                                            </li>
+                                        
+                                            <li>
+                                                <a target="_blank" rel="noopener" href="https://beian.miit.cn.com/go.php">
+                                                    MIIT TRAVEL
+                                                </a>
+                                            </li>
+                                        
+                                            <li>
+                                                <a target="_blank" rel="noopener" href="https://foreverblog.cn/go.html">
+                                                    虫洞 | 十年之约
+                                                </a>
+                                            </li>
+                                        
+                                            <li>
+                                                <a target="_blank" rel="noopener" href="https://bokelu.suijiboke.gs">
+                                                    博客录
+                                                </a>
+                                            </li>
+                                        
+                                            <li>
+                                                <a target="_blank" rel="noopener" href="https://blogscn.fun/random.html">
+                                                    笔墨迹
+                                                </a>
+                                            </li>
+                                        
+                                            <li>
+                                                <a target="_blank" rel="noopener" href="https://bokequan.cn/?suiji">
+                                                    博客圈
+                                                </a>
+                                            </li>
+                                        
+                                            <li>
+                                                <a target="_blank" rel="noopener" href="https://www.travellings.cn/go.html">
+                                                    开往
+                                                </a>
+                                            </li>
+                                        
+                                    </ul>
+                                
+                            </li>
+                    
+                        
+                            
+
+                            <li class="navbar-item">
+                                <!-- Menu -->
+                                <a class=""
+                                   href="/links"
+                                        >
+                                    <i class="fa-regular fa-link fa-fw"></i>
+                                    友情链接
+                                    
+                                </a>
+
+                                <!-- Submenu -->
+                                
+                            </li>
+                    
+                        
+                            
+
+                            <li class="navbar-item">
+                                <!-- Menu -->
+                                <a class=""
+                                   href="/bookmarks/"
+                                        >
+                                    <i class="fa-solid fa-bookmark fa-fw"></i>
+                                    书签
+                                    
+                                </a>
+
+                                <!-- Submenu -->
+                                
+                            </li>
+                    
+                    
+                        <li class="navbar-item search search-popup-trigger">
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                        </li>
+                    
+                </ul>
+            </div>
+            <!-- Mobile -->
+            <div class="mobile">
+                
+                    <div class="icon-item search search-popup-trigger"><i class="fa-solid fa-magnifying-glass"></i>
+                    </div>
+                
+                <div class="icon-item navbar-bar">
+                    <div class="navbar-bar-middle"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Mobile sheet -->
+    <div class="navbar-drawer h-dvh w-full absolute top-0 left-0 bg-background-color flex flex-col justify-between">
+        <ul class="drawer-navbar-list flex flex-col px-4 justify-center items-start">
+            
+                
+                    
+
+                    <li class="drawer-navbar-item text-base my-1.5 flex flex-col w-full">
+                        
+                        <a class="py-1.5 px-2 flex flex-row items-center justify-between gap-1 hover:!text-primary active:!text-primary text-2xl font-semibold group border-b border-border-color hover:border-primary w-full "
+                           href="/"
+                        >
+                            <span>
+                                首页
+                            </span>
+                            
+                                <i class="fa-regular fa-house fa-sm fa-fw"></i>
+                            
+                        </a>
+                        
+
+                        
+                    </li>
+            
+                
+                    
+
+                    <li class="drawer-navbar-item text-base my-1.5 flex flex-col w-full">
+                        
+                        <a class="py-1.5 px-2 flex flex-row items-center justify-between gap-1 hover:!text-primary active:!text-primary text-2xl font-semibold group border-b border-border-color hover:border-primary w-full "
+                           href="/archives"
+                        >
+                            <span>
+                                归档
+                            </span>
+                            
+                                <i class="fa-regular fa-archive fa-sm fa-fw"></i>
+                            
+                        </a>
+                        
+
+                        
+                    </li>
+            
+                
+                    
+
+                    <li class="drawer-navbar-item text-base my-1.5 flex flex-col w-full">
+                        
+                        <a class="py-1.5 px-2 flex flex-row items-center justify-between gap-1 hover:!text-primary active:!text-primary text-2xl font-semibold group border-b border-border-color hover:border-primary w-full "
+                           href="/categories"
+                        >
+                            <span>
+                                分类
+                            </span>
+                            
+                                <i class="fa-regular fa-folder fa-sm fa-fw"></i>
+                            
+                        </a>
+                        
+
+                        
+                    </li>
+            
+                
+                    
+
+                    <li class="drawer-navbar-item text-base my-1.5 flex flex-col w-full">
+                        
+                        <a class="py-1.5 px-2 flex flex-row items-center justify-between gap-1 hover:!text-primary active:!text-primary text-2xl font-semibold group border-b border-border-color hover:border-primary w-full "
+                           href="/tags"
+                        >
+                            <span>
+                                标签
+                            </span>
+                            
+                                <i class="fa-regular fa-tags fa-sm fa-fw"></i>
+                            
+                        </a>
+                        
+
+                        
+                    </li>
+            
+                
+                    
+
+                    <li class="drawer-navbar-item-sub text-base my-1.5 flex flex-col w-full">
+                        
+                        <div class="py-1.5 px-2 flex flex-row items-center justify-between gap-1 hover:!text-primary active:!text-primary cursor-pointer text-2xl font-semibold group border-b border-border-color hover:border-primary w-full "
+                             navbar-data-toggle="submenu-友链接力"
+                        >
+                            <span>
+                                友链接力
+                            </span>
+                            
+                                <i class="fa-solid fa-chevron-right fa-sm fa-fw transition-all"></i>
+                            
+                        </div>
+                        
+
+                        
+                            <div class="flex-col items-start px-2 py-2 hidden" data-target="submenu-友链接力">
+                                
+                                    <div class="drawer-navbar-item text-base flex flex-col justify-center items-start hover:underline active:underline hover:underline-offset-1 rounded-3xl">
+                                        <a class=" text-third-text-color text-xl"
+                                           target="_blank" rel="noopener" href="https://travel.moe/go.html?travel=on">异次元之旅</a>
+                                    </div>
+                                
+                                    <div class="drawer-navbar-item text-base flex flex-col justify-center items-start hover:underline active:underline hover:underline-offset-1 rounded-3xl">
+                                        <a class=" text-third-text-color text-xl"
+                                           target="_blank" rel="noopener" href="https://beian.miit.cn.com/go.php">MIIT TRAVEL</a>
+                                    </div>
+                                
+                                    <div class="drawer-navbar-item text-base flex flex-col justify-center items-start hover:underline active:underline hover:underline-offset-1 rounded-3xl">
+                                        <a class=" text-third-text-color text-xl"
+                                           target="_blank" rel="noopener" href="https://foreverblog.cn/go.html">虫洞 | 十年之约</a>
+                                    </div>
+                                
+                                    <div class="drawer-navbar-item text-base flex flex-col justify-center items-start hover:underline active:underline hover:underline-offset-1 rounded-3xl">
+                                        <a class=" text-third-text-color text-xl"
+                                           target="_blank" rel="noopener" href="https://bokelu.suijiboke.gs">博客录</a>
+                                    </div>
+                                
+                                    <div class="drawer-navbar-item text-base flex flex-col justify-center items-start hover:underline active:underline hover:underline-offset-1 rounded-3xl">
+                                        <a class=" text-third-text-color text-xl"
+                                           target="_blank" rel="noopener" href="https://blogscn.fun/random.html">笔墨迹</a>
+                                    </div>
+                                
+                                    <div class="drawer-navbar-item text-base flex flex-col justify-center items-start hover:underline active:underline hover:underline-offset-1 rounded-3xl">
+                                        <a class=" text-third-text-color text-xl"
+                                           target="_blank" rel="noopener" href="https://bokequan.cn/?suiji">博客圈</a>
+                                    </div>
+                                
+                                    <div class="drawer-navbar-item text-base flex flex-col justify-center items-start hover:underline active:underline hover:underline-offset-1 rounded-3xl">
+                                        <a class=" text-third-text-color text-xl"
+                                           target="_blank" rel="noopener" href="https://www.travellings.cn/go.html">开往</a>
+                                    </div>
+                                
+                            </div>
+                        
+                    </li>
+            
+                
+                    
+
+                    <li class="drawer-navbar-item text-base my-1.5 flex flex-col w-full">
+                        
+                        <a class="py-1.5 px-2 flex flex-row items-center justify-between gap-1 hover:!text-primary active:!text-primary text-2xl font-semibold group border-b border-border-color hover:border-primary w-full "
+                           href="/links"
+                        >
+                            <span>
+                                友情链接
+                            </span>
+                            
+                                <i class="fa-regular fa-link fa-sm fa-fw"></i>
+                            
+                        </a>
+                        
+
+                        
+                    </li>
+            
+                
+                    
+
+                    <li class="drawer-navbar-item text-base my-1.5 flex flex-col w-full">
+                        
+                        <a class="py-1.5 px-2 flex flex-row items-center justify-between gap-1 hover:!text-primary active:!text-primary text-2xl font-semibold group border-b border-border-color hover:border-primary w-full "
+                           href="/bookmarks/"
+                        >
+                            <span>
+                                书签
+                            </span>
+                            
+                                <i class="fa-solid fa-bookmark fa-sm fa-fw"></i>
+                            
+                        </a>
+                        
+
+                        
+                    </li>
+            
+
+            
+            
+                
+                    
+                    
+                    
+            
+        </ul>
+
+        <div class="statistics flex justify-around my-2.5">
+    <a class="item tag-count-item flex flex-col justify-center items-center w-20" href="/tags">
+        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">161</div>
+        <div class="label text-third-text-color text-sm">标签</div>
+    </a>
+    <a class="item tag-count-item flex flex-col justify-center items-center w-20" href="/categories">
+        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">80</div>
+        <div class="label text-third-text-color text-sm">分类</div>
+    </a>
+    <a class="item tag-count-item flex flex-col justify-center items-center w-20" href="/archives">
+        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">193</div>
+        <div class="label text-third-text-color text-sm">文章</div>
+    </a>
+</div>
+    </div>
+
+    <div class="window-mask"></div>
+
+</header>
+
+
+		</div>
+
+		<div class="main-content-body transition-fade-up">
+			
+
+			<div class="main-content">
+				<div class="post-page-container flex relative justify-between box-border w-full h-full">
+	<div class="article-content-container">
+
+		<div class="article-title relative w-full">
+			
+			<div class="w-full flex items-center pt-6 justify-start">
+				<h1 class="article-title-regular text-second-text-color tracking-tight text-4xl md:text-6xl font-semibold px-2 sm:px-6 md:px-8 py-3">卷卷bot使用手册</h1>
+			</div>
+			
+		</div>
+
+		
+		<div class="article-header flex flex-row gap-2 items-center px-2 sm:px-6 md:px-8">
+			<div class="avatar w-[46px] h-[46px] flex-shrink-0 rounded-medium border border-border-color p-[1px]">
+				<img src="https://avatars.githubusercontent.com/u/109416673">
+			</div>
+			<div class="info flex flex-col justify-between">
+				<div class="author flex items-center">
+					<span class="name text-default-text-color text-lg font-semibold">W1ndys</span>
+					
+					<span class="author-label ml-1.5 text-xs px-2 py-0.5 rounded-small text-third-text-color border border-shadow-color-1">Lv6</span>
+					
+				</div>
+				<div class="meta-info">
+					<div class="article-meta-info">
+    <span class="article-date article-meta-item">
+        <i class="fa-regular fa-pen-fancy"></i>&nbsp;
+        <span class="desktop">2025-01-01 19:48:25</span>
+        <span class="mobile">2025-01-01 19:48:25</span>
+        <span class="hover-info">创建</span>
+    </span>
+    
+        <span class="article-date article-meta-item">
+            <i class="fa-regular fa-wrench"></i>&nbsp;
+            <span class="desktop">2025-02-23 13:37:18</span>
+            <span class="mobile">2025-02-23 13:37:18</span>
+            <span class="hover-info">更新</span>
+        </span>
+    
+
+    
+        <span class="article-categories article-meta-item">
+            <i class="fa-regular fa-folders"></i>&nbsp;
+            <ul>
+                
+                
+                    
+                        
+                        <li>
+                            <a href="/categories/QQbot/">QQbot</a>&nbsp;
+                        </li>
+                    
+                    
+                
+            </ul>
+        </span>
+    
+    
+        <span class="article-tags article-meta-item">
+            <i class="fa-regular fa-tags"></i>&nbsp;
+            <ul>
+                
+                    <li>
+                        <a href="/tags/Python/">Python</a>&nbsp;
+                    </li>
+                
+                    <li>
+                        | <a href="/tags/QQbot/">QQbot</a>&nbsp;
+                    </li>
+                
+                    <li>
+                        | <a href="/tags/QQ%E6%9C%BA%E5%99%A8%E4%BA%BA/">QQ机器人</a>&nbsp;
+                    </li>
+                
+                    <li>
+                        | <a href="/tags/NapCatQQ/">NapCatQQ</a>&nbsp;
+                    </li>
+                
+            </ul>
+        </span>
+    
+
+    
+    
+        <span class="article-wordcount article-meta-item">
+            <i class="fa-regular fa-typewriter"></i>&nbsp;<span>4.1k 字</span>
+        </span>
+    
+    
+        <span class="article-min2read article-meta-item">
+            <i class="fa-regular fa-clock"></i>&nbsp;<span>15 分钟</span>
+        </span>
+    
+    
+        <span class="article-pv article-meta-item">
+            <i class="fa-regular fa-eye"></i>&nbsp;<span id="busuanzi_value_page_pv"></span>
+        </span>
+    
+</div>
+
+				</div>
+			</div>
+		</div>
+		
+
+		
+
+
+		<div class="article-content markdown-body px-2 sm:px-6 md:px-8 pb-8">
+			<h2 id="卷卷-bot"><a href="#卷卷-bot" class="headerlink" title="卷卷 bot"></a>卷卷 bot</h2><p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://github.html.zone/W1ndysBot/W1ndysBot"
+                      alt="卷卷 bot"
+                ></p>
+<p>卷卷 bot 是一个基于 Python 和 <a class="link"   target="_blank" rel="noopener" href="https://github.com/NapNeko" >NapCatQQ<i class="fa-solid fa-arrow-up-right ml-[0.2em] font-light align-text-top text-[0.7em] link-icon"></i></a> 的 QQ 机器人，由 <a class="link"   target="_blank" rel="noopener" href="https://github.com/W1ndys" >W1ndys<i class="fa-solid fa-arrow-up-right ml-[0.2em] font-light align-text-top text-[0.7em] link-icon"></i></a> 开发。开源在 <a class="link"   target="_blank" rel="noopener" href="https://github.com/W1ndysBot/W1ndysBot" >W1ndysbot&#x2F;W1ndysbot: 卷卷 bot (github.com)<i class="fa-solid fa-arrow-up-right ml-[0.2em] font-light align-text-top text-[0.7em] link-icon"></i></a></p>
+<h2 id="使用手册"><a href="#使用手册" class="headerlink" title="使用手册"></a>使用手册</h2><h3 id="AI-大模型"><a href="#AI-大模型" class="headerlink" title="AI 大模型"></a>AI 大模型</h3><ul>
+<li><strong>开源地址</strong>：<a class="link"   target="_blank" rel="noopener" href="https://github.com/W1ndysBot/AI" >AI 大模型<i class="fa-solid fa-arrow-up-right ml-[0.2em] font-light align-text-top text-[0.7em] link-icon"></i></a></li>
+<li><strong>使用方法</strong>：群内发送“卷卷+内容”，或“内容+卷卷”，即可使用 AI 大模型提问。</li>
+</ul>
+<h3 id="违禁词监控"><a href="#违禁词监控" class="headerlink" title="违禁词监控"></a>违禁词监控</h3><ul>
+<li><strong>开源地址</strong>：<a class="link"   target="_blank" rel="noopener" href="https://github.com/W1ndysBot/BanWords" >违禁词监控<i class="fa-solid fa-arrow-up-right ml-[0.2em] font-light align-text-top text-[0.7em] link-icon"></i></a></li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>命令</th>
+<th>描述</th>
+<th>示例</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>bwon</code></td>
+<td>开启违禁词监控</td>
+<td><code>bwon</code></td>
+</tr>
+<tr>
+<td><code>bwoff</code></td>
+<td>关闭违禁词监控</td>
+<td><code>bwoff</code></td>
+</tr>
+<tr>
+<td><code>bwlist</code></td>
+<td>查看违禁词列表</td>
+<td><code>bwlist</code></td>
+</tr>
+<tr>
+<td><code>bwadd+词</code></td>
+<td>添加违禁词</td>
+<td><code>bwadd暴力</code></td>
+</tr>
+<tr>
+<td><code>bwrm+词</code></td>
+<td>删除违禁词</td>
+<td><code>bwrm暴力</code></td>
+</tr>
+<tr>
+<td><code>vcon</code></td>
+<td>开启视频监控</td>
+<td><code>vcon</code></td>
+</tr>
+<tr>
+<td><code>vcoff</code></td>
+<td>关闭视频监控</td>
+<td><code>vcoff</code></td>
+</tr>
+<tr>
+<td><code>banwords</code></td>
+<td>显示违禁词系统菜单</td>
+<td><code>banwords</code></td>
+</tr>
+</tbody></table>
+<h3 id="违禁词监控-2（开发中）"><a href="#违禁词监控-2（开发中）" class="headerlink" title="违禁词监控 2（开发中）"></a>违禁词监控 2（开发中）</h3><h4 id="管理员命令"><a href="#管理员命令" class="headerlink" title="管理员命令"></a>管理员命令</h4><table>
+<thead>
+<tr>
+<th>命令</th>
+<th>描述</th>
+<th>示例</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>bw2add&lt;词&gt; &lt;权值&gt;</code></td>
+<td>添加违禁词到指定群的词库</td>
+<td><code>bw2add暴力 10</code></td>
+</tr>
+<tr>
+<td><code>bw2del&lt;词&gt;</code></td>
+<td>删除指定群的违禁词</td>
+<td><code>bw2del暴力</code></td>
+</tr>
+<tr>
+<td><code>bw2defaultadd&lt;词&gt; &lt;权值&gt;</code></td>
+<td>添加违禁词到默认词库</td>
+<td><code>bw2defaultadd暴力 10</code></td>
+</tr>
+<tr>
+<td><code>bw2defaultdel&lt;词&gt;</code></td>
+<td>删除默认违禁词</td>
+<td><code>bw2defaultdel暴力</code></td>
+</tr>
+<tr>
+<td><code>bw2list</code></td>
+<td>查看指定群的违禁词列表</td>
+<td><code>bw2list</code></td>
+</tr>
+<tr>
+<td><code>bw2defaultlist</code></td>
+<td>查看默认违禁词列表</td>
+<td><code>bw2defaultlist</code></td>
+</tr>
+</tbody></table>
+<h3 id="黑名单系统使用手册"><a href="#黑名单系统使用手册" class="headerlink" title="黑名单系统使用手册"></a>黑名单系统使用手册</h3><table>
+<thead>
+<tr>
+<th>命令</th>
+<th>描述</th>
+<th>示例</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>bladd</code></td>
+<td>添加用户到黑名单并踢出群聊。支持使用@或 QQ 号。</td>
+<td><code>bladd@123456</code></td>
+</tr>
+<tr>
+<td><code>blrm</code></td>
+<td>从黑名单中移除用户。支持使用@或 QQ 号。</td>
+<td><code>blrm@123456</code></td>
+</tr>
+<tr>
+<td><code>bllist</code></td>
+<td>查看当前群的黑名单。</td>
+<td><code>bllist</code></td>
+</tr>
+<tr>
+<td><code>blcheck</code></td>
+<td>检查用户是否在黑名单中。支持使用@或 QQ 号。</td>
+<td><code>blcheck@123456</code></td>
+</tr>
+<tr>
+<td><code>blscan</code></td>
+<td>扫描群内成员是否在云端黑名单中。</td>
+<td><code>blscan</code></td>
+</tr>
+<tr>
+<td><code>bltall</code></td>
+<td>踢出所有在云端黑名单中的群成员。</td>
+<td><code>bltall</code></td>
+</tr>
+<tr>
+<td><code>blacklist</code></td>
+<td>显示黑名单系统菜单。</td>
+<td><code>blacklist</code></td>
+</tr>
+<tr>
+<td><code>黑名单系统</code></td>
+<td>显示黑名单系统菜单。</td>
+<td><code>黑名单系统</code></td>
+</tr>
+</tbody></table>
+<p><strong>注意</strong>: 所有命令均需在群聊中使用，且用户需具备相应权限（群主或管理员）才能执行。</p>
+<h3 id="ClassTable-使用手册"><a href="#ClassTable-使用手册" class="headerlink" title="ClassTable 使用手册"></a>ClassTable 使用手册</h3><table>
+<thead>
+<tr>
+<th>命令</th>
+<th>描述</th>
+<th>示例</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>classtable</code> 或 <code>课程表</code></td>
+<td>显示课程表菜单，提供功能说明。</td>
+<td><code>classtable</code> 或 <code>课程表</code></td>
+</tr>
+<tr>
+<td><code>查看今日课表</code> 或 <code>今日课表</code> 或 <code>classtabletoday</code></td>
+<td>查看并发送今日的课程表。</td>
+<td><code>查看今日课表</code> 或 <code>今日课表</code> 或 <code>classtabletoday</code></td>
+</tr>
+<tr>
+<td><code>取消课程表订阅</code> 或 <code>classtableoff</code></td>
+<td>取消当前群的课程表订阅，删除对应的课程表文件。</td>
+<td><code>取消课程表订阅</code> 或 <code>classtableoff</code></td>
+</tr>
+<tr>
+<td>WakeUp 课程表分享口令</td>
+<td>导入课程表，需从 WakeUp 课程表 APP 复制分享口令并发送。</td>
+<td><code>这是来自「WakeUp课程表」的课表分享，...分享口令为「&lt;口令&gt;」</code></td>
+</tr>
+</tbody></table>
+<h4 id="使用示例"><a href="#使用示例" class="headerlink" title="使用示例"></a>使用示例</h4><ol>
+<li><p><strong>查看课程表菜单</strong></p>
+<ul>
+<li>输入 <code>classtable</code> 或 <code>课程表</code>，将显示课程表功能的使用说明。</li>
+</ul>
+</li>
+<li><p><strong>查看今日课表</strong></p>
+<ul>
+<li>输入 <code>查看今日课表</code>、<code>今日课表</code> 或 <code>classtabletoday</code>，将获取并发送今日的课程表。</li>
+</ul>
+</li>
+<li><p><strong>取消课程表订阅</strong></p>
+<ul>
+<li>输入 <code>取消课程表订阅</code> 或 <code>classtableoff</code>，将取消当前群的课程表订阅并删除相关文件。</li>
+</ul>
+</li>
+<li><p><strong>导入课程表</strong></p>
+<ul>
+<li>复制 WakeUp 课程表 APP 的分享口令并发送，格式为 <code>这是来自「WakeUp课程表」的课表分享，...分享口令为「&lt;口令&gt;」</code>，系统将自动导入课程表。</li>
+</ul>
+</li>
+</ol>
+<p>请根据以上命令和示例进行操作。</p>
+<h3 id="CollectTheSun-使用手册"><a href="#CollectTheSun-使用手册" class="headerlink" title="CollectTheSun 使用手册"></a>CollectTheSun 使用手册</h3><p>以下是 CollectTheSun 项目的命令列表及其示例：</p>
+<table>
+<thead>
+<tr>
+<th>命令</th>
+<th>描述</th>
+<th>示例</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>sunmenu</code></td>
+<td>显示指令列表</td>
+<td><code>sunmenu</code></td>
+</tr>
+<tr>
+<td><code>收集阳光</code></td>
+<td>收集阳光</td>
+<td><code>收集阳光</code> 或 <code>sun</code></td>
+</tr>
+<tr>
+<td><code>收集雨水</code></td>
+<td>收集雨水</td>
+<td><code>收集雨水</code> 或 <code>rain</code></td>
+</tr>
+<tr>
+<td><code>查看信息</code></td>
+<td>查看自己的信息</td>
+<td><code>查看信息</code> 或 <code>suninfo</code></td>
+</tr>
+<tr>
+<td><code>查看别人信息</code></td>
+<td>查看他人信息</td>
+<td><code>查看信息@</code> 或 <code>suninfo@</code></td>
+</tr>
+<tr>
+<td><code>加入奇遇</code></td>
+<td>加入奇遇事件</td>
+<td><code>加入奇遇</code> 或 <code>sunjoin</code></td>
+</tr>
+<tr>
+<td><code>退出奇遇</code></td>
+<td>退出奇遇事件</td>
+<td><code>退出奇遇</code> 或 <code>sunquit</code></td>
+</tr>
+<tr>
+<td><code>阳光榜</code></td>
+<td>查看阳光排行榜</td>
+<td><code>阳光榜</code> 或 <code>sunrank</code></td>
+</tr>
+<tr>
+<td><code>雨水榜</code></td>
+<td>查看雨水排行榜</td>
+<td><code>雨水榜</code> 或 <code>rainrank</code></td>
+</tr>
+<tr>
+<td><code>偷阳光</code></td>
+<td>偷取他人阳光</td>
+<td><code>偷阳光@</code> 或 <code>stealsun@</code></td>
+</tr>
+<tr>
+<td><code>偷雨水</code></td>
+<td>偷取他人雨水</td>
+<td><code>偷雨水@</code> 或 <code>stealrain@</code></td>
+</tr>
+<tr>
+<td><code>送阳光</code></td>
+<td>赠送阳光给他人</td>
+<td><code>送阳光@数量</code> 或 <code>givesun@数量</code></td>
+</tr>
+<tr>
+<td><code>送雨水</code></td>
+<td>赠送雨水给他人</td>
+<td><code>送雨水@数量</code> 或 <code>giverain@数量</code></td>
+</tr>
+<tr>
+<td><code>sunadd</code></td>
+<td>管理员命令，增加阳光</td>
+<td><code>sunadd [CQ:at,qq=用户ID]数量</code></td>
+</tr>
+<tr>
+<td><code>rainadd</code></td>
+<td>管理员命令，增加雨水</td>
+<td><code>rainadd [CQ:at,qq=用户ID]数量</code></td>
+</tr>
+</tbody></table>
+<blockquote>
+<p><strong>注意</strong>:</p>
+<ul>
+<li><code>@</code> 表示需要在命令中提及目标用户。</li>
+<li>管理员命令需要拥有相应权限。</li>
+<li>某些命令可能会受到冷却时间的限制。</li>
+</ul>
+</blockquote>
+<h3 id="密码工具"><a href="#密码工具" class="headerlink" title="密码工具"></a>密码工具</h3><p>以下是该程序支持的命令及其使用实例：</p>
+<table>
+<thead>
+<tr>
+<th>命令</th>
+<th>描述</th>
+<th>示例</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>b64d</code></td>
+<td>解码 Base64</td>
+<td><code>b64d SGVsbG8gd29ybGQ=</code></td>
+</tr>
+<tr>
+<td><code>b64e</code></td>
+<td>编码 Base64</td>
+<td><code>b64e Hello world</code></td>
+</tr>
+<tr>
+<td><code>hash</code></td>
+<td>计算哈希值</td>
+<td><code>hash Hello world</code></td>
+</tr>
+<tr>
+<td><code>bin2all</code></td>
+<td>二进制转其他进制</td>
+<td><code>bin2all 1010</code></td>
+</tr>
+<tr>
+<td><code>oct2all</code></td>
+<td>八进制转其他进制</td>
+<td><code>oct2all 12</code></td>
+</tr>
+<tr>
+<td><code>dec2all</code></td>
+<td>十进制转其他进制</td>
+<td><code>dec2all 10</code></td>
+</tr>
+<tr>
+<td><code>hex2all</code></td>
+<td>十六进制转其他进制</td>
+<td><code>hex2all a</code></td>
+</tr>
+<tr>
+<td><code>genpass</code></td>
+<td>生成强密码</td>
+<td><code>genpass 12 3</code></td>
+</tr>
+<tr>
+<td><code>md5e</code></td>
+<td>计算 MD5 编码</td>
+<td><code>md5e Hello world</code></td>
+</tr>
+</tbody></table>
+<p><strong>注意：</strong></p>
+<ul>
+<li><code>genpass</code> 命令的格式为 <code>genpass &lt;长度&gt; &lt;复杂度&gt;</code>，其中长度范围为 1-100，复杂度范围为 1-3。</li>
+<li>复杂度等级：<ul>
+<li>1: 小写字母和数字</li>
+<li>2: 大小写字母和数字</li>
+<li>3: 大小写字母、数字和标点符号</li>
+</ul>
+</li>
+</ul>
+<h3 id="群管理"><a href="#群管理" class="headerlink" title="群管理"></a>群管理</h3><table>
+<thead>
+<tr>
+<th>命令</th>
+<th>描述</th>
+<th>示例</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>groupmanager</code></td>
+<td>显示群管理系统菜单</td>
+<td><code>groupmanager</code> 或 <code>群管</code></td>
+</tr>
+<tr>
+<td><code>ban@ 时间</code></td>
+<td>禁言指定用户 x 秒，默认 60 秒</td>
+<td><code>ban@ 30</code></td>
+</tr>
+<tr>
+<td><code>unban@</code></td>
+<td>解除指定用户禁言</td>
+<td><code>unban@</code></td>
+</tr>
+<tr>
+<td><code>banme</code></td>
+<td>随机禁言自己随机秒</td>
+<td><code>banme</code> 或 <code>禁言我</code></td>
+</tr>
+<tr>
+<td><code>banmerank</code></td>
+<td>查看当日禁言排行</td>
+<td><code>banmerank</code></td>
+</tr>
+<tr>
+<td><code>banrandom</code></td>
+<td>随机禁言一个群友随机秒</td>
+<td><code>banrandom</code> 或 <code>随机禁言</code></td>
+</tr>
+<tr>
+<td><code>banall</code></td>
+<td>全员禁言</td>
+<td><code>banall</code></td>
+</tr>
+<tr>
+<td><code>unbanall</code></td>
+<td>全员解禁</td>
+<td><code>unbanall</code></td>
+</tr>
+<tr>
+<td><code>t@</code></td>
+<td>踢出指定用户</td>
+<td><code>t@</code></td>
+</tr>
+<tr>
+<td><code>del</code></td>
+<td>撤回消息（需回复要撤回的消息）</td>
+<td><code>del</code></td>
+</tr>
+<tr>
+<td><code>vc-on</code></td>
+<td>开启视频监控</td>
+<td><code>vc-on</code></td>
+</tr>
+<tr>
+<td><code>vc-off</code></td>
+<td>关闭视频监控</td>
+<td><code>vc-off</code></td>
+</tr>
+<tr>
+<td><code>wf-on</code></td>
+<td>开启欢迎欢送</td>
+<td><code>wf-on</code></td>
+</tr>
+<tr>
+<td><code>wf-off</code></td>
+<td>关闭欢迎欢送</td>
+<td><code>wf-off</code></td>
+</tr>
+<tr>
+<td><code>wf-set</code></td>
+<td>设置欢迎词</td>
+<td><code>wf-set</code></td>
+</tr>
+<tr>
+<td><code>测试</code></td>
+<td>管理员测试命令，返回测试成功</td>
+<td><code>测试</code> 或 <code>test</code></td>
+</tr>
+</tbody></table>
+<h3 id="ImageGenerate-使用手册"><a href="#ImageGenerate-使用手册" class="headerlink" title="ImageGenerate 使用手册"></a>ImageGenerate 使用手册</h3><h4 id="命令列表"><a href="#命令列表" class="headerlink" title="命令列表"></a>命令列表</h4><table>
+<thead>
+<tr>
+<th>命令</th>
+<th>描述</th>
+<th>示例命令</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>狂粉</td>
+<td>在图片上添加文字 “狂粉”</td>
+<td><code>狂粉 Hello</code></td>
+</tr>
+<tr>
+<td>hand</td>
+<td>在图片上添加文字 “hand”</td>
+<td><code>handHello</code></td>
+</tr>
+<tr>
+<td>网安邀请函</td>
+<td>在图片上添加文字 “网安邀请函”</td>
+<td><code>网安邀请函 Hello</code></td>
+</tr>
+</tbody></table>
+<h4 id="命令说明"><a href="#命令说明" class="headerlink" title="命令说明"></a>命令说明</h4><ul>
+<li><p><strong>狂粉</strong>:</p>
+<ul>
+<li>描述: 在指定的图片上添加文字，文字长度需在 1 到 10 个字符之间。</li>
+<li>示例: <code>狂粉Hello</code></li>
+</ul>
+</li>
+<li><p><strong>hand</strong>:</p>
+<ul>
+<li>描述: 在指定的图片上添加文字，文字长度需在 1 到 10 个字符之间。</li>
+<li>示例: <code>handHello</code></li>
+</ul>
+</li>
+<li><p><strong>网安邀请函</strong>:</p>
+<ul>
+<li>描述: 在指定的图片上添加文字，文字长度需在 1 到 6 个字符之间。</li>
+<li>示例: <code>网安邀请函 Hello</code></li>
+</ul>
+</li>
+</ul>
+<h4 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h4><ul>
+<li>输入的文字长度必须符合各命令的要求，否则会提示输入内容不合法。</li>
+<li>如果输入的文字为空，系统会提示重新输入。</li>
+</ul>
+<h3 id="邀请链系统使用手册"><a href="#邀请链系统使用手册" class="headerlink" title="邀请链系统使用手册"></a>邀请链系统使用手册</h3><table>
+<thead>
+<tr>
+<th>命令</th>
+<th>描述</th>
+<th>示例</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>icon</code></td>
+<td>开启邀请链功能</td>
+<td><code>icon</code></td>
+</tr>
+<tr>
+<td><code>icoff</code></td>
+<td>关闭邀请链功能</td>
+<td><code>icoff</code></td>
+</tr>
+<tr>
+<td><code>iclist@</code></td>
+<td>查看某用户的邀请链</td>
+<td><code>iclist@123456789</code></td>
+</tr>
+<tr>
+<td><code>invitechain</code></td>
+<td>显示邀请链系统菜单</td>
+<td><code>invitechain</code></td>
+</tr>
+</tbody></table>
+<h4 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h4><ul>
+<li><strong>开启邀请链功能</strong>: 发送 <code>icon</code> 到群聊。</li>
+<li><strong>关闭邀请链功能</strong>: 发送 <code>icoff</code> 到群聊。</li>
+<li><strong>查看某用户的邀请链</strong>: 发送 <code>iclist@123456789</code>，其中 <code>123456789</code> 是目标用户的 QQ 号。</li>
+<li><strong>显示邀请链系统菜单</strong>: 发送 <code>invitechain</code> 到群聊。</li>
+</ul>
+<blockquote>
+<p>注意：只有群主、管理员或 root 管理员可以使用这些命令。</p>
+</blockquote>
+<h3 id="关键词回复系统使用手册"><a href="#关键词回复系统使用手册" class="headerlink" title="关键词回复系统使用手册"></a>关键词回复系统使用手册</h3><table>
+<thead>
+<tr>
+<th>命令</th>
+<th>描述</th>
+<th>示例</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>kron</code></td>
+<td>开启关键词回复功能</td>
+<td><code>kron</code></td>
+</tr>
+<tr>
+<td><code>kroff</code></td>
+<td>关闭关键词回复功能</td>
+<td><code>kroff</code></td>
+</tr>
+<tr>
+<td><code>kradd关键词 回复</code></td>
+<td>添加关键词回复</td>
+<td><code>kradd你好 你好世界</code></td>
+</tr>
+<tr>
+<td><code>krrm关键词</code></td>
+<td>删除关键词回复</td>
+<td><code>krrm你好</code></td>
+</tr>
+<tr>
+<td><code>keywordsreply</code></td>
+<td>显示关键词回复系统菜单</td>
+<td><code>keywordsreply</code></td>
+</tr>
+</tbody></table>
+<p><strong>说明</strong>:</p>
+<ul>
+<li><code>kradd</code> 命令用于添加关键词及其对应的回复，格式为 <code>kradd关键词 回复</code>。</li>
+<li><code>krrm</code> 命令用于删除指定的关键词及其回复，格式为 <code>krrm关键词</code>。</li>
+<li><code>kron</code> 和 <code>kroff</code> 用于开启和关闭关键词回复功能。</li>
+<li><code>keywordsreply</code> 命令用于显示系统菜单。</li>
+</ul>
+<h3 id="群名片锁使用手册"><a href="#群名片锁使用手册" class="headerlink" title="群名片锁使用手册"></a>群名片锁使用手册</h3><table>
+<thead>
+<tr>
+<th>命令</th>
+<th>描述</th>
+<th>示例</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>lgcon</code></td>
+<td>开启群名片锁</td>
+<td><code>lgcon</code></td>
+</tr>
+<tr>
+<td><code>lgcoff</code></td>
+<td>关闭群名片锁</td>
+<td><code>lgcoff</code></td>
+</tr>
+<tr>
+<td><code>lgclock</code></td>
+<td>锁定群名片</td>
+<td><code>lgclock[CQ:at,qq=12345]新名片</code></td>
+</tr>
+<tr>
+<td><code>lgcunlock</code></td>
+<td>解锁群名片</td>
+<td><code>lgcunlock[CQ:at,qq=12345]</code></td>
+</tr>
+<tr>
+<td><code>lgcset</code></td>
+<td>修改群名片</td>
+<td><code>lgcset[CQ:at,qq=12345]新名片</code></td>
+</tr>
+<tr>
+<td><code>lockgroupcard</code></td>
+<td>显示群名片锁菜单</td>
+<td><code>lockgroupcard</code></td>
+</tr>
+</tbody></table>
+<h4 id="示例-1"><a href="#示例-1" class="headerlink" title="示例"></a>示例</h4><ul>
+<li><strong>开启群名片锁</strong>:<ul>
+<li>输入 <code>lgcon</code>，系统会回复群名片锁已开启。</li>
+</ul>
+</li>
+<li><strong>关闭群名片锁</strong>:<ul>
+<li>输入 <code>lgcoff</code>，系统会回复群名片锁已关闭。</li>
+</ul>
+</li>
+<li><strong>锁定群名片</strong>:<ul>
+<li>输入 <code>lgclock[CQ:at,qq=12345]新名片</code>，将用户 <code>12345</code> 的群名片锁定为 <code>新名片</code>。</li>
+</ul>
+</li>
+<li><strong>解锁群名片</strong>:<ul>
+<li>输入 <code>lgcunlock[CQ:at,qq=12345]</code>，将用户 <code>12345</code> 的群名片解锁。</li>
+</ul>
+</li>
+<li><strong>修改群名片</strong>:<ul>
+<li>输入 <code>lgcset[CQ:at,qq=12345]新名片</code>，将用户 <code>12345</code> 的群名片修改为 <code>新名片</code>。</li>
+</ul>
+</li>
+<li><strong>显示群名片锁菜单</strong>:<ul>
+<li>输入 <code>lockgroupcard</code>，系统会显示群名片锁的所有可用命令。</li>
+</ul>
+</li>
+</ul>
+<h3 id="NoAddOne-使用手册"><a href="#NoAddOne-使用手册" class="headerlink" title="NoAddOne 使用手册"></a>NoAddOne 使用手册</h3><table>
+<thead>
+<tr>
+<th>命令</th>
+<th>描述</th>
+<th>示例</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>naoon</code></td>
+<td>开启打断复读功能</td>
+<td><code>naoon</code></td>
+</tr>
+<tr>
+<td><code>naooff</code></td>
+<td>关闭打断复读功能</td>
+<td><code>naooff</code></td>
+</tr>
+<tr>
+<td><code>noaddone</code></td>
+<td>显示帮助菜单</td>
+<td><code>noaddone</code></td>
+</tr>
+</tbody></table>
+<h4 id="示例-2"><a href="#示例-2" class="headerlink" title="示例"></a>示例</h4><ul>
+<li><p><strong>开启打断复读功能</strong>:<br>输入 <code>naoon</code>，将会开启打断复读功能，并回复确认信息。</p>
+</li>
+<li><p><strong>关闭打断复读功能</strong>:<br>输入 <code>naooff</code>，将会关闭打断复读功能，并回复确认信息。</p>
+</li>
+<li><p><strong>显示帮助菜单</strong>:<br>输入 <code>noaddone</code>，将会显示可用命令的帮助菜单。</p>
+</li>
+</ul>
+<h3 id="PokePal-使用手册"><a href="#PokePal-使用手册" class="headerlink" title="PokePal 使用手册"></a>PokePal 使用手册</h3><h4 id="命令格式"><a href="#命令格式" class="headerlink" title="命令格式"></a>命令格式</h4><table>
+<thead>
+<tr>
+<th>命令格式</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>[CQ:reply,id=&lt;消息ID&gt;].*骚扰&lt;次数&gt;</code></td>
+<td>对指定消息进行骚扰指定次数</td>
+</tr>
+<tr>
+<td><code>[CQ:reply,id=&lt;消息ID&gt;].*骚扰</code></td>
+<td>对指定消息进行骚扰 20 次</td>
+</tr>
+</tbody></table>
+<h4 id="示例-3"><a href="#示例-3" class="headerlink" title="示例"></a>示例</h4><table>
+<thead>
+<tr>
+<th>示例命令</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>[CQ:reply,id=12345].*骚扰5</code></td>
+<td>对消息 ID 为 12345 的消息进行 5 次骚扰</td>
+</tr>
+<tr>
+<td><code>[CQ:reply,id=67890].*骚扰</code></td>
+<td>对消息 ID 为 67890 的消息进行 20 次骚扰</td>
+</tr>
+</tbody></table>
+<h3 id="QASystem-使用手册"><a href="#QASystem-使用手册" class="headerlink" title="QASystem 使用手册"></a>QASystem 使用手册</h3><p>以下是 QASystem 的命令及其使用示例：</p>
+<table>
+<thead>
+<tr>
+<th>命令</th>
+<th>描述</th>
+<th>示例</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>qaon</code></td>
+<td>开启问答系统</td>
+<td><code>qaon</code></td>
+</tr>
+<tr>
+<td><code>qaoff</code></td>
+<td>关闭问答系统</td>
+<td><code>qaoff</code></td>
+</tr>
+<tr>
+<td><code>qaadd</code></td>
+<td>批量添加或更新问答对</td>
+<td><code>qaadd 问题1 答案1 问题2 答案2</code></td>
+</tr>
+<tr>
+<td><code>qarm</code></td>
+<td>删除指定问题的问答对</td>
+<td><code>qarm问题1</code></td>
+</tr>
+<tr>
+<td><code>qalist</code></td>
+<td>查看问答对列表</td>
+<td><code>qalist</code></td>
+</tr>
+<tr>
+<td><code>qasolo</code></td>
+<td>比较两个词语的相似度</td>
+<td><code>qasolo词语1 词语2</code></td>
+</tr>
+<tr>
+<td><code>qasystem</code></td>
+<td>显示问答系统菜单</td>
+<td><code>qasystem</code></td>
+</tr>
+</tbody></table>
+<blockquote>
+<p><strong>注意</strong>:</p>
+<ul>
+<li><code>qaadd</code> 命令后面可以跟多个问答对，格式为 <code>问题 答案</code>，多个问答对之间用空格分隔。</li>
+<li><code>qarm</code> 命令后面直接跟要删除的问题。</li>
+<li><code>qasolo</code> 命令用于比较两个词语的相似度，格式为 <code>词语1 词语2</code>。</li>
+</ul>
+</blockquote>
+<h3 id="QFNUBustExamClassroomFind-使用手册"><a href="#QFNUBustExamClassroomFind-使用手册" class="headerlink" title="QFNUBustExamClassroomFind 使用手册"></a>QFNUBustExamClassroomFind 使用手册</h3><p>以下是 <code>QFNUBustExamClassroomFind</code> 脚本的命令及其使用实例。</p>
+<table>
+<thead>
+<tr>
+<th>命令</th>
+<th>描述</th>
+<th>示例</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>qfnubecf</code></td>
+<td>切换曲阜师范大学期末考试考场教室查询功能的开关状态。</td>
+<td><code>qfnubecf</code></td>
+</tr>
+<tr>
+<td><code>xxx考场</code></td>
+<td>查询指定考场的教室信息，其中 <code>xxx</code> 为考场名称。</td>
+<td><code>综合教学楼考场</code></td>
+</tr>
+</tbody></table>
+<h4 id="示例-4"><a href="#示例-4" class="headerlink" title="示例"></a>示例</h4><ul>
+<li><strong>开启&#x2F;关闭功能</strong>: 发送 <code>qfnubecf</code> 命令以切换功能状态。</li>
+<li><strong>查询考场信息</strong>: 发送 <code>综合教学楼考场</code> 以查询综合教学楼的考场教室信息。</li>
+</ul>
+<blockquote>
+<p><strong>注意</strong>: 只有授权用户才能切换功能状态。查询功能开启后，群内成员可以使用考场查询命令。</p>
+</blockquote>
+<h3 id="QFNUTracker-使用手册"><a href="#QFNUTracker-使用手册" class="headerlink" title="QFNUTracker 使用手册"></a>QFNUTracker 使用手册</h3><p>以下是 QFNUTracker 的命令及其使用实例：</p>
+<table>
+<thead>
+<tr>
+<th>命令</th>
+<th>描述</th>
+<th>示例</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>qfnujwcon</code></td>
+<td>开启教务处监控</td>
+<td><code>qfnujwcon</code></td>
+</tr>
+<tr>
+<td><code>qfnujwcoff</code></td>
+<td>关闭教务处监控</td>
+<td><code>qfnujwcoff</code></td>
+</tr>
+<tr>
+<td><code>qfnuzccon</code></td>
+<td>开启资产处监控</td>
+<td><code>qfnuzccon</code></td>
+</tr>
+<tr>
+<td><code>qfnuzccoff</code></td>
+<td>关闭资产处监控</td>
+<td><code>qfnuzccoff</code></td>
+</tr>
+<tr>
+<td><code>qfnu</code></td>
+<td>显示 QFNU 定制服务信息</td>
+<td><code>qfnu</code></td>
+</tr>
+</tbody></table>
+<p>以上命令可通过发送相应的消息来触发。请根据需要选择合适的命令进行操作。</p>
+<h3 id="群发消息命令使用手册"><a href="#群发消息命令使用手册" class="headerlink" title="群发消息命令使用手册"></a>群发消息命令使用手册</h3><p>以下是 <code>handle_SendAll_group_message</code> 函数支持的命令及其使用示例：</p>
+<table>
+<thead>
+<tr>
+<th>命令</th>
+<th>描述</th>
+<th>示例</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>sendadd</code></td>
+<td>添加群号到群发列表</td>
+<td><code>sendadd123456789</code></td>
+</tr>
+<tr>
+<td><code>sendrm</code></td>
+<td>从群发列表中删除群号</td>
+<td><code>sendrm123456789</code></td>
+</tr>
+<tr>
+<td><code>sendlist</code></td>
+<td>列出所有群发的群号</td>
+<td><code>sendlist</code></td>
+</tr>
+<tr>
+<td><code>sendall</code></td>
+<td>向所有群发列表中的群发送消息</td>
+<td><code>sendallHello, everyone!</code></td>
+</tr>
+</tbody></table>
+<p><strong>注意事项：</strong></p>
+<ul>
+<li>只有在 <code>owner_id</code> 列表中的用户才能执行这些命令。</li>
+<li><code>sendadd</code> 和 <code>sendrm</code> 命令后面需要紧跟群号。</li>
+<li><code>sendall</code> 命令后面需要紧跟要发送的消息内容。</li>
+</ul>
+<h3 id="软封禁系统使用手册"><a href="#软封禁系统使用手册" class="headerlink" title="软封禁系统使用手册"></a>软封禁系统使用手册</h3><table>
+<thead>
+<tr>
+<th>命令</th>
+<th>描述</th>
+<th>示例</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>sbadd@</code></td>
+<td>添加软封禁用户，使用 <code>@</code> 或 QQ 号指定用户。</td>
+<td><code>sbadd@123456</code></td>
+</tr>
+<tr>
+<td><code>sbrm@</code></td>
+<td>删除软封禁用户，使用 <code>@</code> 或 QQ 号指定用户。</td>
+<td><code>sbrm@123456</code></td>
+</tr>
+<tr>
+<td><code>sblist</code></td>
+<td>查看当前群的软封禁用户列表。</td>
+<td><code>sblist</code></td>
+</tr>
+<tr>
+<td><code>softban</code></td>
+<td>显示软封禁系统菜单，包含所有可用命令的说明。</td>
+<td><code>softban</code></td>
+</tr>
+</tbody></table>
+<p><strong>注意</strong>: 以上命令需要管理员权限才能执行。</p>
+<h3 id="TimeAwareGreetings-使用手册"><a href="#TimeAwareGreetings-使用手册" class="headerlink" title="TimeAwareGreetings 使用手册"></a>TimeAwareGreetings 使用手册</h3><h4 id="命令与实例"><a href="#命令与实例" class="headerlink" title="命令与实例"></a>命令与实例</h4><table>
+<thead>
+<tr>
+<th>命令</th>
+<th>描述</th>
+<th>示例</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>早安</code></td>
+<td>发送早晨问候语</td>
+<td><code>早安～</code></td>
+</tr>
+<tr>
+<td><code>中午好</code></td>
+<td>发送中午问候语</td>
+<td><code>中午好，记得吃饭哦！</code></td>
+</tr>
+<tr>
+<td><code>晚安</code></td>
+<td>发送晚上问候语</td>
+<td><code>晚安，做个好梦！</code></td>
+</tr>
+<tr>
+<td><code>早上好</code></td>
+<td>发送早晨问候语</td>
+<td><code>早上好，今天又是元气满满的一天！</code></td>
+</tr>
+<tr>
+<td><code>午安</code></td>
+<td>发送中午问候语</td>
+<td><code>午安，充实的午后，别忘了补充维C！</code></td>
+</tr>
+<tr>
+<td><code>晚上好</code></td>
+<td>发送晚上问候语</td>
+<td><code>夜深了，早点休息哦～</code></td>
+</tr>
+<tr>
+<td><code>起床</code></td>
+<td>发送早晨问候语</td>
+<td><code>太阳都晒屁股了，快起床吧～</code></td>
+</tr>
+<tr>
+<td><code>午休</code></td>
+<td>发送中午问候语</td>
+<td><code>午休时间到了，休息一下吧！</code></td>
+</tr>
+<tr>
+<td><code>睡觉</code></td>
+<td>发送晚上问候语</td>
+<td><code>别熬夜了，晚安～</code></td>
+</tr>
+</tbody></table>
+<h4 id="注意事项-1"><a href="#注意事项-1" class="headerlink" title="注意事项"></a>注意事项</h4><ul>
+<li>根据用户输入的关键词匹配到对应的时段，发送相应的问候语。</li>
+<li>如果用户输入的时段与当前时段不匹配，将发送不合时宜的提示。</li>
+<li>以上命令仅为示例，实际使用中请根据具体需求进行调整。</li>
+</ul>
+<h3 id="WelcomeFarewell-使用手册"><a href="#WelcomeFarewell-使用手册" class="headerlink" title="WelcomeFarewell 使用手册"></a>WelcomeFarewell 使用手册</h3><h4 id="命令与实例-1"><a href="#命令与实例-1" class="headerlink" title="命令与实例"></a>命令与实例</h4><table>
+<thead>
+<tr>
+<th>命令</th>
+<th>描述</th>
+<th>示例</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>welcomefarewell</code></td>
+<td>显示总菜单</td>
+<td><code>welcomefarewell</code></td>
+</tr>
+<tr>
+<td><code>wfon</code></td>
+<td>开启入群欢迎</td>
+<td><code>wfon</code></td>
+</tr>
+<tr>
+<td><code>wfoff</code></td>
+<td>关闭入群欢迎</td>
+<td><code>wfoff</code></td>
+</tr>
+<tr>
+<td><code>ffon</code></td>
+<td>开启退群欢送</td>
+<td><code>ffon</code></td>
+</tr>
+<tr>
+<td><code>ffoff</code></td>
+<td>关闭退群欢送</td>
+<td><code>ffoff</code></td>
+</tr>
+<tr>
+<td><code>welcomeset &lt;自定义欢迎词&gt;</code></td>
+<td>设置自定义入群欢迎词</td>
+<td><code>welcomeset 欢迎新朋友！</code></td>
+</tr>
+<tr>
+<td><code>farewellset &lt;自定义欢送词&gt;</code></td>
+<td>设置自定义退群欢送词</td>
+<td><code>farewellset 再见，祝好运！</code></td>
+</tr>
+</tbody></table>
+<h4 id="注意事项-2"><a href="#注意事项-2" class="headerlink" title="注意事项"></a>注意事项</h4><ul>
+<li>只有管理员或群主可以使用以上命令。</li>
+<li>自定义消息中可以包含 CQ 码。</li>
+<li>系统会自动记录成员的入群时间和退群时间。</li>
+</ul>
+<h3 id="群词云功能使用手册"><a href="#群词云功能使用手册" class="headerlink" title="群词云功能使用手册"></a>群词云功能使用手册</h3><table>
+<thead>
+<tr>
+<th>命令</th>
+<th>描述</th>
+<th>示例</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>wcon</code></td>
+<td>开启词云统计功能，开始记录群内所有聊天并汇总分词。</td>
+<td><code>wcon</code></td>
+</tr>
+<tr>
+<td><code>wcoff</code></td>
+<td>关闭词云统计功能，停止记录群内聊天。</td>
+<td><code>wcoff</code></td>
+</tr>
+<tr>
+<td><code>今日词云</code></td>
+<td>绘制并发送当天的词云图。</td>
+<td><code>今日词云</code></td>
+</tr>
+<tr>
+<td><code>wordcloud</code></td>
+<td>显示词云功能菜单，介绍词云功能及相关命令。</td>
+<td><code>wordcloud</code></td>
+</tr>
+</tbody></table>
+<h4 id="示例-5"><a href="#示例-5" class="headerlink" title="示例"></a>示例</h4><ul>
+<li><strong>开启词云统计</strong>: 在群聊中发送 <code>wcon</code>，将会收到确认消息，表示词云统计已开启。</li>
+<li><strong>关闭词云统计</strong>: 在群聊中发送 <code>wcoff</code>，将会收到确认消息，表示词云统计已关闭。</li>
+<li><strong>获取今日词云</strong>: 在群聊中发送 <code>今日词云</code>，如果有数据，将会收到当天的词云图。</li>
+<li><strong>查看词云菜单</strong>: 在群聊中发送 <code>wordcloud</code>，将会收到词云功能的详细菜单说明。</li>
+</ul>
+<h3 id="哔哩哔哩直播动态监控（BilibiliPush）使用手册"><a href="#哔哩哔哩直播动态监控（BilibiliPush）使用手册" class="headerlink" title="哔哩哔哩直播动态监控（BilibiliPush）使用手册"></a>哔哩哔哩直播动态监控（BilibiliPush）使用手册</h3><h4 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h4><p>哔哩哔哩直播动态监控是卷卷 bot 的一个功能，可以监控哔哩哔哩直播动态，并将其推送到指定群。</p>
+<p>开源地址：<a class="link"   target="_blank" rel="noopener" href="https://github.com/W1ndysBot/BilibiliPush#/" >https://github.com/W1ndysBot/BilibiliPush#/<i class="fa-solid fa-arrow-up-right ml-[0.2em] font-light align-text-top text-[0.7em] link-icon"></i></a></p>
+<h4 id="命令"><a href="#命令" class="headerlink" title="命令"></a>命令</h4><p>| 命令 | 描述 | 示例 |<br>| bilipush | 开启或关闭哔哩哔哩直播动态监控 | bilipush |<br>| 订阅动态 xxx | 订阅动态 uid | bilipushuid 123456 |<br>| 取消订阅动态 xxx | 取消订阅动态 uid | bilipushuid 123456 |<br>| 订阅直播 xxx | 订阅直播 uid | bilipushlive 123456 |<br>| 取消订阅直播 xxx | 取消订阅直播 uid | bilipushlive 123456 |<br>| 查询订阅 | 查询订阅动态或直播 | bilipushuid |</p>
+<h3 id="群互联（GroupLink）使用手册"><a href="#群互联（GroupLink）使用手册" class="headerlink" title="群互联（GroupLink）使用手册"></a>群互联（GroupLink）使用手册</h3><h4 id="介绍-1"><a href="#介绍-1" class="headerlink" title="介绍"></a>介绍</h4><p>群互联是卷卷 bot 的一个功能，可以实现多个群之间的消息互通。互联起来的群，当一个群有消息时，会向其他群转发。</p>
+<p>开源地址：<a class="link"   target="_blank" rel="noopener" href="https://github.com/W1ndysBot/GroupLink#/" >https://github.com/W1ndysBot/GroupLink#/<i class="fa-solid fa-arrow-up-right ml-[0.2em] font-light align-text-top text-[0.7em] link-icon"></i></a></p>
+<h4 id="命令-1"><a href="#命令-1" class="headerlink" title="命令"></a>命令</h4><p>| 命令 | 描述 | 示例 |<br>| gl 开或关 | 开启或关闭群互联 | gl 开或关 |<br>| add 互联 | 添加互联群 | add 互联 |<br>| rm 互联 | 删除互联群 | rm 互联 |</p>
+
+		</div>
+
+		
+		<div class="post-copyright-info w-full my-8 px-2 sm:px-6 md:px-8">
+			<div class="article-copyright-info-container">
+    <ul>
+        <li><strong>标题:</strong> 卷卷bot使用手册</li>
+        <li><strong>作者:</strong> W1ndys</li>
+        <li><strong>创建于
+                :</strong> 2025-01-01 19:48:25</li>
+        
+            <li>
+                <strong>更新于
+                    :</strong> 2025-02-23 13:37:18
+            </li>
+        
+        <li>
+            <strong>链接:</strong> https://blog.w1ndys.top/posts/fbd9a8fd.html
+        </li>
+        <li>
+            <strong>
+                版权声明:
+            </strong>
+            
+
+            
+                版权所有 &#169 W1ndys，禁止转载。
+            
+        </li>
+    </ul>
+</div>
+
+		</div>
+		
+
+		
+		<ul class="post-tags-box text-lg mt-1.5 flex-wrap justify-center flex md:hidden">
+			
+			<li class="tag-item mx-0.5">
+				<a href="/tags/Python/">#Python</a>&nbsp;
+			</li>
+			
+			<li class="tag-item mx-0.5">
+				<a href="/tags/QQbot/">#QQbot</a>&nbsp;
+			</li>
+			
+			<li class="tag-item mx-0.5">
+				<a href="/tags/QQ%E6%9C%BA%E5%99%A8%E4%BA%BA/">#QQ机器人</a>&nbsp;
+			</li>
+			
+			<li class="tag-item mx-0.5">
+				<a href="/tags/NapCatQQ/">#NapCatQQ</a>&nbsp;
+			</li>
+			
+		</ul>
+		
+
+		
+
+		
+		<div class="article-nav my-8 flex justify-between items-center px-2 sm:px-6 md:px-8">
+			
+			<div class="article-prev border-border-color shadow-redefine-flat shadow-shadow-color-2 rounded-medium px-4 py-2 hover:shadow-redefine-flat-hover hover:shadow-shadow-color-2">
+				<a class="prev" rel="prev" href="/posts/a5daf678.html">
+					<span class="left arrow-icon flex justify-center items-center">
+						<i class="fa-solid fa-chevron-left"></i>
+					</span>
+					<span class="title flex justify-center items-center">
+						<span class="post-nav-title-item">密码学引论复习</span>
+						<span class="post-nav-item">上一篇</span>
+					</span>
+				</a>
+			</div>
+			
+			
+			<div class="article-next border-border-color shadow-redefine-flat shadow-shadow-color-2 rounded-medium px-4 py-2 hover:shadow-redefine-flat-hover hover:shadow-shadow-color-2">
+				<a class="next" rel="next" href="/posts/c2cf88b8.html">
+					<span class="title flex justify-center items-center">
+						<span class="post-nav-title-item">2024年度总结</span>
+						<span class="post-nav-item">下一篇</span>
+					</span>
+					<span class="right arrow-icon flex justify-center items-center">
+						<i class="fa-solid fa-chevron-right"></i>
+					</span>
+				</a>
+			</div>
+			
+		</div>
+		
+
+
+		
+		<div class="comment-container px-2 sm:px-6 md:px-8 pb-8">
+			<div class="comments-container mt-10 w-full ">
+    <div id="comment-anchor" class="w-full h-2.5"></div>
+    <div class="comment-area-title w-full my-1.5 md:my-2.5 text-xl md:text-3xl font-bold">
+        评论
+    </div>
+    
+
+        
+            
+    <div id="giscus-container"></div>
+    <script data-swup-reload-script defer>
+        async function loadGiscus() {
+            const giscusConfig = {
+                'src': 'https://giscus.app/client.js',
+                'data-repo': 'W1ndys/Blog',
+                'data-repo-id': 'R_kgDOLaRaXw',
+                'data-category': 'Show and tell',
+                'data-category-id': 'DIC_kwDOLaRaX84CeBp5',
+                'data-mapping': 'url',
+                'data-strict': '0',
+                'data-reactions-enabled': '1',
+                'data-emit-metadata': '1',
+                'data-theme': 'preferred_color_scheme',
+                'data-lang': 'zh-CN',
+                'data-input-position': 'top',
+                'data-loading': 'lazy',
+                'crossorigin': 'anonymous',
+                'async': true
+            }
+            const giscusScript = document.createElement('script');
+            for (const key in giscusConfig) {
+                giscusScript.setAttribute(key, giscusConfig[key]);
+            }
+            document.getElementById('giscus-container').appendChild(giscusScript);
+        }
+        if ('true') {
+            let loadGiscusTimeout = setTimeout(() => {
+                loadGiscus();
+                clearTimeout(loadGiscusTimeout);
+            }, 1000);
+        } else {
+            document.addEventListener('DOMContentLoaded', loadGiscus);
+        }
+    </script>
+
+
+        
+        
+    
+</div>
+
+		</div>
+		
+	</div>
+
+	
+	<div class="toc-content-container">
+		<div class="post-toc-wrap">
+	<div class="post-toc">
+		<div class="toc-title">目录</div>
+		<div class="page-title">卷卷bot使用手册</div>
+		<ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8D%B7%E5%8D%B7-bot"><span class="nav-text">卷卷 bot</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8%E6%89%8B%E5%86%8C"><span class="nav-text">使用手册</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#AI-%E5%A4%A7%E6%A8%A1%E5%9E%8B"><span class="nav-text">AI 大模型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%BF%9D%E7%A6%81%E8%AF%8D%E7%9B%91%E6%8E%A7"><span class="nav-text">违禁词监控</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%BF%9D%E7%A6%81%E8%AF%8D%E7%9B%91%E6%8E%A7-2%EF%BC%88%E5%BC%80%E5%8F%91%E4%B8%AD%EF%BC%89"><span class="nav-text">违禁词监控 2（开发中）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%BB%91%E5%90%8D%E5%8D%95%E7%B3%BB%E7%BB%9F%E4%BD%BF%E7%94%A8%E6%89%8B%E5%86%8C"><span class="nav-text">黑名单系统使用手册</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ClassTable-%E4%BD%BF%E7%94%A8%E6%89%8B%E5%86%8C"><span class="nav-text">ClassTable 使用手册</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#CollectTheSun-%E4%BD%BF%E7%94%A8%E6%89%8B%E5%86%8C"><span class="nav-text">CollectTheSun 使用手册</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AF%86%E7%A0%81%E5%B7%A5%E5%85%B7"><span class="nav-text">密码工具</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BE%A4%E7%AE%A1%E7%90%86"><span class="nav-text">群管理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ImageGenerate-%E4%BD%BF%E7%94%A8%E6%89%8B%E5%86%8C"><span class="nav-text">ImageGenerate 使用手册</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%82%80%E8%AF%B7%E9%93%BE%E7%B3%BB%E7%BB%9F%E4%BD%BF%E7%94%A8%E6%89%8B%E5%86%8C"><span class="nav-text">邀请链系统使用手册</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%85%B3%E9%94%AE%E8%AF%8D%E5%9B%9E%E5%A4%8D%E7%B3%BB%E7%BB%9F%E4%BD%BF%E7%94%A8%E6%89%8B%E5%86%8C"><span class="nav-text">关键词回复系统使用手册</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BE%A4%E5%90%8D%E7%89%87%E9%94%81%E4%BD%BF%E7%94%A8%E6%89%8B%E5%86%8C"><span class="nav-text">群名片锁使用手册</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#NoAddOne-%E4%BD%BF%E7%94%A8%E6%89%8B%E5%86%8C"><span class="nav-text">NoAddOne 使用手册</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#PokePal-%E4%BD%BF%E7%94%A8%E6%89%8B%E5%86%8C"><span class="nav-text">PokePal 使用手册</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#QASystem-%E4%BD%BF%E7%94%A8%E6%89%8B%E5%86%8C"><span class="nav-text">QASystem 使用手册</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#QFNUBustExamClassroomFind-%E4%BD%BF%E7%94%A8%E6%89%8B%E5%86%8C"><span class="nav-text">QFNUBustExamClassroomFind 使用手册</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#QFNUTracker-%E4%BD%BF%E7%94%A8%E6%89%8B%E5%86%8C"><span class="nav-text">QFNUTracker 使用手册</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BE%A4%E5%8F%91%E6%B6%88%E6%81%AF%E5%91%BD%E4%BB%A4%E4%BD%BF%E7%94%A8%E6%89%8B%E5%86%8C"><span class="nav-text">群发消息命令使用手册</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%BD%AF%E5%B0%81%E7%A6%81%E7%B3%BB%E7%BB%9F%E4%BD%BF%E7%94%A8%E6%89%8B%E5%86%8C"><span class="nav-text">软封禁系统使用手册</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#TimeAwareGreetings-%E4%BD%BF%E7%94%A8%E6%89%8B%E5%86%8C"><span class="nav-text">TimeAwareGreetings 使用手册</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#WelcomeFarewell-%E4%BD%BF%E7%94%A8%E6%89%8B%E5%86%8C"><span class="nav-text">WelcomeFarewell 使用手册</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BE%A4%E8%AF%8D%E4%BA%91%E5%8A%9F%E8%83%BD%E4%BD%BF%E7%94%A8%E6%89%8B%E5%86%8C"><span class="nav-text">群词云功能使用手册</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%93%94%E5%93%A9%E5%93%94%E5%93%A9%E7%9B%B4%E6%92%AD%E5%8A%A8%E6%80%81%E7%9B%91%E6%8E%A7%EF%BC%88BilibiliPush%EF%BC%89%E4%BD%BF%E7%94%A8%E6%89%8B%E5%86%8C"><span class="nav-text">哔哩哔哩直播动态监控（BilibiliPush）使用手册</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BE%A4%E4%BA%92%E8%81%94%EF%BC%88GroupLink%EF%BC%89%E4%BD%BF%E7%94%A8%E6%89%8B%E5%86%8C"><span class="nav-text">群互联（GroupLink）使用手册</span></a></li></ol></li></ol>
+
+	</div>
+</div>
+	</div>
+	
+</div>
+			</div>
+
+			
+		</div>
+
+		<div class="main-content-footer">
+			<footer class="footer mt-5 py-5 h-auto text-base text-third-text-color relative border-t-2 border-t-border-color">
+    <div class="info-container py-3 text-center">
+        
+            <div class="customize-info my-1">Powered by <a href="https://github.com/W1ndys" target="_blank">W1ndys</a></div>
+        
+        <div class="text-center">
+            &copy;
+            
+              <span>2023</span>
+              -
+            
+            2025&nbsp;&nbsp;<i class="fa-solid fa-heart fa-beat" style="--fa-animation-duration: 0.5s; color: #f54545"></i>&nbsp;&nbsp;<a href="/">W1ndys</a>
+            
+                
+                <p class="post-count space-x-0.5">
+                    <span>
+                        共撰写了 193 篇文章
+                    </span>
+                    
+                        <span>
+                            共 224.3k 字
+                        </span>
+                    
+                </p>
+            
+        </div>
+        
+            <script data-swup-reload-script src="https://cn.vercount.one/js"></script>
+            <div class="relative text-center lg:absolute lg:right-[20px] lg:top-1/2 lg:-translate-y-1/2 lg:text-right">
+                
+                    <span id="busuanzi_container_site_uv" class="lg:!block">
+                        <span class="text-sm">访问人数</span>
+                        <span id="busuanzi_value_site_uv"></span>
+                    </span>
+                
+                
+                    <span id="busuanzi_container_site_pv" class="lg:!block">
+                        <span class="text-sm">总访问量</span>
+                        <span id="busuanzi_value_site_pv"></span>
+                    </span>
+                
+            </div>
+        
+        <div class="relative text-center lg:absolute lg:left-[20px] lg:top-1/2 lg:-translate-y-1/2 lg:text-left">
+            <span class="lg:block text-sm">由 <?xml version="1.0" encoding="utf-8"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg class="relative top-[2px] inline-block align-baseline" version="1.1" id="圖層_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="1rem" height="1rem" viewBox="0 0 512 512" enable-background="new 0 0 512 512" xml:space="preserve"><path fill="#0E83CD" d="M256.4,25.8l-200,115.5L56,371.5l199.6,114.7l200-115.5l0.4-230.2L256.4,25.8z M349,354.6l-18.4,10.7l-18.6-11V275H200v79.6l-18.4,10.7l-18.6-11v-197l18.5-10.6l18.5,10.8V237h112v-79.6l18.5-10.6l18.5,10.8V354.6z"/></svg><a target="_blank" class="text-base" href="https://hexo.io">Hexo</a> 驱动</span>
+            <span class="text-sm lg:block">主题&nbsp;<a class="text-base" target="_blank" href="https://github.com/EvanNotFound/hexo-theme-redefine">Redefine v2.8.2</a></span>
+        </div>
+        
+        
+            <div>
+                博客已运行 <span class="odometer" id="runtime_days" ></span> 天 <span class="odometer" id="runtime_hours"></span> 小时 <span class="odometer" id="runtime_minutes"></span> 分钟 <span class="odometer" id="runtime_seconds"></span> 秒
+            </div>
+        
+        
+            <script data-swup-reload-script>
+                try {
+                    function odometer_init() {
+                    const elements = document.querySelectorAll('.odometer');
+                    elements.forEach(el => {
+                        new Odometer({
+                            el,
+                            format: '( ddd).dd',
+                            duration: 200
+                        });
+                    });
+                    }
+                    odometer_init();
+                } catch (error) {}
+            </script>
+        
+        
+            
+                
+        
+                
+        
+                
+
+                    
+                        <script data-swup-reload-script data-pjax src="/js/Capoo.js"></script>
+                    
+        
+        
+    </div>  
+</footer>
+		</div>
+	</div>
+
+	
+	<div class="post-tools">
+		<div class="post-tools-container">
+	<ul class="article-tools-list">
+		<!-- TOC aside toggle -->
+		
+		<li class="right-bottom-tools page-aside-toggle">
+			<i class="fa-regular fa-outdent"></i>
+		</li>
+		
+
+		<!-- go comment -->
+		
+		<li class="go-comment">
+			<i class="fa-regular fa-comments"></i>
+		</li>
+		
+	</ul>
+</div>
+	</div>
+	
+
+	<div class="right-side-tools-container">
+		<div class="side-tools-container">
+	<ul class="hidden-tools-list">
+		<li class="right-bottom-tools tool-font-adjust-plus flex justify-center items-center">
+			<i class="fa-regular fa-magnifying-glass-plus"></i>
+		</li>
+
+		<li class="right-bottom-tools tool-font-adjust-minus flex justify-center items-center">
+			<i class="fa-regular fa-magnifying-glass-minus"></i>
+		</li>
+
+		<li class="right-bottom-tools tool-dark-light-toggle flex justify-center items-center">
+			<i class="fa-regular fa-moon"></i>
+		</li>
+
+		<!-- rss -->
+		
+		<li class="right-bottom-tools rss flex justify-center items-center">
+			<a class="flex justify-center items-center" href="/atom.xml" target="_blank">
+				<i class="fa-regular fa-rss"></i>
+			</a>
+		</li>
+		
+
+		
+
+		<li class="right-bottom-tools tool-scroll-to-bottom flex justify-center items-center">
+			<i class="fa-regular fa-arrow-down"></i>
+		</li>
+	</ul>
+
+	<ul class="visible-tools-list">
+		<li class="right-bottom-tools toggle-tools-list flex justify-center items-center">
+			<i class="fa-regular fa-cog fa-spin"></i>
+		</li>
+		
+		<li class="right-bottom-tools tool-scroll-to-top flex justify-center items-center">
+			<i class="arrow-up fas fa-arrow-up"></i>
+			<span class="percent"></span>
+		</li>
+		
+		
+	</ul>
+</div>
+	</div>
+
+	<div class="image-viewer-container">
+	<img src="">
+</div>
+
+	
+	<div class="search-pop-overlay">
+	<div class="popup search-popup">
+		<div class="search-header">
+			<span class="search-input-field-pre">
+				<i class="fa-solid fa-keyboard"></i>
+			</span>
+			<div class="search-input-container">
+				<input autocomplete="off" autocorrect="off" autocapitalize="off" placeholder="站内搜索您需要的内容..." spellcheck="false" type="search" class="search-input">
+			</div>
+			<span class="popup-btn-close">
+				<i class="fa-solid fa-times"></i>
+			</span>
+		</div>
+		<div id="search-result">
+			<div id="no-result">
+				<i class="fa-solid fa-spinner fa-spin-pulse fa-5x fa-fw"></i>
+			</div>
+		</div>
+	</div>
+</div>
+	
+
+</main>
+
+
+<script  src="https://evan.beee.top/projects/hexo-theme-redefine@2.8.2/source/js/build/libs/Swup.min.js" ></script><script  src="https://evan.beee.top/projects/hexo-theme-redefine@2.8.2/source/js/build/libs/SwupSlideTheme.min.js" ></script><script  src="https://evan.beee.top/projects/hexo-theme-redefine@2.8.2/source/js/build/libs/SwupScriptsPlugin.min.js" ></script><script  src="https://evan.beee.top/projects/hexo-theme-redefine@2.8.2/source/js/build/libs/SwupProgressPlugin.min.js" ></script><script  src="https://evan.beee.top/projects/hexo-theme-redefine@2.8.2/source/js/build/libs/SwupScrollPlugin.min.js" ></script><script  src="https://evan.beee.top/projects/hexo-theme-redefine@2.8.2/source/js/build/libs/SwupPreloadPlugin.min.js" ></script>
+<script>
+    const swup = new Swup({
+        plugins: [
+            new SwupScriptsPlugin({
+                optin: true,
+            }),
+            new SwupProgressPlugin(),
+            new SwupScrollPlugin({
+                offset: 80,
+            }),
+            new SwupSlideTheme({
+                mainElement: ".main-content-body",
+            }),
+            new SwupPreloadPlugin(),
+        ],
+        containers: ["#swup"],
+    });
+</script>
+
+
+
+
+	<script type="module" src="https://evan.beee.top/projects/hexo-theme-redefine@2.8.2/source/js/build/tools/imageViewer.js" ></script><script type="module" src="https://evan.beee.top/projects/hexo-theme-redefine@2.8.2/source/js/build/utils.js" ></script><script type="module" src="https://evan.beee.top/projects/hexo-theme-redefine@2.8.2/source/js/build/main.js" ></script><script type="module" src="https://evan.beee.top/projects/hexo-theme-redefine@2.8.2/source/js/build/layouts/navbarShrink.js" ></script><script type="module" src="https://evan.beee.top/projects/hexo-theme-redefine@2.8.2/source/js/build/tools/scrollTopBottom.js" ></script><script type="module" src="https://evan.beee.top/projects/hexo-theme-redefine@2.8.2/source/js/build/tools/lightDarkSwitch.js" ></script><script type="module" src="https://evan.beee.top/projects/hexo-theme-redefine@2.8.2/source/js/build/layouts/categoryList.js" ></script>
+
+
+    <script type="module" src="https://evan.beee.top/projects/hexo-theme-redefine@2.8.2/source/js/build/tools/localSearch.js" ></script>
+
+
+
+    <script type="module" src="https://evan.beee.top/projects/hexo-theme-redefine@2.8.2/source/js/build/tools/codeBlock.js" ></script>
+
+
+
+    <script type="module" src="https://evan.beee.top/projects/hexo-theme-redefine@2.8.2/source/js/build/layouts/lazyload.js" ></script>
+
+
+
+    <script  src="https://evan.beee.top/projects/hexo-theme-redefine@2.8.2/source/js/build/tools/runtime.js" ></script>
+    <script  src="https://evan.beee.top/projects/hexo-theme-redefine@2.8.2/source/js/build/libs/odometer.min.js" ></script>
+    <link rel="stylesheet" href="https://evan.beee.top/projects/hexo-theme-redefine@2.8.2/source/assets/odometer-theme-minimal.css">
+
+
+
+  <script  src="https://evan.beee.top/projects/hexo-theme-redefine@2.8.2/source/js/build/libs/Typed.min.js" ></script>
+  <script type="module" src="https://evan.beee.top/projects/hexo-theme-redefine@2.8.2/source/js/build/plugins/typed.js" ></script>
+
+
+
+
+
+    <script  src="https://evan.beee.top/projects/hexo-theme-redefine@2.8.2/source/js/build/libs/minimasonry.min.js" ></script>
+    <script type="module" src="https://evan.beee.top/projects/hexo-theme-redefine@2.8.2/source/js/build/plugins/masonry.js" ></script>
+
+
+
+
+
+
+    <script type="module" src="https://evan.beee.top/projects/hexo-theme-redefine@2.8.2/source/js/build/tools/tocToggle.js" data-swup-reload-script></script><script type="module" src="https://evan.beee.top/projects/hexo-theme-redefine@2.8.2/source/js/build/layouts/toc.js" data-swup-reload-script></script><script type="module" src="https://evan.beee.top/projects/hexo-theme-redefine@2.8.2/source/js/build/plugins/tabs.js" data-swup-reload-script></script>
+
+
+<script  src="https://evan.beee.top/projects/hexo-theme-redefine@2.8.2/source/js/build/libs/moment-with-locales.min.js" data-swup-reload-script></script>
+<script type="module" src="https://evan.beee.top/projects/hexo-theme-redefine@2.8.2/source/js/build/layouts/essays.js" data-swup-reload-script></script>
+
+
+    <script  src="https://evan.beee.top/projects/hexo-theme-redefine@2.8.2/source/js/build/libs/pangu.min.js" ></script><script  src="https://evan.beee.top/projects/hexo-theme-redefine@2.8.2/source/js/build/plugins/pangu.js" ></script>
+
+
+
+    <script type="module" src="https://evan.beee.top/projects/hexo-theme-redefine@2.8.2/source/js/build/layouts/bookmarkNav.js" ></script>
+
+	
+</body>
+
+</html>

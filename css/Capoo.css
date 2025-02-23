@@ -1,0 +1,22 @@
+/* CSS样式用于设置 GIF 容器的位置和样式 */
+.gif-container {
+  position: fixed;
+  bottom: 10px;
+  /* 调整 GIF 在底部的距离 */
+  left: 10px;
+  /* 调整 GIF 在左侧的距离 */
+  z-index: 9999;
+  /* 确保 GIF 显示在其他内容的上方 */
+}
+
+.gif-container img {
+  max-width: 130px;
+  /* 设置 GIF 最大宽度 */
+  height: auto;
+  /* 自动调整高度 */
+}
+
+.gif-hidden {
+  display: none;
+  /* 在移动设备上隐藏 GIF */
+}

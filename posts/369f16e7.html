@@ -1,0 +1,1508 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="keywords" content="博客, 生活, 技术, 记录">
+    
+    <meta name="author" content="W1ndys">
+    <!-- preconnect -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    
+        
+        
+        
+            <link rel="preconnect" href="https://evan.beee.top" crossorigin>
+        
+    
+    <!--- Seo Part-->
+    
+    <link rel="canonical" href="https://blog.w1ndys.top/posts/369f16e7.html"/>
+    <meta name="robots" content="index,follow">
+    <meta name="googlebot" content="index,follow">
+    <meta name="revisit-after" content="1 days">
+    
+    
+    
+        
+        <meta name="description" content="W1ndys小屋">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Mirai Administrator 机器人管理插件，好友&#x2F;群管理，黑名单，宵禁">
+<meta property="og:url" content="https://blog.w1ndys.top/posts/369f16e7.html">
+<meta property="og:site_name" content="W1ndys小屋">
+<meta property="og:description" content="W1ndys小屋">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://blog.w1ndys.top/images/redefine-og.webp">
+<meta property="article:published_time" content="2023-11-20T03:25:00.000Z">
+<meta property="article:modified_time" content="2025-02-23T05:37:18.712Z">
+<meta property="article:author" content="W1ndys">
+<meta property="article:tag" content="QQbot">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://blog.w1ndys.top/images/redefine-og.webp">
+    
+    
+    <!--- Icon Part-->
+    <link rel="icon" type="image/png" href="/images/favicon.ico" sizes="192x192">
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon.ico">
+    <meta name="theme-color" content="#A31F34">
+    <link rel="shortcut icon" href="/images/favicon.ico">
+    <!--- Page Info-->
+    
+    <title>
+        
+            Mirai Administrator 机器人管理插件，好友/群管理，黑名单，宵禁 | W1ndys小屋
+        
+    </title>
+
+    <link rel="stylesheet" href="https://evan.beee.top/projects/hexo-theme-redefine@2.8.2/source/fonts/Chillax/chillax.css">
+
+    <!--- Inject Part-->
+    
+        
+            
+    
+            
+    
+            
+                
+                    <script data-swup-reload-script data-pjax charset="UTF-8" id="LA_COLLECT" src="//sdk.51.la/js-sdk-pro.min.js"></script>
+                
+    
+            
+                
+                    <script data-swup-reload-script data-pjax>LA.init({id:"3HPYFt9znqKItrHZ",ck:"3HPYFt9znqKItrHZ",autoTrack:true})</script>
+                
+    
+            
+                
+                    <link rel="stylesheet" type="text/css" href="/css/Capoo.css">
+                
+    
+
+    
+<link rel="stylesheet" href="/css/style.css">
+
+
+    
+        <link rel="stylesheet" href="https://evan.beee.top/projects/hexo-theme-redefine@2.8.2/source/css/build/tailwind.css">
+    
+
+    <link rel="stylesheet" href="https://evan.beee.top/projects/hexo-theme-redefine@2.8.2/source/fonts/GeistMono/geist-mono.css">
+    <link rel="stylesheet" href="https://evan.beee.top/projects/hexo-theme-redefine@2.8.2/source/fonts/Geist/geist.css">
+    <!--- Font Part-->
+    
+    
+    
+    
+    
+    
+        <script  src="https://evan.beee.top/projects/hexo-theme-redefine@2.8.2/source/js/build/libs/anime.min.js" ></script>
+    
+
+    <script id="hexo-configurations">
+    window.config = {"hostname":"blog.w1ndys.top","root":"/","language":"zh-CN","path":"search.xml"};
+    window.theme = {"articles":{"style":{"font_size":"16px","line_height":1.5,"image_border_radius":"14px","image_alignment":"center","image_caption":false,"link_icon":true,"delete_mask":true,"title_alignment":"left","headings_top_spacing":{"h1":"3.2rem","h2":"2.4rem","h3":"1.9rem","h4":"1.6rem","h5":"1.4rem","h6":"1.3rem"}},"word_count":{"enable":true,"count":true,"min2read":true},"author_label":{"enable":true,"auto":false,"list":[]},"code_block":{"copy":true,"style":"mac","highlight_theme":{"light":"github","dark":"vs2015"},"font":{"enable":false,"family":null,"url":null}},"toc":{"enable":true,"max_depth":3,"number":false,"expand":true,"init_open":true},"copyright":{"enable":true,"default":"all_rights_reserved"},"lazyload":true,"pangu_js":true,"recommendation":{"enable":false,"title":"推荐阅读","limit":3,"mobile_limit":2,"placeholder":"/images/wallhaven-wqery6-light.webp","skip_dirs":[]}},"colors":{"primary":"#A31F34","secondary":"#1890ff","default_mode":"light"},"global":{"fonts":{"chinese":{"enable":false,"family":null,"url":null},"english":{"enable":false,"family":null,"url":null},"title":{"enable":false,"family":null,"url":null}},"content_max_width":"1000px","sidebar_width":"210px","hover":{"shadow":true,"scale":true},"scroll_progress":{"bar":true,"percentage":true},"website_counter":{"url":"https://cn.vercount.one/js","enable":true,"site_pv":true,"site_uv":true,"post_pv":true},"single_page":true,"preloader":{"enable":true,"custom_message":"欢迎来到W1ndys小屋"},"open_graph":{"enable":true,"image":"/images/redefine-og.webp","description":"W1ndys小屋"},"google_analytics":{"enable":false,"id":null}},"home_banner":{"enable":true,"style":"fixed","image":{"light":"https://pic1.zhimg.com/80/v2-b4e05912f591b51b9fa3e8aa4b9cba45.png","dark":"https://pic1.zhimg.com/80/v2-b4e05912f591b51b9fa3e8aa4b9cba45.png"},"title":"W1ndys小屋","subtitle":{"text":["一言加载中..."],"hitokoto":{"enable":true,"show_author":true,"api":"https://v1.hitokoto.cn"},"typing_speed":100,"backing_speed":80,"starting_delay":500,"backing_delay":1500,"loop":true,"smart_backspace":true},"text_color":{"light":"#fff","dark":"#d1d1b6"},"text_style":{"title_size":"2.8rem","subtitle_size":"1.5rem","line_height":1.2},"custom_font":{"enable":false,"family":null,"url":null},"social_links":{"enable":true,"style":"default","links":{"github":"https://github.com/W1ndys","instagram":null,"zhihu":"https://www.zhihu.com/people/w1ndys","twitter":null,"email":"w1ndys@outlook.com"},"qrs":{"weixin":null}}},"plugins":{"feed":{"enable":true},"aplayer":{"enable":false,"type":"fixed","audios":[{"name":null,"artist":null,"url":null,"cover":null,"lrc":null}]},"mermaid":{"enable":false,"version":"11.4.1"}},"version":"2.8.2","navbar":{"auto_hide":true,"color":{"left":"#f78736","right":"#367df7","transparency":35},"width":{"home":"1200px","pages":"1000px"},"links":{"Home":{"path":"/","icon":"fa-regular fa-house"},"Archives":{"path":"/archives","icon":"fa-regular fa-archive"},"Categories":{"path":"/categories","icon":"fa-regular fa-folder"},"Tags":{"path":"/tags","icon":"fa-regular fa-tags"},"友链接力":{"icon":"fa-solid fa-train-subway","submenus":{"异次元之旅":"https://travel.moe/go.html?travel=on","MIIT Travel":"https://beian.miit.cn.com/go.php","虫洞 | 十年之约":"https://foreverblog.cn/go.html","博客录":"https://bokelu.suijiboke.gs","笔墨迹":"https://blogscn.fun/random.html","博客圈":"https://bokequan.cn/?suiji","开往":"https://www.travellings.cn/go.html"}},"Friends":{"path":"/links","icon":"fa-regular fa-link"},"书签":{"icon":"fa-solid fa-bookmark","path":"/bookmarks/"}},"search":{"enable":true,"preload":true}},"page_templates":{"friends_column":3,"tags_style":"blur"},"home":{"sidebar":{"enable":true,"position":"left","first_item":"menu","announcement":"Welcome to W1ndys's Blog","show_on_mobile":true,"links":{"Archives":{"path":"/archives","icon":"fa-regular fa-archive"},"Tags":{"path":"/tags","icon":"fa-regular fa-tags"},"Categories":{"path":"/categories","icon":"fa-regular fa-folder"}}},"article_date_format":"auto","excerpt_length":200,"categories":{"enable":true,"limit":5},"tags":{"enable":true,"limit":5}},"footerStart":"2023/08/22 05:20:00"};
+    window.lang_ago = {"second":"%s 秒前","minute":"%s 分钟前","hour":"%s 小时前","day":"%s 天前","week":"%s 周前","month":"%s 个月前","year":"%s 年前"};
+    window.data = {"masonry":true};
+  </script>
+    
+    <!--- Fontawesome Part-->
+    <link rel="stylesheet" href="https://evan.beee.top/projects/hexo-theme-redefine@2.8.2/source/fontawesome/fontawesome.min.css">
+    <link rel="stylesheet" href="https://evan.beee.top/projects/hexo-theme-redefine@2.8.2/source/fontawesome/brands.min.css">
+    <link rel="stylesheet" href="https://evan.beee.top/projects/hexo-theme-redefine@2.8.2/source/fontawesome/solid.min.css">
+    <link rel="stylesheet" href="https://evan.beee.top/projects/hexo-theme-redefine@2.8.2/source/fontawesome/regular.min.css">
+    
+    
+    
+    
+<meta name="generator" content="Hexo 7.3.0"><link rel="alternate" href="/atom.xml" title="W1ndys小屋" type="application/atom+xml">
+</head>
+
+
+
+<body>
+	<div class="progress-bar-container">
+	
+	<span class="scroll-progress-bar"></span>
+	
+
+	
+	<span class="pjax-progress-bar"></span>
+	<!--        <span class="swup-progress-icon">-->
+	<!--            <i class="fa-solid fa-circle-notch fa-spin"></i>-->
+	<!--        </span>-->
+	
+</div>
+
+<style>
+    :root {
+        --preloader-background-color: #fff;
+        --preloader-text-color: #000;
+    }
+
+    @media (prefers-color-scheme: dark) {
+        :root {
+            --preloader-background-color: #202124;
+            --preloader-text-color: #fff;
+        }
+    }
+
+    @media (prefers-color-scheme: light) {
+        :root {
+            --preloader-background-color: #fff;
+            --preloader-text-color: #000;
+        }
+    }
+
+    @media (max-width: 600px) {
+        .ml13 {
+            font-size: 2.6rem !important; /* Adjust this value as needed */
+        }
+    }
+
+    .preloader {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem; /* Tailwind 'gap-4' is 1rem */
+        align-items: center;
+        justify-content: center;
+        position: fixed;
+        padding: 12px;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh; /* 'h-screen' is 100% of the viewport height */
+        background-color: var(--preloader-background-color);
+        z-index: 1100; /* 'z-[1100]' sets the z-index */
+        transition: opacity 0.2s ease-in-out;
+    }
+
+    .ml13 {
+        font-size: 3.2rem;
+        /* text-transform: uppercase; */
+        color: var(--preloader-text-color);
+        letter-spacing: -1px;
+        font-weight: 500;
+        font-family: 'Chillax-Variable', sans-serif;
+        text-align: center;
+    }
+
+    .ml13 .word {
+        display: inline-flex;
+        flex-wrap: wrap;
+        white-space: nowrap;
+    }
+
+    .ml13 .letter {
+        display: inline-block;
+        line-height: 1em;
+    }
+</style>
+
+<div class="preloader">
+    <h2 class="ml13">
+        欢迎来到W1ndys小屋
+    </h2>
+    <script>
+        var textWrapper = document.querySelector('.ml13');
+        // Split text into words
+        var words = textWrapper.textContent.trim().split(' ');
+
+        // Clear the existing content
+        textWrapper.innerHTML = '';
+
+        // Wrap each word and its letters in spans
+        words.forEach(function(word) {
+            var wordSpan = document.createElement('span');
+            wordSpan.classList.add('word');
+            wordSpan.innerHTML = word.replace(/\S/g, "<span class='letter'>$&</span>");
+            textWrapper.appendChild(wordSpan);
+            textWrapper.appendChild(document.createTextNode(' ')); // Add space between words
+        });
+
+        var animation = anime.timeline({ loop: true })
+            .add({
+                targets: '.ml13 .letter',
+                translateY: [20, 0],
+                translateZ: 0,
+                opacity: [0, 1],
+                filter: ['blur(5px)', 'blur(0px)'],
+                easing: "easeOutExpo",
+                duration: 1200,
+                delay: (el, i) => 300 + 20 * i,
+            })
+            .add({
+                targets: '.ml13 .letter',
+                translateY: [0, -20],
+                opacity: [1, 0],
+                filter: ['blur(0px)', 'blur(5px)'],
+                easing: "easeInExpo",
+                duration: 1000,
+                delay: (el, i) => 15 * i,
+                complete: function() {
+                    hidePreloader();
+                }
+            }, '-=700');
+
+
+        let themeStatus = JSON.parse(localStorage.getItem('REDEFINE-THEME-STATUS'))?.isDark;
+
+        // If the theme status is not found in local storage, check the preferred color scheme
+        if (themeStatus === undefined || themeStatus === null) {
+            if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+                themeStatus = 'dark';
+            } else {
+                themeStatus = 'light';
+            }
+        }
+
+        // Now you can use the themeStatus variable in your code
+        if (themeStatus) {
+            document.documentElement.style.setProperty('--preloader-background-color', '#202124');
+            document.documentElement.style.setProperty('--preloader-text-color', '#fff');
+        } else {
+            document.documentElement.style.setProperty('--preloader-background-color', '#fff');
+            document.documentElement.style.setProperty('--preloader-text-color', '#000');
+        }
+
+        window.addEventListener('load', function () {
+            setTimeout(hidePreloader, 5000); // Call hidePreloader after 5000 milliseconds if not already called by animation
+        });
+
+        function hidePreloader() {
+            var preloader = document.querySelector('.preloader');
+            preloader.style.opacity = '0';
+            setTimeout(function () {
+                preloader.style.display = 'none';
+            }, 200);
+        }
+    </script>
+</div>
+
+<main class="page-container" id="swup">
+
+	
+
+	<div class="main-content-container flex flex-col justify-between min-h-dvh">
+		<div class="main-content-header">
+			<header class="navbar-container px-6 md:px-12">
+    <div class="navbar-content transition-navbar ">
+        <div class="left">
+            
+                <a class="logo-image h-8 w-8 sm:w-10 sm:h-10 mr-3" href="/">
+                    <img src="/images/haixian.svg" class="w-full h-full rounded-sm">
+                </a>
+            
+            <a class="logo-title" href="/">
+                
+                W1ndys小屋
+                
+            </a>
+        </div>
+
+        <div class="right">
+            <!-- PC -->
+            <div class="desktop">
+                <ul class="navbar-list">
+                    
+                        
+                            
+
+                            <li class="navbar-item">
+                                <!-- Menu -->
+                                <a class=""
+                                   href="/"
+                                        >
+                                    <i class="fa-regular fa-house fa-fw"></i>
+                                    首页
+                                    
+                                </a>
+
+                                <!-- Submenu -->
+                                
+                            </li>
+                    
+                        
+                            
+
+                            <li class="navbar-item">
+                                <!-- Menu -->
+                                <a class=""
+                                   href="/archives"
+                                        >
+                                    <i class="fa-regular fa-archive fa-fw"></i>
+                                    归档
+                                    
+                                </a>
+
+                                <!-- Submenu -->
+                                
+                            </li>
+                    
+                        
+                            
+
+                            <li class="navbar-item">
+                                <!-- Menu -->
+                                <a class=""
+                                   href="/categories"
+                                        >
+                                    <i class="fa-regular fa-folder fa-fw"></i>
+                                    分类
+                                    
+                                </a>
+
+                                <!-- Submenu -->
+                                
+                            </li>
+                    
+                        
+                            
+
+                            <li class="navbar-item">
+                                <!-- Menu -->
+                                <a class=""
+                                   href="/tags"
+                                        >
+                                    <i class="fa-regular fa-tags fa-fw"></i>
+                                    标签
+                                    
+                                </a>
+
+                                <!-- Submenu -->
+                                
+                            </li>
+                    
+                        
+                            
+
+                            <li class="navbar-item">
+                                <!-- Menu -->
+                                <a class="has-dropdown"
+                                   href="#"
+                                        onClick=&#34;return false;&#34;>
+                                    <i class="fa-solid fa-train-subway fa-fw"></i>
+                                    友链接力
+                                    <i class="fa-solid fa-chevron-down fa-fw"></i>
+                                </a>
+
+                                <!-- Submenu -->
+                                
+                                    <ul class="sub-menu">
+                                        
+                                            <li>
+                                                <a target="_blank" rel="noopener" href="https://travel.moe/go.html?travel=on">
+                                                    异次元之旅
+                                                </a>
+                                            </li>
+                                        
+                                            <li>
+                                                <a target="_blank" rel="noopener" href="https://beian.miit.cn.com/go.php">
+                                                    MIIT TRAVEL
+                                                </a>
+                                            </li>
+                                        
+                                            <li>
+                                                <a target="_blank" rel="noopener" href="https://foreverblog.cn/go.html">
+                                                    虫洞 | 十年之约
+                                                </a>
+                                            </li>
+                                        
+                                            <li>
+                                                <a target="_blank" rel="noopener" href="https://bokelu.suijiboke.gs">
+                                                    博客录
+                                                </a>
+                                            </li>
+                                        
+                                            <li>
+                                                <a target="_blank" rel="noopener" href="https://blogscn.fun/random.html">
+                                                    笔墨迹
+                                                </a>
+                                            </li>
+                                        
+                                            <li>
+                                                <a target="_blank" rel="noopener" href="https://bokequan.cn/?suiji">
+                                                    博客圈
+                                                </a>
+                                            </li>
+                                        
+                                            <li>
+                                                <a target="_blank" rel="noopener" href="https://www.travellings.cn/go.html">
+                                                    开往
+                                                </a>
+                                            </li>
+                                        
+                                    </ul>
+                                
+                            </li>
+                    
+                        
+                            
+
+                            <li class="navbar-item">
+                                <!-- Menu -->
+                                <a class=""
+                                   href="/links"
+                                        >
+                                    <i class="fa-regular fa-link fa-fw"></i>
+                                    友情链接
+                                    
+                                </a>
+
+                                <!-- Submenu -->
+                                
+                            </li>
+                    
+                        
+                            
+
+                            <li class="navbar-item">
+                                <!-- Menu -->
+                                <a class=""
+                                   href="/bookmarks/"
+                                        >
+                                    <i class="fa-solid fa-bookmark fa-fw"></i>
+                                    书签
+                                    
+                                </a>
+
+                                <!-- Submenu -->
+                                
+                            </li>
+                    
+                    
+                        <li class="navbar-item search search-popup-trigger">
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                        </li>
+                    
+                </ul>
+            </div>
+            <!-- Mobile -->
+            <div class="mobile">
+                
+                    <div class="icon-item search search-popup-trigger"><i class="fa-solid fa-magnifying-glass"></i>
+                    </div>
+                
+                <div class="icon-item navbar-bar">
+                    <div class="navbar-bar-middle"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Mobile sheet -->
+    <div class="navbar-drawer h-dvh w-full absolute top-0 left-0 bg-background-color flex flex-col justify-between">
+        <ul class="drawer-navbar-list flex flex-col px-4 justify-center items-start">
+            
+                
+                    
+
+                    <li class="drawer-navbar-item text-base my-1.5 flex flex-col w-full">
+                        
+                        <a class="py-1.5 px-2 flex flex-row items-center justify-between gap-1 hover:!text-primary active:!text-primary text-2xl font-semibold group border-b border-border-color hover:border-primary w-full "
+                           href="/"
+                        >
+                            <span>
+                                首页
+                            </span>
+                            
+                                <i class="fa-regular fa-house fa-sm fa-fw"></i>
+                            
+                        </a>
+                        
+
+                        
+                    </li>
+            
+                
+                    
+
+                    <li class="drawer-navbar-item text-base my-1.5 flex flex-col w-full">
+                        
+                        <a class="py-1.5 px-2 flex flex-row items-center justify-between gap-1 hover:!text-primary active:!text-primary text-2xl font-semibold group border-b border-border-color hover:border-primary w-full "
+                           href="/archives"
+                        >
+                            <span>
+                                归档
+                            </span>
+                            
+                                <i class="fa-regular fa-archive fa-sm fa-fw"></i>
+                            
+                        </a>
+                        
+
+                        
+                    </li>
+            
+                
+                    
+
+                    <li class="drawer-navbar-item text-base my-1.5 flex flex-col w-full">
+                        
+                        <a class="py-1.5 px-2 flex flex-row items-center justify-between gap-1 hover:!text-primary active:!text-primary text-2xl font-semibold group border-b border-border-color hover:border-primary w-full "
+                           href="/categories"
+                        >
+                            <span>
+                                分类
+                            </span>
+                            
+                                <i class="fa-regular fa-folder fa-sm fa-fw"></i>
+                            
+                        </a>
+                        
+
+                        
+                    </li>
+            
+                
+                    
+
+                    <li class="drawer-navbar-item text-base my-1.5 flex flex-col w-full">
+                        
+                        <a class="py-1.5 px-2 flex flex-row items-center justify-between gap-1 hover:!text-primary active:!text-primary text-2xl font-semibold group border-b border-border-color hover:border-primary w-full "
+                           href="/tags"
+                        >
+                            <span>
+                                标签
+                            </span>
+                            
+                                <i class="fa-regular fa-tags fa-sm fa-fw"></i>
+                            
+                        </a>
+                        
+
+                        
+                    </li>
+            
+                
+                    
+
+                    <li class="drawer-navbar-item-sub text-base my-1.5 flex flex-col w-full">
+                        
+                        <div class="py-1.5 px-2 flex flex-row items-center justify-between gap-1 hover:!text-primary active:!text-primary cursor-pointer text-2xl font-semibold group border-b border-border-color hover:border-primary w-full "
+                             navbar-data-toggle="submenu-友链接力"
+                        >
+                            <span>
+                                友链接力
+                            </span>
+                            
+                                <i class="fa-solid fa-chevron-right fa-sm fa-fw transition-all"></i>
+                            
+                        </div>
+                        
+
+                        
+                            <div class="flex-col items-start px-2 py-2 hidden" data-target="submenu-友链接力">
+                                
+                                    <div class="drawer-navbar-item text-base flex flex-col justify-center items-start hover:underline active:underline hover:underline-offset-1 rounded-3xl">
+                                        <a class=" text-third-text-color text-xl"
+                                           target="_blank" rel="noopener" href="https://travel.moe/go.html?travel=on">异次元之旅</a>
+                                    </div>
+                                
+                                    <div class="drawer-navbar-item text-base flex flex-col justify-center items-start hover:underline active:underline hover:underline-offset-1 rounded-3xl">
+                                        <a class=" text-third-text-color text-xl"
+                                           target="_blank" rel="noopener" href="https://beian.miit.cn.com/go.php">MIIT TRAVEL</a>
+                                    </div>
+                                
+                                    <div class="drawer-navbar-item text-base flex flex-col justify-center items-start hover:underline active:underline hover:underline-offset-1 rounded-3xl">
+                                        <a class=" text-third-text-color text-xl"
+                                           target="_blank" rel="noopener" href="https://foreverblog.cn/go.html">虫洞 | 十年之约</a>
+                                    </div>
+                                
+                                    <div class="drawer-navbar-item text-base flex flex-col justify-center items-start hover:underline active:underline hover:underline-offset-1 rounded-3xl">
+                                        <a class=" text-third-text-color text-xl"
+                                           target="_blank" rel="noopener" href="https://bokelu.suijiboke.gs">博客录</a>
+                                    </div>
+                                
+                                    <div class="drawer-navbar-item text-base flex flex-col justify-center items-start hover:underline active:underline hover:underline-offset-1 rounded-3xl">
+                                        <a class=" text-third-text-color text-xl"
+                                           target="_blank" rel="noopener" href="https://blogscn.fun/random.html">笔墨迹</a>
+                                    </div>
+                                
+                                    <div class="drawer-navbar-item text-base flex flex-col justify-center items-start hover:underline active:underline hover:underline-offset-1 rounded-3xl">
+                                        <a class=" text-third-text-color text-xl"
+                                           target="_blank" rel="noopener" href="https://bokequan.cn/?suiji">博客圈</a>
+                                    </div>
+                                
+                                    <div class="drawer-navbar-item text-base flex flex-col justify-center items-start hover:underline active:underline hover:underline-offset-1 rounded-3xl">
+                                        <a class=" text-third-text-color text-xl"
+                                           target="_blank" rel="noopener" href="https://www.travellings.cn/go.html">开往</a>
+                                    </div>
+                                
+                            </div>
+                        
+                    </li>
+            
+                
+                    
+
+                    <li class="drawer-navbar-item text-base my-1.5 flex flex-col w-full">
+                        
+                        <a class="py-1.5 px-2 flex flex-row items-center justify-between gap-1 hover:!text-primary active:!text-primary text-2xl font-semibold group border-b border-border-color hover:border-primary w-full "
+                           href="/links"
+                        >
+                            <span>
+                                友情链接
+                            </span>
+                            
+                                <i class="fa-regular fa-link fa-sm fa-fw"></i>
+                            
+                        </a>
+                        
+
+                        
+                    </li>
+            
+                
+                    
+
+                    <li class="drawer-navbar-item text-base my-1.5 flex flex-col w-full">
+                        
+                        <a class="py-1.5 px-2 flex flex-row items-center justify-between gap-1 hover:!text-primary active:!text-primary text-2xl font-semibold group border-b border-border-color hover:border-primary w-full "
+                           href="/bookmarks/"
+                        >
+                            <span>
+                                书签
+                            </span>
+                            
+                                <i class="fa-solid fa-bookmark fa-sm fa-fw"></i>
+                            
+                        </a>
+                        
+
+                        
+                    </li>
+            
+
+            
+            
+                
+                    
+                    
+                    
+            
+        </ul>
+
+        <div class="statistics flex justify-around my-2.5">
+    <a class="item tag-count-item flex flex-col justify-center items-center w-20" href="/tags">
+        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">161</div>
+        <div class="label text-third-text-color text-sm">标签</div>
+    </a>
+    <a class="item tag-count-item flex flex-col justify-center items-center w-20" href="/categories">
+        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">80</div>
+        <div class="label text-third-text-color text-sm">分类</div>
+    </a>
+    <a class="item tag-count-item flex flex-col justify-center items-center w-20" href="/archives">
+        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">193</div>
+        <div class="label text-third-text-color text-sm">文章</div>
+    </a>
+</div>
+    </div>
+
+    <div class="window-mask"></div>
+
+</header>
+
+
+		</div>
+
+		<div class="main-content-body transition-fade-up">
+			
+
+			<div class="main-content">
+				<div class="post-page-container flex relative justify-between box-border w-full h-full">
+	<div class="article-content-container">
+
+		<div class="article-title relative w-full">
+			
+			<div class="w-full flex items-center pt-6 justify-start">
+				<h1 class="article-title-regular text-second-text-color tracking-tight text-4xl md:text-6xl font-semibold px-2 sm:px-6 md:px-8 py-3">Mirai Administrator 机器人管理插件，好友/群管理，黑名单，宵禁</h1>
+			</div>
+			
+		</div>
+
+		
+		<div class="article-header flex flex-row gap-2 items-center px-2 sm:px-6 md:px-8">
+			<div class="avatar w-[46px] h-[46px] flex-shrink-0 rounded-medium border border-border-color p-[1px]">
+				<img src="https://avatars.githubusercontent.com/u/109416673">
+			</div>
+			<div class="info flex flex-col justify-between">
+				<div class="author flex items-center">
+					<span class="name text-default-text-color text-lg font-semibold">W1ndys</span>
+					
+					<span class="author-label ml-1.5 text-xs px-2 py-0.5 rounded-small text-third-text-color border border-shadow-color-1">Lv6</span>
+					
+				</div>
+				<div class="meta-info">
+					<div class="article-meta-info">
+    <span class="article-date article-meta-item">
+        <i class="fa-regular fa-pen-fancy"></i>&nbsp;
+        <span class="desktop">2023-11-20 11:25</span>
+        <span class="mobile">2023-11-20 11:25</span>
+        <span class="hover-info">创建</span>
+    </span>
+    
+        <span class="article-date article-meta-item">
+            <i class="fa-regular fa-wrench"></i>&nbsp;
+            <span class="desktop">2025-02-23 13:37:18</span>
+            <span class="mobile">2025-02-23 13:37:18</span>
+            <span class="hover-info">更新</span>
+        </span>
+    
+
+    
+        <span class="article-categories article-meta-item">
+            <i class="fa-regular fa-folders"></i>&nbsp;
+            <ul>
+                
+                
+                    
+                        
+                        <li>
+                            <a href="/categories/QQbot/">QQbot</a>&nbsp;
+                        </li>
+                    
+                    
+                
+            </ul>
+        </span>
+    
+    
+        <span class="article-tags article-meta-item">
+            <i class="fa-regular fa-tags"></i>&nbsp;
+            <ul>
+                
+                    <li>
+                        <a href="/tags/QQbot/">QQbot</a>&nbsp;
+                    </li>
+                
+            </ul>
+        </span>
+    
+
+    
+    
+        <span class="article-wordcount article-meta-item">
+            <i class="fa-regular fa-typewriter"></i>&nbsp;<span>1.5k 字</span>
+        </span>
+    
+    
+        <span class="article-min2read article-meta-item">
+            <i class="fa-regular fa-clock"></i>&nbsp;<span>6 分钟</span>
+        </span>
+    
+    
+        <span class="article-pv article-meta-item">
+            <i class="fa-regular fa-eye"></i>&nbsp;<span id="busuanzi_value_page_pv"></span>
+        </span>
+    
+</div>
+
+				</div>
+			</div>
+		</div>
+		
+
+		
+
+
+		<div class="article-content markdown-body px-2 sm:px-6 md:px-8 pb-8">
+			<h1 id="Mirai-Administrator"><a href="#Mirai-Administrator" class="headerlink" title="Mirai Administrator"></a>Mirai Administrator</h1><blockquote>
+<p>基于 Mirai Console 的 管理员 Bot 及其标准</p>
+</blockquote>
+<p><a target="_blank" rel="noopener" href="https://github.com/cssxsh/mirai-administrator/releases"><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://img.shields.io/github/v/release/cssxsh/mirai-administrator"
+                      alt="Release"
+                ></a><br><a target="_blank" rel="noopener" href="https://repo1.maven.org/maven2/xyz/cssxsh/mirai/mirai-administrator/"><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://img.shields.io/github/downloads/cssxsh/mirai-administrator/total"
+                      alt="Downloads"
+                ></a><br><a target="_blank" rel="noopener" href="https://search.maven.org/artifact/xyz.cssxsh.mirai/mirai-administrator"><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://img.shields.io/maven-central/v/xyz.cssxsh.mirai/mirai-administrator"
+                      alt="maven-central"
+                ></a><br><a target="_blank" rel="noopener" href="https://www.codacy.com/gh/cssxsh/mirai-administrator/dashboard?utm_source=github.com&utm_medium=referral&utm_content=cssxsh/mirai-administrator&utm_campaign=Badge_Grade"><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://app.codacy.com/project/badge/Grade/8be173fe96c74059bfedd6268b8e6f0c"
+                      alt="Codacy Badge"
+                ></a></p>
+<p><strong>使用前应该查阅的相关文档或项目</strong></p>
+<ul>
+<li><a class="link"   target="_blank" rel="noopener" href="https://github.com/mamoe/mirai/blob/dev/docs/UserManual.md" >User Manual<i class="fa-solid fa-arrow-up-right ml-[0.2em] font-light align-text-top text-[0.7em] link-icon"></i></a></li>
+<li><a class="link"   target="_blank" rel="noopener" href="https://github.com/mamoe/mirai/blob/dev/mirai-console/docs/BuiltInCommands.md#permissioncommand" >Permission Command<i class="fa-solid fa-arrow-up-right ml-[0.2em] font-light align-text-top text-[0.7em] link-icon"></i></a></li>
+<li><a class="link"   target="_blank" rel="noopener" href="https://github.com/project-mirai/chat-command" >Chat Command<i class="fa-solid fa-arrow-up-right ml-[0.2em] font-light align-text-top text-[0.7em] link-icon"></i></a></li>
+</ul>
+<p>本插件实现的功能有:</p>
+<ul>
+<li>联系人相关 自动审批，指令查看，用户留言</li>
+<li>消息相关 发送消息，撤回消息</li>
+<li>群管理相关 群消息审核，自动宵禁，自动清理不发言，禁言自动退群</li>
+</ul>
+<p>本插件提供<a class="link"   target="_blank" rel="noopener" href="https://mirai.mamoe.net/topic/972/mirai-administrator-%E6%9C%BA%E5%99%A8%E4%BA%BA%E7%AE%A1%E7%90%86%E6%8F%92%E4%BB%B6-%E5%A5%BD%E5%8F%8B-%E7%BE%A4%E7%AE%A1%E7%90%86-%E9%BB%91%E5%90%8D%E5%8D%95-%E5%AE%B5%E7%A6%81/2?page=1#%E6%9C%8D%E5%8A%A1%E6%8E%A5%E5%8F%A3" >服务接口<i class="fa-solid fa-arrow-up-right ml-[0.2em] font-light align-text-top text-[0.7em] link-icon"></i></a>以供其他插件拓展功能<br>例如使用 <a class="link"   target="_blank" rel="noopener" href="https://github.com/gnuf0rce/mirai-content-censor" >Mirai Content Censor<i class="fa-solid fa-arrow-up-right ml-[0.2em] font-light align-text-top text-[0.7em] link-icon"></i></a> 依靠百度API审查群消息<br>例如使用 <a class="link"   target="_blank" rel="noopener" href="https://github.com/cssxsh/mirai-authenticator" >Mirai Authenticator<i class="fa-solid fa-arrow-up-right ml-[0.2em] font-light align-text-top text-[0.7em] link-icon"></i></a> 验证加群请求</p>
+<h2 id="MCL-指令安装"><a href="#MCL-指令安装" class="headerlink" title="MCL 指令安装"></a>MCL 指令安装</h2><p><strong>请确认 mcl.jar 的版本是 2.1.0+</strong><br><code>./mcl --update-package xyz.cssxsh.mirai:mirai-administrator --channel maven-stable --type plugin</code></p>
+<h2 id="指令"><a href="#指令" class="headerlink" title="指令"></a>指令</h2><p>注意: 使用前请确保可以 <a class="link"   target="_blank" rel="noopener" href="https://github.com/project-mirai/chat-command" >在聊天环境执行指令<i class="fa-solid fa-arrow-up-right ml-[0.2em] font-light align-text-top text-[0.7em] link-icon"></i></a><br><code>&lt;...&gt;</code>中的是指令名<br><code>[...]</code>表示参数，当<code>[...]</code>后面带<code>?</code>时表示参数可选</p>
+<p>本插件指令权限ID 格式为 <code>xyz.cssxsh.mirai.plugin.mirai-administrator:command.*</code>, <code>*</code> 是指令的第一指令名<br>例如 <code>/send to 12345</code> 的权限ID为 <code>xyz.cssxsh.mirai.plugin.mirai-administrator:command.send</code><br>对 机器人发送的<strong>联系人请求</strong>通知消息 回复 <code>同意</code> 或 <code>不同意</code> 或 <code>拉黑</code> 即可处理<br>插件提供黑名单功能，使用指令 <code>/contact black u12345</code>, 即可拉黑用户，Bot将不响应用户动作（包括其他插件的功能）</p>
+<h3 id="ADMINCONTACTCOMMAND"><a href="#ADMINCONTACTCOMMAND" class="headerlink" title="ADMINCONTACTCOMMAND"></a>ADMINCONTACTCOMMAND</h3><table>
+<thead>
+<tr>
+<th align="left">Command</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><code>/&lt;contact&gt; &lt;delete&gt; [contact]</code></td>
+<td align="left">删除联系人</td>
+</tr>
+<tr>
+<td align="left"><code>/&lt;contact&gt; &lt;handle&gt; [id] [accept]? [black]?</code></td>
+<td align="left">处理联系人申请</td>
+</tr>
+<tr>
+<td align="left"><code>/&lt;contact&gt; &lt;request&gt;</code></td>
+<td align="left">查看申请列表</td>
+</tr>
+<tr>
+<td align="left"><code>/&lt;contact&gt; &lt;black&gt; &#123;permitteeIds&#125;</code></td>
+<td align="left">拉黑</td>
+</tr>
+<tr>
+<td align="left"><code>/&lt;contact&gt; &lt;white&gt; &#123;permitteeIds&#125;</code></td>
+<td align="left">取消拉黑</td>
+</tr>
+<tr>
+<td align="left"><code>/&lt;contact&gt; &lt;backup&gt;</code></td>
+<td align="left">触发备份功能</td>
+</tr>
+</tbody></table>
+<ol>
+<li><code>id</code> 是 事件id 或 好友id 或 群id</li>
+<li><code>accept</code> 和 <code>black</code> 参数为 <code>true</code>, <code>yes</code>, <code>enabled</code>, <code>on</code>, <code>1</code> 时表示 <code>true</code> (不区分大小写)</li>
+<li>对 机器人发送的新联系人通知消息 回复 <code>同意</code> 或 <code>不同意</code> 或 <code>拉黑</code> 即可处理，详见 <a class="link"   target="_blank" rel="noopener" href="https://mirai.mamoe.net/topic/972/mirai-administrator-%E6%9C%BA%E5%99%A8%E4%BA%BA%E7%AE%A1%E7%90%86%E6%8F%92%E4%BB%B6-%E5%A5%BD%E5%8F%8B-%E7%BE%A4%E7%AE%A1%E7%90%86-%E9%BB%91%E5%90%8D%E5%8D%95-%E5%AE%B5%E7%A6%81/2?page=1#%E8%81%94%E7%B3%BB%E4%BA%BA%E5%AE%A1%E6%89%B9%E9%85%8D%E7%BD%AE" >联系人审批配置<i class="fa-solid fa-arrow-up-right ml-[0.2em] font-light align-text-top text-[0.7em] link-icon"></i></a></li>
+<li><code>permitteeIds</code> 是 权限系统的用户标识符，例如 <code>m12345.6789</code>, 可以提供多个 <a class="link"   target="_blank" rel="noopener" href="https://github.com/mamoe/mirai/blob/dev/mirai-console/docs/Permissions.md#%E8%A2%AB%E8%AE%B8%E5%8F%AF%E4%BA%BA-id" >PermitteeId<i class="fa-solid fa-arrow-up-right ml-[0.2em] font-light align-text-top text-[0.7em] link-icon"></i></a> 一次性拉黑&#x2F;取消拉黑</li>
+<li>黑名单通过 <code>@EventHandler(priority = EventPriority.HIGH, concurrency = ConcurrencyKind.LOCKED)</code> 拦截消息</li>
+</ol>
+<h3 id="ADMINFRIENDCOMMAND"><a href="#ADMINFRIENDCOMMAND" class="headerlink" title="ADMINFRIENDCOMMAND"></a>ADMINFRIENDCOMMAND</h3><table>
+<thead>
+<tr>
+<th align="left">Command</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><code>/&lt;friend&gt; &lt;list&gt;</code></td>
+<td align="left">好友列表</td>
+</tr>
+<tr>
+<td align="left"><code>/&lt;friend&gt; &lt;delete&gt; [friend]</code></td>
+<td align="left">删除好友</td>
+</tr>
+</tbody></table>
+<h3 id="ADMINGROUPCOMMAND"><a href="#ADMINGROUPCOMMAND" class="headerlink" title="ADMINGROUPCOMMAND"></a>ADMINGROUPCOMMAND</h3><table>
+<thead>
+<tr>
+<th align="left">Command</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><code>/&lt;group&gt; &lt;list&gt;</code></td>
+<td align="left">群列表</td>
+</tr>
+<tr>
+<td align="left"><code>/&lt;group&gt; &lt;member&gt; [group]</code></td>
+<td align="left">群成员</td>
+</tr>
+<tr>
+<td align="left"><code>/&lt;group&gt; &lt;quit&gt; [group]</code></td>
+<td align="left">退出群聊</td>
+</tr>
+<tr>
+<td align="left"><code>/&lt;group&gt; &lt;kick&gt; [member] [reason]? [black]?</code></td>
+<td align="left">踢出群员</td>
+</tr>
+<tr>
+<td align="left"><code>/&lt;group&gt; &lt;nick&gt; [member] [nick]</code></td>
+<td align="left">群昵称</td>
+</tr>
+<tr>
+<td align="left"><code>/&lt;group&gt; &lt;title&gt; [member] [title]</code></td>
+<td align="left">群头衔</td>
+</tr>
+<tr>
+<td align="left"><code>/&lt;group&gt; &lt;mute&gt; [member] [second]</code></td>
+<td align="left">禁言</td>
+</tr>
+<tr>
+<td align="left"><code>/&lt;group&gt; &lt;quiet&gt; [group] [open]?</code></td>
+<td align="left">全体禁言</td>
+</tr>
+<tr>
+<td align="left"><code>/&lt;group&gt; &lt;admin&gt; [member] [operation]?</code></td>
+<td align="left">设置管理员</td>
+</tr>
+<tr>
+<td align="left"><code>/&lt;group&gt; &lt;announce&gt; [group]</code></td>
+<td align="left">设置公告</td>
+</tr>
+<tr>
+<td align="left"><code>/&lt;group&gt; &lt;rank&gt; [group] &#123;levels&#125;</code></td>
+<td align="left">设置等级头衔</td>
+</tr>
+</tbody></table>
+<h3 id="ADMINRECALLCOMMAND"><a href="#ADMINRECALLCOMMAND" class="headerlink" title="ADMINRECALLCOMMAND"></a>ADMINRECALLCOMMAND</h3><table>
+<thead>
+<tr>
+<th align="left">Command</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><code>/&lt;recall&gt; [contact]?</code></td>
+<td align="left">撤回消息</td>
+</tr>
+</tbody></table>
+<ol>
+<li>不指定<code>contact</code>时，可以通过<strong>回复消息</strong>指定要撤销的消息，如果没有指定，将尝试撤销最后一条不是由指令发送者发送的消息</li>
+<li><code>contact</code>是群员时，将尝试撤销这个群员的最后一条消息</li>
+<li><code>contact</code>是群或好友时，将尝试撤销bot的最后一条消息</li>
+</ol>
+<h3 id="ADMINREGISTEREDCOMMAND"><a href="#ADMINREGISTEREDCOMMAND" class="headerlink" title="ADMINREGISTEREDCOMMAND"></a>ADMINREGISTEREDCOMMAND</h3><table>
+<thead>
+<tr>
+<th align="left">Command</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><code>/&lt;registered&gt;</code></td>
+<td align="left">查看已注册指令</td>
+</tr>
+<tr>
+<td align="left"><code>/&lt;reg&gt;</code></td>
+<td align="left">查看已注册指令</td>
+</tr>
+</tbody></table>
+<h3 id="ADMINSENDCOMMAND"><a href="#ADMINSENDCOMMAND" class="headerlink" title="ADMINSENDCOMMAND"></a>ADMINSENDCOMMAND</h3><table>
+<thead>
+<tr>
+<th align="left">Command</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><code>/&lt;send&gt; &lt;groups&gt; [bot]? [at]? [second]?</code></td>
+<td align="left">发送给所有群</td>
+</tr>
+<tr>
+<td align="left"><code>/&lt;send&gt; &lt;friends&gt; [bot]? [second]?</code></td>
+<td align="left">发送给所有好友</td>
+</tr>
+<tr>
+<td align="left"><code>/&lt;send&gt; &lt;to&gt; [contact] [at]?</code></td>
+<td align="left">发送给指定联系人</td>
+</tr>
+<tr>
+<td align="left"><code>/&lt;send&gt; &lt;nudge&gt; [user]</code></td>
+<td align="left">戳一戳指定联系人</td>
+</tr>
+<tr>
+<td align="left"><code>/&lt;send&gt; &lt;log&gt; &#123;addresses&#125;</code></td>
+<td align="left">备份日志到邮箱</td>
+</tr>
+</tbody></table>
+<ol>
+<li><code>bot</code> 参数在命令行模式下需要指定</li>
+<li><code>at</code> 参数为 <code>true</code>, <code>yes</code>, <code>enabled</code>, <code>on</code>, <code>1</code> 时表示 <code>true</code>, 将附加一个At</li>
+<li><code>second</code> 参数为 延迟的秒数 例如 <code>/send groups 123456 false 10</code></li>
+<li><code>addresses</code> 参数为 邮箱地址</li>
+</ol>
+<h3 id="ADMINTIMERCOMMAND"><a href="#ADMINTIMERCOMMAND" class="headerlink" title="ADMINTIMERCOMMAND"></a>ADMINTIMERCOMMAND</h3><table>
+<thead>
+<tr>
+<th align="left">Command</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><code>/&lt;timer&gt; &lt;config&gt;</code></td>
+<td align="left">显示当前设置</td>
+</tr>
+<tr>
+<td align="left"><code>/&lt;timer&gt; &lt;mute&gt; [moment] [cron] [group]?</code></td>
+<td align="left">宵禁</td>
+</tr>
+<tr>
+<td align="left"><code>/&lt;timer&gt; &lt;cleaner&gt; [day] [cron] [group]?</code></td>
+<td align="left">清理不发言</td>
+</tr>
+<tr>
+<td align="left"><code>/&lt;timer&gt; &lt;status&gt; [cron] [bot]?</code></td>
+<td align="left">定时发送机器人状态</td>
+</tr>
+<tr>
+<td align="left"><code>/&lt;timer&gt; &lt;message&gt; [cron] [target] [at]</code></td>
+<td align="left">定时发送消息</td>
+</tr>
+</tbody></table>
+<ol>
+<li><code>group</code> 为 要操作的群，在群聊中可以不指定</li>
+<li><code>cron</code>, 为 CRON 表达式, 由 <code>秒 分钟 小时 日 月 周</code> 组成<br>例如 <code>0 0 1 * * ?</code> 表示每天 01:00 执行一次，<code>0 30 2 ? * 2-6</code> 表示星期一至星期五 每天 02:30 执行一次<br>可以使用在线编辑器生成 <a class="link"   target="_blank" rel="noopener" href="https://www.bejson.com/othertools/cron/" >https://www.bejson.com/othertools/cron/<i class="fa-solid fa-arrow-up-right ml-[0.2em] font-light align-text-top text-[0.7em] link-icon"></i></a><br>为防止被 空格 分成多个参数，请使用 <code>&quot;</code> 包裹参数</li>
+<li><code>moment</code> 为 DURATION 表达式, 由 <code>PnDTnHnMn.nS</code> 组成<br>例如 <code>P1DT2H3M4.5S</code> 表示 一天二小时三分钟四点五秒，<code>PT5H</code> 表示 五小时</li>
+<li>mute 指令，moment 小于 <code>0</code> 宵禁就会关闭<br>例如 <code>/timer mute PT5H &quot;0 0 1 ? * 2-6&quot;</code>, 将会在 星期一到星期五的凌晨01:00 禁言 5 小时<br>例如 <code>/timer mute PT0S &quot;0 0 0 1 * ?&quot;</code>, 将会 取消 禁言定时器</li>
+<li>day 单位为天数的发言期限, 小于 <code>0</code> 宵禁就会关闭<br>例如 <code>/timer cleaner 365 &quot;0 0 12 ? * 0&quot;</code>, 将会 取消 禁言定时器</li>
+</ol>
+<h2 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h2><h3 id="联系人审批配置"><a href="#联系人审批配置" class="headerlink" title="联系人审批配置"></a>联系人审批配置</h3><ol>
+<li><code>AdminAutoApproverConfig.yml</code></li>
+</ol>
+<h3 id="禁言自动退群配置"><a href="#禁言自动退群配置" class="headerlink" title="禁言自动退群配置"></a>禁言自动退群配置</h3><ol>
+<li><code>AdminAutoQuitConfig.yml</code></li>
+<li><code>mute_limit</code> 大于这个设置秒数的禁言会触发自动退群</li>
+</ol>
+<h3 id="留言配置"><a href="#留言配置" class="headerlink" title="留言配置"></a>留言配置</h3><ol>
+<li><code>AdminCommentConfig.yml</code></li>
+<li><code>xyz.cssxsh.mirai.plugin.mirai-administrator:comment.include</code> 作用: 拥有此权限的用户，可以给机器人留言</li>
+</ol>
+<h3 id="机器人上线消息配置"><a href="#机器人上线消息配置" class="headerlink" title="机器人上线消息配置"></a>机器人上线消息配置</h3><ol>
+<li><code>AdminOnlineMessageConfig.yml</code></li>
+<li><code>xyz.cssxsh.mirai.plugin.mirai-administrator:online.include</code> 作用: 拥有此权限的群，会发送上线通知</li>
+</ol>
+<h3 id="消息审查及机器人所有者"><a href="#消息审查及机器人所有者" class="headerlink" title="消息审查及机器人所有者"></a>消息审查及机器人所有者</h3><ol>
+<li><code>AdminSetting.yml</code></li>
+<li><code>censor_types</code> 可选值 <code>IMAGE, FLASH, SERVICE, APP, AUDIO, FORWARD, VIP, MARKET, MUSIC, POKE</code></li>
+<li>正则词库, 须手动添加，将会加载 censor 文件夹中的 txt 文件，每一行对应一个正则匹配，会监听文件改动，无需重启</li>
+</ol>
+<h3 id="邮件配置"><a href="#邮件配置" class="headerlink" title="邮件配置"></a>邮件配置</h3><ol>
+<li><code>AdminMailConfig.yml</code> 配置一些默认的发送对象</li>
+<li><code>admin.mail.properties</code> 配置邮箱账号等</li>
+</ol>
+<p>格式参考</p>
+<div class="code-container" data-rel="Properties"><figure class="iseeu highlight properties"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">mail.host</span>=<span class="string">smtp.mail.qq.com</span></span><br><span class="line"><span class="attr">mail.auth</span>=<span class="string">true</span></span><br><span class="line"><span class="attr">mail.user</span>=<span class="string">xxx</span></span><br><span class="line"><span class="attr">mail.password</span>=<span class="string">***</span></span><br><span class="line"><span class="attr">mail.from</span>=<span class="string">cssxsh@qq.com</span></span><br><span class="line"><span class="attr">mail.store.protocol</span>=<span class="string">smtp</span></span><br><span class="line"><span class="attr">mail.transport.protocol</span>=<span class="string">smtp</span></span><br><span class="line"><span class="comment"># smtp</span></span><br><span class="line"><span class="attr">mail.smtp.starttls.enable</span>=<span class="string">true</span></span><br><span class="line"><span class="attr">mail.smtp.auth</span>=<span class="string">true</span></span><br><span class="line"><span class="attr">mail.smtp.timeout</span>=<span class="string">15000</span></span><br></pre></td></tr></table></figure></div>
+
+<p>QQ邮箱帮助： <a class="link"   target="_blank" rel="noopener" href="https://service.mail.qq.com/cgi-bin/help?subtype=1&&id=28&&no=1001256" >https://service.mail.qq.com/cgi-bin/help?subtype=1&amp;&amp;id=28&amp;&amp;no=1001256<i class="fa-solid fa-arrow-up-right ml-[0.2em] font-light align-text-top text-[0.7em] link-icon"></i></a></p>
+
+		</div>
+
+		
+		<div class="post-copyright-info w-full my-8 px-2 sm:px-6 md:px-8">
+			<div class="article-copyright-info-container">
+    <ul>
+        <li><strong>标题:</strong> Mirai Administrator 机器人管理插件，好友/群管理，黑名单，宵禁</li>
+        <li><strong>作者:</strong> W1ndys</li>
+        <li><strong>创建于
+                :</strong> 2023-11-20 11:25:00</li>
+        
+            <li>
+                <strong>更新于
+                    :</strong> 2025-02-23 13:37:18
+            </li>
+        
+        <li>
+            <strong>链接:</strong> https://blog.w1ndys.top/posts/369f16e7.html
+        </li>
+        <li>
+            <strong>
+                版权声明:
+            </strong>
+            
+
+            
+                版权所有 &#169 W1ndys，禁止转载。
+            
+        </li>
+    </ul>
+</div>
+
+		</div>
+		
+
+		
+		<ul class="post-tags-box text-lg mt-1.5 flex-wrap justify-center flex md:hidden">
+			
+			<li class="tag-item mx-0.5">
+				<a href="/tags/QQbot/">#QQbot</a>&nbsp;
+			</li>
+			
+		</ul>
+		
+
+		
+
+		
+		<div class="article-nav my-8 flex justify-between items-center px-2 sm:px-6 md:px-8">
+			
+			<div class="article-prev border-border-color shadow-redefine-flat shadow-shadow-color-2 rounded-medium px-4 py-2 hover:shadow-redefine-flat-hover hover:shadow-shadow-color-2">
+				<a class="prev" rel="prev" href="/posts/10f5a405.html">
+					<span class="left arrow-icon flex justify-center items-center">
+						<i class="fa-solid fa-chevron-left"></i>
+					</span>
+					<span class="title flex justify-center items-center">
+						<span class="post-nav-title-item">RSA的一些解密脚本</span>
+						<span class="post-nav-item">上一篇</span>
+					</span>
+				</a>
+			</div>
+			
+			
+			<div class="article-next border-border-color shadow-redefine-flat shadow-shadow-color-2 rounded-medium px-4 py-2 hover:shadow-redefine-flat-hover hover:shadow-shadow-color-2">
+				<a class="next" rel="next" href="/posts/527dba8e.html">
+					<span class="title flex justify-center items-center">
+						<span class="post-nav-title-item">DS作业-7-Ch5-22网安物联网-20231113</span>
+						<span class="post-nav-item">下一篇</span>
+					</span>
+					<span class="right arrow-icon flex justify-center items-center">
+						<i class="fa-solid fa-chevron-right"></i>
+					</span>
+				</a>
+			</div>
+			
+		</div>
+		
+
+
+		
+		<div class="comment-container px-2 sm:px-6 md:px-8 pb-8">
+			<div class="comments-container mt-10 w-full ">
+    <div id="comment-anchor" class="w-full h-2.5"></div>
+    <div class="comment-area-title w-full my-1.5 md:my-2.5 text-xl md:text-3xl font-bold">
+        评论
+    </div>
+    
+
+        
+            
+    <div id="giscus-container"></div>
+    <script data-swup-reload-script defer>
+        async function loadGiscus() {
+            const giscusConfig = {
+                'src': 'https://giscus.app/client.js',
+                'data-repo': 'W1ndys/Blog',
+                'data-repo-id': 'R_kgDOLaRaXw',
+                'data-category': 'Show and tell',
+                'data-category-id': 'DIC_kwDOLaRaX84CeBp5',
+                'data-mapping': 'url',
+                'data-strict': '0',
+                'data-reactions-enabled': '1',
+                'data-emit-metadata': '1',
+                'data-theme': 'preferred_color_scheme',
+                'data-lang': 'zh-CN',
+                'data-input-position': 'top',
+                'data-loading': 'lazy',
+                'crossorigin': 'anonymous',
+                'async': true
+            }
+            const giscusScript = document.createElement('script');
+            for (const key in giscusConfig) {
+                giscusScript.setAttribute(key, giscusConfig[key]);
+            }
+            document.getElementById('giscus-container').appendChild(giscusScript);
+        }
+        if ('true') {
+            let loadGiscusTimeout = setTimeout(() => {
+                loadGiscus();
+                clearTimeout(loadGiscusTimeout);
+            }, 1000);
+        } else {
+            document.addEventListener('DOMContentLoaded', loadGiscus);
+        }
+    </script>
+
+
+        
+        
+    
+</div>
+
+		</div>
+		
+	</div>
+
+	
+	<div class="toc-content-container">
+		<div class="post-toc-wrap">
+	<div class="post-toc">
+		<div class="toc-title">目录</div>
+		<div class="page-title">Mirai Administrator 机器人管理插件，好友/群管理，黑名单，宵禁</div>
+		<ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Mirai-Administrator"><span class="nav-text">Mirai Administrator</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#MCL-%E6%8C%87%E4%BB%A4%E5%AE%89%E8%A3%85"><span class="nav-text">MCL 指令安装</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%8C%87%E4%BB%A4"><span class="nav-text">指令</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#ADMINCONTACTCOMMAND"><span class="nav-text">ADMINCONTACTCOMMAND</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ADMINFRIENDCOMMAND"><span class="nav-text">ADMINFRIENDCOMMAND</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ADMINGROUPCOMMAND"><span class="nav-text">ADMINGROUPCOMMAND</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ADMINRECALLCOMMAND"><span class="nav-text">ADMINRECALLCOMMAND</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ADMINREGISTEREDCOMMAND"><span class="nav-text">ADMINREGISTEREDCOMMAND</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ADMINSENDCOMMAND"><span class="nav-text">ADMINSENDCOMMAND</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ADMINTIMERCOMMAND"><span class="nav-text">ADMINTIMERCOMMAND</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%85%8D%E7%BD%AE"><span class="nav-text">配置</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%81%94%E7%B3%BB%E4%BA%BA%E5%AE%A1%E6%89%B9%E9%85%8D%E7%BD%AE"><span class="nav-text">联系人审批配置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%A6%81%E8%A8%80%E8%87%AA%E5%8A%A8%E9%80%80%E7%BE%A4%E9%85%8D%E7%BD%AE"><span class="nav-text">禁言自动退群配置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%95%99%E8%A8%80%E9%85%8D%E7%BD%AE"><span class="nav-text">留言配置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%9C%BA%E5%99%A8%E4%BA%BA%E4%B8%8A%E7%BA%BF%E6%B6%88%E6%81%AF%E9%85%8D%E7%BD%AE"><span class="nav-text">机器人上线消息配置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%B6%88%E6%81%AF%E5%AE%A1%E6%9F%A5%E5%8F%8A%E6%9C%BA%E5%99%A8%E4%BA%BA%E6%89%80%E6%9C%89%E8%80%85"><span class="nav-text">消息审查及机器人所有者</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%82%AE%E4%BB%B6%E9%85%8D%E7%BD%AE"><span class="nav-text">邮件配置</span></a></li></ol></li></ol></li></ol>
+
+	</div>
+</div>
+	</div>
+	
+</div>
+			</div>
+
+			
+		</div>
+
+		<div class="main-content-footer">
+			<footer class="footer mt-5 py-5 h-auto text-base text-third-text-color relative border-t-2 border-t-border-color">
+    <div class="info-container py-3 text-center">
+        
+            <div class="customize-info my-1">Powered by <a href="https://github.com/W1ndys" target="_blank">W1ndys</a></div>
+        
+        <div class="text-center">
+            &copy;
+            
+              <span>2023</span>
+              -
+            
+            2025&nbsp;&nbsp;<i class="fa-solid fa-heart fa-beat" style="--fa-animation-duration: 0.5s; color: #f54545"></i>&nbsp;&nbsp;<a href="/">W1ndys</a>
+            
+                
+                <p class="post-count space-x-0.5">
+                    <span>
+                        共撰写了 193 篇文章
+                    </span>
+                    
+                        <span>
+                            共 224.3k 字
+                        </span>
+                    
+                </p>
+            
+        </div>
+        
+            <script data-swup-reload-script src="https://cn.vercount.one/js"></script>
+            <div class="relative text-center lg:absolute lg:right-[20px] lg:top-1/2 lg:-translate-y-1/2 lg:text-right">
+                
+                    <span id="busuanzi_container_site_uv" class="lg:!block">
+                        <span class="text-sm">访问人数</span>
+                        <span id="busuanzi_value_site_uv"></span>
+                    </span>
+                
+                
+                    <span id="busuanzi_container_site_pv" class="lg:!block">
+                        <span class="text-sm">总访问量</span>
+                        <span id="busuanzi_value_site_pv"></span>
+                    </span>
+                
+            </div>
+        
+        <div class="relative text-center lg:absolute lg:left-[20px] lg:top-1/2 lg:-translate-y-1/2 lg:text-left">
+            <span class="lg:block text-sm">由 <?xml version="1.0" encoding="utf-8"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg class="relative top-[2px] inline-block align-baseline" version="1.1" id="圖層_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="1rem" height="1rem" viewBox="0 0 512 512" enable-background="new 0 0 512 512" xml:space="preserve"><path fill="#0E83CD" d="M256.4,25.8l-200,115.5L56,371.5l199.6,114.7l200-115.5l0.4-230.2L256.4,25.8z M349,354.6l-18.4,10.7l-18.6-11V275H200v79.6l-18.4,10.7l-18.6-11v-197l18.5-10.6l18.5,10.8V237h112v-79.6l18.5-10.6l18.5,10.8V354.6z"/></svg><a target="_blank" class="text-base" href="https://hexo.io">Hexo</a> 驱动</span>
+            <span class="text-sm lg:block">主题&nbsp;<a class="text-base" target="_blank" href="https://github.com/EvanNotFound/hexo-theme-redefine">Redefine v2.8.2</a></span>
+        </div>
+        
+        
+            <div>
+                博客已运行 <span class="odometer" id="runtime_days" ></span> 天 <span class="odometer" id="runtime_hours"></span> 小时 <span class="odometer" id="runtime_minutes"></span> 分钟 <span class="odometer" id="runtime_seconds"></span> 秒
+            </div>
+        
+        
+            <script data-swup-reload-script>
+                try {
+                    function odometer_init() {
+                    const elements = document.querySelectorAll('.odometer');
+                    elements.forEach(el => {
+                        new Odometer({
+                            el,
+                            format: '( ddd).dd',
+                            duration: 200
+                        });
+                    });
+                    }
+                    odometer_init();
+                } catch (error) {}
+            </script>
+        
+        
+            
+                
+        
+                
+        
+                
+
+                    
+                        <script data-swup-reload-script data-pjax src="/js/Capoo.js"></script>
+                    
+        
+        
+    </div>  
+</footer>
+		</div>
+	</div>
+
+	
+	<div class="post-tools">
+		<div class="post-tools-container">
+	<ul class="article-tools-list">
+		<!-- TOC aside toggle -->
+		
+		<li class="right-bottom-tools page-aside-toggle">
+			<i class="fa-regular fa-outdent"></i>
+		</li>
+		
+
+		<!-- go comment -->
+		
+		<li class="go-comment">
+			<i class="fa-regular fa-comments"></i>
+		</li>
+		
+	</ul>
+</div>
+	</div>
+	
+
+	<div class="right-side-tools-container">
+		<div class="side-tools-container">
+	<ul class="hidden-tools-list">
+		<li class="right-bottom-tools tool-font-adjust-plus flex justify-center items-center">
+			<i class="fa-regular fa-magnifying-glass-plus"></i>
+		</li>
+
+		<li class="right-bottom-tools tool-font-adjust-minus flex justify-center items-center">
+			<i class="fa-regular fa-magnifying-glass-minus"></i>
+		</li>
+
+		<li class="right-bottom-tools tool-dark-light-toggle flex justify-center items-center">
+			<i class="fa-regular fa-moon"></i>
+		</li>
+
+		<!-- rss -->
+		
+		<li class="right-bottom-tools rss flex justify-center items-center">
+			<a class="flex justify-center items-center" href="/atom.xml" target="_blank">
+				<i class="fa-regular fa-rss"></i>
+			</a>
+		</li>
+		
+
+		
+
+		<li class="right-bottom-tools tool-scroll-to-bottom flex justify-center items-center">
+			<i class="fa-regular fa-arrow-down"></i>
+		</li>
+	</ul>
+
+	<ul class="visible-tools-list">
+		<li class="right-bottom-tools toggle-tools-list flex justify-center items-center">
+			<i class="fa-regular fa-cog fa-spin"></i>
+		</li>
+		
+		<li class="right-bottom-tools tool-scroll-to-top flex justify-center items-center">
+			<i class="arrow-up fas fa-arrow-up"></i>
+			<span class="percent"></span>
+		</li>
+		
+		
+	</ul>
+</div>
+	</div>
+
+	<div class="image-viewer-container">
+	<img src="">
+</div>
+
+	
+	<div class="search-pop-overlay">
+	<div class="popup search-popup">
+		<div class="search-header">
+			<span class="search-input-field-pre">
+				<i class="fa-solid fa-keyboard"></i>
+			</span>
+			<div class="search-input-container">
+				<input autocomplete="off" autocorrect="off" autocapitalize="off" placeholder="站内搜索您需要的内容..." spellcheck="false" type="search" class="search-input">
+			</div>
+			<span class="popup-btn-close">
+				<i class="fa-solid fa-times"></i>
+			</span>
+		</div>
+		<div id="search-result">
+			<div id="no-result">
+				<i class="fa-solid fa-spinner fa-spin-pulse fa-5x fa-fw"></i>
+			</div>
+		</div>
+	</div>
+</div>
+	
+
+</main>
+
+
+<script  src="https://evan.beee.top/projects/hexo-theme-redefine@2.8.2/source/js/build/libs/Swup.min.js" ></script><script  src="https://evan.beee.top/projects/hexo-theme-redefine@2.8.2/source/js/build/libs/SwupSlideTheme.min.js" ></script><script  src="https://evan.beee.top/projects/hexo-theme-redefine@2.8.2/source/js/build/libs/SwupScriptsPlugin.min.js" ></script><script  src="https://evan.beee.top/projects/hexo-theme-redefine@2.8.2/source/js/build/libs/SwupProgressPlugin.min.js" ></script><script  src="https://evan.beee.top/projects/hexo-theme-redefine@2.8.2/source/js/build/libs/SwupScrollPlugin.min.js" ></script><script  src="https://evan.beee.top/projects/hexo-theme-redefine@2.8.2/source/js/build/libs/SwupPreloadPlugin.min.js" ></script>
+<script>
+    const swup = new Swup({
+        plugins: [
+            new SwupScriptsPlugin({
+                optin: true,
+            }),
+            new SwupProgressPlugin(),
+            new SwupScrollPlugin({
+                offset: 80,
+            }),
+            new SwupSlideTheme({
+                mainElement: ".main-content-body",
+            }),
+            new SwupPreloadPlugin(),
+        ],
+        containers: ["#swup"],
+    });
+</script>
+
+
+
+
+	<script type="module" src="https://evan.beee.top/projects/hexo-theme-redefine@2.8.2/source/js/build/tools/imageViewer.js" ></script><script type="module" src="https://evan.beee.top/projects/hexo-theme-redefine@2.8.2/source/js/build/utils.js" ></script><script type="module" src="https://evan.beee.top/projects/hexo-theme-redefine@2.8.2/source/js/build/main.js" ></script><script type="module" src="https://evan.beee.top/projects/hexo-theme-redefine@2.8.2/source/js/build/layouts/navbarShrink.js" ></script><script type="module" src="https://evan.beee.top/projects/hexo-theme-redefine@2.8.2/source/js/build/tools/scrollTopBottom.js" ></script><script type="module" src="https://evan.beee.top/projects/hexo-theme-redefine@2.8.2/source/js/build/tools/lightDarkSwitch.js" ></script><script type="module" src="https://evan.beee.top/projects/hexo-theme-redefine@2.8.2/source/js/build/layouts/categoryList.js" ></script>
+
+
+    <script type="module" src="https://evan.beee.top/projects/hexo-theme-redefine@2.8.2/source/js/build/tools/localSearch.js" ></script>
+
+
+
+    <script type="module" src="https://evan.beee.top/projects/hexo-theme-redefine@2.8.2/source/js/build/tools/codeBlock.js" ></script>
+
+
+
+    <script type="module" src="https://evan.beee.top/projects/hexo-theme-redefine@2.8.2/source/js/build/layouts/lazyload.js" ></script>
+
+
+
+    <script  src="https://evan.beee.top/projects/hexo-theme-redefine@2.8.2/source/js/build/tools/runtime.js" ></script>
+    <script  src="https://evan.beee.top/projects/hexo-theme-redefine@2.8.2/source/js/build/libs/odometer.min.js" ></script>
+    <link rel="stylesheet" href="https://evan.beee.top/projects/hexo-theme-redefine@2.8.2/source/assets/odometer-theme-minimal.css">
+
+
+
+  <script  src="https://evan.beee.top/projects/hexo-theme-redefine@2.8.2/source/js/build/libs/Typed.min.js" ></script>
+  <script type="module" src="https://evan.beee.top/projects/hexo-theme-redefine@2.8.2/source/js/build/plugins/typed.js" ></script>
+
+
+
+
+
+    <script  src="https://evan.beee.top/projects/hexo-theme-redefine@2.8.2/source/js/build/libs/minimasonry.min.js" ></script>
+    <script type="module" src="https://evan.beee.top/projects/hexo-theme-redefine@2.8.2/source/js/build/plugins/masonry.js" ></script>
+
+
+
+
+
+
+    <script type="module" src="https://evan.beee.top/projects/hexo-theme-redefine@2.8.2/source/js/build/tools/tocToggle.js" data-swup-reload-script></script><script type="module" src="https://evan.beee.top/projects/hexo-theme-redefine@2.8.2/source/js/build/layouts/toc.js" data-swup-reload-script></script><script type="module" src="https://evan.beee.top/projects/hexo-theme-redefine@2.8.2/source/js/build/plugins/tabs.js" data-swup-reload-script></script>
+
+
+<script  src="https://evan.beee.top/projects/hexo-theme-redefine@2.8.2/source/js/build/libs/moment-with-locales.min.js" data-swup-reload-script></script>
+<script type="module" src="https://evan.beee.top/projects/hexo-theme-redefine@2.8.2/source/js/build/layouts/essays.js" data-swup-reload-script></script>
+
+
+    <script  src="https://evan.beee.top/projects/hexo-theme-redefine@2.8.2/source/js/build/libs/pangu.min.js" ></script><script  src="https://evan.beee.top/projects/hexo-theme-redefine@2.8.2/source/js/build/plugins/pangu.js" ></script>
+
+
+
+    <script type="module" src="https://evan.beee.top/projects/hexo-theme-redefine@2.8.2/source/js/build/layouts/bookmarkNav.js" ></script>
+
+	
+</body>
+
+</html>
